@@ -4,25 +4,30 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set showcmd
 set showmode
 set number
 set relativenumber
-set scrolloff=3
+set scrolloff=5
 set history=1000
 set clipboard=unnamed
+set tm=800
+set novisualbell
+set noerrorbells
 
 " clear the highlighted search result
-nnoremap <Leader>n :nohlsearch<CR>
+" nnoremap <leader>cs :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
 
-nnoremap <Leader>s :w<CR>
+nnoremap <leader>w :w<CR>
 
 " Quit normal mode
-nnoremap <Leader>q  :q<CR>
-nnoremap <Leader>Q  :qa!<CR>
+nnoremap <leader>q  :q<CR>
+" nnoremap <leader>Q  :qa!<CR>
 
 " Move half page faster
-nnoremap <Leader>d  <C-d>
-nnoremap <Leader>u  <C-u>
+nnoremap <leader>d  <C-d>
+nnoremap <leader>u  <C-u>
 
 " Insert mode shortcut
 inoremap <C-b> <Left>
@@ -35,6 +40,7 @@ inoremap <C-d> <Delete>
 
 " Quit insert mode
 inoremap jj <Esc>
+inoremap kk <Esc>
 
 " Quit visual mode
 vnoremap v <Esc>
@@ -52,7 +58,7 @@ nnoremap U <C-r>
 nnoremap Y y$
 
 " 复制选中区到系统剪切板中
-vnoremap <Leader>y "+y
+vnoremap <leader>y "+y
 
 " => 选中及操作改键
 
@@ -61,65 +67,76 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Window operation
-nnoremap <Leader>ww <C-W>w
-nnoremap <Leader>wd <C-W>c
-nnoremap <Leader>wj <C-W>j
-nnoremap <Leader>wk <C-W>k
-nnoremap <Leader>wh <C-W>h
-nnoremap <Leader>wl <C-W>l
-nnoremap <Leader>ws <C-W>s
-nnoremap <Leader>w- <C-W>s
-nnoremap <Leader>wv <C-W>v
-nnoremap <Leader>w\| <C-W>v
+" nnoremap <leader>ww <C-W>w
+" nnoremap <leader>wd <C-W>c
+" nnoremap <leader>wj <C-W>j
+" nnoremap <leader>wk <C-W>k
+" nnoremap <leader>wh <C-W>h
+" nnoremap <leader>wl <C-W>l
+" nnoremap <leader>ws <C-W>s
+" nnoremap <leader>w- <C-W>s
+" nnoremap <leader>wv <C-W>v
+" nnoremap <leader>w\| <C-W>v
 
 " Tab operation
-nnoremap tn gt
-nnoremap tp gT
+" nnoremap tn gt
+" nnoremap tp gT
+noremap <leader>k gt  
+noremap <leader>j gT
+nnoremap <leader>t1 1gt
+nnoremap <leader>t2 2gt
+nnoremap <leader>t3 3gt
+nnoremap <leader>t4 4gt
+nnoremap <leader>t5 5gt
+nnoremap <leader>t6 6gt
+nnoremap <leader>t0 :tablast<CR>
 
 " ==================================================
 " Show all the provided actions via `:actionlist`
 " ==================================================
 
 " built in search looks better
-nnoremap / :action Find<CR>
+" nnoremap / :action Find<CR>
 " but preserve ideavim search
-nnoremap <Leader>/ /
+" nnoremap <leader>/ /
 
-nnoremap <Leader>;; :action CommentByLineComment<CR>
+nnoremap <leader>;; :action CommentByLineComment<CR>
 
-nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
-nnoremap <Leader>br :action ViewBreakpoints<CR>
+nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
+nnoremap <leader>br :action ViewBreakpoints<CR>
 
-nnoremap <Leader>cv :action ChangeView<CR>
+nnoremap <leader>cv :action ChangeView<CR>
 
-nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
+nnoremap <leader>cd :action ChooseDebugConfiguration<CR>
 
-nnoremap <Leader>ga :action GotoAction<CR>
-nnoremap <Leader>gc :action GotoClass<CR>
-nnoremap <Leader>gd :action GotoDeclaration<CR>
-nnoremap <Leader>gf :action GotoFile<CR>
-nnoremap <Leader>gi :action GotoImplementation<CR>
-nnoremap <Leader>gs :action GotoSymbol<CR>
-nnoremap <Leader>gt :action GotoTest<CR>
+nnoremap <leader>ga :action GotoAction<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gs :action GotoSymbol<CR>
+nnoremap <leader>gt :action GotoTest<CR>
 
-nnoremap <Leader>fp :action ShowFilePath<CR>
-nnoremap <Leader>fu :action FindUsages<CR>
+nnoremap <leader>fp :action ShowFilePath<CR>
+nnoremap <leader>fu :action FindUsages<CR>
 
-nnoremap <Leader>ic :action InspectCode<CR>
+nnoremap <leader>ic :action InspectCode<CR>
 
-nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
+nnoremap <leader>mv :action ActivateMavenProjectsToolWindow<CR>
 
-nnoremap <Leader>oi :action OptimizeImports<CR>
+nnoremap <leader>oi :action OptimizeImports<CR>
 
-nnoremap <Leader>pm :action ShowPopupMenu<CR>
+nnoremap <leader>pm :action ShowPopupMenu<CR>
 
-nnoremap <Leader>rc :action ChooseRunConfiguration<CR>
-nnoremap <Leader>re :action RenameElement<CR>
-nnoremap <Leader>rf :action RenameFile<CR>
+nnoremap <leader>rc :action ChooseRunConfiguration<CR>
+nnoremap <leader>re :action RenameElement<CR>
+nnoremap <leader>rf :action RenameFile<CR>
 
-nnoremap <Leader>se :action SearchEverywhere<CR>
-nnoremap <Leader>su :action ShowUsages<CR>
+nnoremap <leader>se :action SearchEverywhere<CR>
+nnoremap <leader>su :action ShowUsages<CR>
 
-nnoremap <Leader>tc  :action CloseActiveTab<CR>
-nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
-vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+nnoremap <leader>tc  :action CloseActiveTab<CR>
+nnoremap <leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+vnoremap <leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+
+" noremap f :action AceAction<CR> 

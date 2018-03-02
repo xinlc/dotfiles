@@ -1,0 +1,121 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "editor.tabSize": 2,
+    "editor.fontSize": 16,
+    "editor.renderIndentGuides": false, // 使用guides 插件代替
+    "workbench.iconTheme": "vscode-icons",
+    "editor.minimap.enabled": false,
+    "typescript.check.tscVersion": false,
+    "vsicons.projectDetection.autoReload": true,
+    "editor.cursorBlinking": "solid",
+    "editor.renderControlCharacters": false,
+    "window.zoomLevel": 0,
+    "editor.lineNumbers": "relative",
+    // vim
+    "vim.enableNeovim": true,
+    "vim.useSolidBlockCursor": false, // 开启后很卡
+    "vim.overrideCopy": false,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": false,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "w"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.files.save",
+                "args": []
+            }]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": [{
+                "command": ":tabc"
+            }]
+        },
+        {
+            "before":["<leader>","/"],
+            "commands": [ {
+               "command": ":nohl"
+            }]
+        },
+        {
+            "before":["<leader>","t","j"],
+            "commands": [ {
+               "command": ":tabn"
+            }]
+        },
+        {
+            "before":["<leader>","t","k"],
+            "commands": [ {
+               "command": ":tabp"
+            }]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before":["<leader>","y"],
+            "after": ["\"", "+", "y"]
+        },
+        {
+            "before":["<leader>","p"],
+            "after": ["\"", "+", "p"]
+        },
+        {
+            "before":["<leader>","1"],
+            "commands": [ {
+               "command": ":tabn1"
+            }]
+        },
+        {
+            "before":["<leader>","2"],
+            "commands": [ {
+               "command": ":tabn2"
+            }]
+        },
+        {
+            "before":["<leader>","3"],
+            "commands": [ {
+               "command": ":tabn3"
+            }]
+        },
+        {
+            "before":["<leader>","4"],
+            "commands": [ {
+               "command": ":tabn4"
+            }]
+        },
+        {
+            "before":["<leader>","0"],
+            "commands": [ {
+               "command": ":tablast"
+            }]
+        }
+    ],
+    // "vim.statusBarColorControl": true,
+    // "vim.statusBarColors" : {
+    //     "normal": "#005f5f",
+    //     "insert": "#5f0000",
+    //     "visual": "#5f00af",
+    //     "visualline": "#005f87",
+    //     "visualblock": "#86592d",
+    //     "replace": "#000000"
+    // },
+    "terminal.external.osxExec": "iTerm.app",
+    "typescript.check.npmIsInstalled": false,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.searchHighlightColor": "rgba(255, 0, 0, 0.8)",
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": true,
+    "extensions.ignoreRecommendations": false
+}
