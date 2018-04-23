@@ -43,21 +43,25 @@
             }]
         },
         {
-            "before":["<leader>","t","j"],
+            "before":["<leader>","j"],
             "commands": [ {
-               "command": ":tabn"
+               "command": ":tabp"
             }]
         },
         {
-            "before":["<leader>","t","k"],
+            "before":["<leader>","k"],
             "commands": [ {
-               "command": ":tabp"
+               "command": ":tabn"
             }]
         }
     ],
     "vim.insertModeKeyBindings": [
         {
             "before": ["j","j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k","k"],
             "after": ["<Esc>"]
         }
     ],
@@ -117,5 +121,13 @@
     "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": true,
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "workbench.colorTheme": "Atom One Dark",
+    "extensions.autoUpdate": false,
+    "update.channel": "none",
+    "javascript.validate.enable": false,
+    "vsicons.dontShowNewVersionMessage": true
 }
