@@ -5,7 +5,7 @@
     "editor.renderIndentGuides": false, // 使用guides 插件代替
     "workbench.iconTheme": "vscode-icons",
     "editor.minimap.enabled": false,
-    "typescript.check.tscVersion": false,
+    // "typescript.check.tscVersion": false,
     "vsicons.projectDetection.autoReload": true,
     "editor.cursorBlinking": "solid",
     "editor.renderControlCharacters": false,
@@ -13,7 +13,7 @@
     "editor.lineNumbers": "relative",
     // vim
     "vim.enableNeovim": true,
-    "vim.useSolidBlockCursor": false, // 开启后很卡
+    // "vim.useSolidBlockCursor": false, // 开启后很卡
     "vim.overrideCopy": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -21,7 +21,7 @@
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.leader": "<space>",
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["leader", "w"],
             "after": [],
@@ -65,7 +65,7 @@
             "after": ["<Esc>"]
         }
     ],
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindings": [
         {
             "before":["<leader>","y"],
             "after": ["\"", "+", "y"]
@@ -116,7 +116,7 @@
     // },
     "terminal.external.osxExec": "iTerm.app",
     "typescript.check.npmIsInstalled": false,
-    "vim.disableAnnoyingNeovimMessage": true,
+    // "vim.disableAnnoyingNeovimMessage": true,
     "vim.searchHighlightColor": "rgba(255, 0, 0, 0.8)",
     "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -129,5 +129,6 @@
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "javascript.validate.enable": false,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "files.autoSave": "off"
 }
