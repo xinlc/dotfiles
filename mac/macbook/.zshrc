@@ -61,10 +61,15 @@ DEFAULT_USER="leo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# brew install zsh-syntax-highlighting
 plugins=(
   git
   node
   npm
+  extract
+  zsh-autosuggestions
 	zsh-syntax-highlighting
 )
 
@@ -120,3 +125,7 @@ alias readlink=greadlink
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 #autojump
+
+# zsh-syntax-highlighting B
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-syntax-highlighting E
