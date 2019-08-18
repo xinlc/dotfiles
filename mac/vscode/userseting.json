@@ -9,10 +9,10 @@
     "vsicons.projectDetection.autoReload": true,
     "editor.cursorBlinking": "solid",
     "editor.renderControlCharacters": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.lineNumbers": "relative",
     // vim
-    "vim.enableNeovim": true,
+    // "vim.enableNeovim": true,
     // "vim.useSolidBlockCursor": false, // 开启后很卡
     "vim.overrideCopy": false,
     "vim.easymotion": true,
@@ -121,14 +121,49 @@
     "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": true,
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "files.associations": {
         "*.js": "javascriptreact"
     },
     "workbench.colorTheme": "Atom One Dark",
     "extensions.autoUpdate": false,
-    "update.channel": "none",
+    // "update.channel": "none",
     "javascript.validate.enable": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "files.autoSave": "off"
+    "files.autoSave": "off",
+    "go.gopath": "/Users/leo/go",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "px2vworvh.width": 3840,
+    "px2vworvh.height": 720,
+    "px2vw.width": 3840,
+    "config.baseWidth": 3840,
+    "px-to-vw.unitPrecision": 4,
+    "px-to-vw.viewportWidth": 3840
 }

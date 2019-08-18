@@ -1,0 +1,29 @@
+## 安装的插件
+
+- `Awesome Flutter Snippets`
+- `Codelf`
+- `Color Highlight`
+- `Dart`
+- `Docker`
+- `ES7 React/Redux/GraphQL/React-Native snippets`
+- `ESLint`
+- `Flutter`
+- `Go`
+- `Guides`
+- `Import Cost`
+- `Prettier`
+- `Project Manager`
+- `px-to-vw`
+- `Python`
+- `React-Native/React/Redux snippets for es6/es7`
+- `Reactjs code snippets`
+- `Search node_modules`
+- `TabNine`
+- `TODO Highlight`
+- `TSLint`
+- `Vetur`
+- `Vim`
+- `vscode-icons`
+- `vue`
+- `Vue 2 Snippets`
+- `Vue VSCode Snippets`
