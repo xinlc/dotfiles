@@ -51,7 +51,7 @@
 # IINA
 # Franz
 # IntelliJ IDEA
-# iTerm
+# iTerm2
 # Keyboard Maestro
 # Docker
 # Kitematic
@@ -61,6 +61,7 @@
 # WPS Office
 # TeamViewer
 # zoom.us
+# Cakebrew
 ```
 
 ## zsh
@@ -82,4 +83,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 # 卸载
 uninstall_oh_my_zsh
+```
+
+### java8
+```bash
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
 ```
