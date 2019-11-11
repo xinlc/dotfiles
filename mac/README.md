@@ -31,6 +31,7 @@
 # zsh-syntax-highlighting
 # autoconf
 # flow
+# tmux
 ```
 
 ### brew cask 清单
@@ -62,6 +63,8 @@
 # TeamViewer
 # zoom.us
 # Cakebrew
+# hyper
+# contexts https://contexts.co/
 ```
 
 ## zsh
