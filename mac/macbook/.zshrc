@@ -158,3 +158,10 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export FLUTTER_HOME=$HOME/workspace/software/flutter/flutter
 export PATH="$PATH:$FLUTTER_HOME/bin"
 # flutter E
+
+# idea maven B
+# la /Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3/bin
+# chmod +x /Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3/bin/mvn
+export IDEA_MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
+export PATH="$PATH:$IDEA_MAVEN_HOME/bin"
+# idea maven E

@@ -40,6 +40,8 @@
 # blisk
 # genymotion
 # sequel-pro
+# tableplus
+# mysql-workbench
 # sourcetree
 # virtualbox
 # clipy
@@ -65,6 +67,7 @@
 # Cakebrew
 # hyper
 # contexts https://contexts.co/
+# typora https://www.typora.io
 ```
 
 ## zsh
