@@ -68,6 +68,7 @@
 # hyper
 # contexts https://contexts.co/
 # typora https://www.typora.io
+# f.lux https://justgetflux.com
 ```
 
 ## zsh
