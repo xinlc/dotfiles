@@ -1,3 +1,8 @@
+
+" https://github.com/JetBrains/ideavim
+
+" leader: ,
+" let mapleader = ","
 let mapleader=' '
 
 set hlsearch
@@ -117,8 +122,8 @@ nnoremap <leader>gi :action GotoImplementation<CR>
 nnoremap <leader>gs :action GotoSymbol<CR>
 nnoremap <leader>gt :action GotoTest<CR>
 
-nnoremap <leader>fp :action ShowFilePath<CR>
-nnoremap <leader>fu :action FindUsages<CR>
+" nnoremap <leader>fp :action ShowFilePath<CR>
+" nnoremap <leader>fu :action FindUsages<CR>
 
 nnoremap <leader>ic :action InspectCode<CR>
 
@@ -140,3 +145,33 @@ nnoremap <leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
 vnoremap <leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
 
 " noremap f :action AceAction<CR> 
+
+" 映射idea常用快捷键
+" 重命名
+" nnoremap <leader>r :action RenameElement<CR>
+" 格式化当前文件
+nnoremap <leader>f :action ReformatCode<CR><esc>
+" quick java doc
+nnoremap <leader>q :action QuickJavaDoc<CR>
+
+" 插件
+" 1. EasyMotion依赖于IdeaVim-EasyMotion https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion/ 和 AceJump https://plugins.jetbrains.com/plugin/7086-acejump/ 两个插件 
+" 命令 https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+
+" 2. 多光标 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
+
+" 3. surround https://github.com/tpope/vim-surround 就是提供快捷的对操作。比如添加括号，双引号等等。
+" 支持的命令有：ys, cs, ds, S。常见用法如下，将光标停留在*所在位置，输入对应的命令(Command)，即可将左侧（Old text）的内容修改为右侧（New text）的内容“。
+
+" 4. commentary 方便添加注释的插件 https://github.com/tpope/vim-commentary
+" IdeaVim模拟的命令有： gcc, gc + motion, v_gc
+
+" 插件模拟
+" surround
+set surround
+" multiple-cursors
+set multiple-cursors
+" easyMotion 模拟，额外依赖插件：AceJump,IdeaVim-EasyMotion
+set easymotion
+" 注释插件模拟
+set commentary
