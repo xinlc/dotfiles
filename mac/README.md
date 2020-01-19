@@ -69,6 +69,7 @@
 # contexts https://contexts.co/
 # typora https://www.typora.io
 # f.lux https://justgetflux.com
+# aText https://www.trankynam.com/atext/
 ```
 
 ## zsh
