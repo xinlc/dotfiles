@@ -7,31 +7,32 @@
 
 ### brew 清单
 ```bash
-# neovim
+# neovim - 代替 vim
+# autojump - 告别又臭又长的路径名，一键直达任何目录
+# nvm - node 多版本管理
+# bat - 带有语法高亮和Git集成的 cat(1) 克隆
+# yarn - node 包管理工具比npm好用，更快
+# tmux - 一个优秀的终端复用器类自由软件
+# mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！
+# zsh-syntax-highlighting
+# watchman - 监控文件变化 for RN
 # python
-# watchman
-# autojump
 # node
 # readline
 # wget
 # automake
 # maven
-# nvm
 # sqlite
 # wine
-# bat
 # openssl
 # tree
 # cocoapods
-# yarn
 # coreutils
 # ios-deploy
 # mysql@5.7
 # usbmuxd
-# zsh-syntax-highlighting
 # autoconf
 # flow
-# tmux
 ```
 
 ### brew cask 清单
