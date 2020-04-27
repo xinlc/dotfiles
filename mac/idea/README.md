@@ -53,7 +53,11 @@ Preferences -> Editor -> General -> Change font size (Zoom) with Ctrl+Mouse whee
 
 Preferences -> Editor -> General -> Appearance 勾选 Show Line Numbers
 
-## 配置 IDEA VM
+### 微服务项目
+
+显示 Run Dashboard，按两次 shift 输入 Services 或者 Dashboard
+
+### 配置 IDEA VM
 
 ```bash
 # 修改 idea vm
