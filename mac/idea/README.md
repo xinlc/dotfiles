@@ -87,9 +87,9 @@ Preferences -> Appearance & Behavior -> Appearance -> Window Options -> Show mem
 
 ### QAPlugs 工具包
 
-QAPlugs包含了PMD、FindBugs、checkstyle等代码质量分析工具
+QAPlugs 包含了 PMD、FindBugs、checkstyle 等代码质量分析工具
 
-PMD是一个代码静态分析工具，能监测不使用的变量、空捕获块、不必要的创建对象等。它支持java、javascript、http://Salesforce.com Apex、PLSQL、Apache Velocity、XML、XSL。另外它还支持CPD（copy-paste-detector），CPD能找到重复的代码在java、c、c++、c#、Groovy、PHP、Ruby、fortran、javascript等大部分主流语言。
+PMD是一个代码静态分析工具，能监测不使用的变量、空捕获块、不必要的创建对象等。它支持java、javascript、PLSQL、Apache Velocity、XML、XSL。另外它还支持CPD（copy-paste-detector），CPD能找到重复的代码在java、c、c++、c#、Groovy、PHP、Ruby、fortran、javascript等大部分主流语言。
 
 #### FindBugs 概念
 
