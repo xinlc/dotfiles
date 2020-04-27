@@ -33,6 +33,7 @@
 # usbmuxd
 # autoconf
 # flow
+# ctop - https://github.com/bcicen/ctop
 ```
 
 ### brew cask 清单
