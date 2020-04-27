@@ -9,7 +9,7 @@
 - `Atom Material Icons` Icon 主题
 - `Background Image Plus` 可以设置背景
 - `Docker`
-- `FindBugs-IDEA` bug 扫描
+- `FindBugs-IDEA` bug 扫描，或安装 QAPlug
 - `GenerateAllSetter` 自动生成 Bean setter
 - `Grep Console` 控制台过滤 log
 - `IDE Features Trainer`
@@ -84,3 +84,21 @@ Preferences -> Appearance & Behavior -> Appearance -> Window Options -> Show mem
 2. Search for memoryIndicator in the search box.
 3. Toggle on the memory indicator option.
 4. Restart Idea
+
+### QAPlugs 工具包
+
+QAPlugs包含了PMD、FindBugs、checkstyle等代码质量分析工具
+
+PMD是一个代码静态分析工具，能监测不使用的变量、空捕获块、不必要的创建对象等。它支持java、javascript、http://Salesforce.com Apex、PLSQL、Apache Velocity、XML、XSL。另外它还支持CPD（copy-paste-detector），CPD能找到重复的代码在java、c、c++、c#、Groovy、PHP、Ruby、fortran、javascript等大部分主流语言。
+
+#### FindBugs 概念
+
+此工具主要能找到代码质量5个方向问题：
+
+- efficient(性能问题)
+- maintainability（可维护性）
+- portability（可移植性）
+- reliability(可靠性)
+- usability(可用性)
+
+> 安装后，点击 Tools -> QAPlug -> Analyze Code...
