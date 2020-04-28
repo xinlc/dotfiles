@@ -53,6 +53,12 @@ Preferences -> Editor -> General -> Change font size (Zoom) with Ctrl+Mouse whee
 
 Preferences -> Editor -> General -> Appearance 勾选 Show Line Numbers
 
+### 关闭自动保存和标志修改文件为星号
+
+Preferences -> Appearance & Behavior -> 去掉 Synchronize files on frame or editor tab activation 和去掉 Save files on frame deactivation
+
+Preferences -> Editor -> General —> Editor Tabs -> 勾选 Mark modified(*)
+
 ### 微服务项目
 
 显示 Run Dashboard，按两次 shift 输入 Services 或者 Dashboard
