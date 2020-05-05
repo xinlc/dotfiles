@@ -21,9 +21,12 @@
 - `MyBatisCodeHelperPro`
 - `Free MyBatis plugin` MyBatis 免费的插件
 - `MyBatisX`
-- `Key Promoter X` 对你的鼠标操作进行 快捷键提示
+- `Key Promoter X` 对你的鼠标操作进行，快捷键提示 (cmd + 鼠标右键, alt + 鼠标右键)
 - `Rainbow brackets` 让代码中的括号更具标识性
-- `RestfulToolkit` Restful 工具
+- `RestfulToolkit` Restful 工具，可以搭配 HTTP Client
+- `Codota` 1. 智能自动补全让编码速度更快; 2. 从经过测试或证明过的程序中获得编码建议 (ctrl + shift + o 快速查询相关使用案例); 3. 查看开源框架使用案例（ctrl + shift + y）
+- `CodeGlance` 代码一瞥，minimap
+- `CamelCase` 变换字符串格式，快捷键 shift + alt + U，shift + cmd + U
 
 ## 常用设置
 
@@ -58,6 +61,10 @@ Preferences -> Editor -> General -> Appearance 勾选 Show Line Numbers
 Preferences -> Appearance & Behavior -> 去掉 Synchronize files on frame or editor tab activation 和去掉 Save files on frame deactivation
 
 Preferences -> Editor -> General —> Editor Tabs -> 勾选 Mark modified(*)
+
+### 方法分割线以及字符缩进
+
+Preferences -> Editor -> General —> Appearance -> 勾选 Show method separators, Show Whitespaces
 
 ### 微服务项目
 
