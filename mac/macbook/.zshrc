@@ -134,6 +134,8 @@ alias cdw="cd ~/workspace"
 alias rm="bash ~/safermformac.sh"
 alias readlink=greadlink
 alias cat=bat
+# docker run --rm -it -v \/var/run/docker.sock:/var/run/docker.sock \-v ~/.config/lazydocker:/.config/jesseduffield/lazydocker \lazyteam/lazydocker
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 # alias E
 
 # autojump
