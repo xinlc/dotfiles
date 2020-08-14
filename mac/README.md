@@ -115,7 +115,7 @@ brew cask install adoptopenjdk8
 mac自带的bash为3.2版本，而最新的bash是4.9，需要升级了，才能支持关联数组等新特性。
 
 1. brew install bash
-2. 安装到/usr/local/bin/bash里面。可以通过修改/etc/shells文件，来完成开机使用新版本的bash
+2. 安装到/usr/local/bin/bash里面。可以通过修改/etc/shells文件，来完成开机使用新版本的bash，或者修改环境变量（PATH）让 /usr/local/bin提前。
 3. 但是，无法改变/bin/bash的版本，这里仍旧为3.2版本，这给使用脚本带来不便，因为默认都是#!/bin/bash
 4. 细查后，发现原来mac系统禁止更改系统目录的权限，引入sip机制，需要先关闭，修改，再打开这一系列操作。
 5. 下面是打开和关闭sip的步骤：
@@ -127,7 +127,37 @@ mac自带的bash为3.2版本，而最新的bash是4.9，需要升级了，才能
 6. 关闭sip后，加入软连接，在打开sip
 
 ```bash
-sudo mv /bin/bash /bin/bash3.2
+# 这时候有两个 bash, 在PATH变量中，新版本（/usr/local/bin）的目录优先于旧版本（/bin），所以现在再检测Bash版本时就显示已是新版
+which -a bash
 
+sudo mv /bin/bash /bin/bash3.2
 sudo ln -s /usr/local/bin/bash /bin/bash
+
+# 由于 macOS 下的 sh 并不是直接链接 bash，而是 bash 的一个文件拷贝。所以还要替换默认的 sh 指向的命令为 bash，如下：
+sudo mv /bin/sh /bin/sh.origin
+sudo ln -s /usr/local/opt/bash/bin/bash /bin/sh
+```
+
+7. UNIX包含一个安全功能，该功能将可用作登录shell的shell（即登录到系统后使用的shell）限制为“受信任”shell列表。这些shell列在/etc/shells文件。
+
+要将新安装的 Bash shell 设置成默认shell，它必须能够作为登录shell。将其添加到/etc/shells文件。以root用户身份编辑此文件：
+
+```bash
+$ sudo vim /etc/shells
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+/usr/local/bin/bash
+```
+
+现在如果打开一个新终端窗口，仍然会使用Bash 3.2。这是因为/bin/bash仍然是默认shell。修改成新shell，执行以下命令：
+
+```bash
+$ chsh -s /usr/local/bin/bash
+
+# chsh命令仅修改当前用户的默认shell。如果想修改root用户，执行以下操作：这样当使用 sudo su ，以root用户身份打开shell时，也将使用新版Bash。
+$ sudo chsh -s /usr/local/bin/bash
 ```
