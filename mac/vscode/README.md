@@ -27,3 +27,4 @@
 - `vue`
 - `Vue 2 Snippets`
 - `Vue VSCode Snippets`
+- `GitLens`
