@@ -167,3 +167,18 @@ export PATH="$PATH:$FLUTTER_HOME/bin"
 export IDEA_MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
 export PATH="$PATH:$IDEA_MAVEN_HOME/bin"
 # idea maven E
+
+# spring boot B
+# export MAVEN_OPTS=-Djava.security.egd=file:/dev/urandom
+export MAVEN_OPTS=-Djava.security.egd=file:/dev/./urandom
+# spring boot E
+
+# Smart Project B
+export MYSQL_URL=192.168.2.202
+export REDIS_URL=192.168.2.202
+export SMART_GATEWAY=127.0.0.1
+export SMART_ADMIN=127.0.0.1
+export NACOS_URL=192.168.2.202
+export SMART_TX_MANAGER=127.0.0.1
+export MONGO_URL=192.168.2.202
+# Smart Project E
