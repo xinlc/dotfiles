@@ -1,5 +1,6 @@
 // 将设置放入此文件中以覆盖默认设置
 {
+    "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
     "editor.fontSize": 16,
     "editor.renderIndentGuides": false, // 使用guides 插件代替

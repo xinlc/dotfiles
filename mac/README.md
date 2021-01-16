@@ -3,7 +3,11 @@
 ### [brew](https://brew.sh/)
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/leoxin/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
 ### brew 清单
@@ -16,7 +20,6 @@
 # yarn - node 包管理工具比npm好用，更快
 # tmux - 一个优秀的终端复用器类自由软件
 # mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！
-# zsh-syntax-highlighting
 # watchman - 监控文件变化 for RN
 # python
 # node
@@ -29,7 +32,7 @@
 # openssl
 # tree
 # cocoapods
-# coreutils
+# coreutils  - greadlink 需要
 # ios-deploy
 # mysql@5.7
 # usbmuxd
@@ -76,9 +79,11 @@
 # f.lux https://justgetflux.com
 # aText https://www.trankynam.com/atext/
 # switchhosts
+# go2shell https://zipzapmac.com/go2shell
+# another-redis-desktop-manager https://github.com/qishibo/AnotherRedisDesktopManager
 ```
 
-## zsh
+## 安装 zsh
 
 - [iterm2](https://www.iterm2.com/downloads.html)
 
@@ -91,11 +96,36 @@ zsh --version
 chsh -s /bin/zsh
 ```
 
-### oh my zsh
+### oh my zsh 配置
 
 ```bash
-# 安装
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# 安装 on my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 安装 PowerLine
+# sudo easy_install pip
+pip install powerline-status --user
+
+# 安装 PowerFonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+
+# 安装配色方案(新版iTerm2 已经默认安装)
+# cd solarized/iterm2-colors-solarized/
+# open .
+# 在打开的finder窗口中，双击Solarized Dark.itermcolors和Solarized Light.itermcolors即可安装明暗两种配色
+
+# 安装 agnoster 主题（已自带）
+# git clone https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor.git
+# cd oh-my-zsh-agnoster-fcamblor/
+# ./install
+
+# 安装插件
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 # 卸载
 uninstall_oh_my_zsh

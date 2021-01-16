@@ -5,7 +5,6 @@
 1. 启动开发者模式:
 
 设置——>更新和安全——>开发者选项——>开发人员模式
- 
 
 2. 打开windows下的Linux子系统
 
@@ -140,5 +139,4 @@ ubuntu config --default-user root
 
 - [适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)
 - [手动下载适用于 Linux 的 Windows 子系统发行版包](https://docs.microsoft.com/zh-cn/windows/wsl/install-manual)
-
 - [【WSL+Docker】新手Win10下的WSL Ubuntu18并使用Docker（两种方式）](https://zhuanlan.zhihu.com/p/61542198/)
