@@ -1,3 +1,13 @@
+
+## 常用软件
+
+- [Awesome Mac](https://github.com/jaywcjlove/awesome-mac) - 作为一名程序员你应该知道 **Awesome**
+- [MacWk](https://www.macwk.com) - 只提供精品Mac应用
+- [腾讯柠檬](https://lemon.qq.com) - mac系统优化清理工具
+- [uTools](https://u.tools) - 生产力工具集
+- [drawio](https://github.com/jgraph/drawio-desktop) - 画图神器
+- [PDMan](https://gitee.com/robergroup/pdman) - 国产数据库建模工具
+
 ## 安装软件
 
 ### [brew](https://brew.sh/)
@@ -74,13 +84,13 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # zoom.us
 # Cakebrew
 # hyper
-# contexts https://contexts.co/
-# typora https://www.typora.io
-# f.lux https://justgetflux.com
-# aText https://www.trankynam.com/atext/
-# switchhosts
-# go2shell https://zipzapmac.com/go2shell
-# another-redis-desktop-manager https://github.com/qishibo/AnotherRedisDesktopManager
+# contexts - https://contexts.co/
+# typora - https://www.typora.io
+# f.lux - https://justgetflux.com
+# aText - https://www.trankynam.com/atext/
+# switchhosts - https://github.com/oldj/SwitchHosts
+# go2shell - https://zipzapmac.com/go2shell
+# another-redis-desktop-manager - https://github.com/qishibo/AnotherRedisDesktopManager
 ```
 
 ## 安装 zsh
