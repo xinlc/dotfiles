@@ -17,15 +17,23 @@
 - [Clipy](https://github.com/Clipy/Clipy) - 历史剪切板。现在用的 Alfred 带的剪切板功能。
 - [Flux](https://justgetflux.com) - f.lux 护眼神器
 - [Logi Options](https://support.logi.com/hc/zh-cn/articles/360025297893) - Logitech Options 逻辑大师鼠标
-- [Go2Shell](https://zipzapmac.com/go2shell) - 在当前目录打开终端
+- [Go2Shell](https://zipzapmac.com/go2shell) - 在当前目录打开终端（Mac OS 11.2 兼容有问题，建议用 OpenInTerminal）
+- [OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal) - 在当前目录打开终端（代替 Go2Shell）
 - [Thor](https://github.com/gbammc/Thor) - 快捷键打开应用 和 Manico 类似 (App Store)
 - [PopClip](https://pilotmoon.com/popclip/) - 划词扩展工具 (App Store)
+- [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) - 键盘键位修改神器
+- [Contexts](https://contexts.co) - 窗口切换神器，代替 Command-Tab。Manico 和 AltTab 功能组合
+- [iStat Menus](https://bjango.com/mac/istatmenus/) - 优秀的系统监控工具
 - Xnip - 最好用的mac长截图/截图工具 (App Store)
+- iShop - 优秀的截图录屏工具 (App Store)
+- Gifox 2 - 最好用的Gif动画录制工具 (App Store)
 - Yoink - 一款移动复制文件效率工具 (App Store)
 - Magnet - mac窗口整理神器 (App Store)
 - Manico - 应用启动和切换工具 (App Store)
 - The Unarchiver - 解压神器 (App Store)
+- Easy New File - 自定义右键新建文档 (App Store)
 - 超级右键 专业版 - 增强右键功能 (App Store)
+- 自动切换输入法 专业版 - 自动切换中英文输入法（App Store）
 - HazeOver - 提升工作专注力神器 (App Store)
 - Dynamic Wallpaper - 动态壁纸 (App Store)
 
@@ -42,6 +50,9 @@
 - [WPS Office](https://www.wps.cn) - 办公套件
 - [XMind](https://www.xmind.cn) - 脑图神器
 - [IINA](https://github.com/iina/iina) - 全能播放器
+- [uPic](https://github.com/gee1k/uPic) - 最好用的Mac图床客户端
+- [Transmit](https://www.panic.com/transmit/) - 最好用的FTP客户端 (App Store)
+- [PDF Expert](https://pdfexpert.com) - 好用的PDF编辑器
 - Microsoft OneNote - 云笔记 (App Store)
 - QQ - 童年生活方式 (App Store)
 - 微信 - 一个生活方式 (App Store)
@@ -118,6 +129,8 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 ### brew cask 清单
 
+新版本命令 cask 改为参数如：`brew install --cask openinterminal`
+
 ```bash
 # android-studio
 # blisk
@@ -156,6 +169,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # switchhosts - https://github.com/oldj/SwitchHosts
 # go2shell - https://zipzapmac.com/go2shell
 # another-redis-desktop-manager - https://github.com/qishibo/AnotherRedisDesktopManager
+# openinterminal - 代替 go2shell
 ```
 
 ## 安装 zsh
@@ -206,7 +220,53 @@ git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:=~/.oh-m
 uninstall_oh_my_zsh
 ```
 
-### java8
+## mac 免密ssh登陆配置
+
+1. 检查是否已存在公私钥对
+
+在mac上打开terminal。更改目录到~/.ssh目录。list当前目录可以看到所有公私钥文件。拥有.pub结尾的文件是公钥文件，无.pub的是私钥文件。
+
+```bash
+# 更换目录到 ~/.ssh
+cd ~/.ssh  
+
+# 查看当前目录公私钥文件
+ls             
+```
+
+2. 生成公私钥对（可选步骤）
+
+这部适用于上一步list观察之后当前文件夹不存在公私钥对的情况。
+
+```bash
+# 根据交互，输入你想要的名字（默认id_rsa）
+# 然后是passphrase，设置为空即可。这样就生成了一对公私钥  
+ssh-keygen  
+
+# 这时候当前目录下会多了一对公私钥对。
+ls                
+```
+
+3. 上传公钥到服务器
+
+这一步从本地将公钥文件上传到服务器指定目录。
+
+```bash
+# user是你的ssh的用户，host是服务器地址，这时候还要输入密码。
+# 例子：ssh-copy-id -i id_rsa.pub root@111.111.111.111
+ssh-copy-id -i [公钥文件] user@host 
+```
+
+4. ssh-add（mac的坑点）
+
+好一般别的系统到第三步就可以免密登陆了，但是mac并不这样。还要调用ssh-add。
+
+```bash
+ssh-add -K [你的私钥文件，就是那个不加.pub结尾的文件] 
+# 例如，ssh-add -K id_rsa
+```
+
+## java8
 
 ```bash
 brew tap AdoptOpenJDK/openjdk
