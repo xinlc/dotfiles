@@ -132,7 +132,7 @@
     "javascript.validate.enable": false,
     "vsicons.dontShowNewVersionMessage": true,
     "files.autoSave": "off",
-    "go.gopath": "/Users/leo/go",
+    "go.gopath": "/Users/richard/go",
     "eslint.validate": [
         "javascript",
         "javascriptreact",

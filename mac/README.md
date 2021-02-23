@@ -92,7 +92,7 @@
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/leoxin/.zprofile
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/richard/.zprofile
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
