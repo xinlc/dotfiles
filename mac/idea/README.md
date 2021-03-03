@@ -5,7 +5,8 @@
 
 ## 安装的插件
 
-- `Alibaba Java Coding Guidelines` p3c 开启这个比较卡
+- `Alibaba Java Coding Guidelines` p3c 阿里巴巴代码规范
+- `SonarLint` 代码规范、漏洞检查工具
 - `Atom Material Icons` Icon 主题
 - `Background Image Plus` 可以设置背景
 - `Docker`
@@ -59,7 +60,7 @@ Preferences -> Editor -> General -> Appearance 勾选 Show Line Numbers
 
 ### 关闭自动保存和标志修改文件为星号
 
-Preferences -> Appearance & Behavior -> 去掉 Synchronize files on frame or editor tab activation 和去掉 Save files on frame deactivation
+Preferences -> Appearance & Behavior -> System Settings -> 去掉 Synchronize files on frame or editor tab activation 和去掉 Save files on frame deactivation
 
 Preferences -> Editor -> General —> Editor Tabs -> 勾选 Mark modified(*)
 

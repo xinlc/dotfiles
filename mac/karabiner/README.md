@@ -75,7 +75,8 @@
 | `caps + k`               | 下                         |
 | `caps + j`               | 左                         |
 | `caps + l`               | 右                         |
-| `caps + h`               | delete                     |
+| `caps + h`               | backspace                  |
+| `caps + d`               | delete                     |
 | `caps + return`          | 打开文件                   |
 | `shift + cmd + v`        | 历史剪切板（Alfred)        |
 | `shift + cmd + a`        | 截图                       |
