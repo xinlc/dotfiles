@@ -70,18 +70,20 @@
 | 快捷键                   | 描述                       |
 | :----------------------- | :------------------------- |
 | `caps`                   | 映射为 Control             |
-| `cmd + d`                | 删除文件                   |
-| `caps + i`               | 上                         |
-| `caps + k`               | 下                         |
-| `caps + j`               | 左                         |
+| ~~`cmd + d`~~            | 删除文件                   |
+| `caps + k`               | 上                         |
+| `caps + j`               | 下                         |
+| `caps + h`               | 左                         |
 | `caps + l`               | 右                         |
-| `caps + p`               | 上                         |
-| `caps + n`               | 下                         |
-| `caps + b`               | 左                         |
-| `caps + f`               | 右                         |
-| `caps + h`               | backspace                  |
+| ~~`caps + p`~~           | 上                         |
+| ~~`caps + n`~~           | 下                         |
+| ~~`caps + b`~~           | 左                         |
+| ~~`caps + f`~~           | 右                         |
+| ~~`caps + h`~~           | backspace                  |
+| `caps + m`               | backspace                  |
 | `caps + d`               | delete                     |
 | `caps + return`          | 打开文件                   |
+| `caps + ,`               | iTerm2 HotKey (iTerm2)     |
 | `shift + cmd + v`        | 历史剪切板（Alfred)        |
 | `shift + cmd + a`        | 截图                       |
 | `shift + cmd + a`        | 截图                       |

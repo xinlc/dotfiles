@@ -99,6 +99,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 ### brew 清单
 
 ```bash
+# sl - 跑火车，休息一下
 # neovim - 代替 vim
 # autojump - 告别又臭又长的路径名，一键直达任何目录
 # nvm - node 多版本管理
