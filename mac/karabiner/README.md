@@ -75,6 +75,10 @@
 | `caps + k`               | 下                         |
 | `caps + j`               | 左                         |
 | `caps + l`               | 右                         |
+| `caps + p`               | 上                         |
+| `caps + n`               | 下                         |
+| `caps + b`               | 左                         |
+| `caps + f`               | 右                         |
 | `caps + h`               | backspace                  |
 | `caps + d`               | delete                     |
 | `caps + return`          | 打开文件                   |
