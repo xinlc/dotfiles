@@ -28,6 +28,7 @@ insert_final_newline = true
 
 # 对后缀名为 .md 的文件生效
 [*.md]
+indent_size = 2
 insert_final_newline = false
 trim_trailing_whitespace = false
 

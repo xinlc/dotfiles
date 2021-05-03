@@ -176,6 +176,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 ## 安装 zsh
 
 - [iterm2](https://www.iterm2.com/downloads.html)
+- [Mac Terminal 配置](https://xinlichao.cn/tools/mac-terminal/)
 
 ```bash
 brew install zsh

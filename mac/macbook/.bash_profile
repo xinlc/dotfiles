@@ -1,12 +1,22 @@
 #alias begin
-alias cdwork="cd /Users/lichao/documents/work"
-alias cdcyq="cd /Users/lichao/documents/work/reactnativeprojects/can-yin-quan-app"
+alias cdwork="cd /Users/richard/documents/work"
+alias cdcyq="cd /Users/richard/documents/work/reactnativeprojects/can-yin-quan-app"
 #alias end
 
 #terminal 配色begin
+
+#enables colorin the terminal bash shell export
 export CLICOLOR=1
-export LSCOLORS=gxfxaxdxcxegedabagacad
-export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
+
+#setsup thecolor scheme for list export
+export LSCOLORS=gxfxcxdxbxegedabagacad
+ 
+#sets up theprompt color (currently a green similar to linux terminal)
+# export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$     '
+
+#enables colorfor iTerm
+export TERM=xterm-256color
 #terminal 配色end
 
 #bash-completion begin
