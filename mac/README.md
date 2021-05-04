@@ -202,6 +202,9 @@ git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
 
+# 设置字体
+iTerm2 -> Preferences -> Profiles -> Text，在Font区域选中Change Font，然后找到 `Meslo LG S for Powerline`
+
 # 安装配色方案(新版iTerm2 已经默认安装)
 # cd solarized/iterm2-colors-solarized/
 # open .
@@ -268,11 +271,114 @@ ssh-add -K [你的私钥文件，就是那个不加.pub结尾的文件]
 # 例如，ssh-add -K id_rsa
 ```
 
-## java8
+## Java SKD
+
+### 老版Mac java8
 
 ```bash
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
+```
+
+### M1 芯片 Mac
+
+#### 使用IDE安装SDK
+
+File -> Project Structre -> SDKs -> Azul 1.8 aarch64
+
+安装后终端无需任何配置
+
+```bash
+# 查看JDK根目录命令
+/usr/libexec/java_home -V
+
+# 查看JDK版本
+java -version
+```
+
+指定JDK版本
+
+```zsh
+# JDK S
+export JAVA_HOME=/Users/richard/Library/Java/JavaVirtualMachines/azul-1.8.0_292/Contents/Home
+# export CLASSPAHT=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export CLASSPATH=.:$JAVA_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
+# JDK E
+```
+
+切换多个java的版本
+
+```zsh
+export JAVA_7_HOME="$(/usr/libexec/java_home -v 1.7)"
+export JAVA_8_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_9_HOME="$(/usr/libexec/java_home -v 9)"
+
+alias jdk7='export JAVA_HOME=$JAVA_7_HOME'
+alias jdk8='export JAVA_HOME=$JAVA_8_HOME'
+alias jdk9='export JAVA_HOME=$JAVA_9_HOME'
+
+# 默认使用JDK8
+export JAVA_HOME=$JAVA_8_HOME
+
+# 使用以下命令切换
+# jdk8
+# java -version
+# jdk9
+# java -version
+```
+
+#### 使用SDKMAN管理JDK
+
+https://github.com/sdkman/sdkman-cli
+
+https://sdkman.io/install
+
+```bash
+# 安装
+curl -s "https://get.sdkman.io" | bash
+
+# 安装到自定义位置
+# export SDKMAN_DIR="/usr/local/sdkman" && curl -s "https://get.sdkman.io" | bash
+
+# 打开一个新终端执行，会自动添加到zshrc中
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# 查看版本
+sdk version
+
+# 备份后卸载，最后删除 zshrc 配置
+tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman
+rm -rf ~/.sdkman
+
+# 查看所有支持工具
+sdk list
+
+# 查看一下工具的不同版本
+# 例如查看gradle的版本
+sdk list gradle
+
+# 安装软件指定版本
+sdk install gradle 5.6.2
+
+# 查看当前软件版本
+sdk current
+
+# 切换当前软件版本
+sdk use gradle 4.10.3
+```
+
+## Python
+
+```bash
+brew install python2.7
+brew install python3.9
+
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip2.py
+sudo python2 get-pip2.py
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python3 get-pip.py
 ```
 
 ## Mac升级bash到最新版本

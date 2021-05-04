@@ -35,7 +35,7 @@ trim_trailing_whitespace = false
 [{*.ng,*.sht,*.html,*.shtm,*.shtml,*.htm}]
 indent_size = 2
 
-[{*.jhm,*.xslt,*.xul,*.rng,*.xsl,*.xsd,*.ant,*.tld,*.fxml,*.jrxml,*.xml,*.jnlp,*.wsdl}]
+[{*.jhm,*.xslt,*.xul,*.rng,*.xsl,*.xsd,*.ant,*.tld,*.fxml,*.jrxml,*.jnlp,*.wsdl}]
 indent_size = 2
 
 [{.babelrc,.stylelintrc,jest.config,.eslintrc,.prettierrc,*.json,*.jsb3,*.jsb2,*.bowerrc}]

@@ -1,16 +1,14 @@
-// 将设置放入此文件中以覆盖默认设置
 {
     "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "editor.renderIndentGuides": false, // 使用guides 插件代替
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.enabled": false,
     // "typescript.check.tscVersion": false,
     "vsicons.projectDetection.autoReload": true,
     "editor.cursorBlinking": "solid",
     "editor.renderControlCharacters": false,
-    "window.zoomLevel": 1,
     "editor.lineNumbers": "relative",
     // vim
     // "vim.enableNeovim": true,
@@ -24,86 +22,160 @@
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["leader", "w"],
+            "before": [
+                "leader",
+                "w"
+            ],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.files.save",
-                "args": []
-            }]
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
         },
         {
-            "before": ["leader", "q"],
-            "commands": [{
-                "command": ":tabc"
-            }]
+            "before": [
+                "leader",
+                "q"
+            ],
+            "commands": [
+                {
+                    "command": ":tabc"
+                }
+            ]
         },
         {
-            "before":["<leader>","/"],
-            "commands": [ {
-               "command": ":nohl"
-            }]
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
         },
         {
-            "before":["<leader>","j"],
-            "commands": [ {
-               "command": ":tabp"
-            }]
+            "before": [
+                "<leader>",
+                "j"
+            ],
+            "commands": [
+                {
+                    "command": ":tabp"
+                }
+            ]
         },
         {
-            "before":["<leader>","k"],
-            "commands": [ {
-               "command": ":tabn"
-            }]
+            "before": [
+                "<leader>",
+                "k"
+            ],
+            "commands": [
+                {
+                    "command": ":tabn"
+                }
+            ]
         }
     ],
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         },
         {
-            "before": ["k","k"],
-            "after": ["<Esc>"]
+            "before": [
+                "k",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
     "vim.normalModeKeyBindings": [
         {
-            "before":["<leader>","y"],
-            "after": ["\"", "+", "y"]
+            "before": [
+                "<leader>",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "y"
+            ]
         },
         {
-            "before":["<leader>","p"],
-            "after": ["\"", "+", "p"]
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "p"
+            ]
         },
         {
-            "before":["<leader>","1"],
-            "commands": [ {
-               "command": ":tabn1"
-            }]
+            "before": [
+                "<leader>",
+                "1"
+            ],
+            "commands": [
+                {
+                    "command": ":tabn1"
+                }
+            ]
         },
         {
-            "before":["<leader>","2"],
-            "commands": [ {
-               "command": ":tabn2"
-            }]
+            "before": [
+                "<leader>",
+                "2"
+            ],
+            "commands": [
+                {
+                    "command": ":tabn2"
+                }
+            ]
         },
         {
-            "before":["<leader>","3"],
-            "commands": [ {
-               "command": ":tabn3"
-            }]
+            "before": [
+                "<leader>",
+                "3"
+            ],
+            "commands": [
+                {
+                    "command": ":tabn3"
+                }
+            ]
         },
         {
-            "before":["<leader>","4"],
-            "commands": [ {
-               "command": ":tabn4"
-            }]
+            "before": [
+                "<leader>",
+                "4"
+            ],
+            "commands": [
+                {
+                    "command": ":tabn4"
+                }
+            ]
         },
         {
-            "before":["<leader>","0"],
-            "commands": [ {
-               "command": ":tablast"
-            }]
+            "before": [
+                "<leader>",
+                "0"
+            ],
+            "commands": [
+                {
+                    "command": ":tablast"
+                }
+            ]
         }
     ],
     // "vim.statusBarColorControl": true,
@@ -126,13 +198,12 @@
     "files.associations": {
         "*.js": "javascriptreact"
     },
-    "workbench.colorTheme": "Atom One Dark",
     "extensions.autoUpdate": false,
     // "update.channel": "none",
     "javascript.validate.enable": false,
     "vsicons.dontShowNewVersionMessage": true,
     "files.autoSave": "off",
-    "go.gopath": "/Users/richard/go",
+    "go.gopath": "/Users/leo/go",
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -156,7 +227,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -166,5 +237,9 @@
     "px2vw.width": 3840,
     "config.baseWidth": 3840,
     "px-to-vw.unitPrecision": 4,
-    "px-to-vw.viewportWidth": 3840
+    "px-to-vw.viewportWidth": 3840,
+    "tabnine.experimentalAutoImports": true,
+    "hediet.vscode-drawio.local-storage": "xxxxx",
+    "hediet.vscode-drawio.theme": "Kennedy",
+    "workbench.colorTheme": "Material Theme"
 }

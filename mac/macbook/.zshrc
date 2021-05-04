@@ -47,6 +47,8 @@ DEFAULT_USER="richard"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -108,9 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -119,7 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
 
 # nvm B
 export NVM_DIR="$HOME/.nvm"
@@ -127,12 +126,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # nvm E
 
-# coreutils B
-# export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-# coreutils E
-
 # alias B
-alias vim="nvim"
+# alias vim="nvim"
 alias cdw="cd ~/workspace"
 alias rm="bash ~/safermformac.sh"
 alias readlink=greadlink
@@ -141,11 +136,15 @@ alias cat=bat
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 # alias E
 
-# autojump
+# autojump B
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-# autojump
+# autojump E
 
+# proxy B
 # export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
+# export http_proxy=http://127.0.0.1:1087
+# export https_proxy=http://127.0.0.1:1087
+# proxy E
 
 # android B
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -154,7 +153,6 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 # android E
-#
 
 # flutter B
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
@@ -184,3 +182,9 @@ export NACOS_URL=192.168.2.202
 export SMART_TX_MANAGER=127.0.0.1
 export MONGO_URL=192.168.2.202
 # Smart Project E
+
+# sdkman B
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/richard/.sdkman"
+[[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
+# sdkman E

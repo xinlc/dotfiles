@@ -51,10 +51,10 @@ inoremap kk <Esc>
 vnoremap v <Esc>
 
 " Move to the start of line
-nnoremap H ^
+"nnoremap H ^
 
 " Move to the end of line
-nnoremap L $
+"nnoremap L $
 
 " Redo
 nnoremap U <C-r>
@@ -86,7 +86,7 @@ vnoremap > >gv
 " Tab operation
 " nnoremap tn gt
 " nnoremap tp gT
-noremap <leader>k gt  
+noremap <leader>k gt
 noremap <leader>j gT
 nnoremap <leader>t1 1gt
 nnoremap <leader>t2 2gt
@@ -144,7 +144,7 @@ nnoremap <leader>tc  :action CloseActiveTab<CR>
 nnoremap <leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
 vnoremap <leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
 
-" noremap f :action AceAction<CR> 
+" noremap f :action AceAction<CR>
 
 " 映射idea常用快捷键
 " 重命名
@@ -155,7 +155,7 @@ nnoremap <leader>f :action ReformatCode<CR><esc>
 nnoremap <leader>q :action QuickJavaDoc<CR>
 
 " 插件
-" 1. EasyMotion依赖于IdeaVim-EasyMotion https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion/ 和 AceJump https://plugins.jetbrains.com/plugin/7086-acejump/ 两个插件 
+" 1. EasyMotion依赖于IdeaVim-EasyMotion https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion/ 和 AceJump https://plugins.jetbrains.com/plugin/7086-acejump/ 两个插件
 " 命令 https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
 
 " 2. 多光标 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors

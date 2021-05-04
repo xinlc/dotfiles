@@ -33,6 +33,15 @@
 
 ## 常用设置
 
+### ideavim
+
+设置 Mac 按键重复
+
+```bash
+defaults write -g ApplePressAndHoldEnabled 0
+# defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ### 自动生成序列化ID
 
 1. 进入 Preferences -> Editor -> Inspections -> Java -> Serialization Issues -> Serializable class without ‘serialVersionUID’
