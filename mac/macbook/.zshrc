@@ -188,3 +188,11 @@ export MONGO_URL=192.168.2.202
 export SDKMAN_DIR="/Users/richard/.sdkman"
 [[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
 # sdkman E
+
+# python B
+alias python="/opt/homebrew/bin/python3"
+alias pip="/opt/homebrew/bin/pip3"
+# alias python2="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7"
+alias python2="/usr/bin/python2"
+alias pip2="/usr/local/bin/pip2"
+# python E
