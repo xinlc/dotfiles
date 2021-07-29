@@ -196,3 +196,12 @@ alias pip="/opt/homebrew/bin/pip3"
 alias python2="/usr/bin/python2"
 alias pip2="/usr/local/bin/pip2"
 # python E
+
+# selenium B
+export SELENIUM_DRIVER_HOME=$HOME/workspace/software/selenium_driver
+export PATH=$PATH:$SELENIUM_DRIVER_HOME/
+# selenium E
+
+# openjdk B
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# openjdk E
