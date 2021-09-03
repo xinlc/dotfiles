@@ -30,6 +30,7 @@
 - `CodeGlance` 代码一瞥，minimap
 - `CamelCase` 变换字符串格式，快捷键 shift + alt + U，shift + cmd + U
 - `MapStruct Support` MapStruct 插件
+- `SequenceDiagram` 查看接口方法实现及调用时序图
 
 ## 常用设置
 

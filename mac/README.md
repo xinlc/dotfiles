@@ -100,10 +100,12 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 ```bash
 # sl - 跑火车，休息一下
-# neovim - 代替 vim
-# autojump - 告别又臭又长的路径名，一键直达任何目录
-# nvm - node 多版本管理
-# bat - 带有语法高亮和Git集成的 cat(1) 克隆
+# neovim - 代替 vim。https://github.com/neovim/neovim
+# autojump - 告别又臭又长的路径名，一键直达任何目录。 https://github.com/wting/autojump
+# nvm - node 多版本管理。https://github.com/nvm-sh/nvm
+# fd - 简单、快速、好用，用于替换 find 的搜索工具。https://github.com/sharkdp/fd
+# bat - 带有语法高亮和Git集成的 cat(1) 克隆 http://github.com/sharkdp/bat
+# exa - 用来替换 ls 命令的现代化工具。https://github.com/ogham/exa
 # yarn - node 包管理工具比npm好用，更快
 # tmux - 一个优秀的终端复用器类自由软件
 # mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！
@@ -117,6 +119,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # sqlite
 # wine
 # openssl
+# cmake
 # tree
 # cocoapods
 # coreutils  - greadlink 需要
@@ -126,6 +129,13 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # autoconf
 # flow
 # ctop - https://github.com/bcicen/ctop
+# thefuck - 命令输入错误后，输入fuck 自动纠正错误命令。https://github.com/nvbn/thefuck
+# fzf - fzf 是一款支持模糊搜索的交互式工具，可以用来查找任何列表内容，包括文件、Git 分支、进程等。https://github.com/junegunn/fzf 
+  ## To install useful key bindings and fuzzy completion:
+  ## $(brew --prefix)/opt/fzf/install
+
+# nushell - 生产力 shell 工具。https://github.com/nushell/nushell
+# ranger - 终端文件资源管理器。https://github.com/ranger/ranger
 ```
 
 ### brew cask 清单
@@ -171,6 +181,17 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # go2shell - https://zipzapmac.com/go2shell
 # another-redis-desktop-manager - https://github.com/qishibo/AnotherRedisDesktopManager
 # openinterminal - 代替 go2shell
+```
+
+### 其他命令
+
+```bash
+# tdlr 是 Too long, Don't read 的缩写，可以帮助你快速查看常用命令的使用实例，比如 tar 命令，那后面一长串参数谁记得清呢？当然，linux 大佬除外。
+https://github.com/tldr-pages/tldr
+
+# 终端文件管理器（资源管理器 finder)，Ranger 使用 Python 编写，默认为使用 vim 风格的按键绑定，对于使用 vim 的用户来说几乎没有学习成本，能够快速上手使用。
+https://github.com/ranger/ranger
+
 ```
 
 ## 安装 zsh
