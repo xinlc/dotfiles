@@ -209,3 +209,7 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 # the fuck B
 eval $(thefuck --alias)
 # the fuck E
+
+# tmux B
+export EDITOR="vim"
+# tmux E
