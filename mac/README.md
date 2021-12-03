@@ -242,6 +242,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
+# 安装 powerlevel10k 主题
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
+# 此时重开一个iTerm窗口，会进入主题配置引导，有非常详细的注释跟着选就好，选完就能用了。或手动执行 `p10k configure` 重新配置。
+
+# 字体
+# 可以推荐相关字体仓库 Nerd font（https://github.com/ryanoasis/nerd-fonts）
+# `p10k configure` 字体选择可以自动安装或手动选择字体打开iTerm2 → Preferences → Profiles → Text并将Font设置为 Meslo LG S NF
+
 # 卸载
 uninstall_oh_my_zsh
 ```

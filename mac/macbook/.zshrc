@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,7 +16,8 @@ export ZSH="/Users/richard/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="richard"
 
 # Set list of themes to pick from when loading at random
@@ -80,6 +88,9 @@ DEFAULT_USER="richard"
 # git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 # git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
+# 安装powerlevel10k 主题
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 plugins=(
   git
   node
@@ -140,12 +151,6 @@ alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 # autojump E
 
-# proxy B
-# export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
-# export http_proxy=http://127.0.0.1:1087
-# export https_proxy=http://127.0.0.1:1087
-# proxy E
-
 # android B
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -155,7 +160,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 # android E
 
 # flutter B
-export PUB_HOSTED_URL=https://pub.flutter-io.cn  
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export FLUTTER_HOME=$HOME/workspace/software/flutter/flutter
 export PATH="$PATH:$FLUTTER_HOME/bin"
@@ -189,13 +194,24 @@ export SDKMAN_DIR="/Users/richard/.sdkman"
 [[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
 # sdkman E
 
+# proxy B
+#export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
+# proxy E
+#
+
 # python B
-alias python="/opt/homebrew/bin/python3"
-alias pip="/opt/homebrew/bin/pip3"
+# alias python="/opt/homebrew/bin/python3"
+# alias pip="/opt/homebrew/bin/pip3"
 # alias python2="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7"
 alias python2="/usr/bin/python2"
 alias pip2="/usr/local/bin/pip2"
+
+alias python38="/opt/homebrew/opt/python@3.8/bin/python3"
+alias pip38="/opt/homebrew/opt/python@3.8/bin/pip3"
+
+alias python="/usr/local/bin/python3"
 # python E
+#
 
 # selenium B
 export SELENIUM_DRIVER_HOME=$HOME/workspace/software/selenium_driver
@@ -213,3 +229,6 @@ eval $(thefuck --alias)
 # tmux B
 export EDITOR="vim"
 # tmux E
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
