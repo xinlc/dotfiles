@@ -1,0 +1,116 @@
+# ------ general ------------------------------------
+
+# Crtl-s 来作为前缀键，send-prefix 为向终端发送前缀键的命令。
+set -g prefix2 C-s
+bind C-s send-prefix -2
+
+set -g escape-time 0
+set -g base-index 1
+set -g renumber-windows on
+set -g mouse on
+set -wg pane-base-index 1
+
+# rename-window
+set -wg allow-rename off
+set -wg automatic-rename off
+
+set -wg mode-keys vi
+
+# last-window
+bind a last
+
+# retain current path
+bind c new-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+
+# restart and edit
+bind r source ~/.tmux.conf\; display "tmux config sourced"
+bind e neww -n tmux-config "\${EDITOR:-vim} ~/.tmux.conf"
+
+# ------ move around --------------------------------
+bind -r h select-pane -L 
+bind l select-pane -R        # remove repeat, because of ls
+bind -r j select-pane -D
+bind -r k select-pane -U
+
+# ------ status theme -------------------------------
+set -g message-style "bg=#00346e, fg=#ffffd7"        # tomorrow night blue, base3
+
+set -g status-style "bg=#00346e, fg=#ffffd7"   # tomorrow night blue, base3
+set -g status-left "#[bg=#0087ff] ❐ #S "       # blue
+set -g status-left-length 400
+set -g status-right "#{?client_prefix, ⌨ , } #[bg=#0087ff] #(whoami)@#h #[bg=red] %Y-%m-%d %H:%M "
+set -g status-right-length 600
+
+set -g set-clipboard on
+set -g history-limit 8000
+
+set -wg window-status-format " #I #W "
+set -wg window-status-current-format " #I #W "
+set -wg window-status-separator ""
+set -wg window-status-current-style "bg=red" # red
+set -wg window-status-last-style "fg=red"
+
+set -wg pane-active-border-style "fg=blue"
+set -wg pane-border-style "fg=#585858"       # base01
+
+# ------- copy to clipboard ------------------------
+# bind -t vi-copy y copy-pipe 'xclip -selection clipboard > /dev/null'
+# bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+
+################ 说明 ################
+
+# 常用
+# $ tmux new -s test1
+# <prefix> + d            # detach client
+# $ tmux a -t test1     # attach
+# <prefix> + f  # 根据关键字查找
+# <prefix> + 4  # 切换到第四个窗口
+# <prefix> + a  # 切换到最近的窗口
+# <prefix> + space # Next Layout
+# <prefix> + z  # Maximise
+
+# 术语
+# server 包含多个 session
+# session 包含多个 window
+# window 类似于 iterm2 的 Tab，包含多个 pane，以下中文会翻译为窗口
+# pane 类似于 iterm2 的 Pane，以下中文会翻译为面板
+
+# 常见命令
+# bind-key (bind)　：绑定快捷键，按 prefix 键与快捷键触发。
+# set-option (set) : 设置选项
+# source-file (source) : 生效当前配置文件
+# new-window : 新建窗口，默认快捷键 prefix c
+# split-window : 分屏
+
+# 快速移动面板, 其中，参数 -r 代表可重复按键，比如 prefix r r 表示 prefix r， prefix r。其中按键时间需要通过 repeat-time 来设置，一般为500ms。
+# bind -r h select-pane -L 
+# bind -r l select-pane -R
+# bind -r j select-pane -D
+# bind -r k select-pane -U
+
+# Copy Mode
+# <prefix> + [
+# [Vim Goto Command]  # 任意 vim 跳转命令
+# $ tmux set mouse on # 通过鼠标滚动屏幕，切换窗口
+# 按 `prefix [` 键进入此模式，类似于 `vi(emacs)` 的 `normal mode`，支持复制，粘贴，查找，以及翻页。具体是 `vi` 还是 `emacs` 可以根据以下命令探知，表明查看全局窗口设置 `mode-keys`，默认会是 `vi`，如果不是，那就请设置为 `vi` 吧~
+# $ tmux show-window-options -g mode-keys
+# 与 `vi` 命令相同，如上下翻页(半屏)可使用 `C-d` 以及 `C-u`，当然你也可以使用 `hjkl`。
+
+# 复制与粘贴
+# 进入 copy-mode 后，v 开始选中，y 来进行复制并会退出 copy-mode。使用 prefix ] 来进行粘贴。
+# v & y 为自定义配置，配置如下
+# bind -t vi-copy v begin-selection
+# bind -t vi-copy y copy-selection
+# 目前使用
+# <prefix> + [ 进入复制，"space" 键开始选择问题  方向键移动(kjhl)， "回车复制"  <prefix> + ] 黏贴
+
+# 复制操作会把内容存进 buffer 里，熟悉以下几个命令能够更熟练地操作 buffer
+# $ tmux list-buffers          # 列出所有
+# $ tmux show-buffer -b [name] # 显示最近 buffer,也可指定 buffer name
+# $ tmux choose-buffer　　    　# 进入选择 buffer 界面，更加灵活
+
+# 最大化当前面板
+# 命令为 tmux resize-pane -Z，默认快捷键为 prefix z。需要查看更加详细的信息时可以按 prefix z 进入全屏，完毕之后，再按一次恢复。相当酷的一个功能。
