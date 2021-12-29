@@ -96,6 +96,8 @@ echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/richard/.zprofile
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
+> 清华大学镜像：https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
+
 ### brew 清单
 
 ```bash
@@ -129,6 +131,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # autoconf
 # flow
 # ctop - https://github.com/bcicen/ctop
+# btop - https://github.com/aristocratos/btop
 # thefuck - 命令输入错误后，输入fuck 自动纠正错误命令。https://github.com/nvbn/thefuck
 # fzf - fzf 是一款支持模糊搜索的交互式工具，可以用来查找任何列表内容，包括文件、Git 分支、进程等。https://github.com/junegunn/fzf 
   ## To install useful key bindings and fuzzy completion:
@@ -136,6 +139,11 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 # nushell - 生产力 shell 工具。https://github.com/nushell/nushell
 # ranger - 终端文件资源管理器。https://github.com/ranger/ranger
+# fselect - 使用类似 SQL 的查询查找文件。https://github.com/jhspetersson/fselect
+# httpie - 现代命令行 HTTP 客户端 - 用户友好的 curl 替代方案，具有直观的 UI、JSON 支持、语法突出显示、类似 wget 的下载、扩展等。https://github.com/httpie/httpie/
+# hstr - 终端历史命令建议 https://github.com/dvorka/hstr
+# mcfly - 浏览 shell 历史命令，跟 hstr 一样 https://github.com/cantino/mcfly
+
 ```
 
 ### brew cask 清单
@@ -192,6 +200,32 @@ https://github.com/tldr-pages/tldr
 # 终端文件管理器（资源管理器 finder)，Ranger 使用 Python 编写，默认为使用 vim 风格的按键绑定，对于使用 vim 的用户来说几乎没有学习成本，能够快速上手使用。
 https://github.com/ranger/ranger
 
+```
+
+### [conda](https://docs.conda.io/en/latest/miniconda.html)
+
+- [conda](https://docs.conda.io/en/latest/miniconda.html)
+- [Anaconda](https://docs.anaconda.com/anaconda/install/)
+- [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
+
+```bash
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash Miniconda3-latest-MacOSX-arm64.sh
+
+# 创建一个环境，指定python版本
+conda create --name machinelearning python=3.8
+
+#  启动该环境
+conda activate machinelearning
+
+# 验证环境是否被选中
+conda info --envs
+
+# 验证python版本
+python --version
+
+# 禁用环境
+conda deactivate
 ```
 
 ## 安装 zsh

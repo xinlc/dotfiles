@@ -4,7 +4,7 @@
 ## Safely remove files, moving them to GNOME/KDE trash instead of deleting.
 ## Made by Eemil Lagerspetz
 ## Login   <vermind@drache>
-## 
+##
 ## Started on  Mon Aug 11 22:00:58 2008 Eemil Lagerspetz
 ## Last update Wed Mar 14 11:53:18 2018 xinlc
 ##
@@ -99,13 +99,13 @@ setflags() {
   for k in $flags_set; do
 	if [ "$k" == "v" ]; then
 	    verbose="true"
-	elif [ "$k" == "r" ]; then 
+	elif [ "$k" == "r" ]; then
 	    recursive="true"
-	elif [ "$k" == "f" ]; then 
+	elif [ "$k" == "f" ]; then
 	    force="true"
-	elif [ "$k" == "u" ]; then 
+	elif [ "$k" == "u" ]; then
 	    unsafe="true"
-	elif [ "$k" == "q" ]; then 
+	elif [ "$k" == "q" ]; then
     unset verbose
 	fi
   done
@@ -196,7 +196,7 @@ deletefiles() {
 		  if [ "$answer" == "y" ]; then unset unsafe; unset answer; fi
       #echo "MV exit status: $ret"
       if [ ! "$ret" -eq 0 ]
-      then 
+      then
         asknobackup "${k}"
       fi
       if [ -n "$use_desktop" ]; then

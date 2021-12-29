@@ -92,12 +92,14 @@ DEFAULT_USER="richard"
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 plugins=(
+  z
   git
   node
   npm
+  docker
   extract
   zsh-autosuggestions
-  history-substring-search
+  zsh-history-substring-search
   zsh-completions
 	zsh-syntax-highlighting
 )
@@ -200,8 +202,8 @@ export SDKMAN_DIR="/Users/richard/.sdkman"
 #
 
 # python B
-# alias python="/opt/homebrew/bin/python3"
-# alias pip="/opt/homebrew/bin/pip3"
+alias python="/opt/homebrew/bin/python3"
+alias pip="/opt/homebrew/bin/pip3"
 # alias python2="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7"
 alias python2="/usr/bin/python2"
 alias pip2="/usr/local/bin/pip2"
@@ -209,7 +211,7 @@ alias pip2="/usr/local/bin/pip2"
 alias python38="/opt/homebrew/opt/python@3.8/bin/python3"
 alias pip38="/opt/homebrew/opt/python@3.8/bin/pip3"
 
-alias python="/usr/local/bin/python3"
+# alias python="/usr/local/bin/python3"
 # python E
 #
 
@@ -232,3 +234,32 @@ export EDITOR="vim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# hstr B
+# HSTR configuration - add this to ~/.zshrc
+# alias hh=hstr                    # hh to be alias for hstr
+# setopt histignorespace           # skip cmds w/ leading space from history
+# export HSTR_CONFIG=hicolor       # get more colors
+# bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+# hstr E
+
+# mcfly B
+# 代替 hstr
+eval "$(mcfly init zsh)"
+# mcfly E
+
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/richard/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/richard/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/richard/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/richard/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
+

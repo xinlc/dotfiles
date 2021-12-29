@@ -30,3 +30,4 @@
 - `GitLens`
 - `Material Theme`
 - `Material Icon Theme`
+- `Office Viewer`
