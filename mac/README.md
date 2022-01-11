@@ -86,9 +86,14 @@
 
 ## 安装软件
 
-### [brew](https://brew.sh/)
+### [Homebrew](https://brew.sh/)
+
+- [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+- [中科大镜像](https://mirrors.ustc.edu.cn/help/brew.git.html)
 
 ```bash
+xcode-select --install
+
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -96,11 +101,17 @@ echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/richard/.zprofile
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
-> 清华大学镜像：https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
-
 ### brew 清单
 
 ```bash
+# readline - 依赖
+# automake - 依赖
+# wine     - 依赖
+# openssl  - 依赖
+# cmake    - 依赖
+# usbmuxd    - 依赖
+# ios-deploy - 依赖
+# autoconf   - 依赖
 # sl - 跑火车，休息一下
 # neovim - 代替 vim。https://github.com/neovim/neovim
 # autojump - 告别又臭又长的路径名，一键直达任何目录。 https://github.com/wting/autojump
@@ -112,26 +123,18 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # tmux - 一个优秀的终端复用器类自由软件
 # mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！
 # watchman - 监控文件变化 for RN
-# python
-# node
-# readline
-# wget
-# automake
-# maven
-# sqlite
-# wine
-# openssl
-# cmake
-# tree
-# cocoapods
+# python - 可以安装指定版本 python，建议用 conda 管理版本
+# node - 建议用 nvm 安装 nodejs
+# wget     - linux wget命令
 # coreutils  - greadlink 需要
-# ios-deploy
-# mysql@5.7
-# usbmuxd
-# autoconf
-# flow
-# ctop - https://github.com/bcicen/ctop
-# btop - https://github.com/aristocratos/btop
+# maven    - maven ，建议用 idea自带的maven
+# sqlite   - 轻量级数据库
+# tree     - linux tree 命令
+# cocoapods - xcode 包管理
+# mysql@5.7  - 建议用 docker
+# flow       - react flow.js
+# ctop - 代替 top https://github.com/bcicen/ctop
+# btop - 代替 top https://github.com/aristocratos/btop
 # thefuck - 命令输入错误后，输入fuck 自动纠正错误命令。https://github.com/nvbn/thefuck
 # fzf - fzf 是一款支持模糊搜索的交互式工具，可以用来查找任何列表内容，包括文件、Git 分支、进程等。https://github.com/junegunn/fzf 
   ## To install useful key bindings and fuzzy completion:
@@ -143,7 +146,13 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # httpie - 现代命令行 HTTP 客户端 - 用户友好的 curl 替代方案，具有直观的 UI、JSON 支持、语法突出显示、类似 wget 的下载、扩展等。https://github.com/httpie/httpie/
 # hstr - 终端历史命令建议 https://github.com/dvorka/hstr
 # mcfly - 浏览 shell 历史命令，跟 hstr 一样 https://github.com/cantino/mcfly
-
+# nnn - 终端文件管理器 跟 ranger 类似, 可以代替 ls https://github.com/jarun/nnn
+# fpp - 将终端输出结果文件，选择打开, `git status | fpp` https://github.com/facebook/PathPicker
+# xo/xo/usql - SQL 数据库的通用命令行界面 https://github.com/xo/usql
+# xxh - 使用 ssh 时带上 shell 配置。https://github.com/xxh/xxh
+# zoxide - 更智能的 cd 命令，代替 autojump。https://github.com/ajeetdsouza/zoxide
+# cloc - 计算代码行数。 https://github.com/AlDanial/cloc
+# starship - 可定制的跨 shell 提示。 https://github.com/starship/starship
 ```
 
 ### brew cask 清单
@@ -200,13 +209,20 @@ https://github.com/tldr-pages/tldr
 # 终端文件管理器（资源管理器 finder)，Ranger 使用 Python 编写，默认为使用 vim 风格的按键绑定，对于使用 vim 的用户来说几乎没有学习成本，能够快速上手使用。
 https://github.com/ranger/ranger
 
+# forgit 交互式 git，基于 fzf 实现
+https://github.com/wfxr/forgit
+
+# 字体， https://github.com/ryanoasis/nerd-fonts
+brew tap homebrew/cask-fonts &&
+brew install --cask font-fira-code-nerd-font
 ```
 
 ### [conda](https://docs.conda.io/en/latest/miniconda.html)
 
-- [conda](https://docs.conda.io/en/latest/miniconda.html)
+- [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - [Anaconda](https://docs.anaconda.com/anaconda/install/)
 - [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
+- [中科大镜像](https://mirrors.ustc.edu.cn/help/anaconda.html)
 
 ```bash
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
@@ -215,7 +231,7 @@ bash Miniconda3-latest-MacOSX-arm64.sh
 # 创建一个环境，指定python版本
 conda create --name machinelearning python=3.8
 
-#  启动该环境
+# 启动该环境
 conda activate machinelearning
 
 # 验证环境是否被选中
@@ -226,12 +242,37 @@ python --version
 
 # 禁用环境
 conda deactivate
+
+# 删除整个环境
+conda remove -n machinelearning --all
+
+# 重命名环境
+conda create -n python2 --clone py2
+conda remove -n py2 --all
+```
+
+#### tmux 中 conda 环境无法生效问题
+
+原因是：在conda环境下进入的tmux，这时在tmux中重加载conda环境失败。
+
+解决：首先退出并关闭会话，在终端退出conda环境，新建进入会话，在tmux会话中激活所需conda环境方可生效。
+
+```bash
+tmux kill-session xxx
+conda deactivate
+tmux new -s xxx
+conda activate
+
+# 或 关闭自动激活 base 环境
+conda config --set auto_activate_base false
+
+# 可以在执行 tmux 前执行别名 condadown，在 .zshrc 中默认激活指定环境，这样进入 tmux 后就会自动激活环境
 ```
 
 ## 安装 zsh
 
 - [iterm2](https://www.iterm2.com/downloads.html)
-- [Mac Terminal 配置](https://xinlichao.cn/tools/mac-terminal/)
+- [Mac Terminal 配置](https://blog.lichao.xin/tools/mac-terminal/)
 
 ```bash
 brew install zsh
@@ -239,10 +280,11 @@ brew install zsh
 zsh --version
 
 # 将zsh设置为默认的Shell。
-chsh -s /bin/zsh
+# chsh -s /bin/zsh
+chsh -s /opt/homebrew/bin/zsh
 ```
 
-### oh my zsh 配置
+### [oh my zsh 配置](https://github.com/ohmyzsh/ohmyzsh)
 
 ```bash
 # 安装 on my zsh
@@ -284,7 +326,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # 字体
 # 可以推荐相关字体仓库 Nerd font（https://github.com/ryanoasis/nerd-fonts）
-# `p10k configure` 字体选择可以自动安装或手动选择字体打开iTerm2 → Preferences → Profiles → Text并将Font设置为 Meslo LG S NF
+# `p10k configure` 字体选择可以自动安装或手动选择字体打开iTerm2 → Preferences → Profiles → Text并将Font设置为 MesloLGL Nerd Font Mono
+brew tap homebrew/cask-fonts &&
+brew install --cask font-meslo-lg-nerd-font
 
 # 卸载
 uninstall_oh_my_zsh
