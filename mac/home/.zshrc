@@ -188,8 +188,8 @@ eval $(thefuck --alias)
 # the fuck E
 
 # mcfly B
-# 代替 hstr
-eval "$(mcfly init zsh)"
+# 现在使用 fzf ctl-r 
+# eval "$(mcfly init zsh)"
 # mcfly E
 
 # tmux B
@@ -243,7 +243,7 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 # openjdk E
 
 # proxy B
-# export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
+# export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080;
 # proxy E
 
 # hstr B
