@@ -120,7 +120,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # exa - 用来替换 ls 命令的现代化工具。https://github.com/ogham/exa
 # yarn - node 包管理工具比npm好用，更快
 # tmux - 一个优秀的终端复用器类自由软件
-# mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！
+# mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！https://github.com/dbcli/mycli
 # watchman - 监控文件变化 for RN
 # python - 可以安装指定版本 python，建议用 conda 管理版本
 # node - 建议用 nvm 安装 nodejs
@@ -224,6 +224,7 @@ brew install --cask font-fira-code-nerd-font
 - [Anaconda](https://docs.anaconda.com/anaconda/install/)
 - [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 - [中科大镜像](https://mirrors.ustc.edu.cn/help/anaconda.html)
+- [阿里云镜像](https://developer.aliyun.com/mirror/)
 
 ```bash
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh

@@ -244,6 +244,10 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 
 # proxy B
 # export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;export ALL_PROXY=socks5://127.0.0.1:1080;
+alias proxyon='export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy;export all_proxy=socks5://127.0.0.1:1080'
+alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
+#alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+#alias unproxy='unset all_proxy'
 # proxy E
 
 # hstr B
