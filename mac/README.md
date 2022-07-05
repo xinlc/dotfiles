@@ -154,6 +154,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # zoxide - 更智能的 cd 命令，代替 autojump。https://github.com/ajeetdsouza/zoxide
 # cloc - 计算代码行数。 https://github.com/AlDanial/cloc
 # starship - 可定制的跨 shell 提示。 https://github.com/starship/starship
+# lazygit - 用于 git 命令的简单终端 UI。https://github.com/jesseduffield/lazygit
+# lazydocker - 用于 docker 命令的简单终端 UI。https://github.com/jesseduffield/lazydocker
+
 ```
 
 ### brew cask 清单

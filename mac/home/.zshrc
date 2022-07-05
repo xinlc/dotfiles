@@ -270,6 +270,8 @@ alias ls='exa'
 alias ll='exa -lh'
 alias la='exa -la'
 alias lt='exa -T -L 1'
+alias lg='lazygit'
+# alias lzd='lazydocker'
 # alias E
 
 # python B
