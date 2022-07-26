@@ -46,6 +46,7 @@
 - [钉钉](https://page.dingtalk.com/wow/dingtalk/act/download) - 企业办公工具
 - [Bob](https://github.com/ripperhe/Bob) - 划词翻译和截图翻译工具
 - [Chrome](https://www.google.cn/chrome/) - 最好用的浏览器没有之一
+- [Qutebrowser](https://github.com/qutebrowser/qutebrowser) - 如果您正在寻找一款使用Vim风格的键盘操作的浏览器，那么开源的Qutebrowser将会是个不错的选择。
 - [Firefox](http://www.firefox.com.cn) - 信仰浏览器
 - [WPS Office](https://www.wps.cn) - 办公套件
 - [XMind](https://www.xmind.cn) - 脑图神器
@@ -69,6 +70,7 @@
 ### 编程开发
 
 - [iTerm2](https://github.com/gnachman/iTerm2) - 终端神器
+- [Alacritty](https://github.com/alacritty/alacritty) - 一个跨平台的 OpenGL 终端模拟器。
 - [SwitchHosts](https://github.com/oldj/SwitchHosts) - hosts 修改工具
 - [Another Redis Desktop Manager](https://github.com/qishibo/AnotherRedisDesktopManager) - Redis 客户端
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - MySQL 官方客户端
@@ -156,6 +158,8 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # starship - 可定制的跨 shell 提示。 https://github.com/starship/starship
 # lazygit - 用于 git 命令的简单终端 UI。https://github.com/jesseduffield/lazygit
 # lazydocker - 用于 docker 命令的简单终端 UI。https://github.com/jesseduffield/lazydocker
+# hetty - 用于安全研究的 HTTP 工具包，代替 Burp Suite Pro。brew install hettysoft/tap/hetty。https://github.com/dstotijn/hetty/
+# mitmproxy - 抓包工具。类似 Fiddler、Charles、wireshark、Whistle。https://github.com/mitmproxy/mitmproxy/
 
 ```
 
@@ -202,6 +206,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # go2shell - https://zipzapmac.com/go2shell
 # another-redis-desktop-manager - https://github.com/qishibo/AnotherRedisDesktopManager
 # openinterminal - 代替 go2shell
+# hammerspoon - 自动化神奇。通过桥接操作系统与 Lua 脚本引擎的方式，让我们可以通过编写 Lua 代码来实现操作应用程序、窗口、鼠标、文本、音频设备、电池、屏幕、剪切板、定位、wifi等。基本囊括了系统的各方面。https://github.com/Hammerspoon/hammerspoon
 ```
 
 ### 其他命令

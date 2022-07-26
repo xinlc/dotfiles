@@ -175,3 +175,5 @@ set multiple-cursors
 set easymotion
 " 注释插件模拟
 set commentary
+
+" 5. ideavim_extension 自动切换输入法插件 https://github.com/hadix-lin/ideavim_extension
