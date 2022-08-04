@@ -1,0 +1,18 @@
+*.ods   diff=odf
+*.odt   diff=odf
+*.odp   diff=odf
+
+*.pdf   diff=diffpdf
+
+*.docx  diff=word
+*.doc   diff=word
+
+*.xlsx  diff=xls
+*.xls   diff=xls
+
+*.pptx  diff=ppt
+*.ppt   diff=ppt
+
+mix.lock merge=binary
+package-lock.json merge=binary
+

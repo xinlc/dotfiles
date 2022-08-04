@@ -1,0 +1,70 @@
+[user]
+  name = Nelson Estevão
+[include]
+    path = ~/.dotfiles/git/personal.config
+[includeIf "gitdir:~/Code/Marmelasoft/"]
+    path = ~/.dotfiles/git/marmela.config
+[includeIf "gitdir:~/Code/Bikub/"]
+    path = ~/.dotfiles/git/bikub.config
+[web]
+  browser = firefox-developer-edition
+[core]
+  editor = nvim
+  excludesfile = ~/.dotfiles/git/gitignore
+  attributesfile = ~/.dotfiles/git/gitattributes
+  pager = delta
+[init]
+  defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = decorations
+  whitespace-error-style = 22 reverse
+[commit]
+  gpgsign = true
+  verbose = true
+  template = ~/.dotfiles/git/git-commit-msg-template
+[tag]
+  gpgsign = true
+[alias]
+  a = add
+  b = branch
+  c = commit
+  cl = clone
+  co = checkout
+  h = history
+  l = pull
+  p = push
+  fz = fuzzy
+  ht = history
+  rb = rebase
+  rw = review
+  st = status
+
+  co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+  patch   = !git --no-pager diff
+  standup = !git log --all --author=$USER --format=%s --since '9am last week'
+[branch]
+  autosetuprebase = always
+[log]
+  date = auto:human
+[merge]
+  tool = vimdiff
+  log = true
+[push]
+  default = simple
+[pull]
+  rebase = true
+[color]
+  ui = true
+[diff]
+  tool = vimdiff
+  submodule = log
+[url "git@github.com:nelsonmestevao/"]
+  insteadOf = gh:
+[url "git@github.com:"]
+  insteadOf = ghx:
+[url "git@gitlab.com:nelsonmestevao/"]
+  insteadOf = gl:
+[url "git@gitlab.com:"]
+  insteadOf = glx:

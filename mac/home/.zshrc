@@ -101,7 +101,7 @@ plugins=(
   zsh-autosuggestions
   zsh-history-substring-search
   zsh-completions
-	zsh-syntax-highlighting
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -192,6 +192,11 @@ eval $(thefuck --alias)
 # eval "$(mcfly init zsh)"
 # mcfly E
 
+# asdf B
+# echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# asdf E
+
 # tmux B
 export EDITOR="vim"
 # tmux E
@@ -261,18 +266,29 @@ alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 # alias B
 # alias vim="nvim"
 alias cdw="cd ~/workspace"
-alias rm="bash ~/safermformac.sh"
+alias rm="bash ~/bin/safermformac.sh"
 alias readlink=greadlink
 alias cat=bat
 # docker run --rm -it -v \/var/run/docker.sock:/var/run/docker.sock \-v ~/.config/lazydocker:/.config/jesseduffield/lazydocker \lazyteam/lazydocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
-alias ls='exa'
-alias ll='exa -lh'
+# alias ls='exa'
+# alias ll='exa -lh'
 alias la='exa -la'
 alias lt='exa -T -L 1'
 alias lg='lazygit'
 alias rr='ranger'
 # alias lzd='lazydocker'
+alias man='tldr'
+alias zj="zellij"
+
+if [ "$(command -v exa)" ]; then
+    unalias -m 'll'
+    unalias -m 'l'
+    unalias -m 'ls'
+    alias ls='exa -G  --color auto --icons -a -s type'
+    alias ll='exa -l --color always --icons -a -s type'
+fi
+
 # alias E
 
 # python B

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git diff "$@" --name-only | fzf -m --ansi \
+  --preview "git diff $@ --color=always -- {-1}"

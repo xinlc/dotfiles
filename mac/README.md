@@ -103,6 +103,17 @@ echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/richard/.zprofile
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
 
+### 软件导入导出
+
+```bash
+# /usr/local/bin/brew bundle dump
+# /opt/homebrew/bin/brew bundle --file /path/to/Brewfile
+
+cd ~
+brew bundle dump
+brew bundle --file ~/Brewfile
+```
+
 ### brew 清单
 
 ```bash
@@ -121,7 +132,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # bat - 带有语法高亮和Git集成的 cat(1) 克隆 http://github.com/sharkdp/bat
 # exa - 用来替换 ls 命令的现代化工具。https://github.com/ogham/exa
 # yarn - node 包管理工具比npm好用，更快
-# tmux - 一个优秀的终端复用器类自由软件
+# tmux - 一个优秀的终端复用器类自由软件。https://github.com/tmux/tmux
 # mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！https://github.com/dbcli/mycli
 # watchman - 监控文件变化 for RN
 # python - 可以安装指定版本 python，建议用 conda 管理版本
@@ -136,6 +147,7 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # flow       - react flow.js
 # ctop - 代替 top https://github.com/bcicen/ctop
 # btop - 代替 top https://github.com/aristocratos/btop
+# bottom - 代替 top https://github.com/ClementTsang/bottom
 # thefuck - 命令输入错误后，输入fuck 自动纠正错误命令。https://github.com/nvbn/thefuck
 # fd - 简单、快速、好用，用于替换 find 的搜索工具。https://github.com/sharkdp/fd
 # ripgrep - rg 代替 grep/ack/ag。 https://github.com/BurntSushi/ripgrep
@@ -143,23 +155,33 @@ eval $(/opt/homebrew/bin/brew shellenv)
   ## To install useful key bindings and fuzzy completion:
   ## $(brew --prefix)/opt/fzf/install
 
-# nushell - 生产力 shell 工具。https://github.com/nushell/nushell
+# nushell - 生产力 shell 工具。目标：取代 PowerShell 和 zsh。https://github.com/nushell/nushell
 # ranger - 终端文件资源管理器。https://github.com/ranger/ranger
 # fselect - 使用类似 SQL 的查询查找文件。https://github.com/jhspetersson/fselect
 # httpie - 现代命令行 HTTP 客户端 - 用户友好的 curl 替代方案，具有直观的 UI、JSON 支持、语法突出显示、类似 wget 的下载、扩展等。https://github.com/httpie/httpie/
 # hstr - 终端历史命令建议 https://github.com/dvorka/hstr
 # mcfly - 浏览 shell 历史命令，跟 hstr 一样 https://github.com/cantino/mcfly
 # nnn - 终端文件管理器 跟 ranger 类似, 可以代替 ls https://github.com/jarun/nnn
+# lf - 终端文件管理器，跟 ranger 类似。https://github.com/gokcehan/lf
 # fpp - 将终端输出结果文件，选择打开, `git status | fpp` https://github.com/facebook/PathPicker
 # xo/xo/usql - SQL 数据库的通用命令行界面 https://github.com/xo/usql
 # xxh - 使用 ssh 时带上 shell 配置。https://github.com/xxh/xxh
 # zoxide - 更智能的 cd 命令，代替 autojump。https://github.com/ajeetdsouza/zoxide
 # cloc - 计算代码行数。 https://github.com/AlDanial/cloc
-# starship - 可定制的跨 shell 提示。 https://github.com/starship/starship
+# starship - Starship 是由 Rust 编写的命令行主题，简单高效、容易配置（基本不用配置），而且跨平台。代替 ohmyzsh 和 p10k。 https://github.com/starship/starship
 # lazygit - 用于 git 命令的简单终端 UI。https://github.com/jesseduffield/lazygit
 # lazydocker - 用于 docker 命令的简单终端 UI。https://github.com/jesseduffield/lazydocker
+# gitui - git 终端用户界面，类似 lazygit。https://github.com/extrawurst/gitui
 # hetty - 用于安全研究的 HTTP 工具包，代替 Burp Suite Pro。brew install hettysoft/tap/hetty。https://github.com/dstotijn/hetty/
 # mitmproxy - 抓包工具。类似 Fiddler、Charles、wireshark、Whistle。https://github.com/mitmproxy/mitmproxy/
+# asdf - 管理多个运行环境版本的简单命令行工具，代替 nvm、pyenv等社区有大量插件。https://github.com/asdf-vm/asdf
+# tre-command - 现代的 tree 命令。https://github.com/dduan/tre/
+# zellij - 终端复用器（multiplexer），类似 Tmux。https://github.com/zellij-org/zellij
+# tealdeer - 替换 tldr 和 man。https://github.com/dbrgn/tealdeer
+# tokei - 统计代码量。https://github.com/XAMPPRocky/tokei
+# helix - 后现代终端编辑器，类似 vim。https://github.com/helix-editor/helix
+# chezmoi - 多台机器上管理你的个人配置文件 dotfiles。https://github.com/twpayne/chezmoi
+# git-delta - git、diff 输出查看器。https://github.com/dandavison/delta
 
 ```
 

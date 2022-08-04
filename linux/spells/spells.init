@@ -1,0 +1,4 @@
+# vim: ft=zsh
+
+export PATH="$PATH:$SPELLS:$SPELLS/git:$SPELLS/rofi"
+

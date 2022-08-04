@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for dir in $(find . -mindepth 1 -maxdepth 1 -type d); do
+  if [ "$dir" = "./.git" ]; then
+    git "$@"
+  else
+    cd "$dir" || continue
+    echo -e "\033[32m$(pwd)\033[0m"
+    git "$@"
+    cd ..
+  fi
+done
+
+# vim: ft=shell

@@ -1,105 +1,50 @@
-#alias begin
-alias cdwork="cd /Users/richard/documents/work"
-alias cdcyq="cd /Users/richard/documents/work/reactnativeprojects/can-yin-quan-app"
-#alias end
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
-#terminal 配色begin
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
-#enables colorin the terminal bash shell export
-export CLICOLOR=1
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
 
-#setsup thecolor scheme for list export
-export LSCOLORS=gxfxcxdxbxegedabagacad
- 
-#sets up theprompt color (currently a green similar to linux terminal)
-# export PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\] '
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$     '
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
 
-#enables colorfor iTerm
-export TERM=xterm-256color
-#terminal 配色end
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
 
-#bash-completion begin
- if [ -f $(brew --prefix)/etc/bash_completion ]; then
-     . $(brew --prefix)/etc/bash_completion
- fi
-#bash-completion end
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;
 
-# 如果你是通过Homebrew安装SDK的，则加入下列路径
-export ANDROID_HOME=/usr/local/opt/android-sdk
-# adnroid home end
+# Add tab completion for many Bash commands
+if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+	# Ensure existing Homebrew v1 completions continue to work
+	export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
+	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion;
+fi;
 
-#Homebrew cask begin
-export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
-#Homebrew cask end
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null; then
+	complete -o default -o nospace -F _git g;
+fi;
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-#cocoapods begin
-export POD_HOME="/Users/lichao/.gem/ruby/2.4.0/bin"
-export PATH=$POD_HOME:$PATH
-#cocoapods end
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;
 
-
-#mebrew安装SDK的，则加入下列路径
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-
-# Some useful commands to use docker.
-# Author: yeasy@github
-# Created:2014-09-25
-
-alias docker-pid="sudo docker inspect --format '{{.State.Pid}}'"
-alias docker-ip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-
-#the implementation refs from https://github.com/jpetazzo/nsenter/blob/master/docker-enter
-function docker-enter() {
-    #if [ -e $(dirname "$0")/nsenter ]; then
-    #Change for centos bash running
-    if [ -e $(dirname '$0')/nsenter ]; then
-        # with boot2docker, nsenter is not in the PATH but it is in the same folder
-        NSENTER=$(dirname "$0")/nsenter
-    else
-        # if nsenter has already been installed with path notified, here will be clarified
-        NSENTER=$(which nsenter)
-        #NSENTER=nsenter
-    fi
-    [ -z "$NSENTER" ] && echo "WARN Cannot find nsenter" && return
-
-    if [ -z "$1" ]; then
-        echo "Usage: `basename "$0"` CONTAINER [COMMAND [ARG]...]"
-        echo ""
-        echo "Enters the Docker CONTAINER and executes the specified COMMAND."
-        echo "If COMMAND is not specified, runs an interactive shell in CONTAINER."
-    else
-        PID=$(sudo docker inspect --format "{{.State.Pid}}" "$1")
-        if [ -z "$PID" ]; then
-            echo "WARN Cannot find the given container"
-            return
-        fi
-        shift
-
-        OPTS="--target $PID --mount --uts --ipc --net --pid"
-
-        if [ -z "$1" ]; then
-            # No command given.
-            # Use su to clear all host environment variables except for TERM,
-            # initialize the environment variables HOME, SHELL, USER, LOGNAME, PATH,
-            # and start a login shell.
-            #sudo $NSENTER "$OPTS" su - root
-            sudo $NSENTER --target $PID --mount --uts --ipc --net --pid su - root
-        else
-            # Use env to clear all host environment variables.
-            sudo $NSENTER --target $PID --mount --uts --ipc --net --pid env -i $@
-        fi
-    fi
-}
-
-
-###### tmuxinator.bash #######
-source $HOME/.tmuxinator/.tmuxinator.bash
-export EDITOR='vim'
-###################################
-
-
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;

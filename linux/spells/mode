@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+BASE_DIR=$(dirname "${BASH_SOURCE[0]:-$0}")
+cd "${BASE_DIR}/.." || exit 127
+
+# shellcheck source=./helpers.sh
+. helpers.sh
+
+PROGRAM=$(basename "${BASH_SOURCE[0]:-$0}")
+VERSION=0.4.0
+
+function display_help() {
+  cat <<EOF
+  $(help_section Usage)
+    ${PROGRAM} [options] (<theme> | <screen>)
+
+  $(help_section Themes)
+    dark
+    light
+    default
+
+  $(help_section Screens)
+    work            2 screens stacked
+    home            2 screens side-by-side
+    pitch           2 screens 2nd on top
+    chill           1 screen (eDP1)
+    focus           1 screen (HDMI1)
+    demo            2 screens mirror and notifications off
+
+  $(help_section Options)
+    -h, --help      Show this screen.
+    -v, --version   Show version.
+
+  $(help_section Notes)
+    $(italic "Activate the notifications with 'dunstctl set-pause false'!")
+EOF
+}
+
+function change_theme_to() {
+  declare -A themes=(
+    ["dark"]="google-dark"
+    ["light"]="google-light"
+    ["default"]="brewer"
+  )
+
+  declare -r theme=${themes[$1]}
+
+  color -s "$theme"
+
+  echo "Theme changed to $theme!"
+}
+
+function change_screen_to() {
+  local external_monitor
+  local laptop_monitor="eDP-1"
+  external_monitor=$(xrandr -q | grep " connected" | tail -n -1 | cut -d" " -f1)
+  case $1 in
+    work)
+      xrandr --output "$external_monitor" --primary --auto --above "$laptop_monitor"
+      ;;
+    home)
+      xrandr --output "$external_monitor" --primary --auto --right-of "$laptop_monitor"
+      ;;
+    chill)
+      external_monitor=$(xrandr -q | grep " unknown connection" | tail -n -1 | cut -d" " -f1)
+      xrandr --output "$laptop_monitor" --primary --mode 1920x1080 --auto --output "$external_monitor" --off
+      ;;
+    pitch)
+      xrandr --output "$external_monitor" --auto --above "$laptop_monitor" --output "$laptop_monitor" --primary --auto
+      ;;
+    focus)
+      xrandr --output "$external_monitor" --primary --auto --output "$laptop_monitor" --off
+      ;;
+    demo)
+      xrandr --output "$external_monitor" --auto --same-as "$laptop_monitor" --output "$laptop_monitor" --primary --auto
+      dunstctl set-paused true
+      ;;
+  esac
+
+  i3-msg restart
+  setxkbmap -option ctrl:nocaps
+  echo "Changed to mode $1!"
+}
+
+case ${1:-error} in
+  -h | --help)
+    display_help
+    ;;
+  -v | --version)
+    display_version "$PROGRAM" "$VERSION"
+    ;;
+  dark | light | default)
+    change_theme_to "$1"
+    ;;
+  work | home | chill | pitch | focus | demo)
+    change_screen_to "$1"
+    ;;
+  *)
+    display_help >&2
+    exit 1
+    ;;
+esac

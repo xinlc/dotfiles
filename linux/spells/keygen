@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+BASE_DIR=$(dirname "${BASH_SOURCE[0]:-$0}")
+cd "${BASE_DIR}/.." || exit 127
+
+# shellcheck source=./helpers.sh
+. helpers.sh
+
+PROGRAM=$(basename "${BASH_SOURCE[0]:-$0}")
+VERSION=0.9.0
+
+function display_help() {
+  cat <<EOF
+  $(help_section Usage)
+    ${PROGRAM} [OPTIONS] rsa [<comment>]
+
+  $(help_section Options)
+    -h, --help      Show this screen.
+    -v, --version   Show version.
+
+  $(help_section Examples)
+    ${PROGRAM} rsa email@example.com
+EOF
+}
+
+function generate_new_key() {
+  local COMMENT=$1
+  local SSH_PUB="$HOME/.ssh/id_rsa.pub"
+
+  #TODO: add select to generate multiple key types
+  ssh-keygen -t rsa -b 4096 -C "$COMMENT"
+
+  if command -v xclip >/dev/null 2>&1; then
+    xclip -selection clipboard <"$SSH_PUB"
+  else
+    echo "[ssh]: xclip not found, you need to copy manually the following key"
+    cat "$SSH_PUB"
+    exit 1
+  fi
+
+  echo "[ssh]: SSH public key copied into the clipboard"
+}
+
+case ${1:-error} in
+  -h | --help)
+    display_help
+    ;;
+  -v | --version)
+    display_version "$PROGRAM" "$VERSION"
+    ;;
+  rsa)
+    generate_new_key "${2:-$(whoami)@$(uname -n)}"
+    ;;
+  *)
+    display_help >&2
+    exit 1
+    ;;
+esac
