@@ -1,8 +1,7 @@
 {
     "explorer.confirmDragAndDrop": false,
     "editor.tabSize": 2,
-    "editor.fontSize": 18,
-    "editor.renderIndentGuides": false, // 使用guides 插件代替
+    "editor.fontSize": 18, // 使用guides 插件代替
     "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.enabled": false,
     // "typescript.check.tscVersion": false,
@@ -196,7 +195,7 @@
     "workbench.activityBar.visible": true,
     "extensions.ignoreRecommendations": true,
     "files.associations": {
-        "*.js": "javascriptreact"
+        "*.js": "javascript"
     },
     "extensions.autoUpdate": false,
     // "update.channel": "none",
@@ -230,7 +229,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "px2vworvh.width": 3840,
     "px2vworvh.height": 720,
@@ -239,7 +238,24 @@
     "px-to-vw.unitPrecision": 4,
     "px-to-vw.viewportWidth": 3840,
     "tabnine.experimentalAutoImports": true,
-    "hediet.vscode-drawio.local-storage": "xxxxx",
     "hediet.vscode-drawio.theme": "Kennedy",
-    "workbench.colorTheme": "Material Theme"
+    "workbench.colorTheme": "Community Material Theme",
+    "workbench.editor.untitled.hint": "hidden",
+    "appworks.materialSources": [],
+    "vscode-office.autoTheme": true,
+    "workbench.editorAssociations": {
+        "*.md": "default"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "editor.guides.indentation": false,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hant": true,
+        "zh-hans": true
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "－": true
+    },
+    "terminal.integrated.macOptionIsMeta": true    // 避免终端 alt 键输入特殊字符
 }

@@ -148,3 +148,6 @@ Vim Mode Plus 主要有两个模式，normal模式和 visual模式，其中norma
 | d:   | 慢速模式（通过d + hjkl缓慢移动鼠标） |
 | s:   | 滚动模式（按s + hjkl滚动）           |
 
+## 参考
+
+- [Mac 键盘快捷键](https://support.apple.com/zh-cn/HT201236/)

@@ -587,3 +587,26 @@ https://p10-calendars.icloud.com/published/2/MTI3Njk0MTQxNzEyNzY5NFRvxM53AOH-Px1
 # 中国法定节假日
 https://p22-calendars.icloud.com/published/2/RL1JwQQtKFudYOiicAG_adz9DdrozFeZzv5Uyrs4s3gyWobdzL1NZFH-ZHAsTfuAevtnzdqVdYmcRO_Y_dWtxeIdmzUA1TNkAt5RuotJmsg
 ```
+
+## MacOS 禁用 Option（Alt）+ 键盘输出特殊字符(希腊字符)
+
+### iTerm2
+
+iTerm2 -> Profiles -> 选择当前配置 -> Keys -> 将 Left Option Key 改为 Esc+
+
+### vscode
+
+terminal.integrated.macOptionIsMeta 为 true
+
+### MacOs 默认终端
+
+描述文件 -> 键盘 -> 将 Option 键作用Meta键
+
+
+
+## 参考
+
+- https://github.com/webpro/awesome-dotfiles
+- [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles/blob/master/.macos)
+- [打造舒适的macOS生产力环境](https://zhuanlan.zhihu.com/p/121798647/)
+- [Mac 键盘快捷键](https://support.apple.com/zh-cn/HT201236/)

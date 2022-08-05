@@ -8,7 +8,8 @@ require 'modules.shortcut'
 
 -- Switch Alacritty
 -- hs.hotkey.bind({'ctrl'}, ',', function ()
-hs.hotkey.bind(alacritty.prefix, alacritty.key, alacritty.message, function()
+-- hs.hotkey.bind(alacritty.prefix, alacritty.key, alacritty.message, function()
+hs.hotkey.bind(alacritty.prefix, alacritty.key, function()
   local APP_NAME = 'Alacritty'
   function moveWindow(alacritty, space, mainScreen)
     -- move to main space

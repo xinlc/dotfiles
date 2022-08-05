@@ -321,3 +321,7 @@ Option + Shift + 键盘调高亮度 或 Option + Shift + 键盘调低亮度	以�
 按住 Option 键点按开合三角	打开所选文件夹内的所有文件夹。这个快捷键仅在列表视图中有效
 按住 Command 键点按窗口标题	查看包含当前文件夹的文件夹
 ```
+
+## 参考
+
+- [Mac 键盘快捷键](https://support.apple.com/zh-cn/HT201236/)
