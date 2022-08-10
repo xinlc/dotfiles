@@ -25,8 +25,8 @@ hs.hotkey.bind(alacritty.prefix, alacritty.key, function()
     -- if fullScreen then
     --   hs.eventtap.keyStroke('cmd', 'return', 0, alacritty)
     -- end
-    winFrame = win:frame()
-    scrFrame = mainScreen:fullFrame()
+    local winFrame = win:frame()
+    local scrFrame = mainScreen:fullFrame()
     -- print(winFrame)
     -- print(scrFrame)
     winFrame.w = scrFrame.w

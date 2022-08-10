@@ -229,6 +229,7 @@ brew bundle --file ~/Brewfile
 # another-redis-desktop-manager - https://github.com/qishibo/AnotherRedisDesktopManager
 # openinterminal - 代替 go2shell
 # hammerspoon - 自动化神奇。通过桥接操作系统与 Lua 脚本引擎的方式，让我们可以通过编写 Lua 代码来实现操作应用程序、窗口、鼠标、文本、音频设备、电池、屏幕、剪切板、定位、wifi等。基本囊括了系统的各方面。https://github.com/Hammerspoon/hammerspoon
+# redisinsight - RedisInsight 是一个直观高效的 Redis GUI 管理工具(官方工具）。https://github.com/RedisInsight/RedisInsight
 ```
 
 ### 其他命令
