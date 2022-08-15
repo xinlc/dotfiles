@@ -8,6 +8,17 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 # export EDITOR=nvim
 
+# homebrew B
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+
+# export HOMEBREW_PREFIX="/opt/homebrew";
+# export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+# export HOMEBREW_REPOSITORY="/opt/homebrew";
+# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+# export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+# export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+# homebrew E
+
 
 # 设置语言环境 B
 # https://www.tecmint.com/set-system-locales-in-linux/

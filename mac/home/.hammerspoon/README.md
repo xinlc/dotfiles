@@ -8,7 +8,7 @@
   <img src='https://img.shields.io/badge/Shell-417DDE' alt='icon'/>
 </div>
 
-English | [简体中文](./README-CN.md)
+English | [简体中文](./README-CN.md) | [日本語](./README-JP.md)
 
 ---
 
@@ -76,7 +76,19 @@ Click the function item with the mouse to enable/disable the function item
 Alternative to [Magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12) for window movement
 
 <div align='center'>
-  <img src='./images/window.png' width='700'/>
+  <img src='./images/window_move.gif' width='700'/>
+</div>
+
+Grid evenly divided (2, 4, 6, 9, 12, 16, etc.):
+
+<div align='center'>
+  <img src='./images/window_grid.gif' width='700'/>
+</div>
+
+Swap left and right:
+
+<div align='center'>
+  <img src='./images/window_swap.gif' width='700'/>
 </div>
 
 ---
@@ -179,6 +191,10 @@ cp shortcut.lua.example shortcut.lua
 
 Shortcut | Function
 -|-
+`⌃` `⌥` `Z`|Automatic grid layout of multiple Windows of the same application
+`⌃` `⌥` `X`|Automatic grid layout of all windows in the same workspace（What is [workspace?](https://support.apple.com/guide/mac-help/work-in-multiple-spaces-mh14112/mac)？）
+`⌃` `⌥` `A`|All windows of the same app are automatically divided horizontally or vertically
+`⌃` `⌥` `S`|All windows in the same workspace are automatically divided horizontally or vertically
 `⌃` `⌥` `←`|Left half screen
 `⌃` `⌥` `→`|Right half screen
 `⌃` `⌥` `↑`|Top half screen

@@ -8,7 +8,7 @@
   <img src='https://img.shields.io/badge/Shell-417DDE' alt='icon'/>
 </div>
 
-[English](./README.md) | 简体中文 
+[English](./README.md) | 简体中文 | [日本語](./README-JP.md)
 
 ---
 
@@ -76,7 +76,19 @@ git pull origin main
 替代 [Magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12) 进行窗口移动
 
 <div align='center'>
-  <img src='./images/window.png' width='700'/>
+  <img src='./images/window_move.gif' width='700'/>
+</div>
+
+网格均分（2、4、6、9、12、16 等分）：
+
+<div align='center'>
+  <img src='./images/window_grid.gif' width='700'/>
+</div>
+
+左右交换：
+
+<div align='center'>
+  <img src='./images/window_swap.gif' width='700'/>
 </div>
 
 ---
@@ -181,6 +193,10 @@ cp shortcut.lua.example shortcut.lua
 
 快捷键|功能
 -|-
+`⌃` `⌥` `Z`|同一应用的所有窗口自动网格式布局
+`⌃` `⌥` `X`|同一工作空间下的所有窗口自动网格式布局（什么是 [工作空间？](https://support.apple.com/zh-cn/guide/mac-help/mh14112/mac)？）
+`⌃` `⌥` `A`|同一应用的所有窗口自动水平均分或垂直均分
+`⌃` `⌥` `S`|同一工作空间下的所有窗口自动水平均分或垂直均分
 `⌃` `⌥` `←`|左半屏
 `⌃` `⌥` `→`|右半屏
 `⌃` `⌥` `↑`|上半屏

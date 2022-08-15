@@ -237,3 +237,5 @@
 
 [delta "interactive"]
 	keep-plus-minus-markers = false
+[log]
+	date = format:%Y-%m-%d %H:%M:%S

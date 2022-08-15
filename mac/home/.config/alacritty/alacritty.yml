@@ -475,6 +475,14 @@ cursor:
 #   - -c
 #   - 'zellij attach --index 0 --create'
 
+shell:
+  program: /opt/homebrew/bin/zsh
+  args:
+    - -l
+    # - -c
+    # - 'zellij'
+
+
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

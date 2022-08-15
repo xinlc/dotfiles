@@ -10,6 +10,14 @@ shortcut_config = {
 
 -- 窗口管理快捷键配置
 windows = {
+  -- 同一应用的所有窗口自动网格式布局 
+  same_application_auto_layout_grid = { prefix = { "Ctrl", "Option" }, key = "Z", message = "" },
+  -- 同一应用的所有窗口自动水平均分或垂直均分 
+  same_space_auto_layout_grid = { prefix = { "Ctrl", "Option" }, key = "X", message = "" },
+  -- 同一工作空间下的所有窗口自动网格式布局
+  same_application_auto_layout_horizontal_or_vertical = { prefix = { "Ctrl", "Option" }, key = "A", message = "" },
+  -- 同一工作空间下的所有窗口自动水平均分或垂直均分 
+  same_space_auto_layout_horizontal_or_vertical = { prefix = { "Ctrl", "Option" }, key = "S", message = "" },
   -- 左半屏
   left = {prefix = {"Ctrl", "Option"}, key = "Left", message = "Left Half"},
   -- 右半屏
@@ -74,20 +82,23 @@ windows = {
 
 -- 应用切换快捷键配置
 applications = {
-  {prefix = {"Option"}, key = "Q", message="QQ", bundleId="com.tencent.qq"},
+  -- {prefix = {"Option"}, key = "Q", message="QQ", bundleId="com.tencent.qq"},
   {prefix = {"Option"}, key = "W", message="WeChat", bundleId="com.tencent.xinWeChat"},
   {prefix = {"Option"}, key = "V", message="VSCode", bundleId="com.microsoft.VSCode"},
   {prefix = {"Option"}, key = "F", message="Finder", bundleId="com.apple.finder"},
   {prefix = {"Option"}, key = "C", message="Chrome", bundleId="com.google.Chrome"},
   {prefix = {"Option"}, key = "I", message="IntelliJ IDEA", bundleId="com.jetbrains.intellij"},
-  {prefix = {"Option"}, key = "N", message="WizNote", bundleId="cn.wiznote.desktop"},
+  -- {prefix = {"Option"}, key = "N", message="WizNote", bundleId="cn.wiznote.desktop"},
   {prefix = {"Option"}, key = "D", message="DataGrip", bundleId="com.jetbrains.datagrip"},
-  {prefix = {"Option"}, key = "T", message="iTerm2", bundleId="com.googlecode.iterm2"},
-  {prefix = {"Option"}, key = "M", message="MailMaster", bundleId="com.netease.macmail"},
-  {prefix = {"Option"}, key = "P", message="Postman", bundleId="com.postmanlabs.mac"},
-  {prefix = {"Option"}, key = "O", message="Word", bundleId="com.microsoft.Word"},
+  -- {prefix = {"Option"}, key = "T", message="iTerm2", bundleId="com.googlecode.iterm2"},
+  -- {prefix = {"Option"}, key = "M", message="MailMaster", bundleId="com.netease.macmail"},
+  -- {prefix = {"Option"}, key = "P", message="Postman", bundleId="com.postmanlabs.mac"},
+  -- {prefix = {"Option"}, key = "O", message="Word", bundleId="com.microsoft.Word"},
   {prefix = {"Option"}, key = "Y", message="PyCharm", bundleId="com.jetbrains.pycharm"},
-  {prefix = {"Option"}, key = "R", message="Redis Desktop", bundleId="me.qii404.another-redis-desktop-manager"}
+  -- {prefix = {"Option"}, key = "R", message="Redis Desktop", bundleId="me.qii404.another-redis-desktop-manager"}
+
+  {prefix = {"Option"}, key = "1", message="Chrome", bundleId="com.google.Chrome"},
+  {prefix = {"Option"}, key = "2", message="VSCode", bundleId="com.microsoft.VSCode"}
 }
 
 -- 输入法切换快捷键配置
@@ -122,11 +133,8 @@ hotkey = {
   key = "/"
 }
 
--- Alacritty 快捷键
-alacritty = {
-  prefix = {
-      "Ctrl"
-  },
-  key = ",",
-  message = "Alacritty"
+-- dropdown 快捷键
+dropdowns = {
+  {prefix = {"Ctrl"}, key = ",", message="WezTerm", appName="WezTerm"},
+  {prefix = {"Ctrl"}, key = ".", message="Alacritty", appName="Alacritty"}
 }

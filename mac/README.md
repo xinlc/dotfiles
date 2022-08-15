@@ -71,6 +71,7 @@
 
 - [iTerm2](https://github.com/gnachman/iTerm2) - 终端神器
 - [Alacritty](https://github.com/alacritty/alacritty) - 一个跨平台的 OpenGL 终端模拟器。
+- [wezterm](https://github.com/wez/wezterm) - Rust 实现的 GPU 加速跨平台终端仿真器和多路复用器。
 - [SwitchHosts](https://github.com/oldj/SwitchHosts) - hosts 修改工具
 - [Another Redis Desktop Manager](https://github.com/qishibo/AnotherRedisDesktopManager) - Redis 客户端
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - MySQL 官方客户端

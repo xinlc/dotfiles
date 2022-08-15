@@ -14,3 +14,5 @@
 - https://lib.rs/command-line-utilities/
 
 ## Alacritty + zellij + Nushell + starship
+
+## wezterm + Nushell + starship

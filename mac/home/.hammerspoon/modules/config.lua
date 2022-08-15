@@ -2,7 +2,7 @@
 defaultConfig = {{
     -- 配置版本号
     -- 每次新增功能项，需将版本号加 1
-    configVersion = '7'
+    configVersion = '6'
 }, {
     module = 'modules.window',
     name = '窗口管理',
@@ -44,9 +44,9 @@ defaultConfig = {{
     name = '自动检查更新',
     enable = false
 }, {
-    module = 'modules.alacritty',
-    name = 'alacritty下拉',
-    enable = false
+    module = 'modules.dropdown',
+    name = '下拉唤起应用',
+    enable = true
 }}
 
 base_path = os.getenv("HOME") .. '/.hammerspoon/'
