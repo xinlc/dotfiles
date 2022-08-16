@@ -12,6 +12,7 @@
 
 - https://github.com/ivaquero/oxidizer.sh/
 - https://lib.rs/command-line-utilities/
+- https://github.com/ibraheemdev/modern-unix/
 
 ## Alacritty + zellij + Nushell + starship
 

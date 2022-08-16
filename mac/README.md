@@ -177,12 +177,18 @@ brew bundle --file ~/Brewfile
 # mitmproxy - 抓包工具。类似 Fiddler、Charles、wireshark、Whistle。https://github.com/mitmproxy/mitmproxy/
 # asdf - 管理多个运行环境版本的简单命令行工具，代替 nvm、pyenv等社区有大量插件。https://github.com/asdf-vm/asdf
 # tre-command - 现代的 tree 命令。https://github.com/dduan/tre/
+# broot - 一种查看和导航目录tree的新方法。https://github.com/Canop/broot
 # zellij - 终端复用器（multiplexer），类似 Tmux。https://github.com/zellij-org/zellij
 # tealdeer - 替换 tldr 和 man。https://github.com/dbrgn/tealdeer
 # tokei - 统计代码量。https://github.com/XAMPPRocky/tokei
 # helix - 后现代终端编辑器，类似 vim。https://github.com/helix-editor/helix
 # chezmoi - 多台机器上管理你的个人配置文件 dotfiles。https://github.com/twpayne/chezmoi
 # git-delta - git、diff 输出查看器。https://github.com/dandavison/delta
+# cheat - 在命令行上创建和查看交互式备忘单。https://github.com/cheat/cheat
+# navi - 用于命令行的交互式备忘单工具。跟cheat类似。https://github.com/denisidoro/navi
+# gping - ping，但带有图表。https://github.com/orf/gping
+# procs - ps 用 Rust 编写的现代替代品。https://github.com/dalance/procs
+# dog - 一个用户友好的命令行 DNS 客户端，代替 dig。https://github.com/ogham/dog
 
 ```
 

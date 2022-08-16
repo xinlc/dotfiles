@@ -85,7 +85,7 @@ applications = {
   -- {prefix = {"Option"}, key = "Q", message="QQ", bundleId="com.tencent.qq"},
   {prefix = {"Option"}, key = "W", message="WeChat", bundleId="com.tencent.xinWeChat"},
   {prefix = {"Option"}, key = "V", message="VSCode", bundleId="com.microsoft.VSCode"},
-  {prefix = {"Option"}, key = "F", message="Finder", bundleId="com.apple.finder"},
+  {prefix = {"Option"}, key = "E", message="Finder", bundleId="com.apple.finder"},
   {prefix = {"Option"}, key = "C", message="Chrome", bundleId="com.google.Chrome"},
   {prefix = {"Option"}, key = "I", message="IntelliJ IDEA", bundleId="com.jetbrains.intellij"},
   -- {prefix = {"Option"}, key = "N", message="WizNote", bundleId="cn.wiznote.desktop"},
