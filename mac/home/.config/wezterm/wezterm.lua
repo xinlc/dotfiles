@@ -67,7 +67,7 @@ local config = {
     window_close_confirmation = 'NeverPrompt',
     window_decorations = 'RESIZE',
     -- window_background_image = '/Users/richard/Documents/img/im_alita.png',
-    window_background_opacity = 0.95,
+    window_background_opacity = 0.92,
     text_background_opacity = 1.0,
     window_padding = {
         left = 5,
@@ -316,6 +316,14 @@ local config = {
         key = 'Enter',
         mods = 'CTRL',
         action = wezterm.action.ToggleFullScreen
+    }, {
+        key = 'y',
+        mods = 'CTRL|CMD',
+        action = wezterm.action.ScrollByLine(-1)
+    }, {
+        key = 'e',
+        mods = 'CTRL|CMD',
+        action = wezterm.action.ScrollByLine(1)
     }},
     key_tables = {
         -- Defines the keys that are active in our resize-pane mode.

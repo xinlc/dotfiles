@@ -40,13 +40,17 @@ defaultConfig = {{
     name = '提醒下班',
     enable = false
 }, {
-    module = 'modules.update',
-    name = '自动检查更新',
-    enable = false
+    module = 'modules.vim-mode',
+    name = 'VIM模式',
+    enable = true
 }, {
     module = 'modules.dropdown',
     name = '下拉唤起应用',
     enable = true
+}, {
+    module = 'modules.update',
+    name = '自动检查更新',
+    enable = false
 }}
 
 base_path = os.getenv("HOME") .. '/.hammerspoon/'
