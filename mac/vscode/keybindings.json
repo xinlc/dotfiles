@@ -1,48 +1,76 @@
 [
-    // 大小写转换
-    {
-        "key": "cmd+k cmd+l",
-        "command": "editor.action.transformToLowercase",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+k cmd+u",
-        "command": "editor.action.transformToUppercase",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "extension.vim_left",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
-    },
-    {
-        "key": "ctrl+f",
-        "command": "extension.vim_right",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
-    },
-    {
-        "key": "ctrl+p",
-        "command": "extension.vim_up",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "extension.vim_down",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "cursorEnd",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "cursorHome",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "deleteRight",
-        "when": "editorTextFocus && !editorReadonly && vim.mode == 'Insert'"
-    }
+  // 大小写转换
+  {
+    "key": "cmd+k cmd+l",
+    "command": "editor.action.transformToLowercase",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k cmd+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "extension.vim_left",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "extension.vim_right",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "extension.vim_up",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "extension.vim_down",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorEnd",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "cursorHome",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "deleteRight",
+    "when": "editorTextFocus && !editorReadonly && vim.mode == 'Insert'"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  }
 ]

@@ -21,6 +21,8 @@ source ~/.cache/zoxide/init.nu
 def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
 alias open = ^open
 
+alias vi = /opt/homebrew/bin/vim
+alias vim = nvim
 alias ll = ls -l
 alias la = ls -a
 alias lla = ls -al

@@ -1,0 +1,261 @@
+# 继承自 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/default.yaml
+# 按键速查在最下面 
+
+patch:
+  # 方案列表
+  schema_list:
+    - schema: pinyin_simp # 袖珍拼音
+    - schema: luna_pinyin_simp # 朙月拼音
+    - schema: double_pinyin_flypy # 小鹤双拼
+    - schema: double_pinyin # 自然码双拼
+    - schema: numbers # 大写数字
+    # - schema: melt_eng
+
+  # 候选词个数
+  menu/page_size: 9
+
+  # 若 caps 切换大小写无效, 打开 Mac 系统偏好设置 > 键盘 > 输入法 > 取消勾选[使用大写锁定键切换“美国”输入模式]
+  ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
+  ascii_composer/switch_key:
+    # Caps_Lock: commit_text # 打字打到一半时按下了 Caps 后： commit_code 上屏拼音的英文字母 | commit_text 上屏拼音拼出的词语
+    Caps_Lock: commit_code # Caps 键
+    # Shift_L: noop # noop | commit_code ，是否用 Shift 切换中英文
+    Shift_L: commit_code # 左 Shift，切换中英文
+    Shift_R: noop # macOS 不会单独响应这个，设定上面那个，左右 Shift 都管用
+    # Shift_R: commit_code # 右 Shift，切换中英文
+    Control_L: noop # 左 Control，屏蔽该切换键
+    Control_R: noop # 右 Control，屏蔽该切换键
+
+
+  # 呼出方案选单
+  switcher/caption: 〔方案选单〕
+  switcher/hotkeys:
+    # ~ # 把其他都注释掉，或只留一个波浪号，可以将快捷键置空。
+    # - Control+grave
+    # - Alt+grave
+    - Control+Shift+grave
+    # - F4
+
+  # 匹配 patterns 时，原样输出
+  recognizer:
+    patterns:
+      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+      # 方便在中文状态下输入网址，会导致句号不会让句子上屏，使用句号翻页时需要注释掉 url_2：
+      url_2: "^[a-z]+[.]"  # 让类似 google.com（不以 www 开头）的网址址也支持
+      win_path: "^[A-Za-z]:.*"  # 支持 c:\file\path 之类的路径输入
+
+  # 快捷键设定
+  # key_binder/bindings: # 若开启, 去掉前面#
+  key_binder:
+    # 以词定字（上屏当前词组的第一个或最后一个字）
+    select_first_character: 
+    select_last_character: "grave"
+    bindings:
+    # 翻页
+    #- { when: has_menu, accept: Tab, send: Page_Down }            # "tab" 键翻页, 和 "tab" 键分词只能二选一
+    - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
+    - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
+    - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
+    - { when: paging, accept: comma, send: Page_Up } # "," 上一页
+    - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
+    - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
+    - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
+    # 快捷键
+    #- { when: has_menu, accept: semicolon, send: 2 }              # ":" (分号)选择第 2 个候选词
+    #- { when: has_menu, accept: apostrophe, send: 3 }             # "'" (引号)选择第 3 个候选词
+    #- { when: composing, accept: Shift+Tab, send: Shift+Left }    # "Shift+Tab" 键向左选拼音分词
+    #- { when: composing, accept: Control+a, send: Home }          # "Control+a" 光标移至首
+    #- { when: composing, accept: Control+e, send: End }           # "Control+e" 光标移至尾
+    #- { when: composing, accept: Control+g, send: Escape }        # "Control+g" 清码
+    #- { when: composing, accept: Return, send: Escape }           # "Return" 回车清码
+    #- { when: always, accept: Control+Shift+1, select: .next }             # 切换输入方案
+    #- { when: always, accept: Control+Shift+2, toggle: ascii_mode }        # 中/英文切换
+    #- { when: always, accept: Control+Shift+3, toggle: full_shape }        # 全角/半角切换
+    - { when: always, accept: Control+Shift+4, toggle: simplification } # 繁简体切换
+    #- { when: always, accept: Control+Shift+5, toggle: extended_charset }  # 通用/增广切换（显示生僻字）
+    #- { when: composing, accept: Control+b, send: Left }           # "Control+b" 移动光标
+    #- { when: composing, accept: Control+f, send: Right }          # "Control+f" 向右选择候选词
+    #- { when: composing, accept: Control+h, send: BackSpace }      # "Control+h" 删除输入码
+
+
+      ## 快捷键配置方案 2
+      # # 简繁切换
+      # - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
+      # - {accept: "Control+Shift+F", toggle: traditionalization, when: always}
+      # - {accept: "Control+slash",   toggle: traditionalization, when: always}
+      # # 切换中英文标点
+      # - {accept: "Control+Shift+A", toggle: ascii_punct, when: always}
+
+      # # 以下复制于： https://github.com/rime/rime-prelude/blob/master/key_bindings.yaml
+      # # 也可也看本地文件： /Library/Input Methods/Squirrel.app/Contents/SharedSupport/key_bindings.yaml
+
+      # # emacs_editing:
+      # # - { when: composing, accept: Control+p, send: Up }
+      # # - { when: composing, accept: Control+n, send: Down }
+      # # - { when: composing, accept: Control+b, send: Left }
+      # # - { when: composing, accept: Control+f, send: Right }
+      # - { when: composing, accept: Control+a, send: Home } # 光标跳转至行首
+      # - { when: composing, accept: Control+e, send: End }  # 光标跳转至行尾
+      # # - { when: composing, accept: Control+d, send: Delete }
+      # # - { when: composing, accept: Control+k, send: Shift+Delete }
+      # # - { when: composing, accept: Control+h, send: BackSpace }
+      # # - { when: composing, accept: Control+g, send: Escape }
+      # # - { when: composing, accept: Control+bracketleft, send: Escape }
+      # # - { when: composing, accept: Control+y, send: Page_Up }
+      # # - { when: composing, accept: Alt+v, send: Page_Up }
+      # # - { when: composing, accept: Control+v, send: Page_Down }
+
+      # # move_by_word_with_tab: 这个太他妈好用了，Tab/Shift+Tab 切换光标至下/上一个拼音
+      # - { when: composing, accept: ISO_Left_Tab, send: Shift+Left }
+      # - { when: composing, accept: Shift+Tab, send: Shift+Left }
+      # - { when: composing, accept: Tab, send: Shift+Right }
+
+      # # paging_with_minus_equal: 翻页：- =
+      # - { when: has_menu, accept: minus, send: Page_Up }
+      # - { when: has_menu, accept: equal, send: Page_Down }
+
+      # # paging_with_comma_period: 翻页：, .
+      # # - { when: paging, accept: comma, send: Page_Up }
+      # # - { when: has_menu, accept: period, send: Page_Down }
+
+      # # paging_with_brackets: 翻页：[ ]
+      # # - { when: paging, accept: bracketleft, send: Page_Up }
+      # # - { when: has_menu, accept: bracketright, send: Page_Down }
+
+      # # numbered_mode_switch:
+      # # - { when: always, accept: Control+Shift+1, select: .next }
+      # # - { when: always, accept: Control+Shift+2, toggle: ascii_mode }
+      # # - { when: always, accept: Control+Shift+3, toggle: full_shape }
+      # # - { when: always, accept: Control+Shift+4, toggle: simplification }
+      # # - { when: always, accept: Control+Shift+5, toggle: extended_charset }
+      # # - { when: always, accept: Control+Shift+exclam, select: .next }
+      # # - { when: always, accept: Control+Shift+at, toggle: ascii_mode }
+      # # - { when: always, accept: Control+Shift+numbersign, toggle: full_shape }
+      # # - { when: always, accept: Control+Shift+dollar, toggle: simplification }
+      # # - { when: always, accept: Control+Shift+percent, toggle: extended_charset }
+
+      # # windows_compatible_mode_switch:
+      # # - { when: always, accept: Shift+space, toggle: full_shape }
+      # # - { when: always, accept: Control+period, toggle: ascii_punct }
+
+      # # optimized_mode_switch:
+      # # - { when: always, accept: Control+Shift+space, select: .next }
+      # # - { when: always, accept: Shift+space, toggle: ascii_mode }
+      # # - { when: always, accept: Control+comma, toggle: full_shape }
+      # # - { when: always, accept: Control+period, toggle: ascii_punct }
+      # # - { when: always, accept: Control+slash, toggle: simplification }
+      # # - { when: always, accept: Control+backslash, toggle: extended_charset }
+    
+
+# 按键速查：
+# （没有 Command 键，不支持）
+# BackSpace	退格
+# Tab	水平定位符
+# Linefeed	换行
+# Clear	清除
+# Return	回車
+# Pause	暫停
+# Sys_Req	印屏
+# Escape	退出
+# Delete	刪除
+# Home	原位
+# Left	左箭頭
+# Up	上箭頭
+# Right	右箭頭
+# Down	下箭頭
+# Prior、Page_Up	上翻
+# Next、Page_Down	下翻
+# End	末位
+# Begin	始位
+# Shift_L	左Shift
+# Shift_R	右Shift
+# Control_L	左Ctrl
+# Control_R	右Ctrl
+# Meta_L	左Meta
+# Meta_R	右Meta
+# Alt_L	左Alt
+# Alt_R	右Alt
+# Super_L	左Super
+# Super_R	右Super
+# Hyper_L	左Hyper
+# Hyper_R	右Hyper
+# Caps_Lock	大寫鎖
+# Shift_Lock	上檔鎖
+# Scroll_Lock	滾動鎖
+# Num_Lock	小鍵板鎖
+# Select	選定
+# Print	列印
+# Execute	執行
+# Insert	插入
+# Undo	還原
+# Redo	重做
+# Menu	菜單
+# Find	蒐尋
+# Cancel	取消
+# Help	幫助
+# Break	中斷
+# space
+# exclam	!
+# quotedbl	"
+# numbersign	#
+# dollar	$
+# percent	%
+# ampersand	&
+# apostrophe	'
+# parenleft	(
+# parenright	)
+# asterisk	*
+# plus	+
+# comma	,
+# minus	-
+# period	.
+# slash	/
+# colon	:
+# semicolon	;
+# less	<
+# equal	=
+# greater	>
+# question	?
+# at	@
+# bracketleft	[
+# backslash	
+# bracketright	]
+# asciicircum	^
+# underscore	_
+# grave	`
+# braceleft	{
+# bar	|
+# braceright	}
+# asciitilde	~
+# KP_Space	小鍵板空格
+# KP_Tab	小鍵板水平定位符
+# KP_Enter	小鍵板回車
+# KP_Delete	小鍵板刪除
+# KP_Home	小鍵板原位
+# KP_Left	小鍵板左箭頭
+# KP_Up	小鍵板上箭頭
+# KP_Right	小鍵板右箭頭
+# KP_Down	小鍵板下箭頭
+# KP_Prior、KP_Page_Up	小鍵板上翻
+# KP_Next、KP_Page_Down	小鍵板下翻
+# KP_End	小鍵板末位
+# KP_Begin	小鍵板始位
+# KP_Insert	小鍵板插入
+# KP_Equal	小鍵板等於
+# KP_Multiply	小鍵板乘號
+# KP_Add	小鍵板加號
+# KP_Subtract	小鍵板減號
+# KP_Divide	小鍵板除號
+# KP_Decimal	小鍵板小數點
+# KP_0	小鍵板0
+# KP_1	小鍵板1
+# KP_2	小鍵板2
+# KP_3	小鍵板3
+# KP_4	小鍵板4
+# KP_5	小鍵板5
+# KP_6	小鍵板6
+# KP_7	小鍵板7
+# KP_8	小鍵板8
+# KP_9	小鍵板9

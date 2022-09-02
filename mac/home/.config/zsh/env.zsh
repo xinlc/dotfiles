@@ -6,8 +6,6 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # export TERM=xterm-256color
 # export TERM=screen-256color
 
-# export EDITOR=nvim
-
 # homebrew B
 # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 
@@ -41,7 +39,7 @@ export LANG=zh_CN.UTF-8
 
 
 # tmux B
-export EDITOR="vim"
+export EDITOR="nvim"
 # tmux E
 
 # android B

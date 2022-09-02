@@ -1,5 +1,8 @@
 # alias B
+alias vi="/opt/homebrew/bin/vim"
 # alias vim="nvim"
+alias nvim="CC=/opt/homebrew/bin/gcc-12 nvim"
+alias vim="CC=/opt/homebrew/bin/gcc-12 nvim"
 alias c='clear'
 # alias gc='git config credential.helper store'
 # alias gg='git clone'

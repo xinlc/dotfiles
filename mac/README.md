@@ -85,6 +85,7 @@
 - [Docker](https://www.docker.com/get-started) - 应用容器引擎
 - [Charles](https://www.charlesproxy.com) - http抓包神器
 - [Dash](https://kapeli.com/dash) - API文档和代码片段管理
+- [rime](https://github.com/rime) - 聪明的输入法
 - Xcode - 不做IOS开发最好也装，有的软件需要依赖 (App Store)
 
 ## 安装软件
@@ -237,6 +238,8 @@ brew bundle --file ~/Brewfile
 # openinterminal - 代替 go2shell
 # hammerspoon - 自动化神奇。通过桥接操作系统与 Lua 脚本引擎的方式，让我们可以通过编写 Lua 代码来实现操作应用程序、窗口、鼠标、文本、音频设备、电池、屏幕、剪切板、定位、wifi等。基本囊括了系统的各方面。https://github.com/Hammerspoon/hammerspoon
 # redisinsight - RedisInsight 是一个直观高效的 Redis GUI 管理工具(官方工具）。https://github.com/RedisInsight/RedisInsight
+# squirrel - 鼠须管输入法。https://github.com/rime。https://github.com/rime/squirrel
+
 ```
 
 ### 其他命令

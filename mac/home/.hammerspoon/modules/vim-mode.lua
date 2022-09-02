@@ -29,7 +29,7 @@ vim:shouldShowAlertInNormalMode(true)
 vim:setAlertFont("Courier New")
 
 -- Enter normal mode by typing a key sequence
-vim:enterWithSequence('jk', 100)
+-- vim:enterWithSequence('jk', 100)
 
 -- Change to block cursor in normal mode
 vim:enableBetaFeature('block_cursor_overlay')
@@ -49,7 +49,7 @@ vim:setFallbackOnlyUrlPatterns({
 -- To customize the hot key you want, see the mods and key parameters at:
 --   https://www.hammerspoon.org/docs/hs.hotkey.html#bind
 --
--- vim:bindHotKeys({ enter = { {'ctrl'}, ';' } })
+vim:bindHotKeys({ enter = { {'ctrl'}, ';' } })
 
 --------------------------------
 -- END VIM CONFIG
