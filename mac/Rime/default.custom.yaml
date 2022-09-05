@@ -1,19 +1,41 @@
+# default.custom.yaml
+# save it to:
+#   ~/.config/ibus/rime  (linux)
+#   ~/Library/Rime       (macos)
+#   %APPDATA%\Rime       (windows)
+
 # 继承自 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/default.yaml
 # 按键速查在最下面 
+# 注意：yaml obj/field: value 语法不会复盖 obj 其他字段
 
 patch:
   # 方案列表
   schema_list:
     - schema: pinyin_simp # 袖珍拼音
     - schema: luna_pinyin_simp # 朙月拼音
+    - schema: clover           # 四叶草拼音
     - schema: double_pinyin_flypy # 小鹤双拼
     - schema: double_pinyin # 自然码双拼
     - schema: numbers # 大写数字
+    - schema: easy_en # 英文输入法
     # - schema: melt_eng
+    - schema: wubi86_jidian
+    - schema: wubi86_jidian_pinyin
+    # - schema: wubi86_jidian_trad
+    # - schema: wubi86_jidian_trad_pinyin
+    # - schema: pinyin_simp
 
   # 候选词个数
   menu/page_size: 9
 
+  #-----------------------------------------------
+  # 中英文切换自定义
+  #-----------------------------------------------
+  # inline_ascii  在输入法的临时英文编辑区内输入字母，数字，符号，空格等，回车上屏后自动复位到中文
+  # commit_text   已输入的候选文字上屏并切换至英文输入模式
+  # commit_code   已输入的编码字符上屏并切换至英文输入模式
+  # -----------------------------------------------
+  # 参考链接： https://gist.github.com/lotem/2981316
   # 若 caps 切换大小写无效, 打开 Mac 系统偏好设置 > 键盘 > 输入法 > 取消勾选[使用大写锁定键切换“美国”输入模式]
   ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
   ascii_composer/switch_key:
@@ -26,14 +48,15 @@ patch:
     Control_L: noop # 左 Control，屏蔽该切换键
     Control_R: noop # 右 Control，屏蔽该切换键
 
-
   # 呼出方案选单
   switcher/caption: 〔方案选单〕
+  switcher/option_list_separator: "｜"
   switcher/hotkeys:
     # ~ # 把其他都注释掉，或只留一个波浪号，可以将快捷键置空。
     # - Control+grave
     # - Alt+grave
     - Control+Shift+grave
+    - "Control+0"
     # - F4
 
   # 匹配 patterns 时，原样输出
@@ -63,13 +86,13 @@ patch:
     - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
     - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
     # 快捷键
-    #- { when: has_menu, accept: semicolon, send: 2 }              # ":" (分号)选择第 2 个候选词
-    #- { when: has_menu, accept: apostrophe, send: 3 }             # "'" (引号)选择第 3 个候选词
+    - { when: has_menu, accept: semicolon, send: 2 }              # ":" (分号)选择第 2 个候选词
+    - { when: has_menu, accept: apostrophe, send: 3 }             # "'" (引号)选择第 3 个候选词
     #- { when: composing, accept: Shift+Tab, send: Shift+Left }    # "Shift+Tab" 键向左选拼音分词
     #- { when: composing, accept: Control+a, send: Home }          # "Control+a" 光标移至首
     #- { when: composing, accept: Control+e, send: End }           # "Control+e" 光标移至尾
     #- { when: composing, accept: Control+g, send: Escape }        # "Control+g" 清码
-    #- { when: composing, accept: Return, send: Escape }           # "Return" 回车清码
+    - { when: composing, accept: Return, send: Escape }           # "Return" 回车清码
     #- { when: always, accept: Control+Shift+1, select: .next }             # 切换输入方案
     #- { when: always, accept: Control+Shift+2, toggle: ascii_mode }        # 中/英文切换
     #- { when: always, accept: Control+Shift+3, toggle: full_shape }        # 全角/半角切换

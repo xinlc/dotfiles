@@ -470,6 +470,7 @@ melt_eng（[融合拼音](https://github.com/tumuyan/rime-melt)的英文输入�
 
 如果是双拼方案，`preedit_format` 还可以选择是否在输入框进行转换，比如是显示「zz走」还是「zou走」。
 
+
 ## 参考
 
 - [rime](https://github.com/rime)
@@ -481,3 +482,5 @@ melt_eng（[融合拼音](https://github.com/tumuyan/rime-melt)的英文输入�
 - [鼠须管输入法配置详解](https://ssnhd.com/2022/01/06/rime/)
 - [搜狗词库转为 Rime 词库方法](https://ssnhd.com/2022/01/06/sogou-dict/)
 - [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+- [四叶草拼音](https://github.com/fkxxyz/rime-cloverpinyin)
+- [86版极点五笔](https://github.com/KyleBing/rime-wubi86-jidian)
