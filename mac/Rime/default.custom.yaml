@@ -5,7 +5,6 @@
 #   %APPDATA%\Rime       (windows)
 
 # 继承自 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/default.yaml
-# 按键速查在最下面 
 # 注意：yaml obj/field: value 语法不会复盖 obj 其他字段
 
 patch:
@@ -13,9 +12,8 @@ patch:
   schema_list:
     - schema: pinyin_simp # 袖珍拼音
     - schema: luna_pinyin_simp # 朙月拼音
-    - schema: clover           # 四叶草拼音
+    - schema: clover # 四叶草拼音
     - schema: double_pinyin_flypy # 小鹤双拼
-    - schema: double_pinyin # 自然码双拼
     - schema: numbers # 大写数字
     - schema: easy_en # 英文输入法
     # - schema: melt_eng
@@ -36,7 +34,8 @@ patch:
   # commit_code   已输入的编码字符上屏并切换至英文输入模式
   # -----------------------------------------------
   # 参考链接： https://gist.github.com/lotem/2981316
-  # 若 caps 切换大小写无效, 打开 Mac 系统偏好设置 > 键盘 > 输入法 > 取消勾选[使用大写锁定键切换“美国”输入模式]
+
+  # 若 caps 切换大小写无效, macOS 偏好设置的优先级更高，「偏好设置 - 键盘 - 输入法 - 使用“中/英”键切换“ABC”输入模式」。
   ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
   ascii_composer/switch_key:
     # Caps_Lock: commit_text # 打字打到一半时按下了 Caps 后： commit_code 上屏拼音的英文字母 | commit_text 上屏拼音拼出的词语
@@ -65,9 +64,9 @@ patch:
       email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
       uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
       url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
-      # 方便在中文状态下输入网址，会导致句号不会让句子上屏，使用句号翻页时需要注释掉 url_2：
-      url_2: "^[a-z]+[.]"  # 让类似 google.com（不以 www 开头）的网址址也支持
-      win_path: "^[A-Za-z]:.*"  # 支持 c:\file\path 之类的路径输入
+      # 方便在中文状态下输入网址或文件名，会导致句号不会让句子上屏，使用句号翻页时需要注释掉 url_2：
+      url_2: "^[a-z]+[.]" # 让类似 google.com（不以 www 开头）的网址址也支持
+      win_path: "^[A-Za-z]:.*" # 支持 c:\file\path 之类的路径输入
 
   # 快捷键设定
   # key_binder/bindings: # 若开启, 去掉前面#
@@ -76,32 +75,31 @@ patch:
     select_first_character: 
     select_last_character: "grave"
     bindings:
-    # 翻页
-    #- { when: has_menu, accept: Tab, send: Page_Down }            # "tab" 键翻页, 和 "tab" 键分词只能二选一
-    - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
-    - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
-    - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
-    - { when: paging, accept: comma, send: Page_Up } # "," 上一页
-    - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
-    - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
-    - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
-    # 快捷键
-    - { when: has_menu, accept: semicolon, send: 2 }              # ":" (分号)选择第 2 个候选词
-    - { when: has_menu, accept: apostrophe, send: 3 }             # "'" (引号)选择第 3 个候选词
-    #- { when: composing, accept: Shift+Tab, send: Shift+Left }    # "Shift+Tab" 键向左选拼音分词
-    #- { when: composing, accept: Control+a, send: Home }          # "Control+a" 光标移至首
-    #- { when: composing, accept: Control+e, send: End }           # "Control+e" 光标移至尾
-    #- { when: composing, accept: Control+g, send: Escape }        # "Control+g" 清码
-    - { when: composing, accept: Return, send: Escape }           # "Return" 回车清码
-    #- { when: always, accept: Control+Shift+1, select: .next }             # 切换输入方案
-    #- { when: always, accept: Control+Shift+2, toggle: ascii_mode }        # 中/英文切换
-    #- { when: always, accept: Control+Shift+3, toggle: full_shape }        # 全角/半角切换
-    - { when: always, accept: Control+Shift+4, toggle: simplification } # 繁简体切换
-    #- { when: always, accept: Control+Shift+5, toggle: extended_charset }  # 通用/增广切换（显示生僻字）
-    #- { when: composing, accept: Control+b, send: Left }           # "Control+b" 移动光标
-    #- { when: composing, accept: Control+f, send: Right }          # "Control+f" 向右选择候选词
-    #- { when: composing, accept: Control+h, send: BackSpace }      # "Control+h" 删除输入码
-
+      # 翻页
+      #- { when: has_menu, accept: Tab, send: Page_Down }            # "tab" 键翻页, 和 "tab" 键分词只能二选一
+      - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
+      - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
+      - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
+      - { when: paging, accept: comma, send: Page_Up } # "," 上一页
+      - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
+      - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
+      - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
+      # 快捷键
+      - { when: has_menu, accept: semicolon, send: 2 } # ":" (分号)选择第 2 个候选词
+      - { when: has_menu, accept: apostrophe, send: 3 } # "'" (引号)选择第 3 个候选词
+      #- { when: composing, accept: Shift+Tab, send: Shift+Left }    # "Shift+Tab" 键向左选拼音分词
+      #- { when: composing, accept: Control+a, send: Home }          # "Control+a" 光标移至首
+      #- { when: composing, accept: Control+e, send: End }           # "Control+e" 光标移至尾
+      #- { when: composing, accept: Control+g, send: Escape }        # "Control+g" 清码
+      # - { when: composing, accept: Return, send: Escape }           # "Return" 回车清码
+      #- { when: always, accept: Control+Shift+1, select: .next }             # 切换输入方案
+      #- { when: always, accept: Control+Shift+2, toggle: ascii_mode }        # 中/英文切换
+      #- { when: always, accept: Control+Shift+3, toggle: full_shape }        # 全角/半角切换
+      # - { when: always, accept: Control+Shift+4, toggle: simplification } # 繁简体切换
+      #- { when: always, accept: Control+Shift+5, toggle: extended_charset }  # 通用/增广切换（显示生僻字）
+      #- { when: composing, accept: Control+b, send: Left }           # "Control+b" 移动光标
+      #- { when: composing, accept: Control+f, send: Right }          # "Control+f" 向右选择候选词
+      #- { when: composing, accept: Control+h, send: BackSpace }      # "Control+h" 删除输入码
 
       ## 快捷键配置方案 2
       # # 简繁切换
@@ -114,21 +112,21 @@ patch:
       # # 以下复制于： https://github.com/rime/rime-prelude/blob/master/key_bindings.yaml
       # # 也可也看本地文件： /Library/Input Methods/Squirrel.app/Contents/SharedSupport/key_bindings.yaml
 
-      # # emacs_editing:
-      # # - { when: composing, accept: Control+p, send: Up }
-      # # - { when: composing, accept: Control+n, send: Down }
-      # # - { when: composing, accept: Control+b, send: Left }
-      # # - { when: composing, accept: Control+f, send: Right }
-      # - { when: composing, accept: Control+a, send: Home } # 光标跳转至行首
-      # - { when: composing, accept: Control+e, send: End }  # 光标跳转至行尾
-      # # - { when: composing, accept: Control+d, send: Delete }
-      # # - { when: composing, accept: Control+k, send: Shift+Delete }
-      # # - { when: composing, accept: Control+h, send: BackSpace }
-      # # - { when: composing, accept: Control+g, send: Escape }
-      # # - { when: composing, accept: Control+bracketleft, send: Escape }
-      # # - { when: composing, accept: Control+y, send: Page_Up }
-      # # - { when: composing, accept: Alt+v, send: Page_Up }
-      # # - { when: composing, accept: Control+v, send: Page_Down }
+      # emacs_editing:
+      - { when: composing, accept: Control+p, send: Up }
+      - { when: composing, accept: Control+n, send: Down }
+      - { when: composing, accept: Control+b, send: Left }
+      - { when: composing, accept: Control+f, send: Right }
+      - { when: composing, accept: Control+a, send: Home }
+      - { when: composing, accept: Control+e, send: End }
+      - { when: composing, accept: Control+d, send: Delete }
+      - { when: composing, accept: Control+k, send: Shift+Delete }
+      - { when: composing, accept: Control+h, send: BackSpace }
+      - { when: composing, accept: Control+g, send: Escape }
+      - { when: composing, accept: Control+bracketleft, send: Escape }
+      - { when: composing, accept: Control+y, send: Page_Up }
+      - { when: composing, accept: Alt+v, send: Page_Up }
+      - { when: composing, accept: Control+v, send: Page_Down }
 
       # # move_by_word_with_tab: 这个太他妈好用了，Tab/Shift+Tab 切换光标至下/上一个拼音
       # - { when: composing, accept: ISO_Left_Tab, send: Shift+Left }
@@ -170,7 +168,6 @@ patch:
       # # - { when: always, accept: Control+period, toggle: ascii_punct }
       # # - { when: always, accept: Control+slash, toggle: simplification }
       # # - { when: always, accept: Control+backslash, toggle: extended_charset }
-    
 
 # 按键速查：
 # （没有 Command 键，不支持）
@@ -243,7 +240,7 @@ patch:
 # question	?
 # at	@
 # bracketleft	[
-# backslash	
+# backslash \
 # bracketright	]
 # asciicircum	^
 # underscore	_

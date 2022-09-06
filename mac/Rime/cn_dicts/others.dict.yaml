@@ -6,7 +6,7 @@
 #
 ---
 name: others
-version: "2022-09-01"
+version: "2022-09-05"
 sort: by_weight
 vocabulary: essay-zh-hans
 ...
@@ -96,6 +96,9 @@ vocabulary: essay-zh-hans
 阿房宫赋	a pang gong fu
 阿房宫赋	e fang gong fu
 阿房宫赋	a fang gong fu
+# 「伯伯」方言
+伯伯	bo bo
+伯伯	bai bai
 
 
 ##### 叠字
@@ -282,5 +285,5 @@ vocabulary: essay-zh-hans
 四个龍	si ge long
 四个土
 # 其他。。。
-嫐	nv nan nv
-嬲	nan nv nan
+男女男
+女男女
