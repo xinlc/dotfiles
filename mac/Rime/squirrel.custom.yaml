@@ -96,6 +96,8 @@ patch:
     io.alacritty:
         ascii_mode: true
         no_inline: true
+    com.raycast.macos:
+      ascii_mode: true
 
 
   #-----------------#

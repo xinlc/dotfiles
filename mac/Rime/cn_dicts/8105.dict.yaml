@@ -26,9 +26,8 @@
 # 降低一些几乎只在一个固定词汇中使用的读音的权重，不让其参与注音，在 main 中手动注音。
 ---
 name: 8105
-version: "2022-09-05"
+version: "2022-09-16"
 sort: by_weight
-vocabulary: essay-zh-hans
 ...
 ### 按需启用
 # 「这、那」的口语读音
@@ -61,6 +60,7 @@ vocabulary: essay-zh-hans
 # 祂	ta
 # 觍	tian
 # 𪨊	song
+# 磺	huang
 
 
 ### 小时候没学过的拼音。。。
@@ -68,9 +68,8 @@ vocabulary: essay-zh-hans
 # 嗯	ng	在固顶字改为「那个、哪个」了
 # 噷	hm	在固顶字里置顶了
 # 呣	m	在固顶字里放到第三位了
-嗯	eng	179528
+嗯	eng	9179528
 哼	hng	255327
-# 表示打招呼或惊诧时的语气词，繁体有个「誒」，但《现汉》《现规》《通用汉字规范表》都没有收录「诶」，大陆用的是「欸」。
 欸	ei	534
 哟	yo	59051
 唷	yo	68308
@@ -267,6 +266,7 @@ vocabulary: essay-zh-hans
 刨	bao	8691
 苞	bao	7827
 鸨	bao	7173
+曝	bao	6457
 煲	bao	3617
 葆	bao	3519
 雹	bao	2984
@@ -275,7 +275,6 @@ vocabulary: essay-zh-hans
 孢	bao	455
 趵	bao	341
 枹	bao	113
-曝	bao	1
 瀑	bao	1
 被	bei	2998064
 备	bei	823555
@@ -1538,8 +1537,8 @@ vocabulary: essay-zh-hans
 堨	e	0
 𥔲	e	0
 𫫇	e	0
+嗯	en	9179528
 恩	en	433653
-嗯	en	179528
 摁	en	8517
 蒽	en	130
 而	er	5075337
@@ -2428,13 +2427,13 @@ vocabulary: essay-zh-hans
 槐	huai	25776
 徊	huai	17842
 踝	huai	6039
-欢	huan	908850
+换	huan	996459
 缓	huan	450418
 还	huan	406569
-换	huan	396459
 环	huan	300871
 幻	huan	248831
 唤	huan	138357
+欢	huan	90885
 患	huan	76682
 焕	huan	31989
 桓	huan	28953
@@ -2483,6 +2482,7 @@ vocabulary: essay-zh-hans
 潢	huang	3727
 璜	huang	2543
 遑	huang	2242
+磺	huang	2222
 隍	huang	1797
 肓	huang	1770
 湟	huang	1167
@@ -7358,6 +7358,7 @@ vocabulary: essay-zh-hans
 已	yi	3720796
 意	yi	3668831
 衣	yi	974727
+亿	yi	843650
 易	yi	690500
 依	yi	679811
 义	yi	667264
@@ -7381,7 +7382,6 @@ vocabulary: essay-zh-hans
 姨	yi	115750
 怡	yi	96402
 抑	yi	84901
-亿	yi	84365
 毅	yi	73576
 役	yi	72621
 译	yi	60762

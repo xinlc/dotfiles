@@ -11,14 +11,15 @@ patch:
   # 方案列表
   schema_list:
     - schema: pinyin_simp # 袖珍拼音
+    - schema: pinyin_simp_flypy # 袖珍小鹤双拼
     - schema: luna_pinyin_simp # 朙月拼音
-    - schema: clover # 四叶草拼音
-    - schema: double_pinyin_flypy # 小鹤双拼
+    # - schema: clover # 四叶草拼音
+    # - schema: double_pinyin_flypy # 明月小鹤双拼
     - schema: numbers # 大写数字
     - schema: easy_en # 英文输入法
     # - schema: melt_eng
-    - schema: wubi86_jidian
-    - schema: wubi86_jidian_pinyin
+    # - schema: wubi86_jidian
+    # - schema: wubi86_jidian_pinyin
     # - schema: wubi86_jidian_trad
     # - schema: wubi86_jidian_trad_pinyin
     # - schema: pinyin_simp
@@ -72,16 +73,16 @@ patch:
   # key_binder/bindings: # 若开启, 去掉前面#
   key_binder:
     # 以词定字（上屏当前词组的第一个或最后一个字）
-    select_first_character: 
-    select_last_character: "grave"
+    select_first_character: 'comma'
+    select_last_character: 'period'
     bindings:
       # 翻页
       #- { when: has_menu, accept: Tab, send: Page_Down }            # "tab" 键翻页, 和 "tab" 键分词只能二选一
       - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
       - { when: paging, accept: minus, send: Page_Up } # "-" 上一页
       - { when: has_menu, accept: equal, send: Page_Down } # "=" 下一页
-      - { when: paging, accept: comma, send: Page_Up } # "," 上一页
-      - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
+      # - { when: paging, accept: comma, send: Page_Up } # "," 上一页
+      # - { when: has_menu, accept: period, send: Page_Down } # "." 下一页
       - { when: paging, accept: bracketleft, send: Page_Up } # "[" 上一页
       - { when: has_menu, accept: bracketright, send: Page_Down } # "]" 下一页
       # 快捷键

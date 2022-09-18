@@ -481,6 +481,7 @@ melt_eng（[融合拼音](https://github.com/tumuyan/rime-melt)的英文输入�
 - [搜狗词库转为 Rime 词库方法](https://ssnhd.com/2022/01/06/sogou-dict/)
 - [鼠须管输入法配置详解](https://ssnhd.com/2022/01/06/rime/)
 - [我的 Rime 配置 2022](https://dvel.me/posts/my-rime-setting-2022/)
+- [Schema.yaml 詳解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
 - [86版极点五笔](https://github.com/KyleBing/rime-wubi86-jidian)
 - [ssnhd-rime](https://github.com/ssnhd/rime)
 - [rime-ice](https://github.com/iDvel/rime-ice)

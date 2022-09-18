@@ -15,12 +15,17 @@ charset = utf-8
 trim_trailing_whitespace = true
 # 是否在文件的最后插入一个空行
 insert_final_newline = true
+max_line_length = 300
 
 # 对java文件生效
 # [*.java]
 # 遵循阿里巴巴规范，禁止使用 tab 字符缩进
 # indent_style = tab
 # indent_size = 4
+
+# [*.{groovy,java,kt,kts}]
+# indent_style = tab
+# continuation_indent_size = 8
 
 # 对json,yml文件生效
 # [*.{json,yml}]
@@ -47,11 +52,26 @@ indent_size = 2
 [*.js.map]
 indent_size = 2
 
-[*.less]
-indent_size = 2
-
 [*.vue]
 indent_size = 2
 
-[{.analysis_options,*.yml,*.yaml}]
+[Makefile]
+indent_style = tab
+
+[*.py]
+indent_size = 4
+
+[*.js]
+indent_size = 4
+
+[*.ts]
+indent_size = 4
+
+[*.{less,css}]
+indent_size = 2
+
+[*.{tsx,jsx}]
+indent_size = 2
+
+[*.sql]
 indent_size = 2

@@ -7,13 +7,18 @@
 
 ### 系统工具
 
-- [腾讯柠檬](https://lemon.qq.com) - mac系统优化清理工具
-- [uTools](https://u.tools) - 生产力工具集
+- [腾讯柠檬](https://github.com/Tencent/lemon-cleaner) - mac系统优化清理工具。
+- [uTools](https://u.tools) - 生产力工具集。
+- [rubick](https://github.com/rubickCenter/rubick) - 开源工具箱，对标 uTools。
 - [Alfred 4](https://www.alfredapp.com) - 本地搜索及应用快速启动
+- [Raycast](https://www.raycast.com/) - 类似Alfred功能，重要的是免费。
+- [Cerebro](https://github.com/cerebroapp/cerebro) - 开源的 launcher。
+- [sol](https://github.com/ospfranco/sol) - 替代 Alfred、Spotlight 和 Raycast。
 - [AltTab](https://github.com/lwouis/alt-tab-macos?source=https://macwk.com/soft/alttab) - 模拟 Windows Alt+Tab。建议快捷键设置成 Command+tab 代替系统默认 cmd+tab
-- [Bartender 4](https://www.macbartender.com/Bartender4/) - 方便的管理菜单栏图标
+- [Bartender 4](https://www.macbartender.com/Bartender4/) - 方便的管理菜单栏图标。
+- [hidden](https://github.com/dwarvesf/hidden) - 一个超轻的 MacOS 实用程序，有助于隐藏菜单栏图标。
 - [Cakebrew](https://github.com/brunophilipe/Cakebrew) - Homebrew GUI
-- [CheatSheet](https://www.mediaatelier.com/GrandTotal7/) - 快速查看mac应用快捷键
+- [CheatSheet](https://www.mediaatelier.com/CheatSheet/) - 快速查看mac应用快捷键
 - [Clipy](https://github.com/Clipy/Clipy) - 历史剪切板。现在用的 Alfred 带的剪切板功能。
 - [Flux](https://justgetflux.com) - f.lux 护眼神器
 - [Logi Options](https://support.logi.com/hc/zh-cn/articles/360025297893) - Logitech Options 逻辑大师鼠标
@@ -24,6 +29,9 @@
 - [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) - 键盘键位修改神器
 - [Contexts](https://contexts.co) - 窗口切换神器，代替 Command-Tab。Manico 和 AltTab 功能组合
 - [iStat Menus](https://bjango.com/mac/istatmenus/) - 优秀的系统监控工具
+- [xbar/BitBar](https://github.com/matryer/xbar) - 将任何脚本或程序的输出放入 MacOS 菜单栏。
+- [Rectangle](https://github.com/rxhanson/Rectangle) - 使用键盘快捷键和捕捉区域在 macOS 上移动和调整窗口大小。
+- [Mos](https://github.com/Caldis/Mos) - 一个用于在MacOS上平滑你的鼠标滚动效果的小工具, 让你的滚轮爽如触控板。
 - Xnip - 最好用的mac长截图/截图工具 (App Store)
 - iShop - 优秀的截图录屏工具 (App Store)
 - Gifox 2 - 最好用的Gif动画录制工具 (App Store)
@@ -36,6 +44,7 @@
 - 自动切换输入法 专业版 - 自动切换中英文输入法（App Store）
 - HazeOver - 提升工作专注力神器 (App Store)
 - Dynamic Wallpaper - 动态壁纸 (App Store)
+- TinyCal - 日历(App Store)
 
 ### 应用软件
 
@@ -44,16 +53,27 @@
 - [网易有道词典](http://cidian.youdao.com/index-mac.html) - 词典
 - [百度网盘](https://pan.baidu.com/download#pan) - 网盘
 - [钉钉](https://page.dingtalk.com/wow/dingtalk/act/download) - 企业办公工具
+- [腾讯会议](https://meeting.tencent.com/download/) - 会议。
 - [Bob](https://github.com/ripperhe/Bob) - 划词翻译和截图翻译工具
 - [Chrome](https://www.google.cn/chrome/) - 最好用的浏览器没有之一
 - [Qutebrowser](https://github.com/qutebrowser/qutebrowser) - 如果您正在寻找一款使用Vim风格的键盘操作的浏览器，那么开源的Qutebrowser将会是个不错的选择。
 - [Firefox](http://www.firefox.com.cn) - 信仰浏览器
+- [Microsoft Edge](https://www.microsoft.com/zh-cn/edge) - 微软基于 Chromium 开发的新版浏览器。
 - [WPS Office](https://www.wps.cn) - 办公套件
 - [XMind](https://www.xmind.cn) - 脑图神器
 - [IINA](https://github.com/iina/iina) - 全能播放器
 - [uPic](https://github.com/gee1k/uPic) - 最好用的Mac图床客户端
 - [Transmit](https://www.panic.com/transmit/) - 最好用的FTP客户端 (App Store)
 - [PDF Expert](https://pdfexpert.com) - 好用的PDF编辑器
+- [licecap](https://github.com/justinfrankel/licecap) - 轻量小巧的录屏工具。
+- [OBS](https://github.com/obsproject/obs-studio) - OBS Studio - 用于直播和屏幕录制的免费开源软件。
+- [RustDesk](https://github.com/rustdesk/rustdesk) - 开源虚拟与远程桌面基础架构。
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - 开源虚拟机。
+- [Parallels Desktop](https://www.parallels.cn/products/desktop/trial/) - 虚拟机。
+- [Telegram](https://telegram.org/) - TG
+- [Spark](https://sparkmailapp.com/zh) - 邮箱
+- [阿里云盘](https://www.aliyundrive.com) - 云盘
+- [START](https://start.qq.com) - 腾讯START云游戏平台。
 - Microsoft OneNote - 云笔记 (App Store)
 - QQ - 童年生活方式 (App Store)
 - 微信 - 一个生活方式 (App Store)
@@ -63,7 +83,7 @@
 - [drawio](https://github.com/jgraph/drawio-desktop) - 画图神器
 - [ProcessOn](https://www.processon.com) - 国内版 Draw.io
 - [OmniGraffle](https://www.omnigroup.com/omnigraffle/) - 画图神器
-- [PDMan](https://gitee.com/robergroup/pdman) - 国产数据库建模工具
+- [PDManer](https://gitee.com/robergroup/pdmaner) - 国产数据库建模工具
 - [Sketch](https://www.sketch.com) - 最好用的矢量绘图软件
 - [Photoshop](https://www.adobe.com/cn/products/photoshop.html) - 使用最多的图片处理工具
 
@@ -77,15 +97,21 @@
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - MySQL 官方客户端
 - [Navicat Premium](http://www.navicat.com.cn) - 强大的数据库管理工具
 - [Postman](https://www.postman.com/downloads/) - Api 调试神器
+- [hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源 API 开发生态系统（原postwomen）。对标 Postman、insomnia等。
 - [JMeter](http://jmeter.apache.org/download_jmeter.cgi) - 压测工具
 - [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有之一
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
+- [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
+- [PyCharm](https://www.jetbrains.com/zh-cn/pycharm/) - Python IDE。
 - [Android Studio](https://developer.android.com/studio) - Android 开发集成环境
 - [Docker](https://www.docker.com/get-started) - 应用容器引擎
 - [Charles](https://www.charlesproxy.com) - http抓包神器
 - [Dash](https://kapeli.com/dash) - API文档和代码片段管理
 - [rime](https://github.com/rime) - 聪明的输入法
+- [DevToysMac](https://github.com/ObuchiYuki/DevToysMac) - 开发工具集。
+- [Emacs](https://www.gnu.org/software/emacs/) - Emacs是神的编辑器，而Vim是编辑器之神。
+- [AppFlowy](https://github.com/AppFlowy-IO/appflowy) - 开源版 Notion。
 - Xcode - 不做IOS开发最好也装，有的软件需要依赖 (App Store)
 
 ## 安装软件
@@ -190,6 +216,9 @@ brew bundle --file ~/Brewfile
 # gping - ping，但带有图表。https://github.com/orf/gping
 # procs - ps 用 Rust 编写的现代替代品。https://github.com/dalance/procs
 # dog - 一个用户友好的命令行 DNS 客户端，代替 dig。https://github.com/ogham/dog
+# espanso - 输入法扩展器（Text Expander）。https://github.com/espanso/espanso
+# monolith - 用于将完整网页保存为单个 HTML 文件的 CLI 工具。https://github.com/Y2Z/monolith/
+
 
 ```
 
@@ -239,6 +268,11 @@ brew bundle --file ~/Brewfile
 # hammerspoon - 自动化神奇。通过桥接操作系统与 Lua 脚本引擎的方式，让我们可以通过编写 Lua 代码来实现操作应用程序、窗口、鼠标、文本、音频设备、电池、屏幕、剪切板、定位、wifi等。基本囊括了系统的各方面。https://github.com/Hammerspoon/hammerspoon
 # redisinsight - RedisInsight 是一个直观高效的 Redis GUI 管理工具(官方工具）。https://github.com/RedisInsight/RedisInsight
 # squirrel - 鼠须管输入法。https://github.com/rime。https://github.com/rime/squirrel
+# hiddenbar - 隐藏菜单栏图标。https://github.com/dwarvesf/hidden
+# rectangle - 简单的移动和调整大小的窗口。https://github.com/rxhanson/Rectangle
+# mos - 一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具。https://github.com/Caldis/Mos
+# raycast - Raycast 是一款速度极快、完全可扩展的启动器。它可以让您完成任务、计算、共享公共链接等等。https://www.raycast.com/
+# devtoys - 开发工具集。https://github.com/ObuchiYuki/DevToysMac
 
 ```
 
