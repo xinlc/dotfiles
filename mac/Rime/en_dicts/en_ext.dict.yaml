@@ -6,7 +6,7 @@
 #
 ---
 name: en_ext
-version: "2022-09-17"
+version: "2022-10-03"
 sort: by_weight
 ...
 # 一些杂项
@@ -51,6 +51,313 @@ Del	Del
 Delete	Delete
 Esc	Esc
 Eject	Eject
+
+
+# 《冰与火之歌》常见的家族及姓名
+#TODO
+
+
+# 常见姓氏 100 个，常见男名 100 个，常见女名 100 个：
+Smith	Smith
+Bailey	Bailey
+Jones	Jones
+Parker	Parker
+Taylor	Taylor
+Miller	Miller
+Williams	Williams
+Davis	Davis
+Brown	Brown
+Murphy	Murphy
+Davies	Davies
+Price	Price
+Evans	Evans
+Bell	Bell
+Wilson	Wilson
+Baker	Baker
+Thomas	Thomas
+Griffiths	Griffiths
+Roberts	Roberts
+Kelly	Kelly
+Johnson	Johnson
+Simpson	Simpson
+Lewis	Lewis
+Marshall	Marshall
+Walker	Walker
+Collins	Collins
+Robinson	Robinson
+Bennett	Bennett
+Wood	Wood
+Cox	Cox
+Thompson	Thompson
+Richardson	Richardson
+White	White
+Fox	Fox
+Watson	Watson
+Gray	Gray
+Jackson	Jackson
+Rose	Rose
+Wright	Wright
+Chapman	Chapman
+Green	Green
+Hunt	Hunt
+Harris	Harris
+Robertson	Robertson
+Cooper	Cooper
+Shaw	Shaw
+King	King
+Reynolds	Reynolds
+Lee	Lee
+Lloyd	Lloyd
+Martin	Martin
+Ellis	Ellis
+Clarke	Clarke
+Richards	Richards
+James	James
+Russell	Russell
+Morgan	Morgan
+Wilkinson	Wilkinson
+Hughes	Hughes
+Khan	Khan
+Edwards	Edwards
+Graham	Graham
+Hill	Hill
+Stewart	Stewart
+Moore	Moore
+Reid	Reid
+Clark	Clark
+Murray	Murray
+Harrison	Harrison
+Powell	Powell
+Scott	Scott
+Palmer	Palmer
+Young	Young
+Holmes	Holmes
+Morris	Morris
+Rogers	Rogers
+Hall	Hall
+Stevens	Stevens
+Ward	Ward
+Walsh	Walsh
+Turner	Turner
+Hunter	Hunter
+Carter	Carter
+Thomson	Thomson
+Phillips	Phillips
+Matthews	Matthews
+Mitchell	Mitchell
+Ross	Ross
+Patel	Patel
+Owen	Owen
+Adams	Adams
+Mason	Mason
+Campbell	Campbell
+Knight	Knight
+Anderson	Anderson
+Kennedy	Kennedy
+Allen	Allen
+Butler	Butler
+Cook	Cook
+Saunders	Saunders
+James	James
+Joe	Joe
+John	John
+Juan	Juan
+Robert	Robert
+Jack	Jack
+Michael	Michael
+Albert	Albert
+William	William
+Jonathan	Jonathan
+David	David
+Justin	Justin
+Richard	Richard
+Terry	Terry
+Charles	Charles
+Gerald	Gerald
+Joseph	Joseph
+Keith	Keith
+Thomas	Thomas
+Samuel	Samuel
+Christopher	Christopher
+Willie	Willie
+Daniel	Daniel
+Ralph	Ralph
+Paul	Paul
+Lawrence	Lawrence
+Mark	Mark
+Nicholas	Nicholas
+Donald	Donald
+Roy	Roy
+George	George
+Benjamin	Benjamin
+Kenneth	Kenneth
+Bruce	Bruce
+Steven	Steven
+Brandon	Brandon
+Edward	Edward
+Adam	Adam
+Brian	Brian
+Harry	Harry
+Ronald	Ronald
+Fred	Fred
+Anthony	Anthony
+Wayne	Wayne
+Kevin	Kevin
+Billy	Billy
+Jason	Jason
+Steve	Steve
+Matthew	Matthew
+Louis	Louis
+Gary	Gary
+Jeremy	Jeremy
+Timothy	Timothy
+Aaron	Aaron
+Jose	Jose
+Randy	Randy
+Larry	Larry
+Howard	Howard
+Jeffrey	Jeffrey
+Eugene	Eugene
+Frank	Frank
+Carlos	Carlos
+Scott	Scott
+Russell	Russell
+Eric	Eric
+Bobby	Bobby
+Stephen	Stephen
+Victor	Victor
+Andrew	Andrew
+Martin	Martin
+Raymond	Raymond
+Ernest	Ernest
+Gregory	Gregory
+Phillip	Phillip
+Joshua	Joshua
+Todd	Todd
+Jerry	Jerry
+Jesse	Jesse
+Dennis	Dennis
+Craig	Craig
+Walter	Walter
+Alan	Alan
+Patrick	Patrick
+Shawn	Shawn
+Peter	Peter
+Clarence	Clarence
+Harold	Harold
+Sean	Sean
+Douglas	Douglas
+Philip	Philip
+Henry	Henry
+Chris	Chris
+Carl	Carl
+Johnny	Johnny
+Arthur	Arthur
+Earl	Earl
+Ryan	Ryan
+Jimmy	Jimmy
+Roger	Roger
+Antonio	Antonio
+Mary	Mary
+Alice	Alice
+Patricia	Patricia
+Julie	Julie
+Linda	Linda
+Heather	Heather
+Barbara	Barbara
+Teresa	Teresa
+Elizabeth	Elizabeth
+Doris	Doris
+Jennifer	Jennifer
+Gloria	Gloria
+Maria	Maria
+Evelyn	Evelyn
+Susan	Susan
+Jean	Jean
+Margaret	Margaret
+Cheryl	Cheryl
+Dorothy	Dorothy
+Mildred	Mildred
+Lisa	Lisa
+Katherine	Katherine
+Nancy	Nancy
+Joan	Joan
+Karen	Karen
+Ashley	Ashley
+Betty	Betty
+Judith	Judith
+Helen	Helen
+Rose	Rose
+Sandra	Sandra
+Janice	Janice
+Donna	Donna
+Kelly	Kelly
+Carol	Carol
+Nicole	Nicole
+Ruth	Ruth
+Judy	Judy
+Sharon	Sharon
+Christina	Christina
+Michelle	Michelle
+Kathy	Kathy
+Laura	Laura
+Theresa	Theresa
+Sarah	Sarah
+Beverly	Beverly
+Kimberly	Kimberly
+Denise	Denise
+Deborah	Deborah
+Tammy	Tammy
+Jessica	Jessica
+Irene	Irene
+Shirley	Shirley
+Jane	Jane
+Cynthia	Cynthia
+Lori	Lori
+Angela	Angela
+Rachel	Rachel
+Melissa	Melissa
+Marilyn	Marilyn
+Brenda	Brenda
+Andrea	Andrea
+Amy	Amy
+Kathryn	Kathryn
+Anna	Anna
+Louise	Louise
+Rebecca	Rebecca
+Sara	Sara
+Virginia	Virginia
+Anne	Anne
+Kathleen	Kathleen
+Jacqueline	Jacqueline
+Pamela	Pamela
+Wanda	Wanda
+Martha	Martha
+Bonnie	Bonnie
+Debra	Debra
+Julia	Julia
+Amanda	Amanda
+Ruby	Ruby
+Stephanie	Stephanie
+Lois	Lois
+Carolyn	Carolyn
+Tina	Tina
+Christine	Christine
+Phyllis	Phyllis
+Marie	Marie
+Norma	Norma
+Janet	Janet
+Paula	Paula
+Catherine	Catherine
+Diana	Diana
+Frances	Frances
+Annie	Annie
+Ann	Ann
+Lillian	Lillian
+Joyce	Joyce
+Emily	Emily
+Diane	Diane
+Robin	Robin
 
 
 # 往下开始都是扩展单词
@@ -117,7 +424,6 @@ ARM	ARM
 eGPU	eGPU
 One Piece	OnePiece
 Bose	Bose
-iPhone	iPhone
 CCTV	CCTV
 GTA	GTA
 LGBT	LGBT
@@ -146,6 +452,7 @@ Xnip	Xnip
 Workspace	Workspace
 Google Workspace	GoogleWorkspace
 WYSIWYG	WYSIWYG
+What You See Is What You Get	WYSIWYG
 Mark Text	MarkText
 Joplin	Joplin
 Obsidian	Obsidian
@@ -179,6 +486,7 @@ Bitwarden	Bitwarden
 BitComet	BitComet
 Bitbucket	Bitbucket
 Google Photos	GooglePhotos
+Google Calendar	GoogleCalendar
 LyricsX	LyricsX
 OneDrive	OneDrive
 Xbox	Xbox
@@ -194,6 +502,8 @@ IEPL	IEPL
 IPLC	IPLC
 IntelliJ	IntelliJ
 IntelliJ IDEA	IntelliJIDEA
+IntelliJ IDEA Community	IntelliJIDEACommunity
+IntelliJ IDEA Ultimate	IntelliJIDEAUltimate
 IDEA	IDEA
 IDE	IDE
 NTR	NTR
@@ -203,12 +513,6 @@ DOM	DOM
 VIP	VIP
 D.VA	DVA
 Logo	Logo
-Rachel	Rachel
-Monica	Monica
-Phoebe	Phoebe
-Joey	Joey
-Chandler	Chandler
-Ross	Ross
 Telnet	Telnet
 IPv4	IPv
 IPv6	IPv
@@ -219,7 +523,6 @@ IPv6	IPvliu
 Unix	Unix
 Rick and Morty	RickandMorty
 Tokyo	Tokyo
-Rachel	Rachel
 uTools	uTool
 uTools	uTools
 AirPods	AirPods
@@ -258,7 +561,7 @@ Hexo	Hexo
 Hugo	Hugo
 undefined	undefined
 Epic	Epic
-Epic Games	Epic Games
+Epic Games	EpicGames
 Instagram	Instagram
 Beta	Beta
 archive	archive
@@ -328,6 +631,8 @@ Rust	Rust
 segmentfault	segmentfault
 SPA	SPA
 SQL	SQL
+Structured Query Language	SQL
+Structured Query Language	StructuredQueryLanguage
 SQL Server	SQLServer	2
 Microsoft SQL Server	SQLServer	1
 Microsoft SQL Server	MicrosoftSQLServer
@@ -755,6 +1060,10 @@ MagSafe	MagSafe
 HDMI	HDMI
 WorkFlowy	WorkFlowy
 NSFW	NSFW
+Not Safe For Work	NSFW
+Not Suitable For Work	NSFW
+Not Safe For Work	NotSafeForWork
+Not Suitable For Work	NotSuitableForWork
 Disco	Disco
 Termius	Termius
 Jinja	Jinja
@@ -823,6 +1132,8 @@ MX	MX
 macOS Server	macOSServer
 Darwin	Darwin
 NAS	NAS
+Network Attached Storage	NAS
+Network Attached Storage	NetworkAttachedStorage
 Olympic	Olympic
 Fork	Fork
 CommonMark	CommonMark
@@ -861,8 +1172,8 @@ CleanShot X	CleanShotX
 Setapp	Setapp
 IE	IE
 GraphQL	GraphQL
-TOTP	TOTP	2
-Time-based One-Time Password	TOTP	1
+TOTP	TOTP
+Time-based One-Time Password	TOTP
 Unclutter	Unclutter
 Sitemap	Sitemap
 DuckDuckGo	DuckDuckGo
@@ -1063,9 +1374,11 @@ IINA	IINA
 GUID	GUID
 ExFAT	ExFAT
 APFS	APFS
-Microsoft NTFS	MicrosoftNTFS
+Apple File System	APFS
+Apple File System	AppleFileSystem
 NTFS	NTFS
 Microsoft NTFS	NTFS
+Microsoft NTFS	MicrosoftNTFS
 setup	setup
 txt	txt
 chromeOS	chromeOS
@@ -1154,6 +1467,8 @@ exists	exists
 goto	goto
 Bandizip	Bandizip
 NATO	NATO
+North Atlantic Treaty Organization	NATO
+North Atlantic Treaty Organization	NorthAtlanticTreatyOrganization
 MissWarmJ	MissWarmJ
 Miss	Miss
 NASA	NASA
@@ -1181,6 +1496,7 @@ Hostname	Hostname
 CDPR	CDPR
 CD Projekt	CDPR
 CD Projekt	CDProjekt
+CD Projekt RED	CDProjektRED
 ACG	ACG
 Animation Comics Games	ACG
 NBA	NBA
@@ -1237,3 +1553,98 @@ one-liner	oneliner
 Callback	Callback
 SSID	SSID
 Time Machine	TimeMachine
+goodbye	goodbye
+regexp	regexp
+FOSS	FOSS
+Free and open source software	FOSS
+Free and open source software	Freeandopensourcesoftware
+InfoQ	InfoQ
+SFC	SFC
+Software Freedom Conservancy	SFC
+Software Freedom Conservancy	SoftwareFreedomConservancy
+PopCap	PopCap
+PopCap Games	PopCapGames
+Cyberpunk	Cyberpunk
+Kotlin	Kotlin
+PhpStorm	PhpStorm
+Rider	Rider
+Datalore	Datalore
+DataSpell	DataSpell
+RubyMine	RubyMine
+AppCode	AppCode
+PyCharm Edu	PyCharmEdu
+IntelliJ IDEA Edu	IntelliJIDEAEdu
+Code With Me	CodeWithMe
+JetBrains Mono	JetBrainsMono
+JVM	JVM
+Java Virtual Machine	JVM
+Java Virtual Machine	JavaVirtualMachine
+Java EE	JavaEE
+ReSharper	ReSharper
+dotPeek	dotPeek
+dotTrace	dotTrace
+dotMemory	dotMemory
+dotCover	dotCover
+TeamCity	TeamCity
+EduTools	EduTools
+FIFO	FIFO
+First In, First Out	FIFO
+LIFO	LIFO
+Last In, First out	LIFO
+NeatDownloadManager	NeatDownloadManager
+furry	furry
+quantum	quantum
+Hi-Fi	HiFi
+Lucy	Lucy
+David	David
+Rebecca	Rebecca
+Kiwi	Kiwi
+Maine	Maine
+Emma	Emma
+Olivia	Olivia
+Ava	Ava
+Isabella	Isabella
+Sophia	Sophia
+Mia	Mia
+Charlotte	Charlotte
+Sherlock	Sherlock
+Amelia	Amelia
+Evelyn	Evelyn
+Abigail	Abigail
+Liam	Liam
+Noah	Noah
+William	William
+James	James
+Logan	Logan
+Benjamin	Benjamin
+Mason	Mason
+Elijah	Elijah
+Oliver	Oliver
+Jacob	Jacob
+Love & Peace	LoveandPeace
+Love & Peace	LovePeace
+Love and Peace	LoveandPeace
+Peace & Love	PeaceLove
+Peace & Love	PeaceandLove
+Peace and Love	PeaceandLove
+Liquid	Liquid
+Liquid Crystal Display	LCD
+Liquid Crystal Display	LiquidCrystalDisplay
+emotional	emotional
+Emotional Damage	EmotionalDamage
+revert	revert
+GitLab	GitLab
+Apple Silicon	AppleSilicon
+ADSL	ADSL
+Asymmetric Digital Subscriber Line	ADSL
+Asymmetric Digital Subscriber Line	AsymmetricDigitalSubscriberLine
+ICP	ICP
+iRime	iRime
+emo	emo
+colon	colon
+APK	APK
+Android application package	APK
+Android application package	Androidapplicationpackage
+whack	whack
+ing	ing
+encore	encore

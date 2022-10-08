@@ -10,7 +10,7 @@
 # 但不与其他翻译器互相造词，如果使用了完整编码，如「你ni」这样的，那么「你」这个字将无法参与造词，即自造词无法被记住
 # 所以建议只固定非完整编码的字词，「的de」应该改为「的d」，「是shi」应为「是s」，「仙剑xianjian」应为「仙剑xj」。
 #
-# version: "2022-09-01"
+# version: "2022-09-27"
 #
 # 此行之后不能写注释
 
@@ -210,3 +210,4 @@ domain	domain
 TODO	todo
 Dota	dota
 main	main
+Amazon	amazon

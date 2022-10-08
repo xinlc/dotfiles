@@ -32,6 +32,7 @@
 - [xbar/BitBar](https://github.com/matryer/xbar) - 将任何脚本或程序的输出放入 MacOS 菜单栏。
 - [Rectangle](https://github.com/rxhanson/Rectangle) - 使用键盘快捷键和捕捉区域在 macOS 上移动和调整窗口大小。
 - [Mos](https://github.com/Caldis/Mos) - 一个用于在MacOS上平滑你的鼠标滚动效果的小工具, 让你的滚轮爽如触控板。
+- [MonitorControl](https://github.com/MonitorControl/MonitorControl) - 控制外接显示器的亮度和音量。
 - Xnip - 最好用的mac长截图/截图工具 (App Store)
 - iShop - 优秀的截图录屏工具 (App Store)
 - Gifox 2 - 最好用的Gif动画录制工具 (App Store)
@@ -218,7 +219,9 @@ brew bundle --file ~/Brewfile
 # dog - 一个用户友好的命令行 DNS 客户端，代替 dig。https://github.com/ogham/dog
 # espanso - 输入法扩展器（Text Expander）。https://github.com/espanso/espanso
 # monolith - 用于将完整网页保存为单个 HTML 文件的 CLI 工具。https://github.com/Y2Z/monolith/
-
+# archivebox - 开源自托管 Web 归档。https://github.com/ArchiveBox/ArchiveBox/
+# rustscan - 端口扫描工具。https://github.com/RustScan/RustScan
+# git-branchless - 是一套以多种方式增强 Git 的工具。https://github.com/arxanas/git-branchless
 
 ```
 
@@ -273,6 +276,7 @@ brew bundle --file ~/Brewfile
 # mos - 一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具。https://github.com/Caldis/Mos
 # raycast - Raycast 是一款速度极快、完全可扩展的启动器。它可以让您完成任务、计算、共享公共链接等等。https://www.raycast.com/
 # devtoys - 开发工具集。https://github.com/ObuchiYuki/DevToysMac
+# motrix - 全能下载器。https://github.com/agalwood/Motrix
 
 ```
 

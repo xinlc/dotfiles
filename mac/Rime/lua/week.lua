@@ -1,4 +1,4 @@
-function week_translator(input, seg)
+local function week_translator(input, seg)
    if (input == "zweek") then
       if (os.date("%w") == "0") then
          weekstr = "日"
@@ -25,4 +25,5 @@ function week_translator(input, seg)
       yield(Candidate("date", seg.start, seg._end, os.date("%A"), "[星期]"))
    end
 end
+
 return week_translator

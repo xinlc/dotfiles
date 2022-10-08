@@ -10,9 +10,11 @@
   - 速度上较快，有时可能不如 C 工具链，但比其他语言的工具往往要快
   - 跨平台性优于 C
 
-- https://github.com/ivaquero/oxidizer.sh/
-- https://lib.rs/command-line-utilities/
-- https://github.com/ibraheemdev/modern-unix/
+- https://github.com/ivaquero/oxidizer.sh
+- https://lib.rs/command-line-utilities
+- https://github.com/ibraheemdev/modern-unix
+- https://github.com/rust-unofficial/awesome-rust
+- https://github.com/TaKO8Ki/awesome-alternatives-in-rust
 
 ## Alacritty + zellij + Nushell + starship
 

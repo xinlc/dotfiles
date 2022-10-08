@@ -87,3 +87,10 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 # openjdk B
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # openjdk E
+
+# go B
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+# go E
+
+export PATH="$PATH:$HOME/.local/bin"

@@ -14,6 +14,7 @@ schema:
   dependencies:
     - melt_eng
     - latex
+    - liangfen
 
 
 # 功能开关
@@ -39,6 +40,7 @@ switches:
 engine:
   processors:         # ※ 默认组件：處理各類按鍵消息
     - lua_processor@select_character  # 以词定字
+    - lua_processor@code_length_limit_processor@code_length_limit  # 限制码长
     - ascii_composer  # ※ 處理西文模式及中西文切換
     - recognizer      # ※ 與 matcher 搭配，處理符合特定規則的輸入碼，如網址、反查等
     - key_binder      # ※ 在特定條件下將按鍵綁定到其他按鍵，如重定義逗號、句號爲候選翻頁鍵
@@ -60,12 +62,17 @@ engine:
     - lua_translator@date_translator  # 时间、日期、星期 # 这个顺序要在 table_translator@melt_eng 上面，否则动态时间（输入sj）的候选项不会在第一个，不知道为啥。。。
     - table_translator@fixed          # 固顶字：fixed.txt
     - table_translator@melt_eng       # 英文输入
-    - reverse_lookup_translator       # ※ 反查，LaTeX
+    - reverse_lookup_translator@latex       # ※ 反查，LaTeX
+    - reverse_lookup_translator@liangfen    # ※ 反查，liangfen
   filters: # ※ 默认组件：過濾翻譯的結果
     - lua_filter@long_word_filter # 长词优先
     - simplifier@emoji            # Emoji
     - simplifier@traditionalize   # 简繁切换
     - uniquifier                  # 去重
+
+
+# 限制码长，默认 100。（最多能输入 code_length_limit 个字符）
+# code_length_limit: 100
 
 
 # 从 default 继承快捷键
@@ -141,21 +148,30 @@ recognizer:
   patterns:
     # punct: "^/([0-9]+[a-z]*|[a-z]+)$"
     punct: "^v([0-9]0?|[A-Za-z]+)$"  # 用 “v” 替换 “/”，并支持大写
-    reverse_lookup: '^\\.+$'  # LaTeX
+    reverse_lookup: '(^u[A-Za-z]+$)|(^i.+$)'  # 两组反查
 
 
-# LaTeX
-reverse_lookup:
-  dictionary: latex
+# 反查：两分（拼字）
+liangfen:
+  dictionary: liangfen
+  prefix: "u"
   spelling_hints: 9
-  enable_completion: false
-  tips: latex
+  enable_completion: true
+  # tips: 〔两分〕
+
+
+# 反查：LaTeX
+latex:
+  dictionary: latex
+  prefix: "i"
+  spelling_hints: 9
+  enable_completion: true
+  # tips: 〔latex〕
 
 
 # 拼写设定
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
-  # alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\  # LaTeX 需要把反斜杠加上，不让反斜杠直接上屏
   delimiter: " '"
   algebra: 
     ### 模糊音
@@ -223,7 +239,7 @@ speller:
     - derive/([zcs])h(a|e|i|u|ai|ei|an|en|ou|uo|ua|un|ui|uan|uai|uang|ang|eng|ong)$/h$1$2/  # hzi → zhi
     - derive/([zcs])h([aeiu])$/$1$2h/  # zih → zhi
     # ai
-    - derive/^([wghkc])ai$/$1ia/
+    - derive/^([wghkzc])ai$/$1ia/
     # ia
     - derive/([qjx])ia$/$1ai/
     # ei
