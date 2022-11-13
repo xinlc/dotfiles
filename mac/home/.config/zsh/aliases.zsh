@@ -21,6 +21,9 @@ alias rr='ranger'
 # alias lzd='lazydocker'
 alias man='tldr'
 alias zj="zellij"
+# alias onpm='eval $NVM_BIN/npm'
+alias onpm='$NVM_BIN/npm'
+alias npm="pnpm"
 
 if [ "$(command -v exa)" ]; then
     unalias -m 'll'

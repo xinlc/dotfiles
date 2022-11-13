@@ -59,7 +59,7 @@ engine:
     - script_translator  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
     - lua_translator@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
     - lua_translator@date_translator  # 时间、日期、星期 # 这个顺序要在 table_translator@melt_eng 上面，否则动态时间（输入sj）的候选项不会在第一个，不知道为啥。。。
-    - table_translator@fixed          # 固顶字：fixed.txt
+    - table_translator@custom_phrase  # 自定义短语 custom_phrase.txt
     # - table_translator@custom_phraseXT
     # - table_translator@custom_phraseYH
     - table_translator@melt_eng       # 英文输入
@@ -94,17 +94,14 @@ traditionalize:
   tips: all  # 转换提示（即是否显示繁体对应的简体）: all 都显示， char 仅单字显示， none 不显示。
 
 
-# 固顶字：fixed.txt
-fixed:
+# 自定义短语：custom_phrase.txt
+custom_phrase:
   dictionary: ""
-  user_dict: fixed
+  user_dict: custom_phrase
   db_class: stabledb
-  enable_completion: false
-  enable_sentence: false
-  # 固顶字应该享有最高优先级。
-  # 但不与其他翻译器共同造句（所以不要配置完整编码的字词，只配置缩写）
-  # fixed 的权重应该比 pinyin 和 melt_eng 大。
-  initial_quality: 99
+  enable_completion: false # 补全提示
+  enable_sentence: false   # 禁止造句
+  initial_quality: 99  # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
 
 custom_phraseXT:
   dictionary: ""
@@ -184,7 +181,7 @@ translator/max_homographs: 7
 # 引入自己的修改过的 symbols
 punctuator:
   # import_preset: symbols # 默认的
-  import_preset: symbols.custom # symbols.custom.yaml （标点设定和「v」模式在里面）
+  import_preset: symbols_custom # symbols_custom.yaml （标点设定和「v」模式在里面）
 
 recognizer:
   import_preset: default

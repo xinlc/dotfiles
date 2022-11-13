@@ -75,12 +75,12 @@ local function init(config)
     end)
 
     -- Hide dropdown if not in focus
-    hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
-        local dropdown = hs.application.get(APP_NAME)
-        if dropdown ~= nil then
-            dropdown:hide()
-        end
-    end)
+    -- hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
+    --     local dropdown = hs.application.get(APP_NAME)
+    --     if dropdown ~= nil then
+    --         dropdown:hide()
+    --     end
+    -- end)
 end
 
 hs.fnutils.each(dropdowns, function(item)

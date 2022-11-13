@@ -2,7 +2,6 @@
 ## 我的常用软件
 
 - [Awesome Mac](https://github.com/jaywcjlove/awesome-mac) - 作为一名程序员你应该知道 **Awesome**
-- [MacWk](https://www.macwk.com) - 只提供精品Mac应用
 - [少数派](https://sspai.com) - 软件资讯
 
 ### 系统工具
@@ -14,7 +13,7 @@
 - [Raycast](https://www.raycast.com/) - 类似Alfred功能，重要的是免费。
 - [Cerebro](https://github.com/cerebroapp/cerebro) - 开源的 launcher。
 - [sol](https://github.com/ospfranco/sol) - 替代 Alfred、Spotlight 和 Raycast。
-- [AltTab](https://github.com/lwouis/alt-tab-macos?source=https://macwk.com/soft/alttab) - 模拟 Windows Alt+Tab。建议快捷键设置成 Command+tab 代替系统默认 cmd+tab
+- [AltTab](https://github.com/lwouis/alt-tab-macos) - 模拟 Windows Alt+Tab。建议快捷键设置成 Command+tab 代替系统默认 cmd+tab
 - [Bartender 4](https://www.macbartender.com/Bartender4/) - 方便的管理菜单栏图标。
 - [hidden](https://github.com/dwarvesf/hidden) - 一个超轻的 MacOS 实用程序，有助于隐藏菜单栏图标。
 - [Cakebrew](https://github.com/brunophilipe/Cakebrew) - Homebrew GUI
@@ -82,6 +81,7 @@
 ### 图形设计
 
 - [drawio](https://github.com/jgraph/drawio-desktop) - 画图神器
+- [excalidraw](https://github.com/excalidraw/excalidraw) - 手绘风画图神器
 - [ProcessOn](https://www.processon.com) - 国内版 Draw.io
 - [OmniGraffle](https://www.omnigroup.com/omnigraffle/) - 画图神器
 - [PDManer](https://gitee.com/robergroup/pdmaner) - 国产数据库建模工具
@@ -113,6 +113,8 @@
 - [DevToysMac](https://github.com/ObuchiYuki/DevToysMac) - 开发工具集。
 - [Emacs](https://www.gnu.org/software/emacs/) - Emacs是神的编辑器，而Vim是编辑器之神。
 - [AppFlowy](https://github.com/AppFlowy-IO/appflowy) - 开源版 Notion。
+- [jsoncrack](https://github.com/AykutSarac/jsoncrack.com) - 超级优雅的 JSON 数据可视化工具
+- [Beekeeper Studio](https://github.com/beekeeper-studio/beekeeper-studio) - 一款跨平台的数据库管理工具。
 - Xcode - 不做IOS开发最好也装，有的软件需要依赖 (App Store)
 
 ## 安装软件
@@ -222,6 +224,7 @@ brew bundle --file ~/Brewfile
 # archivebox - 开源自托管 Web 归档。https://github.com/ArchiveBox/ArchiveBox/
 # rustscan - 端口扫描工具。https://github.com/RustScan/RustScan
 # git-branchless - 是一套以多种方式增强 Git 的工具。https://github.com/arxanas/git-branchless
+# jenv - jdk 多版本支持。https://github.com/jenv/jenv
 
 ```
 

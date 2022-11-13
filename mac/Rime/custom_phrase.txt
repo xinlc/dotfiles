@@ -1,162 +1,224 @@
-# 碼表各字段以製表符（Tab）分隔
-# 順序爲：文字+編碼+權重（決定重碼的次序、可選）,用tab键间隔
+# Rime table
+# coding: utf-8
+#@/db_name  custom_phrase.txt
+#@/db_type	tabledb
+#
+# 自定义文本
+#
+# 以 Tab 分割：汉字<Tab>编码<Tab>权重
+#
+# 这个文件内的字词会占据最高权重（排在候选项的最前面）。
+# 但不与其他翻译器互相造词，如果使用了完整编码，那么这个字或词将无法参与造词，即自造词无法被记住。
+# 所以建议只固定非完整编码的字词，「的de」应为「的d」，「是shi」应为「是s」，「仙剑xianjian」应为「仙剑xj」。
+#
+# 最下面的英文是因为一些常用单词的第一候选项被纠错覆盖了，
+# 比如 Amazon 被纠错为「a ma zong 阿妈粽」，
+# 期望的 Amazon 跑到第二个候选项了，所以这里给它固定死喽。
+#
+# version: "2022-11-01"
+#
+# 此行之后不能写注释
 
-Rime	rime	4
-鼠须管	rime	3
-https://rime.im/	rime	2
-Squirrel	rime	1
->	dy	2
-≥	dy	1
-<	xy	2
-≤	xy	1
-App Store	as	2
-Apple Store	as	1
-AppleCare+	ac	1
-Apple ID	aid
-Apple Music	am	2
-AiMesh	am	1
-AirPods	ap	450
-Apple Pay	ap	400
-Apple	ap	500
-Alipay	ap	480
-Apple TV	atv
-Apple Watch	aw
-Android	az
-App Cleaner & Uninstaller	acu
-Chrome	ch	2
-Clubhouse	ch
-ClashX	cla
-CleanMyMac X	cmm	1
-Command	cm	1
-Control	ct	2
-CarPlay	cp	1
-CleanShot X	cs
-CallKit	ck
-ClashX	cl
 
-Download	dl	1
-Emoji	em
-Facebook	fb
+欻	chua
+噷	hm
+哼	hng
 
-Final Cut Pro	fcp
-gfwlist	gfw
-GitHub Desktop	gh	1
-GitHub	gh	2
-Gmail	gm
-Google	gg
-Google Pay	gp
-Google Play	gp	2
-GV	gv	100
-Google Voice	gv	200
-GV 号	gvhao
-Gboard	gb
 
-HyperSwitch	hs
+去	q	2
+千	q	1
 
-iCloud	ic
-iStat Menus	ism
-iWork	iw	4
-iPhone	i	200
-iPhone XS Max	i	100
-iPhone 13 Pro Max	i	1
-iMac	imac	2
-iMac Pro	imac	1
-Instagram	ins
-iStat Menus	is
-iPad	ipad	300
-iPad Air	ipad	200
-iPad Pro	ipad	100
-iMessage	im	100
-I'm	im	200
+我	w	3
+万	w	2
+往	w	1
 
-Just My Socks	jms
+儿	r
 
-koolcenter	kc	
-Keynote	kn
-koolshare	ks
-Evutec	kfl
-Lightning to USB-C	ltc
-Lightning to USB	ltu
-Linux	lx
+他	t	4
+她	t	3
+它	t	2
+祂	t	1
 
-Mac	mac	200
-macOS	mac	100
-Mac mini	mac	1
-Mimestream	mim
-macOS	macos	500
-macOS Monterey	macos	400
-macOS BigSur	macos	100
-Markdown	md
-Microsoft	mic	2
-Microsoft Office	mic	1
-Netflix	nf	
-MacBook Pro	mbp
-MacBook Air	mba
-Messenger	ms
-㎡	pfm
-🐂️🍺️	nb	2
-Numbers	nb	1
-1Password	one	2
-OneDrive	one	1
-openwrt	ow
-OK	ok
-Option	ot
-Outlook	ol	2
-Parallels Desktop	pd
-Photoshop	ps
-Paypal	pp
-Pro	pro
-QQ	qq
-Quantumult X	quanx	2
-圈X	quanx	1
+与	y	2
+于	y	1
 
-Safari	sf	2
-Shift	sf	1
-Spark	sp	300
-Spotify	sp	200
-SpaceX	sp	100
-Surge	su	200
-Speedtest	su	100
-Sublime Text	sbt
-Shadowrocket	sds
+有	u	3
+又	u	2
+由	u	1
 
-Telegram	tg
-Twitter	tt	2
-TikTok	tt	1
-Type-C	tc	
-Typora	ty
-TeamViewer  tv
-USB-C	uc
-V2EX	ve
-Voice	vo
+一	i	4
+以	i	3
+已	i	2
+亦	i	1
 
-WhatsApp	wa
-WeChat	wc	2
-Windows	win
-YouTube	yt
-YouTube Premium	yp
-又双叒叕	yyy
+哦	o	3
+噢	o	2
+喔	o	1
 
-A杖	azhang
-B站	bzhan
-iOS	ios
-H&M	hm	1
-HarmonyOS	hm	2
-IT之家	itzhijia
-IP	ip
-你TM	nitama
-Q幣	qbi
-QQ號	qqhao
-QQ號碼	qqhaoma
-QQ會員	qqhuiyuan
-QQ空間	qqkongjian
-QQ群	qqqun
-QQ郵箱	qqyouxiang
-T恤	txu
-U盤	upan
-up主	upzhu
-V站	vzhan
-🇭🇰	hk	10002
-HK	hk	10001
-Hong Kong	hk	10000
-π	pai
+片	p	2
+篇	p	1
+
+是	s	4
+时	s	3
+使	s	2
+式	s	1
+
+的	d	3
+地	d	2
+得	d	1
+
+发	f	2
+分	f	1
+
+个	g
+
+和	h	2
+或	h	1
+
+及	j	5
+将	j	4
+即	j	3
+既	j	2
+继	j	1
+
+可	k
+
+了	l	3
+啦	l	2
+嘞	l	1
+
+在	z	3
+再	z	2
+自	z	1
+
+想	x	3
+像	x	2
+向	x	1
+
+才	c	2
+从	c	1
+
+吧	b	3
+百	b	2
+呗	b	1
+
+那	n	4
+哪	n	3
+拿	n	2
+呐	n	1
+
+吗	m	3
+嘛	m	2
+呣	m	1
+
+
+我们	wm
+我们	wom
+我们	wmen
+你们	nm
+你们	nim
+你们	nmen
+人们	rm
+人们	renm
+人们	rmen
+
+
+他的	td	3
+她的	td	2
+它的	td	1
+他的	tad	3
+她的	tad	2
+它的	tad	1
+他的	tde	3
+她的	tde	2
+它的	tde	1
+他们	tm	3
+她们	tm	2
+它们	tm	1
+他们	tam	3
+她们	tam	2
+它们	tam	1
+他们	tmen	3
+她们	tmen	2
+它们	tmen	1
+
+
+那儿	nr	2
+哪儿	nr	1
+那儿	nar	2
+哪儿	nar	1
+那个	ng	2
+哪个	ng	1
+那个	nag	2
+哪个	nag	1
+那些	nx	2
+哪些	nx	1
+那些	nax	2
+哪些	nax	1
+那里	nl	2
+哪里	nl	1
+那里	nal	2
+哪里	nal	1
+那边	nb	2
+哪边	nb	1
+那边	nab	2
+哪边	nab	1
+那位	nw	2
+哪位	nw	1
+那位	naw	2
+哪位	naw	1
+
+
+这	zh
+一个	ig
+有个	ug
+是一个	sig
+有一个	uig
+有一个	uyig
+有一个	uyige
+有没有	umu
+有没有	umeiu
+又有	uu
+又又又	uuu
+又双叒叕	uuuu
+
+
+等等	dd
+的地得	ddd
+等等等等	dddd
+刚刚	gg
+才刚刚	cgg
+知道	zd
+不知道	bzd
+往往	ww
+哈哈	hh
+看看	kk
+常常	cc
+想想	xx	2
+想象	xx	1
+隐约	yy
+因为	yw
+什么	sm
+所以	sy
+为什么	wsm
+是不是	sbs
+没什么	msm
+有时候	ysh
+有时候	yshh
+有时候	yshou
+什么的	smd
+什么是	sms
+
+
+Go	go	2
+go	go	1
+Golang	golang
+Hugo	hugo
+goto	goto
+domain	domain
+TODO	todo
+Dota	dota
+main	main
+Amazon	amazon
+NASA	nasa
+gone	gone

@@ -4,7 +4,7 @@
 
 ## vim 配置
 
-[.ideavimrc](../macbook/.ideavimrc)
+[.ideavimrc](../home/.ideavimrc)
 
 ## 安装的插件
 

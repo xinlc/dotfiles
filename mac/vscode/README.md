@@ -31,3 +31,6 @@
 - `Material Theme`
 - `Material Icon Theme`
 - `Office Viewer`
+- `Milkdown`
+- `Slidev`
+- `UnoCSS`

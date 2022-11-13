@@ -36,7 +36,13 @@ patch:
   # -----------------------------------------------
   # 参考链接： https://gist.github.com/lotem/2981316
 
-  # 若 caps 切换大小写无效, macOS 偏好设置的优先级更高，「偏好设置 - 键盘 - 输入法 - 使用“中/英”键切换“ABC”输入模式」。
+  # 按键行为
+  # good_old_caps_lock: Caps 切换大小写或切换中英，macOS 偏好设置的优先级更高：偏好设置 - 键盘 - 输入法 - 使用“中/英”键切换“ABC”输入模式。
+  # 打字打到一半时按下了 Caps 或 Shift 后：
+  # commit_code  上屏原始的编码，然后切换到英文
+  # commit_text  上屏拼出的词句，然后切换到英文
+  # clear        清除输入的内容，然后切换到英文
+  # noop         屏蔽快捷键，啥也不干，但不要屏蔽 Caps
   ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
   ascii_composer/switch_key:
     # Caps_Lock: commit_text # 打字打到一半时按下了 Caps 后： commit_code 上屏拼音的英文字母 | commit_text 上屏拼音拼出的词语
@@ -47,9 +53,15 @@ patch:
     # Shift_R: commit_code # 右 Shift，切换中英文
     Control_L: noop # 左 Control，屏蔽该切换键
     Control_R: noop # 右 Control，屏蔽该切换键
+    Eisu_toggle: clear
 
   # 呼出方案选单
   switcher/caption: 〔方案选单〕
+  switcher/save_options:  # 开关记忆，从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset。
+    - full_shape
+    - ascii_punct
+    - traditionalization
+    - emoji
   switcher/option_list_separator: "｜"
   switcher/hotkeys:
     # ~ # 把其他都注释掉，或只留一个波浪号，可以将快捷键置空。

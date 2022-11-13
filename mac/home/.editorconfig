@@ -28,8 +28,8 @@ max_line_length = 300
 # continuation_indent_size = 8
 
 # 对json,yml文件生效
-# [*.{json,yml}]
-# indent_size = 2
+[*.{json,yml,yaml}]
+indent_size = 2
 
 # 对后缀名为 .md 的文件生效
 [*.md]

@@ -1,12 +1,13 @@
 # Rime dictionary
 # encoding: utf-8
 #
+#
 # https://github.com/iDvel/rime-ice
 # ------- 补充的英文词汇 -------
 #
 ---
 name: en_ext
-version: "2022-10-03"
+version: "2022-11-08"
 sort: by_weight
 ...
 # 一些杂项
@@ -361,7 +362,8 @@ Robin	Robin
 
 
 # 往下开始都是扩展单词
-iPhone	iPhone	5
+# +_+
+iPhone	iPhone	999
 iPhone 14	iPhone	4
 iPhone 14 Plus	iPhone	3
 iPhone 14 Pro	iPhone	2
@@ -390,6 +392,22 @@ Catalina	Catalina
 Big Sur	BigSur
 Monterey	Monterey
 Ventura	Ventura
+Windows	Windows	999
+Windows 95	Windows	1
+Windows 98	Windows	2
+Windows Me	Windows	3
+Windows 2000	Windows	4
+Windows XP	Windows	5
+Windows XP	WindowsXP
+Windows Vista	Windows	6
+Windows 7	Windows	7
+Windows 8	Windows	8
+Windows 10	Windows	10
+Windows 11	Windows	11
+Windows Vista	WindowsVista
+Windows RT	WindowsRT
+Windows Me	WindowsMe
+Windows NT	WindowsNT
 Aeron	Aeron
 Aeron Chair	AeronChair
 RPG	RPG
@@ -538,7 +556,6 @@ DeepL	DeepL
 Homebrew	Homebrew
 brew	brew
 Finder	Finder
-Trojan	Trojan
 VMess	VMess
 Shadowsocks	Shadowsocks
 PC	PC
@@ -559,7 +576,6 @@ YAML	YAML
 TOML	TOML
 Hexo	Hexo
 Hugo	Hugo
-undefined	undefined
 Epic	Epic
 Epic Games	EpicGames
 Instagram	Instagram
@@ -572,8 +588,6 @@ CSDN	CSDN
 Gitee	Gitee
 GitBook	GitBook
 Gboard	Gboard
-Chromium	Chromium
-API	API
 Access	Access
 Ajax	Ajax
 Bug	Bug
@@ -587,7 +601,6 @@ Coding	Coding
 Django	Django
 Edge	Edge
 Excel	Excel
-fuck	fuck
 Flask	Flask
 Facebook	Facebook
 Firefox	Firefox
@@ -615,7 +628,6 @@ MongoDB	MongoDB
 MySQL	MySQL
 Node	Node
 Node.js	Nodejs
-Oracle	Oracle
 Pornhub	Pornhub
 PostgreSQL	PostgreSQL
 PowerPoint	PowerPoint
@@ -643,9 +655,6 @@ TCP/IP	tcpip
 Twitter	Twitter
 V2EX	ver
 V2EX	verex
-VSCode	VSC
-VSCode	VSCo
-VSCode	VSCod
 VSCode	VSCode
 Vue	Vue
 Vue.js	Vuejs
@@ -654,7 +663,6 @@ Web	Web
 WebStorm	WebStorm
 Word	Word
 Xcode	Xcode
-demo	demo
 Emoji	Emoji
 exe	exe
 gakki	gakki
@@ -727,7 +735,6 @@ Apple Pay	ApplePay
 iTunes Store	iTunesStore
 AMD	AMD
 Amphetamine	Amphetamine
-Android	Android
 App Store	AppStore
 AirDrop	AirDrop
 Alfred	Alfred
@@ -778,7 +785,6 @@ Diumoo	Diumoo
 Dock	Dock
 Dropbox	Dropbox
 Dropzone	Dropzone
-DVD	DVD
 Endnote	Endnote
 Entropy	Entropy
 ePub	ePub
@@ -804,7 +810,6 @@ Gists	Gists
 GitHub	GitHub
 Gmail	Gmail
 GoagentX	GoagentX
-Google	Google
 Google Play	GooglePlay
 Google Play Music	GooglePlayMusic
 Graffle	Graffle
@@ -829,15 +834,12 @@ Inboard	Inboard
 Instacast	Instacast
 Instashare	Instashare
 Intensify	Intensify
-iOS	iOS
 IP	IP
 iPack	iPack
-iPad	iPad
 iPad Air	iPadAir
 iPad mini	iPadmini
 iPad Pro	iPadPro
 IPN	IPN
-iPod	iPod
 IPTV	IPTV
 iStat Menus	iStatMenus
 iTerm	iTerm
@@ -855,12 +857,10 @@ Knock	Knock
 LaTeXian	LaTeXian
 LaTeXian	LaTeXian
 Launcher	Launcher
-Linux	Linux
 Little Snitch	LittleSnitch
 Live Photos	LivePhotos
 LiveReload	LiveReload
 LockScreen	LockScreen
-Mac	Mac
 MAS	MAS
 Mac App Store	MAS
 Mac App Store	MacAppStore
@@ -880,7 +880,6 @@ Maple	Maple
 MarkMyWords	MarkMyWords
 MarsEdit	MarsEdit
 Mathtype	Mathtype
-Microsoft	Microsoft
 MIPS	MIPS
 Moke	Moke
 Moneywiz	Moneywiz
@@ -926,7 +925,6 @@ Pro	Pro
 Promotee	Promotee
 Proxifier	Proxifier
 Public Beta	PublicBeta
-Python	Python
 Quitter	Quitter
 Quiver	Quiver
 Rdio	Rdio
@@ -963,7 +961,6 @@ SSLEdge	SSLEdge
 StackSocial	StackSocial
 Sublime Text	SublimeText
 Surge	Surge
-Swift	Swift
 Symbol	Symbol
 Tag	Tag
 TechWeb	TechWeb
@@ -1006,22 +1003,6 @@ Widget	Widget
 WiFi Explorer	WiFiExplorer
 WiFi Scanner	WiFiScanner
 Window Tidy	WindowTidy
-Windows	Windows	999
-Windows 95	Windows	1
-Windows 98	Windows	2
-Windows Me	Windows	3
-Windows 2000	Windows	4
-Windows XP	Windows	5
-Windows XP	WindowsXP
-Windows Vista	Windows	6
-Windows 7	Windows	7
-Windows 8	Windows	8
-Windows 10	Windows	10
-Windows 11	Windows	11
-Windows Vista	WindowsVista
-Windows RT	WindowsRT
-Windows Me	WindowsMe
-Windows NT	WindowsNT
 Windows Server	WindowsServer
 Windows Mobile	WindowsMobile
 Windows Phone	WindowsPhone
@@ -1047,7 +1028,6 @@ Hypertext Transfer Protocol	HypertextTransferProtocol
 HTTPS	HTTPS
 Hypertext Transfer Protocol Secure	HTTPS
 Hypertext Transfer Protocol Secure	HypertextTransferProtocolSecure
-cookies	cookies
 WSGI	WSGI
 Bitcoin	Bitcoin
 BTC	BTC
@@ -1069,7 +1049,6 @@ Termius	Termius
 Jinja	Jinja
 capitalize	capitalize
 Bootstrap	Bootstrap
-hack	hack
 NetSetMan	NetSetMan
 Cinity	Cinity
 UTC	UTC
@@ -1189,7 +1168,6 @@ TinyPNG	TinyPNG
 Thanos	Thanos
 Byte	Byte
 bytes	bytes
-bit	bit
 XML	XML
 Googlebot	Googlebot
 Baiduspider	Baiduspider
@@ -1219,7 +1197,6 @@ Pikachu	Pikachu
 Fastmail	Fastmail
 rumour	rumour
 WordPress	WordPress
-done	done
 AOSP	AOSP
 React	React
 TypeScript	TypeScript
@@ -1243,7 +1220,6 @@ OC	OC
 Objective-C	OC
 Mac mini	Macmini
 Garena	Garena
-children	children
 WonderCV	WonderCV
 Spark	Spark
 WebKit	WebKit
@@ -1379,7 +1355,6 @@ Apple File System	AppleFileSystem
 NTFS	NTFS
 Microsoft NTFS	NTFS
 Microsoft NTFS	MicrosoftNTFS
-setup	setup
 txt	txt
 chromeOS	chromeOS
 GCD	GCD
@@ -1401,14 +1376,12 @@ Launchpad	Launchpad
 Airbnb	Airbnb
 opencc	opencc
 HarmonyOS	HarmonyOS
-platinum	platinum
 Incase	Incase
 NPC	NPC
 Non-Player Character	NPC
 Non-Player Character	NonPlayerCharacter
 MVP	MVP
 Quantumult X	QuantumultX
-cheers	cheers
 Confluence	Confluence
 Gitea	Gitea
 followers	followers
@@ -1454,17 +1427,12 @@ Adobe Photoshop	AdobePhotoshop
 dashboard	dashboard
 Honey Select	HoneySelect
 McCafe	McCafe
-benchmark	benchmark
 BSD	BSD
 Berkeley Software Distribution	BSD
 Berkeley Software Distribution	BerkeleySoftwareDistribution
 Berkeley	Berkeley
 GPL	GPL
-LGPL	LGPL
-MIT	MIT
 DNSPod	DNSPod
-exists	exists
-goto	goto
 Bandizip	Bandizip
 NATO	NATO
 North Atlantic Treaty Organization	NATO
@@ -1472,10 +1440,9 @@ North Atlantic Treaty Organization	NorthAtlanticTreatyOrganization
 MissWarmJ	MissWarmJ
 Miss	Miss
 NASA	NASA
+National Aeronautics and Space Administration	NASA
 Meta	Meta
-pizza	pizza
 PictureView	PictureView
-programming	programming
 RAM	RAM
 Random-access memory	RAM
 Random-access memory	RandomAccessMemory
@@ -1523,7 +1490,6 @@ ICMP	ICMP
 Internet Control Message Protocol	ICMP
 Internet Control Message Protocol	InternetControlMessageProtocol
 Electron	Electron
-fixes	fixes
 backup	backup
 FTP	FTP
 File Transfer Protocol	FTP
@@ -1591,7 +1557,7 @@ FIFO	FIFO
 First In, First Out	FIFO
 LIFO	LIFO
 Last In, First out	LIFO
-NeatDownloadManager	NeatDownloadManager
+Neat Download Manager	NeatDownloadManager
 furry	furry
 quantum	quantum
 Hi-Fi	HiFi
@@ -1630,7 +1596,6 @@ Peace and Love	PeaceandLove
 Liquid	Liquid
 Liquid Crystal Display	LCD
 Liquid Crystal Display	LiquidCrystalDisplay
-emotional	emotional
 Emotional Damage	EmotionalDamage
 revert	revert
 GitLab	GitLab
@@ -1646,5 +1611,58 @@ APK	APK
 Android application package	APK
 Android application package	Androidapplicationpackage
 whack	whack
-ing	ing
 encore	encore
+suffix	suffix
+prefix	prefix
+Type-A	TypeA
+Type-B	TypeB
+Type-C	TypeC
+USB Type-A	USBTypeA
+USB Type-B	USBTypeB
+USB Type-C	USBTypeC
+USB-A	USBA
+USB-B	USBB
+USB-C	USBC
+vex	vex
+tempest	tempest
+J.R.R. Tolkien	JRRTolkien
+Impostor Factory	ImpostorFactory
+impostor	impostor
+Vampire Survivors	VampireSurvivors
+AppCleaner	AppCleaner
+IQIYI	IQIYI
+BuhoCleaner	BuhoCleaner
+Midjourney	Midjourney
+Champion's inequality	Championsinequality
+NovelAI	NovelAI
+swab	swab
+angular	angular
+addressable	addressable
+rebase	rebase
+Motrix	Motrix
+VCS	VCS
+version control system	VCS
+version control system	versioncontrolsystem
+cnBeta	cnBeta
+Pull Request	PullRequest
+Merge Request	MergeRequest
+squash	squash
+Ant Design	AntDesign
+Disney	Disney
+early access	earlyaccess
+deprecate	deprecate
+deprecated	deprecated
+tum	tum
+Sir	Sir
+rapper	rapper
+fucked	fucked
+Fedora	Fedora
+downbeat	downbeat
+hading	hading
+LeetCode	LeetCode
+danced	danced
+swept	swept
+spun	spun
+ghosts	ghosts
+admiral	admiral
+moonlit	moonlit
