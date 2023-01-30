@@ -3,10 +3,9 @@
 -- 修改：不提升英文和中英混输的
 local function long_word_filter(input, env)
     -- 提升 count 个词语，插入到第 idx 个位置，默认 2、4。
-	local config = env.engine.schema.config
-	local count = config:get_string(env.name_space .."/count") or 2
-    local idx = config:get_string(env.name_space .."/idx") or 4
-
+    local config = env.engine.schema.config
+    local count = config:get_string(env.name_space .. "/count") or 2
+    local idx = config:get_string(env.name_space .. "/idx") or 4
 
     local l = {}
     local firstWordLength = 0 -- 记录第一个候选词的长度，提前的候选词至少要比第一个候选词长

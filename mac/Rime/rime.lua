@@ -123,14 +123,18 @@ select_character = require("select_character")
 -- 简单计算器
 calculator = require("calculator_simp")
 
--- 长词优先（提升「西安」「提案」「图案」「饥饿」等词汇的优先级） 
+-- 长词优先（提升「西安」「提案」「图案」「饥饿」等词汇的优先级）
 long_word_filter = require("long_word_filter")
 
 -- 单字优先，候选项应改为「ā á ǎ à」
-v_single_char_first_filter = require("single_char_first")
+-- v_single_char_first_filter = require("single_char_first")
+v_single_char_first_filter = require("v_single_char_first")
 
 -- 限制码长（最多能输入 length_limit 个字符，超过后不再上屏）
 code_length_limit_processor = require("code_length_limit_processor")
 
 -- iRime 九宫格专用，将输入框的数字转为对应的拼音或英文
 -- irime_t9_preedit = require("irime_t9_preedit")
+
+-- Unicode 输入
+unicode_input_translator = require("unicode_input_translator")

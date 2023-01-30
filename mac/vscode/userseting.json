@@ -1,261 +1,219 @@
 {
-    "explorer.confirmDragAndDrop": false,
-    "editor.tabSize": 2,
-    "editor.fontSize": 18, // 使用guides 插件代替
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.minimap.enabled": false,
-    // "typescript.check.tscVersion": false,
-    "vsicons.projectDetection.autoReload": true,
-    "editor.cursorBlinking": "solid",
-    "editor.renderControlCharacters": false,
-    "editor.lineNumbers": "relative",
-    // vim
-    // "vim.enableNeovim": true,
-    // "vim.useSolidBlockCursor": false, // 开启后很卡
-    "vim.overrideCopy": false,
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": false,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.leader": "<space>",
-    "vim.normalModeKeyBindingsNonRecursive": [
+  "editor.tabSize": 2,
+  "editor.fontSize": 18,
+
+  // 双引号彩色化
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.renderControlCharacters": false,
+  "editor.lineNumbers": "relative",
+
+  "editor.guides.indentation": false,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hant": true,
+    "zh-hans": true
+  },
+
+  // 自动关闭和重命名HTML标签
+  "editor.linkedEditing": true,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+
+  // 自动导入
+  // "javascript.suggest.autoImports": true,
+  // "javascript.updateImportsOnFileMove.enabled": "always",
+  // "typescript.suggest.autoImports": true,
+  // "typescript.updateImportsOnFileMove.enabled": "always"
+
+  "tabnine.experimentalAutoImports": false,
+
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.md": "default"
+  },
+  "workbench.colorTheme": "Community Material Theme",
+
+  // 避免终端 alt 键输入特殊字符
+  "terminal.integrated.macOptionIsMeta": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+
+  // vim
+  // "vim.enableNeovim": true,
+  // "vim.useSolidBlockCursor": false, // 开启后很卡
+  "vim.overrideCopy": false,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "w"],
+      "after": [],
+      "commands": [
         {
-            "before": [
-                "leader",
-                "w"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.files.save",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "q"
-            ],
-            "commands": [
-                {
-                    "command": ":tabc"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "/"
-            ],
-            "commands": [
-                {
-                    "command": ":nohl"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "j"
-            ],
-            "commands": [
-                {
-                    "command": ":tabp"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "k"
-            ],
-            "commands": [
-                {
-                    "command": ":tabn"
-                }
-            ]
+          "command": "workbench.action.files.save",
+          "args": []
         }
-    ],
-    "vim.insertModeKeyBindings": [
+      ]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [
         {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        },
-        {
-            "before": [
-                "k",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
+          "command": ":tabc"
         }
-    ],
-    "vim.normalModeKeyBindings": [
+      ]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": [
         {
-            "before": [
-                "<leader>",
-                "y"
-            ],
-            "after": [
-                "\"",
-                "+",
-                "y"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p"
-            ],
-            "after": [
-                "\"",
-                "+",
-                "p"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "1"
-            ],
-            "commands": [
-                {
-                    "command": ":tabn1"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "2"
-            ],
-            "commands": [
-                {
-                    "command": ":tabn2"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "3"
-            ],
-            "commands": [
-                {
-                    "command": ":tabn3"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "4"
-            ],
-            "commands": [
-                {
-                    "command": ":tabn4"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "0"
-            ],
-            "commands": [
-                {
-                    "command": ":tablast"
-                }
-            ]
+          "command": ":nohl"
         }
-    ],
-    // "vim.statusBarColorControl": true,
-    // "vim.statusBarColors" : {
-    //     "normal": "#005f5f",
-    //     "insert": "#5f0000",
-    //     "visual": "#5f00af",
-    //     "visualline": "#005f87",
-    //     "visualblock": "#86592d",
-    //     "replace": "#000000"
-    // },
-    "terminal.external.osxExec": "iTerm.app",
-    "typescript.check.npmIsInstalled": false,
-    // "vim.disableAnnoyingNeovimMessage": true,
-    "vim.searchHighlightColor": "rgba(255, 0, 0, 0.8)",
-    "workbench.editor.enablePreview": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.activityBar.visible": true,
-    "extensions.ignoreRecommendations": true,
-    "files.associations": {
-        "*.js": "javascript"
+      ]
     },
-    "extensions.autoUpdate": false,
-    // "update.channel": "none",
-    "javascript.validate.enable": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "files.autoSave": "off",
-    "go.gopath": "/Users/leo/go",
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
+    {
+      "before": ["<leader>", "j"],
+      "commands": [
         {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        },
-        {
-            "language": "vue",
-            "autoFix": true
+          "command": ":tabp"
         }
-    ],
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      ]
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<leader>", "k"],
+      "commands": [
+        {
+          "command": ":tabn"
+        }
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
     },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+    {
+      "before": ["k", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
     },
-    "px2vworvh.width": 3840,
-    "px2vworvh.height": 720,
-    "px2vw.width": 3840,
-    "config.baseWidth": 3840,
-    "px-to-vw.unitPrecision": 4,
-    "px-to-vw.viewportWidth": 3840,
-    "tabnine.experimentalAutoImports": true,
-    "hediet.vscode-drawio.theme": "Kennedy",
-    "workbench.colorTheme": "Community Material Theme",
-    "workbench.editor.untitled.hint": "hidden",
-    "appworks.materialSources": [],
-    "vscode-office.autoTheme": true,
-    "workbench.editorAssociations": {
-        "*.md": "default"
+    {
+      "before": ["<leader>", "1"],
+      "commands": [
+        {
+          "command": ":tabn1"
+        }
+      ]
     },
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    {
+      "before": ["<leader>", "2"],
+      "commands": [
+        {
+          "command": ":tabn2"
+        }
+      ]
     },
-    "editor.guides.indentation": false,
-    "editor.unicodeHighlight.allowedLocales": {
-        "zh-hant": true,
-        "zh-hans": true
+    {
+      "before": ["<leader>", "3"],
+      "commands": [
+        {
+          "command": ":tabn3"
+        }
+      ]
     },
-    "editor.unicodeHighlight.allowedCharacters": {
-        "－": true
+    {
+      "before": ["<leader>", "4"],
+      "commands": [
+        {
+          "command": ":tabn4"
+        }
+      ]
     },
-    "terminal.integrated.macOptionIsMeta": true    // 避免终端 alt 键输入特殊字符
+    {
+      "before": ["<leader>", "0"],
+      "commands": [
+        {
+          "command": ":tablast"
+        }
+      ]
+    }
+  ],
+  // "vim.statusBarColorControl": true,
+  // "vim.statusBarColors" : {
+  //     "normal": "#005f5f",
+  //     "insert": "#5f0000",
+  //     "visual": "#5f00af",
+  //     "visualline": "#005f87",
+  //     "visualblock": "#86592d",
+  //     "replace": "#000000"
+  // },
+  // "vim.disableAnnoyingNeovimMessage": true,
+  "vim.searchHighlightColor": "rgba(255, 0, 0, 0.8)",
+
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdate": false,
+  "files.autoSave": "off",
+  "hediet.vscode-drawio.theme": "Kennedy",
+  "vscode-office.autoTheme": true,
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

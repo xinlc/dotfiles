@@ -20,7 +20,7 @@
 - [CheatSheet](https://www.mediaatelier.com/CheatSheet/) - 快速查看mac应用快捷键
 - [Clipy](https://github.com/Clipy/Clipy) - 历史剪切板。现在用的 Alfred 带的剪切板功能。
 - [Flux](https://justgetflux.com) - f.lux 护眼神器
-- [Logi Options](https://support.logi.com/hc/zh-cn/articles/360025297893) - Logitech Options 逻辑大师鼠标
+- [Logi Options+](https://support.logi.com/hc/zh-cn/articles/4418699283607) - Logitech Options 逻辑大师鼠标
 - [Go2Shell](https://zipzapmac.com/go2shell) - 在当前目录打开终端（Mac OS 11.2 兼容有问题，建议用 OpenInTerminal）
 - [OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal) - 在当前目录打开终端（代替 Go2Shell）
 - [Thor](https://github.com/gbammc/Thor) - 快捷键打开应用 和 Manico 类似 (App Store)
@@ -100,13 +100,15 @@
 - [Postman](https://www.postman.com/downloads/) - Api 调试神器
 - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源 API 开发生态系统（原postwomen）。对标 Postman、insomnia等。
 - [JMeter](http://jmeter.apache.org/download_jmeter.cgi) - 压测工具
-- [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有之一
+- [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有~~之一~~
+- [Obsidian](https://obsidian.md/) - 代替 Typora
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
 - [PyCharm](https://www.jetbrains.com/zh-cn/pycharm/) - Python IDE。
 - [Android Studio](https://developer.android.com/studio) - Android 开发集成环境
 - [Docker](https://www.docker.com/get-started) - 应用容器引擎
+- [Podman](https://github.com/containers/podman) - 代替 Docker
 - [Charles](https://www.charlesproxy.com) - http抓包神器
 - [Dash](https://kapeli.com/dash) - API文档和代码片段管理
 - [rime](https://github.com/rime) - 聪明的输入法
@@ -132,6 +134,16 @@ xcode-select --install
 
 echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/richard/.zprofile
 eval $(/opt/homebrew/bin/brew shellenv)
+```
+
+### 常用命令
+
+```bash
+brew --help
+brew search xxx
+brew install xxx
+brew uninstall xxx
+brew services start|stop|restart xxx
 ```
 
 ### 软件导入导出

@@ -57,21 +57,31 @@ engine:
   translators:           # ※ 默认组件：翻譯特定類型的編碼段爲一組候選文字
     - punct_translator   # ※ 轉換標點符號
     - script_translator  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
-    - lua_translator@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
+    # - lua_translator@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
     - lua_translator@date_translator  # 时间、日期、星期 # 这个顺序要在 table_translator@melt_eng 上面，否则动态时间（输入sj）的候选项不会在第一个，不知道为啥。。。
     - table_translator@custom_phrase  # 自定义短语 custom_phrase.txt
     - table_translator@melt_eng       # 英文输入
     - reverse_lookup_translator@latex       # ※ 反查，LaTeX
     - reverse_lookup_translator@liangfen    # ※ 反查，liangfen
+    - lua_translator@unicode_input_translator  # Unicode
   filters: # ※ 默认组件：過濾翻譯的結果
     - lua_filter@long_word_filter # 长词优先
     - simplifier@emoji            # Emoji
     - simplifier@traditionalize   # 简繁切换
+    - lua_filter@v_single_char_first_filter   # v 模式 symbols 优先（否则是英文优先）
     - uniquifier                  # 去重
 
 
 # 限制码长，默认 100。（最多能输入 code_length_limit 个字符）
 # code_length_limit: 100
+
+# 日期、时间、星期、ISO 8601、时间戳的触发关键字
+date_translator:
+  date: rq       # 日期： 2022-11-29
+  time: sj       # 时间： 18:13
+  week: xq       # 星期： 星期二
+  datetime: dt   # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: ts  # 时间戳： 1669716794
 
 # 长词优先，提升 count 个词语，插入到第 idx 个位置，默认 2、4。
 # 示例：将 2 个词插入到第 4、5 个候选项，输入 jie 得到「1接 2解 3姐 4饥饿 5极恶」
@@ -92,9 +102,10 @@ emoji:
 
 # 简繁切换
 traditionalize:
-  opencc_config: s2t.json  # s2t.json | s2hk.json | s2tw.json | s2twp.json 等等，参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/opencc
   option_name: traditionalization
-  tips: all  # 转换提示（即是否显示繁体对应的简体）: all 都显示 | char 仅单字显示 | none 不显示。
+  opencc_config: s2t.json             # s2t.json | s2hk.json | s2tw.json | s2twp.json  # 如果选择台湾繁体，长句子正常，但1~2个字时无法正确转换台湾繁体，仍然显示香港繁体，不知道为啥。
+  tips: all                           # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [ reverse_lookup ]  # 不转换反查的内容，比如目前使用的两分输入方案的拼字
 
 
 # 自定义短语：custom_phrase.txt
@@ -154,16 +165,17 @@ punctuator:
 recognizer:
   # import_preset: default
   patterns:
-    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
-    uppercase: "[A-Z][_+.'0-9A-Za-z]*$"
-    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
-    url_2: "^[a-z]+[.].*"     # 支持 google.com（不以 www 开头）的网址，会导致句号不会让句子上屏，或使用句号翻页时需要注释掉
-    win_path: "^[A-Za-z]:.*"  # 支持 c:\file\path 之类的路径输入
-    colon: "^[A-Za-z]+:.*"    # 上面的超集，冒号在句子中不直接上屏
-    # punct: "^/([0-9]+[a-z]*|[a-z]+)$"
-    punct: "^v([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
-    # reverse_lookup: "^u[a-z]+$"       # 响应两分的反查
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # 自带的，e-mail 正则
+    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"                           # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # 自带的，URL 正则
+    url_2: "^[A-Za-z]+[.].*"             # 支持 google.com abc.txt 等网址或文件名，会导致句号不会让句子上屏，或使用句号翻页时需要注释掉
+    win_path: "^[A-Za-z]:.*"             # 支持 c:\file\path 之类的路径输入
+    colon: "^[A-Za-z]+:.*"               # 上面的超集，可以输入冒号，不会导致句子直接上屏
+    # punct: "^/([0-9]+[a-z]*|[a-z]+)$"  # 响应默认的 punctuation/symbols 的「/」开头的字符
+    punct: "^v([0-9]|10|[A-Za-z]+)$"     # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
+    # reverse_lookup: "^u[a-z]+$"          # 响应两分的反查
     reverse_lookup: '(^u[A-Za-z]+$)|(^i.+$)'  # 两组反查
+    unicode: "^U[a-f0-9]+"               # 响应 Unicode
 
 # 反查：两分（拼字）
 liangfen:

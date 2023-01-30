@@ -10,13 +10,13 @@ shortcut_config = {
 
 -- 窗口管理快捷键配置
 windows = {
-  -- 同一应用的所有窗口自动网格式布局 
+  -- 同一应用的所有窗口自动网格式布局
   same_application_auto_layout_grid = { prefix = { "Ctrl", "Option" }, key = "Z", message = "" },
-  -- 同一应用的所有窗口自动水平均分或垂直均分 
+  -- 同一应用的所有窗口自动水平均分或垂直均分
   same_space_auto_layout_grid = { prefix = { "Ctrl", "Option" }, key = "X", message = "" },
   -- 同一工作空间下的所有窗口自动网格式布局
   same_application_auto_layout_horizontal_or_vertical = { prefix = { "Ctrl", "Option" }, key = "A", message = "" },
-  -- 同一工作空间下的所有窗口自动水平均分或垂直均分 
+  -- 同一工作空间下的所有窗口自动水平均分或垂直均分
   same_space_auto_layout_horizontal_or_vertical = { prefix = { "Ctrl", "Option" }, key = "S", message = "" },
   -- 左半屏
   left = {prefix = {"Ctrl", "Option"}, key = "Left", message = "Left Half"},
@@ -75,9 +75,9 @@ windows = {
   -- 将窗口移动到下方屏幕
   to_down = {prefix = {"Ctrl", "Option", "Command"}, key = "Down", message = "Move To Down Screen"},
   -- 将窗口移动到左侧屏幕
-  to_left = {prefix = {"Ctrl", "Option", "Command"}, key = "Left", message = "Move To Left Screen"},
+  to_left = {prefix = {"Ctrl", "Option"}, key = "H", message = "Move To Left Screen"},
   -- 将窗口移动到右侧屏幕
-  to_right = {prefix = {"Ctrl", "Option", "Command"}, key = "Right", message = "Move To Right Screen"}
+  to_right = {prefix = {"Ctrl", "Option"}, key = "L", message = "Move To Right Screen"}
 }
 
 -- 应用切换快捷键配置
@@ -104,7 +104,7 @@ applications = {
 -- 输入法切换快捷键配置
 input_methods = {
   abc = {prefix = {"Option"}, key = "J", message="ABC"},
-  chinese = {prefix = {"Option"}, key = "K", message="简体拼音"}, 
+  chinese = {prefix = {"Option"}, key = "K", message="简体拼音"},
   japanese = {prefix = {"Option"}, key = "L", message="Hiragana"}
 }
 
@@ -121,7 +121,7 @@ password_paste = {
   prefix = {
       "Ctrl", "Command"
   },
-  key = "V", 
+  key = "V",
   message = "Password Paste"
 }
 
