@@ -1,73 +1,73 @@
 -- 默认加载的功能模块
-defaultConfig = {
-    {
-        -- 配置版本号
-        -- 每次新增功能项，需将版本号加 1
-        configVersion = "7",
-    },
-    {
-        module = "modules.window",
-        name = "窗口管理",
-        enable = true,
-    },
-    {
-        module = "modules.application",
-        name = "应用切换",
-        enable = true,
-    },
-    {
-        module = "modules.emoji",
-        name = "表情包搜索",
-        enable = false,
-    },
-    {
-        module = "modules.password",
-        name = "密码粘贴",
-        enable = false,
-    },
-    {
-        module = "modules.input-method",
-        name = "输入法切换",
-        enable = false,
-    },
-    {
-        module = "modules.network",
-        name = "实时网速",
-        enable = false,
-    },
-    {
-        module = "modules.keystroke-visualizer",
-        name = "按键回显",
-        enable = false,
-    },
-    {
-        module = "modules.wallpaper",
-        name = "壁纸切换",
-        enable = false,
-    },
-    {
-        module = "modules.hotkey",
-        name = "快捷键列表查看",
-        enable = true,
-    },
-    {
-        module = "modules.remind",
-        name = "提醒下班",
-        enable = false,
-    }, {
-        module = 'modules.vim-mode',
-        name = 'VIM模式',
-        enable = true
-    }, {
-        module = 'modules.dropdown',
-        name = '下拉唤起应用',
-        enable = true
-    }, {
-        module = "modules.update",
-        name = "自动检查更新",
-        enable = false,
-    },
-}
+defaultConfig = {{
+    -- 配置版本号
+    -- 每次新增功能项，需将版本号加 1
+    configVersion = "8"
+}, {
+    module = "modules.window",
+    name = "窗口管理",
+    enable = true
+}, {
+    module = "modules.window-management",
+    name = "窗口管理2",
+    enable = false
+}, {
+    module = "modules.application",
+    name = "应用切换",
+    enable = true
+}, {
+    module = "modules.emoji",
+    name = "表情包搜索",
+    enable = false
+}, {
+    module = "modules.password",
+    name = "密码粘贴",
+    enable = false
+}, {
+    module = "modules.input-method",
+    name = "输入法切换",
+    enable = false
+}, {
+    module = "modules.im-autoSelect",
+    name = "自动输入法",
+    enable = false
+}, {
+    module = "modules.network",
+    name = "实时网速",
+    enable = false
+}, {
+    module = "modules.keystroke-visualizer",
+    name = "按键回显",
+    enable = false
+}, {
+    module = "modules.wallpaper",
+    name = "壁纸切换",
+    enable = false
+}, {
+    module = "modules.hotkey",
+    name = "快捷键列表查看",
+    enable = true
+}, {
+    module = "modules.remind",
+    name = "提醒下班",
+    enable = false
+}, {
+    module = 'modules.vim-mode',
+    name = 'VIM模式',
+    enable = true
+}, {
+    module = 'modules.vim-binding',
+    name = 'VIM全局快捷键',
+    enable = false
+}, {
+    module = 'modules.dropdown',
+    name = '下拉唤起应用',
+    enable = true
+}, {
+    module = "modules.update",
+    name = "自动检查更新",
+    enable = false
+}}
 
 base_path = os.getenv("HOME") .. "/.hammerspoon/"
 -- 本地配置文件路径

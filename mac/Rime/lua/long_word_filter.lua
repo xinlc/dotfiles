@@ -4,8 +4,8 @@
 local function long_word_filter(input, env)
     -- 提升 count 个词语，插入到第 idx 个位置，默认 2、4。
     local config = env.engine.schema.config
-    local count = config:get_string(env.name_space .. "/count") or 2
-    local idx = config:get_string(env.name_space .. "/idx") or 4
+    local count = config:get_int(env.name_space .. "/count") or 2
+    local idx = config:get_int(env.name_space .. "/idx") or 4
 
     local l = {}
     local firstWordLength = 0 -- 记录第一个候选词的长度，提前的候选词至少要比第一个候选词长
@@ -15,7 +15,7 @@ local function long_word_filter(input, env)
     local i = 1
     for cand in input:iter() do
         leng = utf8.len(cand.text)
-        if (firstWordLength < 1 or i < tonumber(idx)) then
+        if (firstWordLength < 1 or i < idx) then
             i = i + 1
             firstWordLength = leng
             yield(cand)
@@ -30,7 +30,7 @@ local function long_word_filter(input, env)
 		--     end
 		-- 换了个正则，否则中英混输的也会被提升
 		-- elseif ((leng > firstWordLength) and (s2 < count)) and (string.find(cand.text, "^[%w%p%s]+$")==nil) then
-        elseif ((leng > firstWordLength) and (s2 < tonumber(count))) and (string.find(cand.text, "[%w%p%s]+") == nil) then
+        elseif ((leng > firstWordLength) and (s2 < count)) and (string.find(cand.text, "[%w%p%s]+") == nil) then
             yield(cand)
             s2 = s2 + 1
         else

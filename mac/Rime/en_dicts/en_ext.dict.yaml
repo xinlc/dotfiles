@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2023-01-26"
+version: "2023-03-01"
 sort: by_weight
 ...
 # 一些杂项
@@ -15,6 +15,7 @@ sort: by_weight
 <br>	br
 .DS_Store	DSStore
 唵嘛呢叭咪吽	ongmanibeimeihong
+唵嘛呢嘛呢叭咪吽	ongmanimanibeimeihong
 
 
 # 按键
@@ -169,6 +170,7 @@ Liam	Liam
 Noah	Noah
 Jay	Jay
 Enya	Enya
+Juno	Juno
 
 
 # 带权重的系列
@@ -351,6 +353,7 @@ AfterShokz	AfterShokz
 Aeropex	Aeropex
 Xnip	Xnip
 Workspace	Workspace
+Google Chrome	GoogleChrome
 Google Workspace	GoogleWorkspace
 WYSIWYG	WYSIWYG
 What You See Is What You Get	WYSIWYG
@@ -816,7 +819,7 @@ SaneDesk	SaneDesk
 Scrapbook	Scrapbook
 ScreenFloat	ScreenFloat
 ScreenFlow	ScreenFlow
-Scribble	Scribble
+scribble	scribble
 Scrivener	Scrivener
 SDK	SDK
 Software Development Kit	SDK
@@ -1887,3 +1890,41 @@ lullaby	lullaby
 LibreWolf	LibreWolf
 miscarry	miscarry
 WebRTC	WebRTC
+WebDAV	WebDAV
+SwiftUI	SwiftUI
+watermarking	watermarking
+jellyfish	jellyfish
+Astro	Astro
+SigmaOS	SigmaOS
+switcher	switcher
+fuckity	fuckity
+fo	fo
+layouts	layouts
+redirect	redirect
+redirects	redirects
+bash	bash
+Unix shell	Unixshell
+shells	shells
+Zaraz	Zaraz
+waitlist	waitlist
+diffusion	diffusion
+Scribble Diffusion	ScribbleDiffusion
+Lenovo	Lenovo
+Adios	Adios
+EMS	EMS
+Express Mail Service	EMS
+IPFS	IPFS
+InterPlanetary File System	IPFS
+InterPlanetary File System	InterPlanetaryFileSystem
+interplanetary	interplanetary
+Noria	Noria
+DHCP	DHCP
+Dynamic Host Configuration Protocol	DHCP
+PPPoE	PPPoE
+Point-to-Point Protocol over Ethernet	PPPoE
+IPoE	IPoE
+Internet Protocol over Ethernet	IPoE
+VLAN	VLAN
+Virtual Local Area Network	VLAN
+WLAN	WLAN
+Wireless LAN	WLAN

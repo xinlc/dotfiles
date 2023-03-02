@@ -50,6 +50,8 @@ defaults write -g ApplePressAndHoldEnabled 0
 
 1. 进入 Preferences -> Editor -> Inspections -> Java -> Serialization Issues -> Serializable class without ‘serialVersionUID’
 
+> 新版本在 JVM languages 下 (在 Inspections 中搜索 serialVersionUID)
+
 2. 类继承了 Serializable 接口之后，使用 alt+enter 快捷键自动创建序列化ID
 
 ### 代码提示不区分大小写

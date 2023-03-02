@@ -126,6 +126,9 @@ calculator = require("calculator_simp")
 -- 长词优先（提升「西安」「提案」「图案」「饥饿」等词汇的优先级）
 long_word_filter = require("long_word_filter")
 
+-- 降低部分英语单词在候选项的位置
+reduce_english_filter = require("reduce_english_filter")
+
 -- 单字优先，候选项应改为「ā á ǎ à」
 -- v_single_char_first_filter = require("single_char_first")
 v_single_char_first_filter = require("v_single_char_first")

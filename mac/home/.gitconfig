@@ -26,9 +26,10 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-	editor = vim
+	editor = CC=/opt/homebrew/bin/gcc-12 nvim
+	#editor = nvim
 
-  pager = delta
+    pager = delta
 
 [pager]
 	diff = delta
@@ -79,7 +80,7 @@
 	# Detect copies as well as renames
 	renames = copies
 
-  colorMoved = default
+    colorMoved = default
 
 
 [diff "bin"]
@@ -97,7 +98,7 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
-  conflictstyle = diff3
+    conflictstyle = diff3
 
 [push]
 
@@ -227,13 +228,13 @@
 
 [delta]
 	features = decorations
-  navigate = true
-  light = false
-  line-numbers = true
-  side-by-side = true
-  # line-numbers-left-format = ""
-  # line-numbers-right-format = "│ "
-  syntax-theme = Nord
+    navigate = true
+    light = false
+    line-numbers = true
+    side-by-side = true
+    # line-numbers-left-format = ""
+    # line-numbers-right-format = "│ "
+    syntax-theme = Nord
 
 [delta "interactive"]
 	keep-plus-minus-markers = false

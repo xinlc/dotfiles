@@ -1,8 +1,11 @@
 # alias B
 alias vi="/opt/homebrew/bin/vim"
 # alias vim="nvim"
+
+# https://github.com/doom-neovim/doom-nvim/issues/246
 alias nvim="CC=/opt/homebrew/bin/gcc-12 nvim"
 alias vim="CC=/opt/homebrew/bin/gcc-12 nvim"
+
 alias c='clear'
 # alias gc='git config credential.helper store'
 # alias gg='git clone'
