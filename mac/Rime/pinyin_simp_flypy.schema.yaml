@@ -2,6 +2,15 @@
 # encoding: utf-8
 
 
+# 复制自 rime_ice.schema.yaml ，适配了双拼。
+# 双拼键位映射复制自 https://github.com/rime/rime-double-pinyin
+#     双拼和全拼主要就是 speller/algebra 和 translator/preedit_format 这里有区别。
+#
+# 全拼的自定义文本和双拼有些冲突，改成了 custom_phrase_double ，需要创建 custom_phrase_double.txt 文件。
+#
+# 中英混输词库 en_dicts/cn_en.dict.yaml 可以删除或修改，里面是写死了的全拼+英文编码。
+
+
 # 方案配置，改进自「袖珍简化字拼音」方案。
 schema:
   schema_id: pinyin_simp_flypy
@@ -12,26 +21,29 @@ schema:
   description: |
     袖珍简化字拼音+小鹤双拼
   dependencies:
-    - melt_eng
-    - latex
+    - melt_eng  # 英文输入，作为次翻译器挂载到拼音方案
+    - liangfen  # 两分拼字，作为反查挂载到拼音方案
 
 
-# 功能开关
+# 开关
+# 鼠须管 0.16 后，用快捷键切换时的提示文字由 states 定义
+# states: 方案选单显示的名称。可以注释掉，仍可以通过快捷键切换。
+# reset: 默认状态。 注释掉后，切换窗口时不会重置到默认状态。
 switches:
   - name: ascii_mode
-    states: [ 中文, 英文 ]
+    states: [ 中, A ]
     reset: 0
-  - name: full_shape
-    states: [ 半角, 全角 ]
+  - name: ascii_punct # 中英标点
+    states: [ ¥, $ ]
     reset: 0
-  - name: ascii_punct
-    states: [ 中文标点, 英文标点 ]
+  - name: traditionalization
+    states: [ 简, 繁 ]
     reset: 0
   - name: emoji
     states: [ 💀, 😄 ]
     reset: 1
-  - name: traditionalization
-    states: [ 简体, 繁體 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
     reset: 0
 
 
@@ -39,7 +51,7 @@ switches:
 engine:
   processors:         # ※ 默认组件：處理各類按鍵消息
     - lua_processor@select_character  # 以词定字
-    - lua_processor@code_length_limit_processor@code_length_limit  # 限制码长
+    - lua_processor@code_length_limit_processor  # 限制码长
     - ascii_composer  # ※ 處理西文模式及中西文切換
     - recognizer      # ※ 與 matcher 搭配，處理符合特定規則的輸入碼，如網址、反查等
     - key_binder      # ※ 在特定條件下將按鍵綁定到其他按鍵，如重定義逗號、句號爲候選翻頁鍵
@@ -57,22 +69,44 @@ engine:
   translators:           # ※ 默认组件：翻譯特定類型的編碼段爲一組候選文字
     - punct_translator   # ※ 轉換標點符號
     - script_translator  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
-    - lua_translator@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
-    - lua_translator@date_translator  # 时间、日期、星期 # 这个顺序要在 table_translator@melt_eng 上面，否则动态时间（输入sj）的候选项不会在第一个，不知道为啥。。。
-    - table_translator@custom_phrase  # 自定义短语 custom_phrase.txt
+    - lua_translator@date_translator  # 时间、日期、星期
+    - table_translator@custom_phrase  # 自定义短语 custom_phrase_double.txt
     # - table_translator@custom_phraseXT
     # - table_translator@custom_phraseYH
     - table_translator@melt_eng       # 英文输入
-    - reverse_lookup_translator       # ※ 反查，LaTeX
+    - reverse_lookup_translator@liangfen  # 反查，两分拼字
+    - lua_translator@unicode_input_translator  # Unicode
   filters: # ※ 默认组件：過濾翻譯的結果
-    - lua_filter@long_word_filter # 长词优先
-    - simplifier@emoji            # Emoji
-    - simplifier@traditionalize   # 简繁切换
-    - uniquifier                  # 去重
+    - simplifier@emoji                  # Emoji
+    - simplifier@traditionalize         # 简繁切换
+    - lua_filter@reduce_english_filter  # 降低部分英语单词在候选项的位置
+    - uniquifier                        # 去重
 
 
-# 限制码长，默认 100。（最多能输入 code_length_limit 个字符）
-# code_length_limit: 100
+# Lua 配置: 限制码长，默认 100。（最多能输入的字符个数）
+code_length_limit_processor: 100
+
+# Lua 配置: 日期、时间、星期、ISO 8601、时间戳的触发关键字
+date_translator:
+  date: date            # 日期： 2022-11-29
+  time: time            # 时间： 18:13
+  week: week            # 星期： 星期二
+  datetime: datetime    # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp  # 时间戳： 1669716794
+
+  # Lua 配置: 降低部分英语单词在候选项的位置
+# 详细介绍 https://dvel.me/posts/make-rime-en-better/#短单词置顶的问题
+# 正常情况： 输入 rug 得到 「1.rug 2.如果 …… 」
+# 降低之后： 输入 rug 得到 「1.如果 2.rug …… 」
+reduce_english_filter:
+  # 降低到第 idx 个位置
+  idx: 2
+  # 要降低的单词，匹配的是输入码，即全小写。
+  words: [rug, bus, ship, laos, bail, bam, bans, bib, bos, chic, chit, dab, dag,
+  dal, dit, dub, dug, fab, gam, ger, gus, hem, hep, hud, kat, lam, lax, lex, lug,
+  lux, moc, mos, mot, mum, nad, nay, nib, nip, pak, pap, pax, rig, rum, sac, sal,
+  sax, sec, shin, sis, ska, slang, sus, tad, taj, tac, tic, yep, yum, fax, cain,
+  key, mob, buy]
 
 
 # 从 default 继承快捷键
@@ -89,19 +123,20 @@ emoji:
 
 # 简繁切换
 traditionalize:
-  opencc_config: s2t.json  # 其他选项（如台湾繁体 s2tw.json、香港繁体 s2hk.json）参考：https://github.com/BYVoid/OpenCC#configurations-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
   option_name: traditionalization
-  tips: all  # 转换提示（即是否显示繁体对应的简体）: all 都显示， char 仅单字显示， none 不显示。
+  # opencc_config: s2t.json  # 其他选项（如台湾繁体 s2tw.json、香港繁体 s2hk.json）参考：https://github.com/BYVoid/OpenCC#configurations-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+  opencc_config: s2t.json             # s2t.json | s2hk.json | s2tw.json | s2twp.json  # 如果选择台湾繁体，长句子正常，但1~2个字时无法正确转换台湾繁体，仍然显示香港繁体，不知道为啥。
+  tips: all                           # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [ reverse_lookup ]  # 不转换反查的内容，比如目前使用的两分输入方案的拼字
 
-
-# 自定义短语：custom_phrase.txt
+# 自定义短语
 custom_phrase:
   dictionary: ""
-  user_dict: custom_phrase
+  user_dict: custom_phrase_double  # 需要手动创建 custom_phrase_double.txt 文件
   db_class: stabledb
   enable_completion: false # 补全提示
   enable_sentence: false   # 禁止造句
-  initial_quality: 99  # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
+  initial_quality: 99      # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
 
 custom_phraseXT:
   dictionary: ""
@@ -118,14 +153,20 @@ custom_phraseYH:
   enable_sentence: false
   initial_quality: 1.5
 
+
+# 引入八股文
+grammar:
+  language: zh-hans-t-essay-bgw
+
+
 # 挂载拼音主词库
 translator:
   dictionary: pinyin_simp  # 挂载拼音主词库 pinyin_simp.dict.yaml
-  prism: pinyin_simp_flypy
-  enable_completion: true
-  spelling_hints: 2
-  initial_quality: 1.2 # 拼音的权重应该比英文大 2
-  preedit_format: # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
+  prism: pinyin_simp_flypy # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
+  db_class: tabledb        # tabledb | userdb ，前者会生成人类可读的 *.txt，后者生成二进制的 *.userdb/
+  contextual_suggestions: true  # 开启八股文
+  initial_quality: 1.2          # 拼音的权重应该比英文大
+  preedit_format:               # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
@@ -160,52 +201,57 @@ translator:
     - xform/([nl])v/$1ü/
 
 
-# 英文输入方案
+# 英文
 melt_eng:
-  dictionary: melt_eng # 挂载英文主词库 melt_eng.dict.yaml
-  spelling_hints: 9
-  enable_completion: true # 补全提示
-  enable_sentence: false  # 禁止造句
-  enable_user_dict: false # 禁用用户词典
-  initial_quality: 1.1
+  dictionary: melt_eng     # 挂载词库 melt_eng.dict.yaml
+  enable_sentence: false   # 禁止造句
+  enable_user_dict: false  # 禁用用户词典
+  initial_quality: 1.1     # 初始权重
+  comment_format:          # 自定义提示码
+    - xform/.*//           # 清空提示码
 
 
-# 八股文语言模型
-grammar:
-  language: zh-hans-t-essay-bgw
-translator/contextual_suggestions: true
-translator/max_homophones: 7
-translator/max_homographs: 7
-
-
-# 引入自己的修改过的 symbols
+# 标点符号
+# 共享目录预设的 punctuation.yaml 包含了 full_shape half_shape （全角和半角的符号映射）
+# 共享目录预设的 symbols.yaml     包含了 full_shape half_shape symbols
+# symbols 的功能是支持以「/」前缀开头输出一系列字符，自定义的 symbols_custom_double.yaml 修改成了「v」开头。
 punctuator:
-  # import_preset: symbols # 默认的
-  import_preset: symbols_custom # symbols_custom.yaml （标点设定和「v」模式在里面）
+  # __include: punctuation:/          # 从共享目录引入预设的 punctuation.yaml
+  # import_preset: symbols            # 从共享目录引入预设的 symbols.yaml
+  import_preset: symbols_custom       # 从 symbols_custom.yaml 引入自己自定义的
+  __include: symbols_custom_double:/  # 从 symbols_custom_double.yaml 替换为适用于双拼的 symbols
 
+
+# 处理符合特定规则的输入码，如网址、反查
 recognizer:
-  import_preset: default
   patterns:
-    punct: "^/([0-9]+[a-z]*|[a-z]+)$"
-    # punct: "^v([0-9]0?|[A-Za-z]+)$"  # 用 “v” 替换 “/”，并支持大写
-    reverse_lookup: '^\\.+$'  # LaTeX
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # 自带的，e-mail 正则
+    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"                           # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # 自带的，URL 正则
+    url_2: "^[A-Za-z]+[.].*"            # 支持 google.com abc.txt 等网址或文件名，会导致句号不会让句子上屏，或使用句号翻页时需要注释掉
+    win_path: "^[A-Za-z]:.*"            # 支持 c:\file\path 之类的路径输入
+    colon: "^[A-Za-z]+:.*"              # 上面的超集，可以输入冒号，不会导致句子直接上屏
+    underscore: "^[A-Za-z]+_.*"         # 可以输入下划线 _ ，不会导致句子直接上屏
+    punct: "^V([0-9]|10|[A-Za-z]+)$"    # 响应 symbols_custom_double.yaml 下的 symbols，用「V」替换「/」并支持大写
+    reverse_lookup: '^L[a-z]+$'         # 响应两分的反查
+    unicode: "^U[a-f0-9]+"              # 响应 Unicode
 
 
-# LaTeX
-reverse_lookup:
-  dictionary: latex
-  spelling_hints: 9
-  enable_completion: false
-  tips: latex
+# 反查：两分（拼字）
+liangfen:
+  dictionary: liangfen
+  prefix: 'L'              # 以 L 开头来反查
+  enable_completion: true  # 补全提示
+  # tips: 〔两分〕          # 反查时显示的文字，建议注释掉，否则很多 L 开头的英文单词也会显示这个
 
 
 # 拼写设定
 speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
-  # alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\  # LaTeX 需要把反斜杠加上，不让反斜杠直接上屏
-  delimiter: " '"
+  delimiter: " '"  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
   algebra:
-    # 小鹤双拼码表
+    #- abbrev/^(.).+$/$1/  # 首字母简拼
     - erase/^xx$/
     - derive/^([jqxy])u$/$1v/
     - derive/^([aoe])([ioun])$/$1$1$2/
@@ -236,6 +282,5 @@ speller:
     - xform/ui$/V/
     - xform/in$/B/
     - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
-
-    # 简拼支持
-    #- abbrev/^(.).+$/$1/
+    # 可输入大写字母。因为上面的双拼拼写规则用掉了大写字母。做了 xlit 转写，同时适配全拼和双拼。
+    - xlit/āḃçďēḟḡĥīĵḱĺḿńōṕɋŕśťūṽẃẋȳź/ABCDEFGHIJKLMNOPQRSTUVWXYZ/

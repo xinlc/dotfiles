@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2023-03-01"
+version: "2023-04-11"
 sort: by_weight
 ...
 # 一些杂项
@@ -158,7 +158,6 @@ Norma	Norma
 Paula	Paula
 Frances	Frances
 Lillian	Lillian
-Kiwi	Kiwi
 Olivia	Olivia
 Ava	Ava
 Isabella	Isabella
@@ -171,7 +170,14 @@ Noah	Noah
 Jay	Jay
 Enya	Enya
 Juno	Juno
-
+Trump	Trump
+Biden	Biden
+Joseph	Joseph
+Braun	Braun
+Bayes	Bayes
+Saul	Saul
+Wick	Wick
+#///
 
 # 带权重的系列
 iPhone	iPhone	999
@@ -245,19 +251,6 @@ Windows 8	Windows	8
 Windows 10	Windows	10
 Windows 11	Windows	11
 
-SQL Server	SQLServer	2
-Microsoft SQL Server	SQLServer	1
-Microsoft SQL Server	MicrosoftSQLServer
-
-SSH	SSH	2
-Secure Shell	SSH	1
-Secure Shell	SecureShell
-
-ISO	ISO	2
-ISO 8601	ISO	1
-RFC	RFC	2
-RFC 3339	RFC	1
-
 
 # 往下开始都是扩展单词
 # +_+
@@ -278,6 +271,16 @@ League of Legends	LOL
 League of Legends	LeagueofLegends
 Laugh Out Loudly	LOL
 Laugh Out Loudly	LaughOutLoudly
+SQL Server	SQLServer
+Microsoft SQL Server	SQLServer
+Microsoft SQL Server	MicrosoftSQLServer
+SSH	SSH
+Secure Shell	SSH
+Secure Shell	SecureShell
+ISO	ISO
+ISO 8601	ISO
+RFC	RFC
+RFC 3339	RFC
 Pro Max	ProMax
 Aeron	Aeron
 Aeron Chair	AeronChair
@@ -288,7 +291,6 @@ Database	Database
 Macintosh	Macintosh
 Superlist	Superlist
 DJ	DJ
-IGN	IGN
 DLC	DLC
 Downloadable content	DLC
 Downloadable content	Downloadablecontent
@@ -317,7 +319,6 @@ Advanced RISC Machine	ARM
 Advanced RISC Machine	AdvancedRISCMachine
 eGPU	eGPU
 One Piece	OnePiece
-Bose	Bose
 CCTV	CCTV
 Closed-Circuit Television	CCTV
 Closed-Circuit Television	ClosedCircuitTelevision
@@ -465,7 +466,6 @@ qBittorrent Enhanced Edition	qBEE
 qBittorrent Enhanced Edition	qBitEE
 qBittorrent Enhanced Edition	qBittorrentEE
 qBittorrent Enhanced Edition	qBittorrentEnhancedEdition
-Bittorrent	Bittorrent
 YAML	YAML
 YAML Ain't Markup Language	YAML
 TOML	TOML
@@ -481,7 +481,7 @@ Evernote	Evernote
 PDF	PDF
 Portable Document Format	PDF
 Portable Document Format	PortableDocumentFormat
-QuickTime	QuickTime
+QuickTime Player	QuickTimePlayer
 CSDN	CSDN
 Gitee	Gitee
 Gitea	Gitea
@@ -510,7 +510,6 @@ Git	Git
 Go	Go
 GoLand	GoLand
 Golang	Golang
-HBO	HBO
 IQOS	IQOS
 Intel	Intel
 JSON	JSON
@@ -531,6 +530,7 @@ Node	Node
 Node.js	Nodejs
 Pornhub	Pornhub
 PostgreSQL	PostgreSQL
+Postgres	Postgres
 PowerPoint	PowerPoint
 PPT	PPT
 PowerPoint	ppt
@@ -551,8 +551,9 @@ Sourcetree	Sourcetree
 Spiritfarer	Spiritfarer
 TCP/IP	tcpip
 Twitter	Twitter
-V2EX	ver
-V2EX	verex
+V2EX	Ver
+V2EX	VerEX
+V2EX	VtoEX
 VSCode	VSCode
 Vue	Vue
 Vue.js	Vuejs
@@ -679,14 +680,12 @@ Forecast	Forecast
 ForkLift	ForkLift
 Frank DeLoupe	FrankDeLoupe
 Geekbench	Geekbench
-gemini	gemini
 Gestimer	Gestimer
 GhostNote	GhostNote
 GhostTile	GhostTile
 Gif Brewery	GifBrewery
 Gists	Gists
 GitHub	GitHub
-Gmail	Gmail
 GoagentX	GoagentX
 Google Play	GooglePlay
 Google Play Music	GooglePlayMusic
@@ -771,7 +770,6 @@ Netflix	Netflix
 Noizio	Noizio
 Numbers	Numbers
 nvALT	nvALT
-Nvidia	Nvidia
 Office	Office
 OmmWriter	OmmWriter
 OmniFocus	OmniFocus
@@ -934,7 +932,6 @@ Disco	Disco
 Termius	Termius
 Jinja	Jinja
 capitalize	capitalize
-Bootstrap	Bootstrap
 NetSetMan	NetSetMan
 Cinity	Cinity
 UTC	UTC
@@ -1077,6 +1074,8 @@ SWAT	SWAT
 footer	footer
 header	header
 GitHub Copilot	GitHubCopilot
+GitHub Copilot X	GitHubCopilotX
+GitHub Copilot CLI	GitHubCopilotCLI
 Blog	Blog
 iPadOS	iPadOS
 Apple Pencil	ApplePencil
@@ -1204,7 +1203,6 @@ Niconico	Niconico
 TickTick	TickTick
 CHDBits	CHDBits
 M-team	Mteam
-Microsoft Azure	MicrosoftAzure
 Emacs	Emacs
 Vim	Vim
 Wikipedia	Wikipedia
@@ -1241,10 +1239,7 @@ Internet Explorer	InternetExplorer
 Windows Media Player	WindowsMediaPlayer
 Media Player	MediaPlayer
 Windows Media Player	MediaPlayer
-Microsoft Azure 	MicrosoftAzure
-Microsoft Azure 	Azure
 Microsoft Edge	MicrosoftEdge
-Microsoft Edge	Edge
 Visual Studio Code	VisualStudioCode
 Visual Studio Code	VSCode
 PowerShell	PowerShell
@@ -1269,7 +1264,6 @@ New Technology File System	NTFS
 New Technology File System	NewTechnologyFileSystem
 Microsoft NTFS	NTFS
 Microsoft NTFS	MicrosoftNTFS
-txt	txt
 chromeOS	chromeOS
 GCD	GCD
 Grand Central Dispatch	GCD
@@ -1302,7 +1296,7 @@ Serverless	Serverless
 Air	Air
 Identifier	Identifier
 NameCheap	NameCheap
-Rime ice	Rimeice
+rime-ice	rimeice
 Handover	Handover
 Language Reactor	LanguageReactor
 Tencent	Tencent
@@ -1374,7 +1368,6 @@ FBI	FBI
 Federal Bureau of Investigation	FBI
 Federal Bureau of Investigation	FederalBureauofInvestigation
 FBI WARNING	FBIWARNING
-Hostname	Hostname
 CDPR	CDPR
 CD Projekt	CDPR
 CD Projekt	CDProjekt
@@ -1408,7 +1401,6 @@ ICMP	ICMP
 Internet Control Message Protocol	ICMP
 Internet Control Message Protocol	InternetControlMessageProtocol
 Electron	Electron
-backup	backup
 FTP	FTP
 File Transfer Protocol	FTP
 File Transfer Protocol	FileTransferProtocol
@@ -1439,7 +1431,6 @@ SSID	SSID
 Service Set Identifier	SSID
 Service Set Identifier	ServiceSetIdentifier
 Time Machine	TimeMachine
-goodbye	goodbye
 regexp	regexp
 FOSS	FOSS
 Free and open source software	FOSS
@@ -1479,8 +1470,6 @@ LIFO	LIFO
 Last In, First out	LIFO
 Neat Download Manager	NeatDownloadManager
 furry	furry
-quantum	quantum
-Hi-Fi	HiFi
 Maine	Maine
 Elijah	Elijah
 Love & Peace	LoveandPeace
@@ -1648,12 +1637,12 @@ ASCII	ASCII
 ANSI	ANSI
 IEEE	IEEE
 Institute of Electrical and Electronics Engineers	IEEE
-Institute of Electrical and Electronics Engineers	InstituteofElectricalandElectronicsEngineers
 DjVu	DjVu
 LaTeX	LaTeX
 Wire	Wire
 Guard	Guard
 API	API
+Application Programming Interface	API
 Ethernet	Ethernet
 SOCKS	SOCKS
 PrintScreen	PrintScreen
@@ -1670,7 +1659,6 @@ C++	cpp
 Python	Python
 Perl	Perl
 Swift	Swift
-nginx	nginx
 MIT	MIT
 Massachusetts Institute of Technology	MIT
 Massachusetts Institute of Technology	MassachusettsInstituteofTechnology
@@ -1679,6 +1667,7 @@ LGPL	LGPL
 GNU Lesser General Public License	LGPL
 GNU Lesser General Public License	GNULesserGeneralPublicLicense
 Mozilla	Mozilla
+Mozilla	Firefox	MozillaFirefox
 Apache	Apache
 Steam	Steam
 App	App
@@ -1711,6 +1700,8 @@ DirectX	DirectX
 Kinect	Kinect
 Azure	Azure
 azure	azure
+Microsoft Azure 	Azure
+Microsoft Azure	MicrosoftAzure
 Cloudflare	Cloudflare
 Buddhism	Buddhism
 Catholic	Catholic
@@ -1832,7 +1823,12 @@ Quality of Service	QoS
 Quality of Service	QualityofService
 DoH	DoH
 DNS over HTTPS	DoH
+DNS over HTTPS/3	DoH
 DNS over HTTPS	DNSoverHTTPS
+DNS over HTTPS/3	DNSoverHTTPS
+DoQ	DoQ
+DNS over QUIC	DoQ
+DNS over QUIC	DNSoverQUIC
 HK	HK
 Hong Kong	HK
 Hong Kong	HongKong
@@ -1902,7 +1898,6 @@ fo	fo
 layouts	layouts
 redirect	redirect
 redirects	redirects
-bash	bash
 Unix shell	Unixshell
 shells	shells
 Zaraz	Zaraz
@@ -1928,3 +1923,154 @@ VLAN	VLAN
 Virtual Local Area Network	VLAN
 WLAN	WLAN
 Wireless LAN	WLAN
+GPT	GPT
+Generative Pre-trained Transformer	GPT
+Bard	Bard
+bard	bard
+LaMDA	LaMDA
+tokens	tokens
+roadmap	roadmap
+Coinbase Wallet	CoinbaseWallet
+MetaMask	MetaMask
+favicon	favicon
+Discord	Discord
+New Bing	NewBing
+Notion AI	NotionAI
+memos	memos
+flomo	flomo
+arabica	Arabica
+robusta	robusta
+HanLP	HanLP
+Arch Linux	ArchLinux
+AlmaLinux	AlmaLinux
+Fedora CoreOS	FedoraCoreOS
+CoreOS	CoreOS
+OpenBSD	OpenBSD
+Rocky Linux	RockyLinux
+Vultr	Vultr
+GoFrame	GoFrame
+ORM	ORM
+Object Relational Mapping	ORM
+Gin	Gin
+Echo	Echo
+Iris	Iris
+iris	iris
+burnt	burnt
+KPI	KPI
+Key Performance Indicators	KPI
+mutex	mutex
+TIOBE	TIOBE
+DigitalOcean	DigitalOcean
+Google Authenticator	GoogleAuthenticator
+Authenticator	Authenticator
+authenticator	authenticator
+Depay	Depay
+codeium	codeium
+OpenCat	OpenCat
+AWS	AWS
+Amazon Web Services	AWS
+Amazon Web Services	AmazonWebServices
+Gemini	Gemini
+gemini	gemini
+Orion	Orion
+Virgo	Virgo
+Aries	Aries
+Taurus	Taurus
+Cancer	Cancer
+Libra	Libra
+Scorpio	Scorpio
+Sagittarius	Sagittarius
+Capricorn	Capricorn
+Aquarius	Aquarius
+Pisces	Pisces
+tailwind	tailwind
+Fcitx	Fcitx
+openSUSE	openSUSE
+defer	defer
+FOMO	FOMO
+Fear of Missing Out	FOMO
+rune	rune
+wick	wick
+meow	meow
+woof	woof
+Bromite	Bromite
+bromite	bromite
+Zelda	Zelda
+hutch	hutch
+Laotian	Laotian
+mitigation	mitigation
+transformer	transformer
+mayonnaise	mayonnaise
+orz	orz
+parametric	parametric
+Scooby-Doo	ScoobyDoo
+SpongeBob	SpongeBob
+SquarePants	SquarePants
+SpongeBob SquarePants	SpongeBobSquarePants
+Universal Actions	UniversalActions
+Louis Vuitton	LouisVuitton
+FIFA	FIFA
+Fédération Internationale de Football Association	FIFA
+FYI	FYI
+for your information	FYI
+IPO	IPO
+Initial Public Offerings	IPO
+MVC	MVC
+Model-View-Controller	MVC
+MVVM	MVVM
+Model-View-ViewModel	MVVM
+NGO	NGO
+Non-Governmental Organization	NGO
+OMG	OMG
+Oh My God	OMG
+RFT	RFT
+Rich Text Format	RFT
+SVG	SVG
+Scalable Vector Graphics	SVG
+SVN	SVN
+Apache Subversion	SVN
+TLS	TLS
+Transport Layer Security	TLS
+SSL	SSL
+Secure Sockets Layer	SSL
+UDP	UDP
+User Datagram Protocol	UDP
+TCP	TCP
+Transmission Control Protocol	TCP
+UID	UID
+User ID	UID
+USSR	USSR
+Union of Soviet Socialist Republics	USSR
+WMV	WMV
+Windows Media Video	WMV
+WWI	WWI
+World War I	WWI
+WWII	WWII
+World War II	WWII
+WWIII	WWIII
+World War III	WWIII
+PL/pgSQL	PLpgSQL
+Procedural Language / PostGres Structured Query Language	PLpgSQL
+IQ	IQ
+Intelligence quotient	IQ
+quotient	quotient
+BTW	BTW
+by the way	BTW
+QUIC	QUIC
+Quick UDP Internet Connections	QUIC
+SRWare Iron	SRWareIron
+trending	trending
+Nexitally	Nexitally
+AGI	AGI
+Artificial general intelligence	AGI
+Strong AI	StrongAI
+Weak AI	WeakAI
+Narrow AI	NarrowAI
+Applied AI	AppliedAI
+BREAKING CHANGE	BREAKINGCHANGE
+GitHub Actions	GitHubActions
+UUID	UUID
+Universally Unique Identifier	UUID
+stargazers	stargazers
+fallback	fallback
+Fyne	Fyne

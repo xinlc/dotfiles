@@ -42,6 +42,7 @@ patch:
   # commit_code  上屏原始的编码，然后切换到英文
   # commit_text  上屏拼出的词句，然后切换到英文
   # clear        清除输入的内容，然后切换到英文
+  # inline_ascii 无输入时，切换中英；有输入时，切换到临时英文模式，按回车上屏后回到中文状态
   # noop         屏蔽快捷键，啥也不干，但不要屏蔽 Caps
   ascii_composer/good_old_caps_lock: true # 若为 true， Caps 只切换大小写
   ascii_composer/switch_key:
@@ -71,16 +72,19 @@ patch:
     - "Control+0"
     # - F4
 
-  # 匹配 patterns 时，原样输出
+  # 处理符合特定规则的输入码，如网址、反查
+  # 此处配置所有方案通用的；各方案中另设专有的，比如全拼的拼字用 u，双拼的拼字用 L
   recognizer:
     patterns:
-      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
-      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
-      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
-      # 方便在中文状态下输入网址或文件名，会导致句号不会让句子上屏，使用句号翻页时需要注释掉 url_2：
-      url_2: "^[a-z]+[.].*"  # 让类似 google.com（不以 www 开头）的网址址也支持
-      win_path: "^[A-Za-z]:.*"  # 支持 c:\file\path 之类的路径输入
-      colon: "^[A-Za-z]+:.*"  # 上面的超集，冒号不直接上屏
+      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # 自带的，email 正则
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"                           # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # 自带的，URL 正则
+      punct: "^v([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_custom.yaml 下的 punctuator/symbols，用「v」替换「/」并支持大写
+      # 一些不直接上屏的配置示例：
+      url_2: "^[A-Za-z]+[.].*"     # 句号不上屏，支持 google.com abc.txt 等网址或文件名，使用句号翻页时需要注释掉
+      # win_path: "^[A-Za-z]:.*"   # 支持 c:\file\path 之类的路径输入
+      colon: "^[A-Za-z]+:.*"       # 冒号不上屏
+      underscore: "^[A-Za-z]+_.*"  # 下划线不上屏
 
   # 快捷键设定
   # key_binder/bindings: # 若开启, 去掉前面#
@@ -183,22 +187,25 @@ patch:
       # # - { when: always, accept: Control+slash, toggle: simplification }
       # # - { when: always, accept: Control+backslash, toggle: extended_charset }
 
-# 按键速查：
+
+# 按键速查
+# https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
 # （没有 Command 键，不支持）
+# accept 和 send 可用字段除 A-Za-z0-9 外，还包含以下键盘上实际有的键：
 # BackSpace	退格
 # Tab	水平定位符
 # Linefeed	换行
 # Clear	清除
-# Return	回車
-# Pause	暫停
+# Return	回车
+# Pause	暂停
 # Sys_Req	印屏
 # Escape	退出
-# Delete	刪除
+# Delete	删除
 # Home	原位
-# Left	左箭頭
-# Up	上箭頭
-# Right	右箭頭
-# Down	下箭頭
+# Left	左箭头
+# Up	上箭头
+# Right	右箭头
+# Down	下箭头
 # Prior、Page_Up	上翻
 # Next、Page_Down	下翻
 # End	末位
@@ -215,22 +222,22 @@ patch:
 # Super_R	右Super
 # Hyper_L	左Hyper
 # Hyper_R	右Hyper
-# Caps_Lock	大寫鎖
-# Shift_Lock	上檔鎖
-# Scroll_Lock	滾動鎖
-# Num_Lock	小鍵板鎖
-# Select	選定
-# Print	列印
-# Execute	執行
+# Caps_Lock	大写锁
+# Shift_Lock	上档锁
+# Scroll_Lock	滚动锁
+# Num_Lock	小键板锁
+# Select	选定
+# Print	打印
+# Execute	运行
 # Insert	插入
-# Undo	還原
+# Undo	还原
 # Redo	重做
-# Menu	菜單
-# Find	蒐尋
+# Menu	菜单
+# Find	搜寻
 # Cancel	取消
-# Help	幫助
-# Break	中斷
-# space
+# Help	帮助
+# Break	中断
+# space	空格
 # exclam	!
 # quotedbl	"
 # numbersign	#
@@ -254,7 +261,7 @@ patch:
 # question	?
 # at	@
 # bracketleft	[
-# backslash \
+# backslash	\
 # bracketright	]
 # asciicircum	^
 # underscore	_
@@ -263,33 +270,33 @@ patch:
 # bar	|
 # braceright	}
 # asciitilde	~
-# KP_Space	小鍵板空格
-# KP_Tab	小鍵板水平定位符
-# KP_Enter	小鍵板回車
-# KP_Delete	小鍵板刪除
-# KP_Home	小鍵板原位
-# KP_Left	小鍵板左箭頭
-# KP_Up	小鍵板上箭頭
-# KP_Right	小鍵板右箭頭
-# KP_Down	小鍵板下箭頭
-# KP_Prior、KP_Page_Up	小鍵板上翻
-# KP_Next、KP_Page_Down	小鍵板下翻
-# KP_End	小鍵板末位
-# KP_Begin	小鍵板始位
-# KP_Insert	小鍵板插入
-# KP_Equal	小鍵板等於
-# KP_Multiply	小鍵板乘號
-# KP_Add	小鍵板加號
-# KP_Subtract	小鍵板減號
-# KP_Divide	小鍵板除號
-# KP_Decimal	小鍵板小數點
-# KP_0	小鍵板0
-# KP_1	小鍵板1
-# KP_2	小鍵板2
-# KP_3	小鍵板3
-# KP_4	小鍵板4
-# KP_5	小鍵板5
-# KP_6	小鍵板6
-# KP_7	小鍵板7
-# KP_8	小鍵板8
-# KP_9	小鍵板9
+# KP_Space	小键板空格
+# KP_Tab	小键板水平定位符
+# KP_Enter	小键板回车
+# KP_Delete	小键板删除
+# KP_Home	小键板原位
+# KP_Left	小键板左箭头
+# KP_Up	小键板上箭头
+# KP_Right	小键板右箭头
+# KP_Down	小键板下箭头
+# KP_Prior、KP_Page_Up	小键板上翻
+# KP_Next、KP_Page_Down	小键板下翻
+# KP_End	小键板末位
+# KP_Begin	小键板始位
+# KP_Insert	小键板插入
+# KP_Equal	小键板等于
+# KP_Multiply	小键板乘号
+# KP_Add	小键板加号
+# KP_Subtract	小键板减号
+# KP_Divide	小键板除号
+# KP_Decimal	小键板小数点
+# KP_0	小键板0
+# KP_1	小键板1
+# KP_2	小键板2
+# KP_3	小键板3
+# KP_4	小键板4
+# KP_5	小键板5
+# KP_6	小键板6
+# KP_7	小键板7
+# KP_8	小键板8
+# KP_9	小键板9
