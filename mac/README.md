@@ -208,6 +208,7 @@ brew bundle --file ~/Brewfile
 # lf - 终端文件管理器，跟 ranger 类似。https://github.com/gokcehan/lf
 # fpp - 将终端输出结果文件，选择打开, `git status | fpp` https://github.com/facebook/PathPicker
 # xo/xo/usql - SQL 数据库的通用命令行界面 https://github.com/xo/usql
+# gobang - 用 Rust 编写的跨平台 TUI 数据库管理工具 https://github.com/TaKO8Ki/gobang
 # xxh - 使用 ssh 时带上 shell 配置。https://github.com/xxh/xxh
 # zoxide - 更智能的 cd 命令，代替 autojump。https://github.com/ajeetdsouza/zoxide
 # cloc - 计算代码行数。 https://github.com/AlDanial/cloc
@@ -237,6 +238,7 @@ brew bundle --file ~/Brewfile
 # rustscan - 端口扫描工具。https://github.com/RustScan/RustScan
 # git-branchless - 是一套以多种方式增强 Git 的工具。https://github.com/arxanas/git-branchless
 # jenv - jdk 多版本支持。https://github.com/jenv/jenv
+# fnm - 代替 nvm。 https://github.com/Schniz/fnm
 
 ```
 

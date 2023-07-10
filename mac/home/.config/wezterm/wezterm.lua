@@ -324,6 +324,14 @@ local config = {
         key = 'e',
         mods = 'CTRL|CMD',
         action = wezterm.action.ScrollByLine(1)
+    }, {
+        key = 'u',
+        mods = 'CTRL|CMD',
+        action = wezterm.action.ScrollByPage(-0.5)
+    }, {
+        key = 'd',
+        mods = 'CTRL|CMD',
+        action = wezterm.action.ScrollByPage(0.5)
     }},
     key_tables = {
         -- Defines the keys that are active in our resize-pane mode.

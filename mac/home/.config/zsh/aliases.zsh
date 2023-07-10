@@ -25,8 +25,12 @@ alias rr='ranger'
 alias man='tldr'
 alias zj="zellij"
 # alias onpm='eval $NVM_BIN/npm'
-alias onpm='$NVM_BIN/npm'
+#alias onpm='$NVM_BIN/npm'
+alias onpm='$FNM_MULTISHELL_PATH/bin/npm'
 alias npm="pnpm"
+alias nvm="fnm"
+alias otop='/usr/bin/top'
+alias top='btm'
 
 if [ "$(command -v exa)" ]; then
     unalias -m 'll'

@@ -18,11 +18,15 @@ source ~/.config/zsh/p10k.zsh
 eval "$(zoxide init zsh --cmd j)"
 # zoxide E
 
-# nvm B
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-# nvm E
+# fnm B
+eval "$(fnm env --use-on-cd)"
+# fnm E
+
+# # nvm B
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# # nvm E
 
 # sdkman B
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -60,7 +64,7 @@ eval $(thefuck --alias)
 # the fuck E
 
 # mcfly B
-# 现在使用 fzf ctl-r 
+# 现在使用 fzf ctl-r
 # eval "$(mcfly init zsh)"
 # mcfly E
 

@@ -25,150 +25,14 @@
 辛丽超	xlc	2
 小懒虫	xlc	1
 
-欻	ix
-噷	hm
-
-去	qu	2
-千	qm	1
-
-我	wo	3
-万	wj	2
-往	wh	1
-
-儿	er
-
-他	ta	4
-她	ta	3
-它	ta	2
-祂	ta	1
-
-与	yu	2
-于	yu	1
-
-有	yz	3
-又	yz	2
-由	yz	1
-
-一	yi	4
-以	yi	3
-已	yi	2
-亦	yi	1
-
-片	pm	2
-篇	pm	1
-
-是	ui	4
-时	ui	3
-使	ui	2
-式	ui	1
-
-的	de	3
-地	de	2
-得	de	1
-
-发	fa	2
-分	ff	1
-
-个	ge
-
-和	he	2
-或	ho	1
-
-及	ji	5
-将	jl	4
-即	ji	3
-既	ji	2
-继	ji	1
-
-可	ke
-
-了	le	4
-啦	la	3
-喽	lz	2
-嘞	lw	1
-
-在	zd	3
-再	zd	2
-自	zi	1
-
-想	xl	3
-像	xl	2
-向	xl	1
-
-才	cd	2
-从	cs	1
-
-吧	ba	3
-百	bd	2
-呗	bw	1
-
-那	na	4
-哪	na	3
-拿	na	2
-呐	na	1
-
-吗	ma  3
-嘛	ma	2
-
-我们	womf
-你们	nimf
-人们	rfmf
-
-他的	tade	3
-她的	tade	2
-它的	tade	1
-他们	tamf	3
-她们	tamf	2
-它们	tamf	1
-
-那儿	naer	2
-哪儿	naer	1
-那个	nage	2
-哪个	nage	1
-那些	naxp	2
-哪些	naxp	1
-那里	nali	2
-哪里	nali	1
-那边	nabm	2
-哪边	nabm	1
-那位	naww	2
-哪位	naww	1
-
-这	ve
-一个	yige
-有个	yzge
-是一个	uyg
+为什么	wum
 有一个	yyg
 有没有	ymy
 又又又	uuu
 又双叒叕	uuuu
+啊对对对	addd
 
-的地得	ddd
-等等等等	dddd
-刚刚	gg
-才刚刚	cgg
-知道	vd
-不知道	bvd
-往往	ww
-哈哈	hh
-看看	kk
-常常	ii
-想想	xx	2
-想象	xx	1
-隐约	yy
-因为	yw
-什么	um
-所以	sy
-为什么	wum
-是不是	ubu
-没什么	mum
-有时候	yuh
-什么的	umd
-什么是	umu
-什么啊	uma
-
-Go	go	2
-go	go	1
+go	go
 Golang	golang
 Hugo	hugo
 goto	goto
@@ -179,3 +43,5 @@ main	main
 Amazon	amazon
 NASA	nasa
 gone	gone
+Go程	gocheng
+code	code

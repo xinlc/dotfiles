@@ -213,8 +213,7 @@
 什么啊	sma
 
 
-Go	go	2
-go	go	1
+go	go
 Golang	golang
 Hugo	hugo
 goto	goto
@@ -225,3 +224,5 @@ main	main
 Amazon	amazon
 NASA	nasa
 gone	gone
+Go程	gocheng
+code	code

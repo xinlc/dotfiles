@@ -43,6 +43,7 @@ engine:
   processors:         # ※ 默认组件：處理各類按鍵消息
     - lua_processor@select_character  # 以词定字
     # - lua_processor@code_length_limit_processor@code_length_limit  # 限制码长
+    # - lua_processor@*cold_word_drop.processor  # 词条隐藏、降频
     - lua_processor@code_length_limit_processor  # 限制码长
     - ascii_composer  # ※ 處理西文模式及中西文切換
     - recognizer      # ※ 與 matcher 搭配，處理符合特定規則的輸入碼，如網址、反查等
@@ -68,13 +69,16 @@ engine:
     - reverse_lookup_translator@latex       # ※ 反查，LaTeX
     - reverse_lookup_translator@liangfen    # ※ 反查，liangfen
     - lua_translator@unicode_input_translator  # Unicode
+    - lua_translator@number_translator    # 数字、金额大写
   filters: # ※ 默认组件：過濾翻譯的結果
-    - lua_filter@long_word_filter       # 长词优先
     - simplifier@emoji                  # Emoji
     - simplifier@traditionalize         # 简繁切换
     - lua_filter@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
+    - lua_filter@autocap_filter         # 英文自动大写
     - lua_filter@reduce_english_filter  # 降低部分英语单词在候选项的位置
-    - uniquifier                        # 去重
+    # - lua_filter@*cold_word_drop.filter # 词条隐藏、降频
+    - lua_filter@long_word_filter         # 长词优先（建议放到靠后位置，不然内存起飞后不降下来）
+    - uniquifier                          # 去重（建议去重组件放到最后）
 
 
 # Lua 配置: 限制码长，默认 100。（最多能输入的字符个数）
@@ -107,7 +111,8 @@ reduce_english_filter:
   dal, dit, dub, dug, fab, gam, ger, gus, hem, hep, hud, kat, lam, lax, lex, lug,
   lux, moc, mos, mot, mum, nad, nay, nib, nip, pak, pap, pax, rig, rum, sac, sal,
   sax, sec, shin, sis, ska, slang, sus, tad, taj, tac, tic, yep, yum, fax, cain,
-  key, mob, buy]
+  key, mob, buy, dam, wap, yes, but, put, lag, buf, lip, aid, aim, dig, dim, din,
+  dip, pail, cad, chap, bend, lid, gem, tin]
 
 # 从 default 继承快捷键
 key_binder:
@@ -198,6 +203,7 @@ recognizer:
     # reverse_lookup: "^u[a-z]+$"          # 响应两分的反查
     reverse_lookup: '(^u[A-Za-z]+$)|(^i.+$)'  # 两组反查
     unicode: "^U[a-f0-9]+"            # 响应 Unicode
+    number: "^R[0-9]+[.]?[0-9]*"      # 响应 number_translator
 
 # 反查：两分（拼字）
 liangfen:
@@ -236,25 +242,25 @@ speller:
     # - derive/^g/k/
     # - derive/^k/g/
     # 韵母
-    # - derive/ang/an/
-    # - derive/an/ang/
-    # - derive/eng/en/
-    # - derive/en/eng/
-    # - derive/in/ing/
-    # - derive/ing/in/
-    # - derive/ian/iang/
-    # - derive/iang/ian/
-    # - derive/uan/uang/
-    # - derive/uang/uan/
-    # - derive/ai/an/
-    # - derive/an/ai/
-    # - derive/ong/un/
-    # - derive/un/ong/
-    # - derive/ong/on/
-    # - derive/iong/un/
-    # - derive/un/iong/
-    # - derive/ong/eng/
-    # - derive/eng/ong/
+    # - derive/ang$/an/
+    # - derive/an$/ang/
+    # - derive/eng$/en/
+    # - derive/en$/eng/
+    # - derive/in$/ing/
+    # - derive/ing$/in/
+    # - derive/ian$/iang/
+    # - derive/iang$/ian/
+    # - derive/uan$/uang/
+    # - derive/uang$/uan/
+    # - derive/ai$/an/
+    # - derive/an$/ai/
+    # - derive/ong$/un/
+    # - derive/un$/ong/
+    # - derive/ong$/on/
+    # - derive/iong$/un/
+    # - derive/un$/iong/
+    # - derive/ong$/eng/
+    # - derive/eng$/ong/
     # 拼音音节
     # - derive/^fei$/hui/
     # - derive/^hui$/fei/
@@ -281,9 +287,6 @@ speller:
     - derive/^([nl])ve$/$1ue/
     - derive/^([jqxy])u/$1v/
     - derive/^([jqxy])v/$1u/
-
-    ### 可输入大写字母，做了 xlit 转写是为了适配双拼
-    - xlit/āḃçďēḟḡĥīĵḱĺḿńōṕɋŕśťūṽẃẋȳź/ABCDEFGHIJKLMNOPQRSTUVWXYZ/
 
     ### 自动纠错
     # 有些规则对全拼简拼混输有副作用：如「x'ai 喜爱」被纠错为「xia 下」

@@ -1,0 +1,12 @@
+{:logseq-tabs {:version "v1.19.0", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
+ :logseq-heatmap {:version "v2.4.3", :repo "pengx17/logseq-plugin-heatmap", :effect true, :theme false}
+ :logseq-journals-calendar {:version "v0.10.8", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
+ :logseq-paste-more {:version "v1.5.6", :repo "usoonees/logseq-plugin-paste-more", :effect true, :theme false}
+ :logseq-diagrams-as-code {:version "0.0.20", :repo "npgrosser/logseq-diagrams-as-code", :effect false, :theme false}
+ :logseq-charspacing {:version "v1.3.5", :repo "sethyuan/logseq-plugin-charspacing", :effect true, :theme false}
+ :logseq-markdown-table {:version "v1.7.0", :repo "haydenull/logseq-plugin-markdown-table", :effect false, :theme false}
+ :logseq-todo-master {:version "v1.10.3", :repo "pengx17/logseq-plugin-todo-master", :effect false, :theme false}
+ :logseq-plugin-gpt3-openai {:version "v1.10.0", :repo "briansunter/logseq-plugin-gpt3-openai", :effect true, :theme false}
+ :logseq-pdf-export-plugin {:version "2.2.8", :repo "sawhney17/logseq-pdf-export", :effect true, :theme false}
+ :logseq-bullet-threading {:version "v1.1.1", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-awesome-ui {:version "v2.2.6", :repo "yoyurec/logseq-awesome-ui", :effect true, :theme false}}

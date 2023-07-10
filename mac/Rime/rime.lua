@@ -64,7 +64,8 @@ librime-lua 样例
 
 -- 日历 代替 date
 -- 详见 `lua/calendar.lua`:
-date_translator = require("calendar")
+-- date_translator = require("calendar")
+date_translator = require("date_translator")
 
 -- time_translator: 将 `time` 翻译为当前时间
 -- 详见 `lua/time.lua`
@@ -141,3 +142,16 @@ code_length_limit_processor = require("code_length_limit_processor")
 
 -- Unicode 输入
 unicode_input_translator = require("unicode_input_translator")
+
+-- 为用户词典中（输入过）的内容结尾加上一个星号 *
+is_in_user_dict_filter = require("is_in_user_dict")
+
+-- 人民币大写
+number_translator = require("number_translator")
+
+-- 自动大写英文词汇
+autocap_filter = require("autocap_filter")
+
+-- 中英混输词条自动空格
+-- 在 engine/filters 增加 - lua_filter@cn_en_spacer
+cn_en_spacer = require("cn_en_spacer")
