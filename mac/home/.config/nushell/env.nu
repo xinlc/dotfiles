@@ -17,9 +17,9 @@ mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 # starship E
 
-# zoxide B
-mkdir ~/.cache/zoxide
-zoxide init nushell --cmd j --hook prompt | save -f ~/.cache/zoxide/init.nu
+# zoxide B move plugins
+# mkdir ~/.cache/zoxide
+# zoxide init nushell --cmd j --hook prompt | save -f ~/.cache/zoxide/init.nu
 # zoxide E
 
 ## FNM B
@@ -41,3 +41,19 @@ if not (which fnm | is-empty) {
 }
 
 ## FNM E
+
+
+# Directories to search for scripts when calling source or use
+#
+# By default, <nushell-config-dir>/scripts is added
+let-env NU_LIB_DIRS = [
+  ($nu.config-path | path dirname | path join modules)
+  ($nu.config-path | path dirname | path join completions)
+]
+
+# Directories to search for plugin binaries when calling register
+#
+# By default, <nushell-config-dir>/plugins is added
+let-env NU_PLUGIN_DIRS = [
+  ($nu.config-path | path dirname | path join plugins)
+]

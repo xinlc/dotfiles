@@ -3,50 +3,26 @@
 ## config nu
 ## source ~/.config/nushell/config.nu
 
-# starship B
-source ~/.cache/starship/init.nu
-# starship E
+# use B
 
-# zoxide B
-source ~/.cache/zoxide/init.nu
-# zoxide E
+# use alias.nu *
+use ./modules/alias.nu *
+use ./modules/functions.nu *
+use ./modules/env.nu *
+# use path.nu *
+use ./modules/lab.nu *
 
+source ./modules/plugins.nu
+source ./modules/completions.nu
 
-# exports B
+use ./modules/mappings.nu get-mappings
+use ./modules/menus.nu get-menus
+use ./modules/theme.nu get-theme
 
-
-# exports E
-
-
-# aliases B
-def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
-alias open = ^open
-
-alias vi = /opt/homebrew/bin/vim
-alias vim = nvim
-alias ll = ls -l
-alias la = ls -a
-alias lla = ls -al
-alias lt = exa -T -L 1
-alias cat = bat
-alias rm = rm --trash
-alias man = tldr
-alias rr = ranger
-alias lg = lazygit
-alias zj = zellij
-# alias onpm = $"($env.FNM_MULTISHELL_PATH)/bin/npm"
-alias onpm = ^($env.FNM_MULTISHELL_PATH + "/bin/npm")
-alias npm = pnpm
-alias nvm = fnm
-alias otop = ^top
-alias top = btm
-
-# aliases E
-
-use '~/.config/nushell/completions.nu' * # Get just the extern definitions without the custom completion commands
+# use E
 
 # 覆盖默认配置
-let-env config = {
+let custom_config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   rm: {
@@ -58,4 +34,10 @@ let-env config = {
   cursor_shape: {
     emacs: blink_line
   }
+
+  color_config: (get-theme)
+  menus: (get-menus)
+  keybindings: (get-mappings)
 }
+
+let-env config = ($env.config | merge $custom_config)

@@ -1,0 +1,148 @@
+##
+## settings
+##
+
+# files
+set hidden
+set shellopts "-eu"
+
+set shell bash
+
+# ui
+set number
+set drawbox
+
+# preview
+set previewer stpv
+set cleaner stpvimgclr
+&stpvimg --listen $id
+
+##
+## mappings
+##
+
+# unmap
+map ,
+map c
+map y
+map d
+map <space>
+
+# shortcuts
+map <esc> quit
+map ; read
+map C clear
+
+# navigation
+map t :toggle; down
+map T :toggle; up
+
+# create
+map O push $mkdir<space>-p<space>
+map o push $touch<space>
+
+# delete
+map dd cut
+map dD delete
+map dt trash-put
+
+# rename
+map cc :rename; cmd-end; cmd-delete-home
+map ce :rename; cmd-end; cmd-word-back; cmd-delete-word
+map cb :rename; cmd-word-back; cmd-delete-word
+map I :rename; cmd-home
+map a :rename
+map A :rename; cmd-end
+
+# copy
+map yy copy
+map yp ${{ echo -n $f | copy }}
+map yf ${{ basename -- $f | trim | copy }}
+
+# open
+map <enter> open
+map L rifle
+map x $$f
+map X !$f
+
+# toggle previews
+cmd togglePreview ${{
+	if [ $lf_preview == true ]; then
+		lf -remote "send $id set nopreview"
+		lf -remote "send $id set ratios 1"
+		lf -remote "send $id set info size:time"
+	else
+		lf -remote "send $id set ratios 1:2:3"
+		lf -remote "send $id set info"
+		lf -remote "send $id set preview"
+	fi
+}}
+map ~ togglePreview
+
+# reload config
+map ,r source ~/.config/lf/lfrc
+
+# integrations
+
+# fuzz
+map <space>fc fzf_select
+map <space>fd fzf_cd
+
+##
+## functions
+##
+
+cmd open ${{
+	test -L $f && f=$(readlink -f $f)
+	case $(file --mime-type $f -b) in
+		text/*) $EDITOR $fx ;;
+		*) for f in $fx; do setsid $OPENER $f >/dev/null 2>/dev/null & done ;;
+	esac
+}}
+
+cmd pack ${{
+	apack $1 $fx
+}}
+
+cmd unpack ${{
+	aunpack $f
+}}
+
+## integrations
+
+# trash
+cmd trash-put %trash-put $fx
+
+# fzf
+
+cmd fzf_select ${{
+	list="$(fzf)"
+	lf -remote "send $id select \"$list\""
+}}
+
+cmd fzf_cd ${{
+	list="$(fd --type d --hidden | fzf)"
+	lf -remote "send $id cd \"$list\""
+}}
+
+# ranger
+cmd rifle ${{
+	set -f
+	rifle -l "$f"
+	read -p "Select runner: " runner
+	rifle -p "$runner" "$f"
+}}
+
+# get config value
+cmd get ${{
+	option="lf_${1}"
+	value="${!option}"
+	lf -remote "send $id echo $value"
+}}
+
+# debug
+cmd debug ${{
+	lf -remote "send $id echo $1"
+}}
+
+# vim: ft=bash

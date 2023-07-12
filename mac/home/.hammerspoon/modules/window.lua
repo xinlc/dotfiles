@@ -1,65 +1,31 @@
+---@diagnostic disable: lowercase-global
 -- 窗口管理
-
-require("modules.shortcut")
 
 -- 关闭动画持续时间
 hs.window.animationDuration = 0
 
+local lastSeenChain = nil
+local lastSeenWindow = nil
+local lastSeenAt = 0
+
+LAYOUT_COUNT = {
+    grid = 0,
+    hflatten = 0,
+    vflatten = 0,
+}
+
+alwaysAdjustAppWindowLayoutData = {
+    appNames = {},
+}
+
 -- 窗口枚举
-local AUTO_LAYOUT_TYPE = {
+AUTO_LAYOUT_TYPE = {
     -- 网格式布局
     GRID = "GRID",
     -- 水平或垂直评分
     HORIZONTAL_OR_VERTICAL = "HORIZONTAL_OR_VERTICAL",
+    HORIZONTAL_OR_VERTICAL_R = "ROTATE",
 }
-
--- 同一应用的所有窗口自动网格式布局
-if windows.same_application_auto_layout_grid ~= nil then
-    hs.hotkey.bind(
-        windows.same_application_auto_layout_grid.prefix,
-        windows.same_application_auto_layout_grid.key,
-        windows.same_application_auto_layout_grid.message,
-        function()
-            same_application(AUTO_LAYOUT_TYPE.GRID)
-        end
-    )
-end
-
--- 同一应用的所有窗口自动水平均分或垂直均分
-if windows.same_application_auto_layout_horizontal_or_vertical ~= nil then
-    hs.hotkey.bind(
-        windows.same_application_auto_layout_horizontal_or_vertical.prefix,
-        windows.same_application_auto_layout_horizontal_or_vertical.key,
-        windows.same_application_auto_layout_horizontal_or_vertical.message,
-        function()
-            same_application(AUTO_LAYOUT_TYPE.HORIZONTAL_OR_VERTICAL)
-        end
-    )
-end
-
--- 同一工作空间下的所有窗口自动网格式布局
-if windows.same_space_auto_layout_grid ~= nil then
-    hs.hotkey.bind(
-        windows.same_space_auto_layout_grid.prefix,
-        windows.same_space_auto_layout_grid.key,
-        windows.same_space_auto_layout_grid.message,
-        function()
-            same_space(AUTO_LAYOUT_TYPE.GRID)
-        end
-    )
-end
-
--- 同一工作空间下的所有窗口自动水平均分或垂直均分
-if windows.same_space_auto_layout_horizontal_or_vertical ~= nil then
-    hs.hotkey.bind(
-        windows.same_space_auto_layout_horizontal_or_vertical.prefix,
-        windows.same_space_auto_layout_horizontal_or_vertical.key,
-        windows.same_space_auto_layout_horizontal_or_vertical.message,
-        function()
-            same_space(AUTO_LAYOUT_TYPE.HORIZONTAL_OR_VERTICAL)
-        end
-    )
-end
 
 function same_application(auto_layout_type)
     local focusedWindow = hs.window.focusedWindow()
@@ -83,17 +49,39 @@ function same_application(auto_layout_type)
 end
 
 function same_space(auto_layout_type)
-    local spaceId = hs.spaces.focusedSpace()
-    -- 该空间下的所有 window 的 id，注意这里的 window 概念和 Hammerspoon 的 window 概念并不同，详请参考：http://www.hammerspoon.org/docs/hs.spaces.html#windowsForSpace
-    local windowIds = hs.spaces.windowsForSpace(spaceId)
+    local window_filter = hs.window.filter.new():setOverrideFilter({
+        visible = true,
+        fullscreen = false,
+        hasTitlebar = true,
+        currentSpace = true,
+        allowRoles = "AXStandardWindow",
+    })
+
+    local all_windows = window_filter:getWindows()
+
     local windows = {}
-    for k, windowId in ipairs(windowIds) do
-        local window = hs.window.get(windowId)
-        if window ~= nil then
+    for _, window in ipairs(all_windows) do
+        if window ~= nil and window:isStandard() and not window:isMinimized() then
             table.insert(windows, window)
         end
     end
     layout_auto(windows, auto_layout_type)
+end
+
+function smart_rotate_layout(windows)
+    local focusedScreen = hs.screen.mainScreen()
+    local focusedScreenFrame = focusedScreen:frame()
+    -- 如果是竖屏，就水平均分，否则垂直均分
+    if isWhatLayout() == "horizontal" then
+        LAYOUT_COUNT.hflatten = LAYOUT_COUNT.hflatten + 1
+        layout_horizontal(windows, focusedScreenFrame)
+    elseif isWhatLayout() == "vertical" then
+        LAYOUT_COUNT.vflatten = LAYOUT_COUNT.vflatten + 1
+        layout_vertical(windows, focusedScreenFrame)
+    else
+        LAYOUT_COUNT.grid = LAYOUT_COUNT.grid + 1
+        layout_grid(windows)
+    end
 end
 
 function layout_auto(windows, auto_layout_type)
@@ -101,11 +89,14 @@ function layout_auto(windows, auto_layout_type)
         layout_grid(windows)
     elseif AUTO_LAYOUT_TYPE.HORIZONTAL_OR_VERTICAL == auto_layout_type then
         layout_horizontal_or_vertical(windows)
+    else
+        smart_rotate_layout(windows)
     end
 end
 
 -- 平铺模式-网格均分
 function layout_grid(windows)
+    LAYOUT_COUNT.grid = LAYOUT_COUNT.grid + 1
     local focusedScreen = hs.screen.mainScreen()
     -- TODO-JING num = 3、5、7、8、10、11、13、14、15
     -- TODO-JING せめて num = 3 の問題を消して
@@ -150,7 +141,7 @@ function layout_grid(windows)
 
     local windowNum = #windows
     local focusedScreenFrame = focusedScreen:frame()
-    for _k, item in ipairs(layout) do
+    for _, item in ipairs(layout) do
         if windowNum <= item.num then
             local column = item.column
             local row = item.row
@@ -174,8 +165,8 @@ function layout_grid(windows)
                     local windowFrame = window:frame()
                     windowFrame.x = focusedScreenFrame.x + i * widthForPerWindow
                     windowFrame.y = focusedScreenFrame.y + j * heightForPerWindow
-                    windowFrame.w = widthForPerWindow
-                    windowFrame.h = heightForPerWindow
+                    windowFrame.w = widthForPerWindow - 2
+                    windowFrame.h = heightForPerWindow - 2
                     window:setFrame(windowFrame)
                     -- 让窗口获取焦点以将窗口置前
                     window:focus()
@@ -193,8 +184,10 @@ function layout_horizontal_or_vertical(windows)
     local focusedScreenFrame = focusedScreen:frame()
     -- 如果是竖屏，就水平均分，否则垂直均分
     if isVerticalScreen(focusedScreen) then
+        LAYOUT_COUNT.hflatten = LAYOUT_COUNT.hflatten + 1
         layout_horizontal(windows, focusedScreenFrame)
     else
+        LAYOUT_COUNT.vflatten = LAYOUT_COUNT.vflatten + 1
         layout_vertical(windows, focusedScreenFrame)
     end
 end
@@ -208,7 +201,7 @@ function layout_horizontal(windows, focusedScreenFrame)
         windowFrame.x = focusedScreenFrame.x
         windowFrame.y = focusedScreenFrame.y + heightForPerWindow * (i - 1)
         windowFrame.w = focusedScreenFrame.w
-        windowFrame.h = heightForPerWindow
+        windowFrame.h = heightForPerWindow - 2
         window:setFrame(windowFrame)
         window:focus()
     end
@@ -222,360 +215,12 @@ function layout_vertical(windows, focusedScreenFrame)
         local windowFrame = window:frame()
         windowFrame.x = focusedScreenFrame.x + widthForPerWindow * (i - 1)
         windowFrame.y = focusedScreenFrame.y
-        windowFrame.w = widthForPerWindow
+        windowFrame.w = widthForPerWindow - 2
         windowFrame.h = focusedScreenFrame.h
         window:setFrame(windowFrame)
         window:focus()
     end
 end
-
--- 左半屏
-hs.hotkey.bind(windows.left.prefix, windows.left.key, windows.left.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-end)
-
--- 右半屏
-hs.hotkey.bind(windows.right.prefix, windows.right.key, windows.right.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 2)
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
-    win:setFrame(f)
-end)
-
--- 上半屏
-hs.hotkey.bind(windows.up.prefix, windows.up.key, windows.up.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 下半屏
-hs.hotkey.bind(windows.down.prefix, windows.down.key, windows.down.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y + (max.h / 2)
-    f.w = max.w
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 左上角
-hs.hotkey.bind(windows.top_left.prefix, windows.top_left.key, windows.top_left.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 右上角
-hs.hotkey.bind(windows.top_right.prefix, windows.top_right.key, windows.top_right.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 2)
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 左下角
-hs.hotkey.bind(windows.left_bottom.prefix, windows.left_bottom.key, windows.left_bottom.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y + (max.h / 2)
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 右下角
-hs.hotkey.bind(windows.right_bottom.prefix, windows.right_bottom.key, windows.right_bottom.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 2)
-    f.y = max.y + (max.h / 2)
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f)
-end)
-
--- 1/9
-hs.hotkey.bind(windows.one.prefix, windows.one.key, windows.one.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 2/9
-hs.hotkey.bind(windows.two.prefix, windows.two.key, windows.two.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3)
-    f.y = max.y
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 3/9
-hs.hotkey.bind(windows.three.prefix, windows.three.key, windows.three.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3) * 2
-    f.y = max.y
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 4/9
-hs.hotkey.bind(windows.four.prefix, windows.four.key, windows.four.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y + (max.h / 3)
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 5/9
-hs.hotkey.bind(windows.five.prefix, windows.five.key, windows.five.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3)
-    f.y = max.y + (max.h / 3)
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 6/9
-hs.hotkey.bind(windows.six.prefix, windows.six.key, windows.six.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3) * 2
-    f.y = max.y + (max.h / 3)
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 7/9
-hs.hotkey.bind(windows.seven.prefix, windows.seven.key, windows.seven.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x
-    f.y = max.y + (max.h / 3) * 2
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 8/9
-hs.hotkey.bind(windows.eight.prefix, windows.eight.key, windows.eight.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3)
-    f.y = max.y + (max.h / 3) * 2
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 9/9
-hs.hotkey.bind(windows.nine.prefix, windows.nine.key, windows.nine.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-
-    f.x = max.x + (max.w / 3) * 2
-    f.y = max.y + (max.h / 3) * 2
-    f.w = max.w / 3
-    f.h = max.h / 3
-    win:setFrame(f)
-end)
-
--- 左 1/3（横屏）或上 1/3（竖屏）
-hs.hotkey.bind(windows.left_1_3.prefix, windows.left_1_3.key, windows.left_1_3.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    -- 如果为竖屏
-    if isVerticalScreen(screen) then
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w
-        f.h = max.h / 3
-        -- 如果为横屏
-    else
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w / 3
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
-
--- 中 1/3
-hs.hotkey.bind(windows.middle.prefix, windows.middle.key, windows.middle.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    -- 如果为竖屏
-    if isVerticalScreen(screen) then
-        f.x = max.x
-        f.y = max.y + (max.h / 3)
-        f.w = max.w
-        f.h = max.h / 3
-        -- 如果为横屏
-    else
-        f.x = max.x + (max.w / 3)
-        f.y = max.y
-        f.w = max.w / 3
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
-
--- 右 1/3（横屏）或下 1/3（竖屏）
-hs.hotkey.bind(windows.right_1_3.prefix, windows.right_1_3.key, windows.right_1_3.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    -- 如果为竖屏
-    if isVerticalScreen(screen) then
-        f.x = max.x
-        f.y = max.y + (max.h / 3 * 2)
-        f.w = max.w
-        f.h = max.h / 3
-        -- 如果为横屏
-    else
-        f.x = max.x + (max.w / 3 * 2)
-        f.y = max.y
-        f.w = max.w / 3
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
-
--- 左 2/3（横屏）或上 2/3（竖屏）
-hs.hotkey.bind(windows.left_2_3.prefix, windows.left_2_3.key, windows.left_2_3.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    -- 如果为竖屏
-    if isVerticalScreen(screen) then
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w
-        f.h = max.h / 3 * 2
-        -- 如果为横屏
-    else
-        f.x = max.x
-        f.y = max.y
-        f.w = max.w / 3 * 2
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
-
--- 右 2/3（横屏）或下 2/3（竖屏）
-hs.hotkey.bind(windows.right_2_3.prefix, windows.right_2_3.key, windows.right_2_3.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    -- 如果为竖屏
-    if isVerticalScreen(screen) then
-        f.x = max.x
-        f.y = max.y + (max.h / 3)
-        f.w = max.w
-        f.h = max.h / 3 * 2
-        -- 如果为横屏
-    else
-        f.x = max.x + (max.w / 3)
-        f.y = max.y
-        f.w = max.w / 3 * 2
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
 
 -- 判断指定屏幕是否为竖屏
 function isVerticalScreen(screen)
@@ -586,101 +231,107 @@ function isVerticalScreen(screen)
     end
 end
 
--- 居中
-hs.hotkey.bind(windows.center.prefix, windows.center.key, windows.center.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
-    local size = max.w / 2
-
-    f.x = max.x + (max.w / 4)
-    f.y = max.y + (max.h / 4)
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f)
-
-    --如果应用窗口有最小限制,则根据最小窗口居中
-    if win:frame().w > size then
-        f.x = (max.w-win:frame().w)/2
-        f.y = (max.h -win:frame().h)/2
-        f.w = win:frame().w
-        f.h = win:frame().h
-        win:setFrame(f)
+function isWhatLayout()
+    local gCount = LAYOUT_COUNT.grid
+    local hCount = LAYOUT_COUNT.hflatten
+    local vCount = LAYOUT_COUNT.vflatten
+    local minVal = math.min(gCount, hCount, vCount)
+    if gCount == minVal then
+        return "grid"
+    elseif hCount == minVal then
+        return "horizontal"
+    else
+        return "vertical"
     end
-end)
+end
 
--- 等比例放大窗口
-hs.hotkey.bind(windows.zoom.prefix, windows.zoom.key, windows.zoom.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
+function kill_same_application()
+    local focusedWindow = hs.window.focusedWindow()
+    local application = focusedWindow:application()
+    -- 当前屏幕
+    -- local focusedScreen = focusedWindow:screen()
+    -- 同一应用的所有窗口
+    application:kill()
+end
 
-    f.w = f.w + 40
-    f.h = f.h + 40
-    f.x = f.x - 20
-    f.y = f.y - 20
-    if f.x < max.x then
-        f.x = max.x
+function close_same_application_other_windows()
+    local focusedWindow = hs.window.focusedWindow()
+    local application = focusedWindow:application()
+    local visibleWindows = application:visibleWindows()
+    for k, visibleWindow in ipairs(visibleWindows) do
+        if not visibleWindow:isStandard() then
+            table.remove(visibleWindows, k)
+        end
+        if visibleWindow ~= focusedWindow then
+            visibleWindow:close()
+        end
     end
-    if f.y < max.y then
-        f.y = max.y
-    end
-    if f.w > max.w then
-        f.w = max.w
-    end
-    if f.h > max.h then
-        f.h = max.h
-    end
-    win:setFrame(f)
-end)
+end
 
--- 等比例缩小窗口
-hs.hotkey.bind(windows.narrow.prefix, windows.narrow.key, windows.narrow.message, function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    f.w = f.w - 40
-    f.h = f.h - 40
-    f.x = f.x + 20
-    f.y = f.y + 20
-    win:setFrame(f)
-end)
+----------------------------------------------------------------
 
--- 最大化
-hs.hotkey.bind(windows.max.prefix, windows.max.key, windows.max.message, function()
-    local win = hs.window.focusedWindow()
-    win:maximize()
-end)
+-- Grid 轮切模式实现
+sequenceNumber = 1
+function rotateWinGrid(movements)
+    local chainResetInterval = 2 -- seconds
+    local cycleLength = #movements
+    -- local sequenceNumber = 1
 
--- 将窗口移动到上方屏幕
-hs.hotkey.bind(windows.to_up.prefix, windows.to_up.key, windows.to_up.message, function()
-    local win = hs.window.focusedWindow()
-    if win then
-        win:moveOneScreenNorth()
+    -- return function()
+    local execSetGrid = function()
+        local win = hs.window.frontmostWindow()
+        local id = win:id()
+        local now = hs.timer.secondsSinceEpoch()
+        local screen = win:screen()
+
+        if lastSeenChain ~= movements or lastSeenAt < now - chainResetInterval or lastSeenWindow ~= id then
+            sequenceNumber = 1
+            lastSeenChain = movements
+            -- elseif (sequenceNumber == 1) then
+            -- At end of chain, restart chain on next screen.
+            -- screen = screen:next()
+        end
+
+        lastSeenAt = now
+        lastSeenWindow = id
+
+        hs.grid.set(win, movements[sequenceNumber], screen)
+        sequenceNumber = sequenceNumber % cycleLength + 1
     end
-end)
+    return execSetGrid()
+end
 
--- 将窗口移动到下方屏幕
-hs.hotkey.bind(windows.to_down.prefix, windows.to_down.key, windows.to_down.message, function()
-    local win = hs.window.focusedWindow()
-    if win then
-        win:moveOneScreenSouth()
-    end
-end)
+----------------------------------------------------------------
+-- 全局任意方式切换后自动调整布局的实现
+function AppWindowAutoLayout()
+    hs.fnutils.each(applications, function(item)
+        hs.alert.show("!!!start: 即将自动调整窗口布局", 0.5)
 
--- 将窗口移动到左侧屏幕
-hs.hotkey.bind(windows.to_left.prefix, windows.to_left.key, windows.to_left.message, function()
-    local win = hs.window.focusedWindow()
-    if win then
-        win:moveOneScreenWest(true, true)
-    end
-end)
+        if item.anytimeAdjustWindowLayout and item.alwaysWindowLayout then
+            local Appname = nil
+            if item.bundleId then
+                Appname = hs.application.nameForBundleID(item.bundleId)
+            else
+                Appname = item.name
+            end
+            local appMaplayout = { [Appname] = item.alwaysWindowLayout }
+            table.insert(alwaysAdjustAppWindowLayoutData.appNames, Appname)
+            table.insert(alwaysAdjustAppWindowLayoutData, appMaplayout)
+        end
 
--- 将窗口移动到右侧屏幕
-hs.hotkey.bind(windows.to_right.prefix, windows.to_right.key, windows.to_right.message, function()
-    local win = hs.window.focusedWindow()
-    if win then
-        win:moveOneScreenEast(true, true)
-    end
-end)
+        if #alwaysAdjustAppWindowLayoutData ~= 0 then
+            local awf = hs.window.filter.new(alwaysAdjustAppWindowLayoutData.appNames)
+            awf:subscribe(hs.window.filter.windowFocused, function(window, appName)
+                hs.alert.show("即将自动调整窗口布局", 0.5)
+                local layout = nil
+                for _, v in ipairs(alwaysAdjustAppWindowLayoutData) do
+                    if v[appName] then
+                        layout = v[appName]
+                    end
+                end
+
+                hs.grid.set(window, layout)
+            end)
+        end
+    end)
+end

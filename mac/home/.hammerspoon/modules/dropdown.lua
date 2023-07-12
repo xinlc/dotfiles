@@ -1,5 +1,5 @@
 -- terminal 实现 iTerm2 下拉唤起
-require("modules.shortcut")
+require("configs.shortcuts")
 
 ---- https://world.hey.com/jonash/alacritty-drop-down-guake-quake-style-terminal-setup-on-macos-6eef7d73
 ---- https://github.com/asmagill/hs._asm.spaces
