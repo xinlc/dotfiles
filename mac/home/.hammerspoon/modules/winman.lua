@@ -203,7 +203,8 @@ if spoon.WinMan then
                 cmodal:bind(item.prefix, item.key, item.message, function()
                     spoon.WinMan:stash()
                     spoon.WinMan:cMoveToScreen(item.location)
-                    handleWinManMode("off")
+                    -- handleWinManMode("off")
+                    handleWinManMode("on")
                 end)
             elseif wfn == "moveToSpace" then
                 cmodal:bind(item.prefix, item.key, item.message, function()

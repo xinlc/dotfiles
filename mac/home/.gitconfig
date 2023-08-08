@@ -1,7 +1,7 @@
 [user]
 
 	name = Richard
-	email = mail@lichao.xin
+	email = hi@lichao.xin
 
 [core]
 
@@ -30,6 +30,7 @@
 	#editor = nvim
 
     pager = delta
+	quotepath = false
 
 [pager]
 	diff = delta

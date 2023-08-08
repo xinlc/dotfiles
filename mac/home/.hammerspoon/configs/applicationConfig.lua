@@ -16,7 +16,7 @@ require("configs.windowConfig")
 
 applications = {
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "L",
     --     message = "VSCode",
     --     bundleId = "com.microsoft.VSCode", -- 支持 App bundleID
@@ -25,7 +25,7 @@ applications = {
     --     onPrimaryScreen = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "V",
     --     message = "neovide",
     --     name = {"neovide", "nvide", "goneovim"},  -- 支持多 AppName
@@ -34,7 +34,7 @@ applications = {
     --     onPrimaryScreen = false,
     -- },
     {
-        prefix = HyperKey,
+        prefix = AppHyperKey,
         key = "O",
         message = "Obsidian",
         name = { "obsidian", "typora" }, -- 支持 APP 名称
@@ -43,13 +43,13 @@ applications = {
         anytimeAdjustWindowLayout = true,
     },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "A",
     --     message = "ApiPost",
     --     name = { "apipost", "apifox" }, -- 支持 App 名称模糊匹配(ApiPost7)
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "U",
     --     message = "FDM",
     --     name = { "fdm", "Folx" }, -- 支持 APP 名称简写
@@ -59,7 +59,7 @@ applications = {
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "I",
     --     message = "iTerm2",
     --     name = {"Alacritty", "iTerm", "iTerm2", "warp"},
@@ -68,7 +68,7 @@ applications = {
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "F",
     --     message = "PathFinder",
     --     bundleId = "com.cocoatech.PathFinder",
@@ -77,15 +77,16 @@ applications = {
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "M",
     --     message = "Foxmail",
     --     -- bundleId = "com.tencent.Foxmail",
     --     name = {"Spark", "Foxmail"},
+    --     name = {"Outlook", "Foxmail"},
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "B",
     --     message = "firefox",
     --     bundleId = "org.mozilla.firefox",
@@ -94,7 +95,7 @@ applications = {
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "K",
     --     message = "Edge",
     --     -- message = "Chrome",
@@ -105,33 +106,33 @@ applications = {
     --     anytimeAdjustWindowLayout = true,
     -- },
     {
-        prefix = HyperKey,
+        prefix = AppHyperKey,
         key = "D",
         message = "DBeaver",
         name = { "dbeaver", "DBeaverEE", "DataGrip" },
     },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "Q",
     --     message = "QQ",
     --     bundleId = "com.tencent.qq",
     -- },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "0",
     --     message = "WeWork",
     --     bundleId = "com.tencent.WeWorkMac",
     -- },
     {
-        prefix = HyperKey,
-        key = "8",
+        prefix = AppHyperKey,
+        key = "W",
         message = "WeChat",
         bundleId = "com.tencent.xinWeChat",
         onPrimaryScreen = true,
         alwaysWindowLayout = window_grids.centeredMedium,
     },
     -- {
-    --     prefix = HyperKey,
+    --     prefix = AppHyperKey,
     --     key = "8",
     --     message = "NeteaseMusic",
     --     bundleId = "com.netease.163music",
@@ -141,26 +142,26 @@ applications = {
     -- },
 
     {
-        prefix = HyperKey,
+        prefix = AppHyperKey,
         key = "E",
         message = "Finder",
         bundleId = "com.apple.finder",
     },
     {
-        prefix = HyperKey,
+        prefix = AppHyperKey,
         key = "I",
         message = "IntelliJ IDEA",
         bundleId = "com.jetbrains.intellij",
     },
     {
-        prefix = HyperKey,
-        key = "0",
+        prefix = AppHyperKey,
+        key = "1",
         message = "Chrome",
         bundleId = "com.google.Chrome",
     },
     {
-        prefix = HyperKey,
-        key = "9",
+        prefix = AppHyperKey,
+        key = "2",
         message = "VSCode",
         bundleId = "com.microsoft.VSCode",
     },

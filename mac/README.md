@@ -239,6 +239,7 @@ brew bundle --file ~/Brewfile
 # git-branchless - 是一套以多种方式增强 Git 的工具。https://github.com/arxanas/git-branchless
 # jenv - jdk 多版本支持。https://github.com/jenv/jenv
 # fnm - 代替 nvm。 https://github.com/Schniz/fnm
+# atuin - Atuin 使用 SQLite 数据库取代了你现有的 shell 历史。https://github.com/atuinsh/atuin
 
 ```
 
@@ -310,8 +311,11 @@ https://github.com/ranger/ranger
 https://github.com/wfxr/forgit
 
 # 字体， https://github.com/ryanoasis/nerd-fonts
-brew tap homebrew/cask-fonts &&
-brew install --cask font-fira-code-nerd-font
+brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
+
+# 霞鹜文楷 https://github.com/lxgw/LxgwWenKai
+# 字体名：LXGW WenKai Mono
+brew tap homebrew/cask-fonts && brew install font-lxgw-wenkai
 ```
 
 ### [conda](https://docs.conda.io/en/latest/miniconda.html)
@@ -365,6 +369,18 @@ conda activate
 conda config --set auto_activate_base false
 
 # 可以在执行 tmux 前执行别名 condadown，在 .zshrc 中默认激活指定环境，这样进入 tmux 后就会自动激活环境
+```
+
+### [mamba](https://github.com/mamba-org/mamba) 代替 conda
+
+- [miniforge](https://github.com/conda-forge/miniforge) 代替 miniconda
+
+```bash
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-arm64.sh
+bash Mambaforge-MacOSX-arm64.sh
+
+mamba create --name dev python=3.9
+mamba activate dev"
 ```
 
 ## 安装 zsh
@@ -668,11 +684,62 @@ terminal.integrated.macOptionIsMeta 为 true
 
 描述文件 -> 键盘 -> 将 Option 键作用Meta键
 
+## 配置 github 的 ssh key
 
+由于众所周知的原因，大陆用户访问github会受到限制，经过测试之后发现使用ssh完全不会受到影响。
+
+### 添加github的ssh key
+
+先安装openssh（以archlinux为例，其他发行版应该也是要装openssh这个包）：
+
+```bash
+sudo pacman -S openssh
+```
+
+```bash
+git config --global user.name "你的github账户名"
+git config --global user.email "你的github账户默认的邮箱地址"
+```
+
+之后生成你的ssh-key
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "你的github账户默认的邮箱地址"
+```
+
+过程中会要求输入passphrase做进一步的加密保护，自行输入，直接回车表示没有passphrase。
+
+假设你刚刚生成的sshkey的路径为~/.ssh/id_rsa（windows的路径形如/c/Users/ayamir/.ssh/id_rsa）
+
+拷贝~/.ssh/id_rsa.pub的输入到剪切板（即拷贝公钥内容）
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+选中输出并复制到系统剪切板
+
+### 配置github的ssh key
+
+浏览器打开这个网址：https://github.com/settings/keys
+
+点击 New SSH key，之后将拷贝的公钥内容粘贴到key那个输入框中，tile框中的内容可以输入这个key的描述性文字，以我为例输入的是archlinux ssh
+
+之后点击 Add SSH key，最后输入你的github密码确认即可
+
+1. Add your ssh key to github account: [adding-a-new-ssh-key-to-your-github-account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+2. Configure your ssh key, add follow content to `~/.ssh/config`
+
+```text
+Host github
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa.pub # your SSH public key file
+```
 
 ## 参考
 
-- https://github.com/webpro/awesome-dotfiles
+- [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)
 - [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles/blob/master/.macos)
 - [打造舒适的macOS生产力环境](https://zhuanlan.zhihu.com/p/121798647/)
 - [Mac 键盘快捷键](https://support.apple.com/zh-cn/HT201236/)

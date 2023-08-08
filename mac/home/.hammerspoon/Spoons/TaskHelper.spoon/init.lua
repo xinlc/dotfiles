@@ -21,35 +21,36 @@ obj.logger = hs.logger.new('TaskHelper', 'info')
 --- Options:
 ---   notifyOnSuccess: if true, show a temporary success notification when the command completes successfully
 function obj.run(title, path, arguments, options)
-  options = options or {}
-  function taskCallback(exitCode, stdOut, stdErr)
-    logTitle = title .. " " .. path .. " " .. hs.inspect.inspect(arguments)
-    exitMsg = "returned " .. exitCode
-    logExitMsg = logTitle .. " " .. exitMsg
-    notifMsg = path .. " " .. exitMsg
-    if exitCode == 0 then
-      obj.logger.i(logExitMsg)
-      if options.notifyOnSuccess then
-        hs.notify.show(title, 'Succeeded', notifMsg)
-      end
-    else
-      obj.logger.w(logExitMsg)
-      hs.notify.new({
-        title = title,
-        subTitle = "Failed",
-        informativeText = notifMsg,
-        autoWithdraw = false,
-        withdrawAfter = 0
-      }):send()
+    options = options or {}
+    local function taskCallback(exitCode, stdOut, stdErr)
+        local logTitle = title .. " " .. path .. " " .. hs.inspect.inspect(arguments)
+        local exitMsg = "returned " .. exitCode
+        local logExitMsg = logTitle .. " " .. exitMsg
+        local notifMsg = path .. " " .. exitMsg
+        if exitCode == 0 then
+            obj.logger.i(logExitMsg)
+            if options.notifyOnSuccess then
+                hs.notify.show(title, 'Succeeded', notifMsg)
+            end
+        else
+            obj.logger.w(logExitMsg)
+            hs.notify.new({
+                title = title,
+                subTitle = "Failed",
+                informativeText = notifMsg,
+                autoWithdraw = false,
+                withdrawAfter = 0
+            }):send()
+        end
+        if stdOut and stdOut ~= '' then
+            obj.logger.i('stdout for ' .. logTitle .. ':\n' .. stdOut)
+        end
+        if stdErr and stdErr ~= '' then
+            obj.logger.w('stderr for ' .. logTitle .. ':\n' .. stdErr)
+        end
     end
-    if stdOut and stdOut ~= '' then
-      obj.logger.i('stdout for ' .. logTitle .. ':\n' .. stdOut)
-    end
-    if stdErr and stdErr ~= '' then
-      obj.logger.w('stderr for ' .. logTitle .. ':\n' .. stdErr)
-    end
-  end
-  hs.task.new(path, taskCallback, arguments):start()
+
+    hs.task.new(path, taskCallback, arguments):start()
 end
 
 return obj

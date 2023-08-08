@@ -52,5 +52,6 @@ fi
 #alias python38="/opt/homebrew/opt/python@3.8/bin/python3"
 #alias pip38="/opt/homebrew/opt/python@3.8/bin/pip3"
 # alias python="/usr/local/bin/python3"
+#alias python="/Library/Frameworks/Python.framework/Versions/2.7/bin/python2"
 # python E
 #

@@ -216,4 +216,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "editor.accessibilitySupport": "off",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.fontFamily": "LXGW WenKai Mono, Menlo, Monaco, 'Courier New', monospace",
 }

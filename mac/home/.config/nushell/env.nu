@@ -3,18 +3,18 @@
 ## source ~/.config/nushell/env.nu
 
 # homebrew B
-let-env HOMEBREW_PREFIX = '/opt/homebrew'
-let-env HOMEBREW_CELLAR = '/opt/homebrew/Cellar'
-let-env HOMEBREW_REPOSITORY = '/opt/homebrew'
-# let-env MANPATH = ($env.MANPATH | prepend '/opt/homebrew/share/man')
-# let-env INFOPATH = ($env.INFOPATH | prepend '/opt/homebrew/share/info')
-let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin')
-let-env PATH = ($env.PATH | prepend '/opt/homebrew/sbin')
+$env.HOMEBREW_PREFIX = '/opt/homebrew'
+$env.HOMEBREW_CELLAR = '/opt/homebrew/Cellar'
+$env.HOMEBREW_REPOSITORY = '/opt/homebrew'
+# $env.MANPATH = ($env.MANPATH | prepend '/opt/homebrew/share/man')
+# $env.INFOPATH = ($env.INFOPATH | prepend '/opt/homebrew/share/info')
+$env.PATH = ($env.PATH | prepend '/opt/homebrew/bin')
+$env.PATH = ($env.PATH | prepend '/opt/homebrew/sbin')
 # homebrew E
 
 # starship B
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
+#mkdir ~/.cache/starship
+#starship init nu | save -f ~/.cache/starship/init.nu
 # starship E
 
 # zoxide B move plugins
@@ -35,18 +35,24 @@ starship init nu | save -f ~/.cache/starship/init.nu
 
 if not (which fnm | is-empty) {
   ^fnm env --json | from json | load-env
-  let-env PATH = ($env.PATH | prepend [
+  $env.PATH = ($env.PATH | prepend [
     $"($env.FNM_MULTISHELL_PATH)/bin"
   ])
 }
 
 ## FNM E
 
+# atuin B
+# mkdir ~/.local/share/atuin/
+# atuin init nu | save ~/.local/share/atuin/init.nu
+# mkdir ~/.cache/atuin
+# atuin init nu | save -f ~/.cache/atuin/init.nu
+# atuin E
 
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
-let-env NU_LIB_DIRS = [
+$env.NU_LIB_DIRS = [
   ($nu.config-path | path dirname | path join modules)
   ($nu.config-path | path dirname | path join completions)
 ]
@@ -54,6 +60,6 @@ let-env NU_LIB_DIRS = [
 # Directories to search for plugin binaries when calling register
 #
 # By default, <nushell-config-dir>/plugins is added
-let-env NU_PLUGIN_DIRS = [
+$env.NU_PLUGIN_DIRS = [
   ($nu.config-path | path dirname | path join plugins)
 ]

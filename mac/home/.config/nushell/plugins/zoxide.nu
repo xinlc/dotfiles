@@ -7,11 +7,11 @@
 
 # Initialize hook to add new entries to the database.
 if (not ($env | default false __zoxide_hooked | get __zoxide_hooked)) {
-  let-env __zoxide_hooked = true
-  let-env config = ($env | default {} config).config
-  let-env config = ($env.config | default {} hooks)
-  let-env config = ($env.config | update hooks ($env.config.hooks | default [] pre_prompt))
-  let-env config = ($env.config | update hooks.pre_prompt ($env.config.hooks.pre_prompt | append { ||
+  $env.__zoxide_hooked = true
+  $env.config = ($env | default {} config).config
+  $env.config = ($env.config | default {} hooks)
+  $env.config = ($env.config | update hooks ($env.config.hooks | default [] pre_prompt))
+  $env.config = ($env.config | update hooks.pre_prompt ($env.config.hooks.pre_prompt | append { ||
     zoxide add -- $env.PWD
   }))
 }

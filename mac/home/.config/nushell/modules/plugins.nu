@@ -1,6 +1,7 @@
 
 # starship B
-source ~/.cache/starship/init.nu
+#source ~/.cache/starship/init.nu
+source ../plugins/starship.nu
 # starship E
 
 # zoxide B
@@ -10,3 +11,8 @@ source ~/.cache/starship/init.nu
 #}
 source ../plugins/zoxide.nu
 # zoxide E
+
+# atuin B
+#source ~/.cache/atuin/init.nu
+source ../plugins/atuin.nu
+# atuin E

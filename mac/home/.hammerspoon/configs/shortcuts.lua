@@ -57,7 +57,7 @@ superKey_items = {
     toggleDND = { { "cmd", "alt", "ctrl" }, "\\" },
     evernote_todo = { { "cmd", "alt", "ctrl" }, "n" },
     eudic_lightPeek = { { "cmd", "alt", "ctrl" }, "l" },
-    iterm_floatWindow = { { "cmd", "alt", "ctrl" }, "i" },
+    -- iterm_floatWindow = { { "cmd", "alt", "ctrl" }, "i" },
     -- 可选填写代理服务器配置
     httpProxy = "http://127.0.0.1:7890",
     favoriteBluetoothName = "小爱音箱-4099",

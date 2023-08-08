@@ -21,18 +21,18 @@
 
 
 plugins=(
-  z
-  git
-  node
-  npm
-  # vi-mode
-  docker
-  extract
-  fzf-tab
-  zsh-autosuggestions
-  zsh-history-substring-search
-  zsh-completions
-	zsh-syntax-highlighting
+    # z
+    git
+    # node
+    # npm
+    # vi-mode
+    # docker
+    # extract
+    fzf-tab
+    zsh-autosuggestions
+    zsh-history-substring-search
+    zsh-completions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

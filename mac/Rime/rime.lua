@@ -155,3 +155,6 @@ autocap_filter = require("autocap_filter")
 -- 中英混输词条自动空格
 -- 在 engine/filters 增加 - lua_filter@cn_en_spacer
 cn_en_spacer = require("cn_en_spacer")
+
+-- 错音错字提示
+corrector = require("corrector")

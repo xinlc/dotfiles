@@ -28,16 +28,27 @@ let custom_config = {
   rm: {
     always_trash: true # always act as if -t was given. Can be overridden with -p
   }
+  history: {
+    max_size: 100 # Session has to be reloaded for this to take effect
+  }
   completions: {
     algorithm: "fuzzy"  # prefix or fuzzy
   }
   cursor_shape: {
     emacs: blink_line
   }
-
   color_config: (get-theme)
   menus: (get-menus)
   keybindings: (get-mappings)
 }
 
-let-env config = ($env.config | merge $custom_config)
+# $env.config = ($env.config | merge $custom_config)
+
+$env.config.show_banner = $custom_config.show_banner
+$env.config.rm = ($env.config.rm | merge $custom_config.rm)
+$env.config.history = ($env.config.history | merge $custom_config.history)
+$env.config.completions = ($env.config.completions | merge $custom_config.completions)
+$env.config.cursor_shape = ($env.config.cursor_shape | merge $custom_config.cursor_shape)
+$env.config.color_config = ($env.config.color_config | merge $custom_config.color_config)
+$env.config.menus = ($env.config.menus | merge $custom_config.menus)
+$env.config.keybindings = ($env.config.keybindings | merge $custom_config.keybindings)

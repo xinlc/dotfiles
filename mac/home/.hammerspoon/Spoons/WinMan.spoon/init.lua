@@ -337,7 +337,7 @@ function obj:moveAndResize(option)
         --     -- cwin:setFrame({x=cres.x+cres.w/3/2, y=cres.h/96, w=cres.w/3*2, h=cres.h})
         --     cwin:setFrame({x=cres.x+cres.w/3/2, y=cres.y, w=cres.w/3*2, h=cres.h})
 
-        -- -- 定义 show 
+        -- -- 定义 show
         -- -- 宽度为24 分之 22
         -- elseif option == "show" then
         --     -- cwin:setFrame({x=cres.x+cres.w/3/2/2/2/2, y=cres.h/96, w=cres.w/48*46, h=cres.h})
@@ -348,7 +348,7 @@ function obj:moveAndResize(option)
         --     -- cwin:setFrame({x=cres.x+cres.w/3/2/2, y=cres.h/96, w=cres.w/12*10, h=cres.h})
         --     cwin:setFrame({x=cres.x+cres.w/3/2/2, y=cres.y, w=cres.w/12*10, h=cres.h})
 
-        -- -- 定义 center-2 
+        -- -- 定义 center-2
         -- elseif option == "center-2" then
         --     cwin:setFrame({x=cres.x+cres.w/2/2, y=cres.y, w=cres.w/2, h=cres.h})
 
@@ -415,9 +415,9 @@ function obj:cMoveToScreen(direction)
         elseif direction == "down" then
             cwin:moveOneScreenSouth()
         elseif direction == "left" then
-            cwin:moveOneScreenWest()
+            cwin:moveOneScreenWest(true, true)
         elseif direction == "right" then
-            cwin:moveOneScreenEast()
+            cwin:moveOneScreenEast(true, true)
         elseif direction == "next" then
             cwin:cMoveToScreen(cscreen:next())
         end

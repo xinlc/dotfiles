@@ -82,3 +82,36 @@ export def zshtory [] {
 # ] {
 # 	cd (zoxide query $query | str trim)
 # }
+
+# def argz [...arg] {
+  # ($arg | str collect (char space))
+# }
+
+# def h [...arg] {
+  # history | find (argz $arg)
+# }
+
+# def p [...arg] {
+  # ps | find (argz $arg)
+# }
+
+# def f [arg] {
+  # ls **/*($arg)*
+# }
+
+
+##
+## terminal proxy
+##
+
+export def-env proxyon [] {
+    $env.http_proxy = "http://127.0.0.1:7890"
+    $env.https_proxy = "http://127.0.0.1:7890"
+    $env.all_proxy = "socks5://127.0.0.1:7890"
+}
+
+export def-env proxyoff [] {
+    hide-env http_proxy
+    hide-env https_proxy
+    hide-env all_proxy
+}

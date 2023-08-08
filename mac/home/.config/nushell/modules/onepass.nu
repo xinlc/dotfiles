@@ -15,7 +15,7 @@ export def "authed" [] {
 
 # Log into a 1password session for the given account
 export def-env "login" [account: string = 'neofinancial' --return] {
-    let-env OP_SESSION = (if (onepass authed) {
+    $env.OP_SESSION = (if (onepass authed) {
         $env.OP_SESSION
     } else {
         let options = ['neofinancial']

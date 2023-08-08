@@ -1,4 +1,5 @@
 .DS_Store
+**/.idea/
 .vscode/
 
 build/
@@ -9,4 +10,3 @@ user.yaml
 
 cn_dicts/private.dict.yaml
 *private*
-opencc/.idea

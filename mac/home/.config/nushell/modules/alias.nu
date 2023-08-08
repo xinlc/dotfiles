@@ -42,5 +42,9 @@ export alias npm = pnpm
 export alias nvm = fnm
 export alias otop = ^top
 export alias top = btm
+export alias gl = git pull
+export alias conda = mamba
+export alias condaup = mamba activate dev
+export alias condadown = mamba deactivate
 
 # aliases E

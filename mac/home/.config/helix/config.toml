@@ -1,12 +1,24 @@
-theme = "monokai"
+theme = "tokyonight"
 
 [editor]
     middle-click-paste     = false
-    line-number            = "absolute"
-    mouse                  = true
     scroll-lines           = 10
     scrolloff              = 3
     completion-trigger-len = 3
+
+    [editor.statusline]
+        left = ["mode", "spinner", "diagnostics"]
+        center = ["file-name"]
+        right = [
+            "selections",
+            "position",
+            "position-percentage",
+            "file-encoding",
+            "file-type",
+        ]
+
+    [editor.lsp]
+        display-messages = true
 
     [editor.cursor-shape]
         insert = "bar"
@@ -14,4 +26,9 @@ theme = "monokai"
         select = "underline"
 
     [editor.file-picker]
-        hidden = false
+        hidden = true
+
+    [editor.indent-guides]
+        render      = true
+        character   = "╎"  # Some characters that work well: "▏", "┆", "┊", "⸽"
+        skip-levels = 1

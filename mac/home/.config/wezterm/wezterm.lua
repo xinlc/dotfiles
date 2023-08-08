@@ -3,6 +3,8 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
+-- local wezdir = os.getenv("HOME") .. "/.config/wezterm"
+
 local launch_menu = {}
 local default_prog = {}
 local set_environment_variables = {}
@@ -64,10 +66,11 @@ local config = {
 
     -- Window
     -- adjust_window_size_when_changing_font_size = false,
+    native_macos_fullscreen_mode = false,
     window_close_confirmation = 'NeverPrompt',
     window_decorations = 'RESIZE',
     -- window_background_image = '/Users/richard/Documents/img/im_alita.png',
-    window_background_opacity = 0.92,
+    window_background_opacity = 0.85,
     text_background_opacity = 1.0,
     window_padding = {
         left = 5,
@@ -95,9 +98,14 @@ local config = {
     },
 
     -- Font
+    -- font = wezterm.font_with_fallback {{
+    --     family = 'FiraCode Nerd Font'
+    -- }, 'FiraCode NF'},
+    -- font_size = 16,
+
     font = wezterm.font_with_fallback {{
-        family = 'FiraCode Nerd Font'
-    }, 'FiraCode NF'},
+        family = 'LXGW WenKai Mono'
+    }, 'FiraCode Nerd Font'},
     font_size = 16,
 
     -- Keys
@@ -138,31 +146,32 @@ local config = {
             }
         }
     }, -- Pane navigation
+    -- {
+    --     key = 'h', -- LeftArrow
+    --     mods = 'ALT',
+    --     action = wezterm.action {
+    --         ActivatePaneDirection = 'Left'
+    --     }
+    -- }, {
+    --     key = 'j', -- DownArrow
+    --     mods = 'ALT',
+    --     action = wezterm.action {
+    --         ActivatePaneDirection = 'Down'
+    --     }
+    -- }, {
+    --     key = 'k', -- UpArrow
+    --     mods = 'ALT',
+    --     action = wezterm.action {
+    --         ActivatePaneDirection = 'Up'
+    --     }
+    -- }, {
+    --     key = 'l', -- RightArrow
+    --     mods = 'ALT',
+    --     action = wezterm.action {
+    --         ActivatePaneDirection = 'Right'
+    --     }
+    -- },
     {
-        key = 'h', -- LeftArrow
-        mods = 'ALT',
-        action = wezterm.action {
-            ActivatePaneDirection = 'Left'
-        }
-    }, {
-        key = 'j', -- DownArrow
-        mods = 'ALT',
-        action = wezterm.action {
-            ActivatePaneDirection = 'Down'
-        }
-    }, {
-        key = 'k', -- UpArrow
-        mods = 'ALT',
-        action = wezterm.action {
-            ActivatePaneDirection = 'Up'
-        }
-    }, {
-        key = 'l', -- RightArrow
-        mods = 'ALT',
-        action = wezterm.action {
-            ActivatePaneDirection = 'Right'
-        }
-    }, {
         key = 'h',
         mods = 'LEADER',
         action = wezterm.action {

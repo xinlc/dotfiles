@@ -87,10 +87,23 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 # openjdk B
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # openjdk E
+#
 
 # go B
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+
+export CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/config.yaml
+export USUAL_CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/usualConfig.yaml
+
 # go E
 
 export PATH="$PATH:$HOME/.local/bin"
+
+# php B
+export LDFLAGS="-L/opt/homebrew/opt/php@7.2/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/php@7.2/include"
+# export PATH="$PATH:/opt/homebrew/opt/php@7.2/bin"
+# export PATH="$PATH:/opt/homebrew/opt/php@7.2/sbin"
+# php E
+

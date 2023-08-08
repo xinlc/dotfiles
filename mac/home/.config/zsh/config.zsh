@@ -22,6 +22,10 @@ eval "$(zoxide init zsh --cmd j)"
 eval "$(fnm env --use-on-cd)"
 # fnm E
 
+# atuin B
+eval "$(atuin init zsh)"
+# atuin E
+
 # # nvm B
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -38,25 +42,30 @@ export SDKMAN_DIR="/Users/richard/.sdkman"
 # conda B
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/richard/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/richard/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/richard/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/richard/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/richard/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/Users/richard/mambaforge/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/richard/miniconda3/bin:$PATH"
+        export PATH="/Users/richard/mambaforge/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/Users/richard/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/Users/richard/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 # 设置别名
-alias condaup="conda activate dev"
-alias condadown="conda deactivate"
+alias conda="mamba"
+alias condaup="mamba activate dev"
+alias condadown="mamba deactivate"
 
 # 自动激活 dev 环境
-conda activate dev
+mamba activate dev
 # conda E
 
 # the fuck B
@@ -75,8 +84,8 @@ eval $(thefuck --alias)
 
 
 # proxy B
-export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890;export ALL_PROXY=socks5://127.0.0.1:7890;
-alias proxyon='export http_proxy=127.0.0.1:7890;export https_proxy=$http_proxy;export all_proxy=socks5://127.0.0.1:7890'
+#export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890;export ALL_PROXY=socks5://127.0.0.1:7890;
+alias proxyon='export http_proxy=http://127.0.0.1:7890; export https_proxy=$http_proxy; export all_proxy=socks5://127.0.0.1:7890'
 alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 #alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 #alias unproxy='unset all_proxy'
@@ -89,3 +98,11 @@ alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 # export HSTR_CONFIG=hicolor       # get more colors
 # bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 # hstr E
+
+# pnpm
+export PNPM_HOME="/Users/richard/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

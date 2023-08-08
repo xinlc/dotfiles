@@ -16,7 +16,7 @@ set relativenumber
 set scrolloff=5
 set history=1000
 set clipboard=unnamed
-set tm=800
+set tm=300
 set novisualbell
 set noerrorbells
 

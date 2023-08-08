@@ -1,8 +1,9 @@
 {
-    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-    "Lua.diagnostics.globals": [
-        "hs",
-        "input_method_config",
-        "spoon"
-    ]
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "Lua.diagnostics.globals": [
+      "hs",
+      "input_method_config",
+      "spoon",
+      "hshelp_keys"
+  ]
 }
