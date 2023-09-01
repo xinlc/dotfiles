@@ -206,13 +206,15 @@ brew bundle --file ~/Brewfile
 # mcfly - 浏览 shell 历史命令，跟 hstr 一样 https://github.com/cantino/mcfly
 # nnn - 终端文件管理器 跟 ranger 类似, 可以代替 ls https://github.com/jarun/nnn
 # lf - 终端文件管理器，跟 ranger 类似。https://github.com/gokcehan/lf
+# xplr - 终端文件管理器，跟 ranger 类似。https://github.com/sayanarijit/xplr
+# joshuto - 终端文件管理器，跟 ranger 类似(Rust 重写)。https://github.com/kamiyaa/joshuto
 # fpp - 将终端输出结果文件，选择打开, `git status | fpp` https://github.com/facebook/PathPicker
 # xo/xo/usql - SQL 数据库的通用命令行界面 https://github.com/xo/usql
 # gobang - 用 Rust 编写的跨平台 TUI 数据库管理工具 https://github.com/TaKO8Ki/gobang
 # xxh - 使用 ssh 时带上 shell 配置。https://github.com/xxh/xxh
 # zoxide - 更智能的 cd 命令，代替 autojump。https://github.com/ajeetdsouza/zoxide
 # cloc - 计算代码行数。 https://github.com/AlDanial/cloc
-# starship - Starship 是由 Rust 编写的命令行主题，简单高效、容易配置（基本不用配置），而且跨平台。代替 ohmyzsh 和 p10k。 https://github.com/starship/starship
+# starship - Starship 是由 Rust 编写的命令行主题，简单高效、容易配置（基本不用配置），而且跨平台。代替 ohmyposh 和 powerline10k。 https://github.com/starship/starship
 # lazygit - 用于 git 命令的简单终端 UI。https://github.com/jesseduffield/lazygit
 # lazydocker - 用于 docker 命令的简单终端 UI。https://github.com/jesseduffield/lazydocker
 # gitui - git 终端用户界面，类似 lazygit。https://github.com/extrawurst/gitui
@@ -240,6 +242,7 @@ brew bundle --file ~/Brewfile
 # jenv - jdk 多版本支持。https://github.com/jenv/jenv
 # fnm - 代替 nvm。 https://github.com/Schniz/fnm
 # atuin - Atuin 使用 SQLite 数据库取代了你现有的 shell 历史。https://github.com/atuinsh/atuin
+# uutils-coreutils - 替换 coreutils。https://github.com/uutils/coreutils
 
 ```
 
@@ -731,10 +734,10 @@ cat ~/.ssh/id_rsa.pub
 2. Configure your ssh key, add follow content to `~/.ssh/config`
 
 ```text
-Host github
+Host github.com
     Hostname github.com
     User git
-    IdentityFile ~/.ssh/id_rsa.pub # your SSH public key file
+    IdentityFile ~/.ssh/id_rsa
 ```
 
 ## 参考

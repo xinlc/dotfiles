@@ -2,6 +2,7 @@ channels:
   - defaults
 show_channel_urls: true
 auto_activate_base: false
+changeps1: false
 default_channels:
   - http://mirrors.aliyun.com/anaconda/pkgs/main
   - http://mirrors.aliyun.com/anaconda/pkgs/r

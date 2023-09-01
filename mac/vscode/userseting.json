@@ -218,5 +218,6 @@
   },
   "editor.accessibilitySupport": "off",
   "git.openRepositoryInParentFolders": "never",
-  "editor.fontFamily": "LXGW WenKai Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "FiraCode Nerd Font Mono,LXGW WenKai Mono",
+  "editor.fontLigatures": true,
 }

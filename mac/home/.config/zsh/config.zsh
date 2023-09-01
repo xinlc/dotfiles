@@ -10,8 +10,12 @@ source ~/.config/zsh/prompt.zsh
 
 # p10k B
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/.config/zsh/p10k.zsh
+#source ~/.config/zsh/p10k.zsh
 # p10k E
+
+# starship B
+eval "$(starship init zsh)"
+# starship E
 
 # zoxide B
 # --cmd j 修改别名 z 为 j

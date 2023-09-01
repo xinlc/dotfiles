@@ -144,6 +144,27 @@ local function getAppID(appName)
     end
 end
 
+-- Toggle an application between being the frontmost app, and being hidden
+local function toggleApplication(_app)
+	-- local app = hs.appfinder.appFromName(_app)
+  local app = hs.application.get(_app)
+	if not app then
+		-- hs.application.launchOrFocus(_app)
+    hs.application.launchOrFocusByBundleID(_app)
+		return
+	end
+	local mainwin = app:mainWindow()
+	if mainwin then
+		if mainwin == hs.window.focusedWindow() then
+			mainwin:application():hide()
+		else
+			mainwin:application():activate(true)
+			mainwin:application():unhide()
+			mainwin:focus()
+		end
+	end
+end
+
 local function launchOrFocusApp(appInfo)
     local previousFocusedWindow = hs.window.focusedWindow()
     if previousFocusedWindow ~= nil then
@@ -153,7 +174,8 @@ local function launchOrFocusApp(appInfo)
     local appBundleID = appInfo.bundleId
     local appNameItems = appInfo.name
     if appBundleID then
-        hs.application.launchOrFocusByBundleID(appBundleID)
+      toggleApplication(appBundleID)
+        -- hs.application.launchOrFocusByBundleID(appBundleID)
         -- print(hs.inspect(x))
     else
         appBundleID = getAppIdFromRunningApp(appNameItems)
@@ -171,7 +193,8 @@ local function launchOrFocusApp(appInfo)
                 return false
             end
         end
-        hs.application.launchOrFocusByBundleID(appBundleID)
+        -- hs.application.launchOrFocusByBundleID(appBundleID)
+        toggleApplication(appBundleID)
         appInfo.bundleId = appBundleID
     end
 

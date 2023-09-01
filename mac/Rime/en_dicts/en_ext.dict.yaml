@@ -7,7 +7,7 @@
 #
 ---
 name: en_ext
-version: "2023-08-07"
+version: "2023-08-27"
 sort: by_weight
 ...
 # 一些杂项
@@ -677,7 +677,6 @@ Cortana	Cortana
 Curio	Curio
 Current Mac Bundles	CurrentMacBundles
 Daisy Disk	DaisyDisk
-Dash	Dash
 Datagraph	Datagraph
 Day One	DayOne
 Default Folder X	DefaultFolderX
@@ -965,7 +964,6 @@ iKlear	iKlear
 Legal High	LegalHigh
 Werkzeug	Werkzeug
 itsdangerours	itsdangerours
-Unicode	Unicode
 Mimestream	Mimestream
 CRUD	CRUD
 Create Read Update Delete	CRUD
@@ -996,7 +994,7 @@ Digital Millennium Copyright Act	DigitalMillenniumCopyrightAct
 PUA	PUA
 Pickup Artists	PUA
 Pickup Artists	PickupArtists
-Docker	Docker
+docker	docker
 Darcula	Darcula
 Google Analytics	GoogleAnalytics
 Cloudflare Pages	CloudflarePages
@@ -1055,7 +1053,7 @@ Zoho	Zoho
 Harington	Harington
 Hades	Hades
 Gecko	Gecko
-Omicron	Omicron
+omicron	omicron
 TinyPNG	TinyPNG
 Thanos	Thanos
 XML	XML
@@ -1131,7 +1129,6 @@ GNU General Public License	GNU
 GNU General Public License	GNUGeneralPublicLicense
 GPL	GPL
 GNU General Public License	GPL
-Delta	Delta
 Ukraine	Ukraine
 Minions	Minions
 Rush B	RushB
@@ -1574,7 +1571,6 @@ offload	offload
 Hammerspoon	Hammerspoon
 CrossOver	CrossOver
 hallelujahIM	hallelujahIM
-Trojan	Trojan
 AVAST!	AVAST!
 Bitdefender	Bitdefender
 ClamAV	ClamAV
@@ -1639,6 +1635,7 @@ Steam	Steam
 Steam Deck	SteamDeck
 Android	Android
 android	android
+Chrome	Chrome
 arch	arch
 iOS	iOS
 Linux	Linux
@@ -2118,7 +2115,6 @@ Google DeepMind	GoogleDeepMind
 TL;DR	TL;DR
 too long; didn't read	TL;DR
 Ant-Man	Ant-Man
-Spider-Man	Spider-Man
 ungoogled	ungoogled
 ungoogled-chromium	ungoogled-chromium
 taxman	taxman
@@ -2240,3 +2236,29 @@ mantis	mantis
 strongbox	strongbox
 tabby	tabby
 subtext	subtext
+homophone	homophone
+homophones	homophones
+JDK	JDK
+Java Development Kit	JDK
+polyphony	polyphony
+iota	iota
+mu	mu
+rho	rho
+upsilon	upsilon
+D&D	D&D
+Dungeons & Dragons	D&D
+Dungeons & Dragons	Dungeons&Dragons
+DnD	DnD
+D&D	DnD
+Dungeons & Dragons	DnD
+Minecraft	Minecraft
+LSP	LSP
+Language Server Protocol	LSP
+Google Pixel	GooglePixel
+medallion	medallion
+add-on	add-on
+add-ons	add-ons
+C#	C#
+C#	Csharp
+C#	Cjing
+decode	decode
