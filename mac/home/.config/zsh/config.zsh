@@ -1,4 +1,5 @@
 
+source ~/.config/zsh/functions.zsh
 source ~/.config/zsh/plugins.zsh
 source ~/.config/zsh/env.zsh
 source ~/.config/zsh/aliases.zsh
@@ -30,7 +31,7 @@ eval "$(fnm env --use-on-cd)"
 eval "$(atuin init zsh)"
 # atuin E
 
-# # nvm B
+# nvm B
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -94,6 +95,7 @@ alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 #alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 #alias unproxy='unset all_proxy'
 # proxy E
+
 
 # hstr B
 # HSTR configuration - add this to ~/.zshrc

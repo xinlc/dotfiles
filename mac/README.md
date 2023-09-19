@@ -72,6 +72,7 @@
 - [Parallels Desktop](https://www.parallels.cn/products/desktop/trial/) - 虚拟机。
 - [Telegram](https://telegram.org/) - TG
 - [Spark](https://sparkmailapp.com/zh) - 邮箱
+- [Microsoft Outlook](https://www.microsoft.com/zh-cn/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook) - 邮箱  (App Store)
 - [阿里云盘](https://www.aliyundrive.com) - 云盘
 - [START](https://start.qq.com) - 腾讯START云游戏平台。
 - Microsoft OneNote - 云笔记 (App Store)
@@ -173,7 +174,7 @@ brew bundle --file ~/Brewfile
 # autojump - 告别又臭又长的路径名，一键直达任何目录。 https://github.com/wting/autojump
 # nvm - node 多版本管理。https://github.com/nvm-sh/nvm
 # bat - 带有语法高亮和Git集成的 cat(1) 克隆 http://github.com/sharkdp/bat
-# exa - 用来替换 ls 命令的现代化工具。https://github.com/ogham/exa
+# exa - 用来替换 ls 命令的现代化工具。https://github.com/ogham/exa，https://github.com/eza-community/eza
 # yarn - node 包管理工具比npm好用，更快
 # tmux - 一个优秀的终端复用器类自由软件。https://github.com/tmux/tmux
 # mycli - 为 MySQL 命令行客户端，提供语法高亮和提示功能的工具！https://github.com/dbcli/mycli
@@ -208,6 +209,7 @@ brew bundle --file ~/Brewfile
 # lf - 终端文件管理器，跟 ranger 类似。https://github.com/gokcehan/lf
 # xplr - 终端文件管理器，跟 ranger 类似。https://github.com/sayanarijit/xplr
 # joshuto - 终端文件管理器，跟 ranger 类似(Rust 重写)。https://github.com/kamiyaa/joshuto
+# felix - tui 文件管理器，具有类似 vim 的键映射。https://github.com/kyoheiu/felix
 # fpp - 将终端输出结果文件，选择打开, `git status | fpp` https://github.com/facebook/PathPicker
 # xo/xo/usql - SQL 数据库的通用命令行界面 https://github.com/xo/usql
 # gobang - 用 Rust 编写的跨平台 TUI 数据库管理工具 https://github.com/TaKO8Ki/gobang
@@ -222,7 +224,7 @@ brew bundle --file ~/Brewfile
 # mitmproxy - 抓包工具。类似 Fiddler、Charles、wireshark、Whistle。https://github.com/mitmproxy/mitmproxy/
 # asdf - 管理多个运行环境版本的简单命令行工具，代替 nvm、pyenv等社区有大量插件。https://github.com/asdf-vm/asdf
 # tre-command - 现代的 tree 命令。https://github.com/dduan/tre/
-# broot - 一种查看和导航目录tree的新方法。https://github.com/Canop/broot
+# broot - 一种查看和导航目录tree的新方法，它集成了ls, tree, find, grep, du, fzf等工具的常用功能。https://github.com/Canop/broot
 # zellij - 终端复用器（multiplexer），类似 Tmux。https://github.com/zellij-org/zellij
 # tealdeer - 替换 tldr 和 man。https://github.com/dbrgn/tealdeer
 # tokei - 统计代码量。https://github.com/XAMPPRocky/tokei
@@ -243,6 +245,11 @@ brew bundle --file ~/Brewfile
 # fnm - 代替 nvm。 https://github.com/Schniz/fnm
 # atuin - Atuin 使用 SQLite 数据库取代了你现有的 shell 历史。https://github.com/atuinsh/atuin
 # uutils-coreutils - 替换 coreutils。https://github.com/uutils/coreutils
+# dust - 代替 du。https://github.com/bootandy/dust
+# duf - 代替 df。https://github.com/muesli/duf
+# lsd - 代替 ls。https://github.com/lsd-rs/lsd
+# choose-rust - 代替 awk。https://github.com/theryangeary/choose
+# sd - 代替 sed。https://github.com/chmln/sd
 
 ```
 

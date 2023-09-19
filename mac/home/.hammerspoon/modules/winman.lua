@@ -189,8 +189,8 @@ if spoon.WinMan then
             elseif wfn == "stepResize" then
                 cmodal:bind(item.prefix, item.key, item.message, function()
                     spoon.WinMan:stash()
-                    -- spoon.WinMan:stepResize(item.direction)
-                    spoon.WinMan:smartStepResize(item.direction)
+                    spoon.WinMan:stepResize(item.direction)
+                    -- spoon.WinMan:smartStepResize(item.direction)
                     handleWinManMode("on")
                 end)
             elseif wfn == "stepMove" then

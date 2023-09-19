@@ -19,20 +19,21 @@
 # fzf-tab
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
+source ~/.config/zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 plugins=(
-    # z
-    git
-    # node
-    # npm
-    # vi-mode
-    # docker
-    # extract
-    fzf-tab
-    zsh-autosuggestions
-    zsh-history-substring-search
-    zsh-completions
-    zsh-syntax-highlighting
+  # z
+  git
+  # node
+  # npm
+  # vi-mode
+  # docker
+  # extract
+  fzf-tab
+  zsh-autosuggestions
+  zsh-history-substring-search
+  zsh-completions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

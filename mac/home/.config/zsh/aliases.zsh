@@ -10,17 +10,17 @@ alias c='clear'
 # alias gc='git config credential.helper store'
 # alias gg='git clone'
 alias cdw="cd ~/workspace"
-alias rm="bash ~/bin/safermformac.sh"
+alias rm="safermformac"
 alias readlink=greadlink
 alias cat=bat
 # docker run --rm -it -v \/var/run/docker.sock:/var/run/docker.sock \-v ~/.config/lazydocker:/.config/jesseduffield/lazydocker \lazyteam/lazydocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
-# alias ls='exa'
-# alias ll='exa -lh'
-alias la='exa -la'
-alias lt='exa -T -L 1'
+# alias ls='eza'
+# alias ll='eza -lh'
+alias la='eza -la'
+alias lt='eza -T -L 1'
 alias lg='lazygit'
-alias rr='joshuto'
+alias rr='joshuto_cwd_fn --change-directory'
 alias er='xplr'
 # alias lzd='lazydocker'
 alias man='tldr'
@@ -32,13 +32,14 @@ alias npm="pnpm"
 alias nvm="fnm"
 alias otop='/usr/bin/top'
 alias top='btm'
+alias gg='git_diff_fn'
 
-if [ "$(command -v exa)" ]; then
+if [ "$(command -v eza)" ]; then
     unalias -m 'll'
     unalias -m 'l'
     unalias -m 'ls'
-    alias ls='exa -G  --color auto --icons -a -s type'
-    alias ll='exa -l --color always --icons -a -s type'
+    alias ls='eza -G  --color auto --icons -a -s type'
+    alias ll='eza -l --color always --icons -a -s type'
 fi
 
 
@@ -56,3 +57,4 @@ fi
 #alias python="/Library/Frameworks/Python.framework/Versions/2.7/bin/python2"
 # python E
 #
+

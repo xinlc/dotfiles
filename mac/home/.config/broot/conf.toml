@@ -1,0 +1,95 @@
+###############################################################
+# This configuration file lets you
+# - define new commands
+# - change the shortcut or triggering keys of built-in verbs
+# - change the colors
+# - set default values for flags
+# - set special behaviors on specific paths
+# - and more...
+#
+# Configuration documentation is available at
+#     https://dystroy.org/broot
+###############################################################
+
+###############################################################
+# Imports
+#
+# While it's possible to have all configuration in one file,
+# it's more convenient to split it in several ones.
+# Importing also allows to set a condition on the terminal's
+# color, which makes it possible to have a different skin
+# chosen when your terminal has a light background and when
+# it has a light one.
+imports = [
+    "skin.toml",
+    "verbs.toml"
+]
+
+###############################################################
+# Default flags
+# You can set up flags you want broot to start with by
+# default, for example `default_flags="ihp"` if you usually want
+# to see hidden and gitignored files and the permissions (then
+# if you don't want the hidden files you can launch `br -H`)
+# A popular flag is the `g` one which displays git related info.
+#
+default_flags = "igh"
+
+###############################################################
+# uncomment to activate modal mode
+#
+# (you really should read https://dystroy.org/broot/modal/
+# before as it may not suit everybody even among vim users)
+#
+modal = true
+
+###############################################################
+# Whether to mark the selected line with a triangle
+#
+show_selection_mark = true
+
+###############################################################
+# Quit on last cancel
+# You can usually cancel the last state change on escape.
+# If you want the escape key to quit broot when there's nothing
+# to cancel (for example when you just opened broot), uncomment
+# this parameter
+#
+# quit_on_last_cancel = true
+
+###############################################################
+# Icons
+# If you want to display icons in broot, uncomment this line
+# (see https://dystroy.org/broot/icons for installation and
+# troubleshooting)
+#
+icon_theme = "vscode"
+# syntax_theme = "SolarizedDark"
+
+###############################################################
+# Special paths
+# If some paths must be handled specially, uncomment (and change
+# this section as per the examples
+#
+[special-paths]
+"**/.git" = "hide"
+"**/.DS_Store" = "hide"
+
+# [search-modes]
+# "<empty>" = "fuzzy path"
+# "/"       = "regex path"
+# "e/"      = "exact path"
+# # "f/"      = "fuzzy content" # Not supported
+# "r/"      = "regex content"
+# "ec/"     = "exact content"
+# "en/"     = "exact name"
+# "ep/"     = "exact path"
+# # "fc/"     = "fuzzy content" # Not supported
+# "fn/"     = "fuzzy name"
+# "fp/"     = "fuzzy path"
+# "rc/"     = "regex content"
+# "rn/"     = "regex name"
+# "rp/"     = "regex path"
+# # "tc/"     = "tokens content" # Not supported
+# "tn/"     = "tokens name"
+# "tp/"     = "tokens path"

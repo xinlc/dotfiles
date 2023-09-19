@@ -15,7 +15,7 @@ collapse_preview = true
 # ratios for parent view (optional), current view and preview
 column_ratio = [1, 4, 4]
 scroll_offset = 6
-show_borders = true
+show_borders = false
 show_hidden = false
 show_icons = true
 tilde_in_titlebar = true

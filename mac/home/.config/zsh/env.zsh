@@ -42,6 +42,8 @@ export LANG=zh_CN.UTF-8
 export EDITOR="nvim"
 # tmux E
 
+export PATH=$PATH:~/bin
+
 # android B
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools

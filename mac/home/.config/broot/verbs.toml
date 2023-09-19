@@ -1,0 +1,226 @@
+###############################################################
+# This file contains the verb definitions for broot
+#
+# Doc at https://dystroy.org/broot/verbs/
+###############################################################
+# Verbs and shortcuts
+
+# A standard recommended command for editing files, that you
+# can customize.
+# If $EDITOR isn't set on your computer, you should either set it using
+#  something similar to
+#   export EDITOR=/usr/local/bin/nvim
+#  or just replace it with your editor of choice in the 'execution'
+#  pattern.
+#  If your editor is able to open a file on a specific line, use {line}
+#   so that you may jump directly at the right line from a preview.
+# Example:
+#  execution: nvim +{line} {file}
+[[verbs]]
+invocation = "edit"
+shortcut = "e"
+apply_to = "file"
+keys = ["ctrl-e", "enter"]
+external = "$EDITOR +{line} {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "open_stay"
+shortcut = "os"
+key = "ctrl-o"
+internal = ":open_stay"
+apply_to = "file"
+# extensions = ["png", "ico", "jpg", "jpeg", "mp4", "mov"]
+leave_broot = false
+
+[[verbs]]
+invocation = "open_with {cmd}"
+shortcut = "open"
+external = "{cmd} {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "rm"
+external = "safermformac -r {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "run"
+apply_to = "file"
+extensions = ["sh"]
+external = "{file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "create {subpath}"
+shortcut = "cr"
+external = "$EDITOR {directory}/{subpath}"
+leave_broot = false
+
+# If $PAGER isn't set on your computer, you should either set it
+#  or just replace it with your viewer of choice in the 'execution'
+#  pattern.
+# Example:
+#  execution = "less {file}"
+[[verbs]]
+name = "view"
+invocation = "view"
+shortcut = "v"
+apply_to = "file"
+# external = "$PAGER {file}"
+external = "bat {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "toggle_preview"
+keys = ["ctrl-p", "p"]
+internal = ":toggle_preview"
+
+[[verbs]]
+invocation = "start_end_panel"
+key = "alt-p"
+internal = ":start_end_panel"
+
+# [[verbs]]
+# key = "alt-p"
+# internal = ":open_preview"
+
+# [[verbs]]
+# key = "alt-shift-p"
+# internal = ":close_preview"
+
+# [[verbs]]
+# key = "alt-a"
+# internal = ":stage_all_files"
+
+# [[verbs]]
+# key = "alt-s"
+# internal = ":stage"
+
+# [[verbs]]
+# invocation = "alt-shift-s"
+# internal = ":unstage"
+
+[[verbs]]
+invocation = "toggle_perm"
+shortcut = "tp"
+internal = ":toggle_perm"
+
+[[verbs]]
+invocation = "git_status"
+key = "ctrl-alt-s"
+shortcut = "tgs"
+internal = ":toggle_git_status"
+# internal = ":toggle_git_file_info"
+
+[[verbs]]
+invocation = "git_diff"
+shortcut = "gd"
+external = "git diff {file}"
+
+[[verbs]]
+invocation = "enter_command_mode"
+key = "alt-m"
+internal = ":mode_command"
+
+[[verbs]]
+invocation = "enter_input_mode"
+key = "i"
+internal = ":mode_input"
+
+[[verbs]]
+invocation = "toggle_git_ignore"
+shortcut = "tgi"
+internal = ":toggle_git_ignore"
+
+[[verbs]]
+invocation = "toggle_files"
+keys = ["f"]
+shortcut = "tf"
+internal = ":toggle_files"
+
+# [[verbs]]
+# invocation = "input_clear"
+# key = "ctrl-u"
+# internal = ":input_clear"
+
+# exit broot
+[[verbs]]
+invocation = "exit"
+key = "q"
+internal = ":quit"
+
+# # next dir
+# [[verbs]]
+# invocation = "next_dir"
+# shortcut = "n"
+# internal = ":next_dir"
+
+# # previous dir
+# [[verbs]]
+# invocation = "previous_dir"
+# shortcut = "b"
+# internal = ":previous_dir"
+
+[[verbs]]
+invocation = "down"
+key = "ctrl-j"
+internal = ":line_down"
+
+[[verbs]]
+invocation = "up"
+key = "ctrl-k"
+internal = ":line_up"
+
+[[verbs]]
+invocation = "select_last"
+key = "alt-shift-j"
+internal = ":select_last"
+
+[[verbs]]
+invocation = "select_first"
+key = "alt-shift-k"
+internal = ":select_first"
+
+[[verbs]]
+invocation = "page_down"
+# key = "ctrl-f"
+key = "ctrl-d"
+internal = ":page_down"
+
+[[verbs]]
+invocation = "page_up"
+# key = "ctrl-b"
+key = "ctrl-u"
+internal = ":page_up"
+
+[[verbs]]
+invocation = "panel_right"
+# key = "alt-l"
+key = "ctrl-l"
+internal = ":panel_right"
+
+[[verbs]]
+invocation = "panel_left"
+# key = "alt-h"
+key = "ctrl-h"
+internal = ":panel_left"
+
+# [[verbs]]
+# key = "ctrl-h"
+# internal = ":parent"
+
+# [[verbs]]
+# key = "ctrl-l"
+# internal = ":focus"
+
+[[verbs]]
+invocation = "toggle_stage"
+# key = "ctrl-space"
+key = "space"
+internal = ":toggle_stage"
+
+# [[verbs]]
+# invocation = "up"
+# key = "ctrl-["
+# internal = ":focus {root}/.."
