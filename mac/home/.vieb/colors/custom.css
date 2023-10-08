@@ -1,0 +1,182 @@
+:root {
+    /* general */
+    --bg: #1d1f21;
+    --fg: #e0e0e0;
+    --tab-background: #1d1f21;
+    --tab-suspended: #373b41;
+    --visible-tab: #456887;
+    --tab-split: #81a2be;
+    --tab-audio: none;
+    --tab-muted: none;
+    --tab-muted-playing: none;
+    --tab-crashed: #cc6666;
+    --tab-scrollbar: #5ff;
+    --container-background: none;
+    --mode-normal-fg: #e0e0e0;
+    --mode-normal-bg: #1d1f21;
+    --mode-command-fg: #e0e0e0;
+    --mode-command-bg: #373b41;
+    --mode-insert-fg: #1d1f21;
+    --mode-insert-bg: #b5bd68;
+    --mode-follow-fg: #e0e0e0;
+    --mode-follow-bg: #1d1f21;
+    --mode-explore-fg: #ffffff;
+    --mode-explore-bg: #456887;
+    --mode-search-fg: #1d1f21;
+    --mode-search-bg: #de935f;
+    --mode-pointer-fg: #e0e0e0;
+    --mode-pointer-bg: #1d1f21;
+    --mode-visual-fg: #e0e0e0;
+    --mode-visual-bg: #1d1f21;
+    --url-default: #666;
+    --url-search: #f90;
+    --url-searchwords: #fcf;
+    --url-url: #3ff;
+    --url-suggest: #3f3;
+    --url-file: #ff9;
+    --url-invalid: #f33;
+    --follow-text: #ffffff;
+    --follow-url-bg: #233443;
+    --follow-url-border: none;
+    --follow-url-hover: none;
+    --follow-onclick-bg: #233443;
+    --follow-onclick-border: none;
+    --follow-onclick-hover: none;
+    --follow-click-bg: #5c410a;
+    --follow-click-border: none;
+    --follow-click-hover: none;
+    --follow-insert-bg: #5c410a;
+    --follow-insert-border: #5c410a;
+    --follow-insert-hover: none;
+    --follow-media-bg: #233443;
+    --follow-media-border: #233443;
+    --follow-media-hover: none;
+    --follow-image-bg: #233443;
+    --follow-image-border: #233443;
+    --follow-image-hover: none;
+    --follow-other-bg: #373b41;
+    --follow-other-border: none;
+    --follow-other-hover: none;
+    --suggestions-border: #1d1f21;
+    --suggestions-bg: #1d1f21;
+    --suggestions-selected: #373b41;
+    --suggestions-searchwords: #81a2be;
+    --suggestions-url: #456887;
+    --suggestions-file: #f0c674;
+    --notification-border: #373b41;
+    --notification-date: #e0e0e0;
+    --notification-permission: #e0e0e0;
+    --notification-error: #f33;
+    --notification-warning: #fd0;
+    --notification-info: #0cf;
+    --notification-success: #3f3;
+    --url-hover-fg: #000;
+    --url-hover-bg: #fffc;
+    --screenshot-highlight: #f90;
+    /* special pages */
+    --link-color: #0cf;
+    --link-underline: #059;
+    --scrollbar-bg: none;
+    --scrollbar-thumb: #81a2be;
+    --button-disabled: #999;
+    --code-fg: #fff;
+    --code-bg: #111;
+    --code-command: #f88;
+    --placeholder-text: #ccc;
+    --special-page-element-bg: #444;
+    --special-page-element-border: #222;
+    --input-unfocused: #666;
+    --input-focused: #aaa;
+    --download-progress-fg: #ccc;
+    --download-progress-bg: #666;
+    --helppage-h1: #d33;
+    --helppage-h2: #f76;
+    --helppage-h3: #fb9;
+    --helppage-countable: #fc0;
+    --helppage-range-compat: #fc0;
+    /* sourceviewer */
+    --syntax-fg: var(--fg);
+    --syntax-bg: var(--bg);
+    --syntax-keyword: #f77;
+    --syntax-entity: #daf;
+    --syntax-constant: #8cf;
+    --syntax-string: #adf;
+    --syntax-variable: #fa5;
+    --syntax-comment: #89a;
+    --syntax-entity-tag: #8e8;
+    --syntax-markup-heading: #27e;
+    --syntax-markup-list: #fc6;
+    --syntax-markup-emphasis: #cde;
+    --syntax-markup-addition-fg: #bfb;
+    --syntax-markup-addition-bg: #041;
+    --syntax-markup-deletion-fg: #fdd;
+    --syntax-markup-deletion-bg: #600;
+}
+
+body {font-family: "Arial";}
+
+/* No logo */
+#logo { display: none; }
+
+
+#tabs > span, #tabs .pinned {padding: 0.3em;}
+#tabs > span > img {padding-right: 0.2em; height: 1.2em;width: 1.2em;min-height: 1.2em;min-width: 1.2em;}
+#tabs .pinned > span { display: none;}
+#tabs .pinned > img {margin: auto 0 auto .25em;}
+#tabs > span > span { flex-grow: 1;}
+#tabs [media-playing]::after {content: "";}
+#tabs [muted][media-playing]::after {content: "";}
+#tabs .pinned [media-playing]::after {content: "";}
+#tabs .pinned [muted][media-playing]::after {content: "";}
+#tabs [media-playing]::after, #tabs [muted][media-playing]::after { font-family: "Hack Nerd Font"; height: fit-content; width: fit-content; margin: auto 0; padding-right: 10px;}
+#tabs [suspended] {background: unset; color: var(--tab-suspended);}
+#tabs [suspended] > img {filter: grayscale(1); opacity: 0.5;}
+
+
+#mode-container {display: flex;width: 10px; padding: 0 5px; text-align: left; vertical-align: middle; overflow: hidden;}
+#mode {text-transform: capitalize;font-family: "Hack Nerd Font"; margin: auto;font-weight: bold;display: flex;letter-spacing: 5px;}
+
+#navbar {order: 100; height: 2.5em; font-family: "Hack Nerd Font"; font-size: 1.1em}
+#notifications, #app #mapsuggest { margin-bottom: 3em; font-size: 1.2em;}
+#mode-container {display: none;}
+#mode-suggestions {display: none;}
+#url {margin: 0.5em 1em; border:none;}
+#suggest-dropdown {top: unset; bottom: 2.5em; left: 1em; width: fit-content; max-width: 50vw ; color: var(--fg); max-height: 50vh; font: 1em "Arial"; opacity: 0.95;}
+#suggest-dropdown div .title {max-width: none;}
+/* Put above #navbar */
+#url-hover {display: none;position: absolute;background: var(--url-hover-bg);color:var(--url-hover-fg);bottom: 2.5em;left: 0;right:unset;pointer-events: none;padding: .1em;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;width: fit-content;margin: auto;max-width: 80vw;text-align: center;z-index: 3;}
+
+
+[current-mode=normal] #navbar, [current-mode=normal] #url {color: var(--mode-normal-fg);background: var(--mode-normal-bg);}
+[current-mode=command] #navbar, [current-mode=command] #url {color: var(--mode-command-fg);background: var(--mode-command-bg);}
+[current-mode=command] #url::before {content: ":tastoehu";width: 100; position: absolute; left: 0; top: 0;}
+[current-mode=insert] #navbar, [current-mode=insert] #url {color: var(--mode-insert-fg);background: var(--mode-insert-bg);}
+[current-mode=follow] #navbar, [current-mode=follow] #url {color: var(--mode-follow-fg);background: var(--mode-follow-bg);}
+[current-mode=explore] #navbar, [current-mode=explore] #url {color: var(--mode-explore-fg);background: var(--mode-explore-bg);}
+[current-mode=search] #navbar, [current-mode=search] #url {color: var(--mode-search-fg);background: var(--mode-search-bg);}
+[current-mode=pointer] #navbar, [current-mode=pointer] #url {color: var(--mode-pointer-fg);background: var(--mode-pointer-bg);}
+[current-mode=visual] #navbar, [current-mode=visual] #url {color: var(--mode-visual-fg);background: var(--mode-visual-bg);}
+
+
+#app #follow {position: fixed;z-index: 1; font-family: "Hack Nerd Font";}
+
+#app #follow .follow-url,
+#app #follow .follow-inputs-click,
+#app #follow .follow-inputs-insert,
+#app #follow .follow-onclick,
+#app #follow .follow-media,
+#app #follow .follow-image,
+#app #follow .follow-other {
+    padding: 0.3em;
+    width: fit-content;
+    border-radius:0.2em;
+    opacity: 0.8;
+}
+
+
+/* TODO solve the issue in split where the split indicator rattle the tab */
+
+
+::-webkit-scrollbar {width: 0.6em;}
+::-webkit-scrollbar-thumb {min-height: 8%;opacity: 0.5;}
+

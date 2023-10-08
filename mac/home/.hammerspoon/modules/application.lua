@@ -118,7 +118,7 @@ local function getAppID(appName)
         return appBundleID
     end
 
-        --[[
+    --[[
             "kMDItemDisplayName = '*iterm*'c                                    -- "c": 大小写不敏感
                 && (kMDItemKind = 'Application' || kMDItemKind = '应用程序')    -- "指定文件后缀为 `.app`"
                 && kMDItemContentType = 'com.apple.application-bundle'"         -- "指定仅App 应用程序"
@@ -146,23 +146,31 @@ end
 
 -- Toggle an application between being the frontmost app, and being hidden
 local function toggleApplication(_app)
-	-- local app = hs.appfinder.appFromName(_app)
-  local app = hs.application.get(_app)
-	if not app then
-		-- hs.application.launchOrFocus(_app)
-    hs.application.launchOrFocusByBundleID(_app)
-		return
-	end
-	local mainwin = app:mainWindow()
-	if mainwin then
-		if mainwin == hs.window.focusedWindow() then
-			mainwin:application():hide()
-		else
-			mainwin:application():activate(true)
-			mainwin:application():unhide()
-			mainwin:focus()
-		end
-	end
+    -- local app = hs.appfinder.appFromName(_app)
+    local app = hs.application.get(_app)
+    if not app then
+        -- hs.application.launchOrFocus(_app)
+        hs.application.launchOrFocusByBundleID(_app)
+        return
+    end
+
+    local isFrontmost = app:isFrontmost()
+    if isFrontmost then
+      app:hide()
+    else
+      app:activate(true)
+    end
+
+    -- local mainwin = app:mainWindow()
+    -- if mainwin then
+    --     if mainwin == hs.window.focusedWindow() then
+    --         mainwin:application():hide()
+    --     else
+    --         mainwin:application():activate(true)
+    --         mainwin:application():unhide()
+    --         mainwin:focus()
+    --     end
+    -- end
 end
 
 local function launchOrFocusApp(appInfo)
@@ -174,7 +182,7 @@ local function launchOrFocusApp(appInfo)
     local appBundleID = appInfo.bundleId
     local appNameItems = appInfo.name
     if appBundleID then
-      toggleApplication(appBundleID)
+        toggleApplication(appBundleID)
         -- hs.application.launchOrFocusByBundleID(appBundleID)
         -- print(hs.inspect(x))
     else
@@ -187,7 +195,9 @@ local function launchOrFocusApp(appInfo)
         if WhetherIsAgent or not appBundleID then
             for _, v in ipairs(appNameItems) do
                 appBundleID = getAppID(v)
-                if appBundleID then break end
+                if appBundleID then
+                    break
+                end
             end
             if not appBundleID then
                 return false

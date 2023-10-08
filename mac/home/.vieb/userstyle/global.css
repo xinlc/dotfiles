@@ -1,0 +1,5 @@
+/* this files loads after the page css is loaded */
+html, body {
+    /* Remove smooth-behavior as it affects scrolling */
+    scroll-behavior: initial !important;
+}

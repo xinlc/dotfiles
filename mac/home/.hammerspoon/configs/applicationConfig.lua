@@ -82,7 +82,6 @@ applications = {
     --     message = "Foxmail",
     --     -- bundleId = "com.tencent.Foxmail",
     --     name = {"Spark", "Foxmail"},
-    --     name = {"Outlook", "Foxmail"},
     --     anytimeAdjustWindowLayout = true,
     -- },
     -- {
@@ -125,7 +124,7 @@ applications = {
     -- },
     {
         prefix = AppHyperKey,
-        key = "W",
+        key = "0",
         message = "WeChat",
         bundleId = "com.tencent.xinWeChat",
         onPrimaryScreen = true,
@@ -164,5 +163,11 @@ applications = {
         key = "2",
         message = "VSCode",
         bundleId = "com.microsoft.VSCode",
+    },
+    {
+        prefix = AppHyperKey,
+        key = "3",
+        message = "QuteBrowser",
+        bundleId = "org.qutebrowser.qutebrowser",
     },
 }

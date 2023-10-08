@@ -13,7 +13,7 @@ statusmessage.new = function(messageText)
 
         local styledTextAttributes = {
             font = {
-                name = "Fira Mono",
+                name = "LXGW WenKai Mono",
                 size = 20,
             },
             color = {

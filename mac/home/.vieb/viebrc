@@ -1,0 +1,197 @@
+" Custom
+set searchengine=https://www.google.com/search?q=%s
+set followchars="custom:hutenosa"
+set splitbelow
+set splitright
+set followelement="url,onclick,inputs-insert,inputs-click"
+set followelementpointer="url,onclick,inputs-insert,inputs-click,media,image,other"
+set guifontsize=12
+set noshowcmd
+set suspendtimeout=3600000
+    " 1 hour
+set redirects="https?://(www\.)?google\.com(\.\w+)?/amp/s/amp\.(.*)~https://$3"
+set redirects+=",https://(localhost|127.0.0.1)(.*)~http://$1$2"
+set redirects+=",https://www.google.com/search\?q=%3A(\d+)(.*)~http://localhost:$1"
+set redirects+=",(https://www.google.com/search\?q=)g%2F(.*)~$1$2"
+set redirects+=",https://www.google.com/search\?q=s3$~https://s3.console.aws.amazon.com/s3/buckets"
+set redirects+=",https://www.google.com/search\?q=dynamodb$~https://console.aws.amazon.com/dynamodbv2/home#tables"
+set redirects+=",https://www.google.com/search\?q=redshift$~https://console.aws.amazon.com/redshiftv2/home"
+set redirects+=",https://www.google.com/search\?q=gh$~https://github.com/"
+set redirects+=",https://www.google.com/search\?q=gh-ggg$~https://github.com/gogetgoing"
+set redirects+=",https://www.google.com/search\?q=mail$~https://mail.google.com/"
+set redirects+=",https://www.google.com/search\?q=rss$~https://jp.inoreader.com/dashboard"
+set userstyle=true
+set nativetheme=dark
+set reloadtaboncrash=true
+set menupage=never
+
+" Mappings
+nnoremap <space>bh <:lclose>
+nnoremap <space>bl <:rclose>
+nnoremap <space>bo <:lclose><:rclose>
+nnoremap <space>ba <:lclose><:rclose><:close>
+nnoremap <bs> <:b #>
+nnoremap g0 <:b 0>
+nnoremap g1 <:b 1>
+nnoremap g2 <:b 2>
+nnoremap g3 <:b 3>
+nnoremap g4 <:b 4>
+nnoremap g5 <:b 5>
+nnoremap g6 <:b 6>
+nnoremap g7 <:b 7>
+nnoremap g8 <:b 8>
+nnoremap g9 <:b 9>
+nnoremap g$ <:b -1>
+nnoremap <c-{> <moveTabBackward>
+nnoremap <c-}> <moveTabForward>
+noremap <c-m-{> <moveTabBackward>
+noremap <c-m-}> <moveTabForward>
+nnoremap <c-h> <toLeftSplitWindow>
+noremap <c-m-h> <toLeftSplitWindow>
+nnoremap <c-l> <toRightSplitWindow>
+noremap <c-m-l> <toRightSplitWindow>
+nnoremap <c-j> <toBottomSplitWindow>
+noremap <c-m-j> <toBottomSplitWindow>
+nnoremap <c-k> <toTopSplitWindow>
+noremap <c-m-k> <toTopSplitWindow>
+nnoremap <s-left> <:vsplit #><exchangeSplitWindow><toLeftSplitWindow>
+nnoremap <s-right> <:vsplit #>
+nnoremap <s-down> <:split #><exchangeSplitWindow><toTopSplitWindow>
+nnoremap <s-up> <:split #>
+
+" Make scrollable even in insert mode
+inoremap <c-d> <scrollPageDownHalf>
+inoremap <c-u> <scrollPageUpHalf>
+
+nnoremap gp <:pin>
+nnoremap gt <toCommandMode>b<space>
+nnoremap g/ <:tabnew><toExploreMode>g/
+
+noremap <m-q> <:quitall>
+nnoremap <c-w><c-q> <:hide>
+nnoremap <c-q> <:close>
+noremap <m-w> <:close>
+
+noremap <m-c-p> <previousTab>
+noremap <m-c-n> <nextTab>
+
+noremap <m-l> <toExploreMode>
+nnoremap o <toExploreMode>
+noremap <m-t> <:tabnew><toExploreMode>
+noremap <m-r> <refreshTab>
+nnoremap t <:tabnew><toExploreMode>
+
+nnoremap <m-left> <backInHistory>
+pnoremap <m-left> <backInHistory>
+vnoremap <m-left> <backInHistory>
+cnoremap <m-left> <backInHistory>
+enoremap <m-left> <backInHistory>
+nnoremap <c-i> <forwardInHistory>
+nnoremap <m-right> <forwardInHistory>
+pnoremap <m-right> <forwardInHistory>
+vnoremap <m-right> <forwardInHistory>
+cnoremap <m-right> <forwardInHistory>
+enoremap <m-right> <forwardInHistory>
+
+nnoremap <m-c> <p.copyText>
+vnoremap <m-c> <p.copyText>
+
+nnoremap + <zoomIn>
+nnoremap - <zoomOut>
+nnoremap = <zoomReset>
+
+pnoremap <up> <p.scrollUp>
+pnoremap <down> <p.scrollDown>
+pnoremap <right> <p.scrollRight>
+pnoremap <left> <p.scrollLeft>
+pnoremap <c-u> 3<p.scrollUp>
+pnoremap <c-d> 3<p.scrollDown>
+vnoremap <c-u> 3<p.scrollUp>
+vnoremap <c-d> 3<p.scrollDown>
+pnoremap ? <p.inspectElement>
+pnoremap : <toCommandMode>
+
+fnoremap <c-d> <scrollPageDownHalf>
+fnoremap <c-u> <scrollPageDownHalf>
+
+set permissioncamera=ask
+set permissionmicrophone=ask
+set permissionmediadevices=allow
+set permissioncertificateerror=ask
+set permissionclipboardread=ask
+set permissiondisplaycapture=ask
+" set permissiongeolocation=ask
+set permissionhid=allow
+set permissionnotifications=ask
+
+set dialogalert=show
+set dialogprompt=show
+set dialogconfirm=show
+
+set devtoolsposition=vsplit
+nnoremap <space>d <:devtools>
+nnoremap <space>td <:set darkreader!>
+nnoremap <space>tt <:runjsinpage document.location = `https://${document.location.host.replaceAll("-","--").replaceAll(".","-")}.translate.goog${document.location.pathname}?_x_tr_sl=auto&_x_tr_tl=en`>
+nnoremap <c-enter> <clickOnSearch>
+nnoremap <enter> <toCommandMode>b<space>
+
+nnoremap <c-z> <:%suspend>
+
+
+" Commands
+colorscheme custom
+
+set vimcommand="$([[ -f "/opt/homebrew/bin/kitty" ]] && echo "/opt/homebrew/bin" || echo "/Applications/kitty.app/Contents/MacOS")/kitty -1 ~/.asdf/shims/nvim +'setf browser'"
+
+nunmap d
+
+inoremap <c-u> <:runjsinpage ~/.vieb/scripts/delete_to_start.js>
+" inoremap <c-w> <s-left><a-s-left><bs>
+inoremap <c-w> <:runjsinpage ~/.vieb/scripts/delete_word.js>
+inoremap <c-y> <home><s-end><m-c><end>
+cnoremap <c-k> <s-end><bs>
+cnoremap <c-u> <s-home><bs>
+cnoremap <c-w> <s-left><a-s-left><bs>
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+cnoremap <c-b> <left>
+cnoremap <c-f> <right>
+cnoremap <c-y> <home><s-end><m-c><end>
+enoremap <c-k> <s-end><bs>
+enoremap <c-u> <s-home><bs>
+enoremap <c-w> <s-left><a-s-left><bs>
+enoremap <c-a> <home>
+enoremap <c-e> <end>
+enoremap <c-b> <left>
+enoremap <c-f> <right>
+enoremap <c-y> <home><s-end><m-c><end>
+snoremap <c-k> <s-end><bs>
+snoremap <c-u> <s-home><bs>
+snoremap <c-w> <s-left><a-s-left><bs>
+snoremap <c-a> <home>
+snoremap <c-e> <end>
+snoremap <c-b> <left>
+snoremap <c-f> <right>
+snoremap <c-y> <home><s-end><m-c><end>
+
+" Enable to <esc> to work
+nnoremap <esc> <toInsertMode><esc><toNormalMode><:nohlsearch>
+
+" Password AutoComplete
+" Timeout is set because runjsinpage executes before openLinkExternal
+inoremap <c-space>u <:set externalcommand="~/.vieb/scripts/get_page_username.sh"><action.openLinkExternal><:runjsinpage setTimeout(function(){document.execCommand('paste')}, 500)>
+inoremap <c-space>p <:set externalcommand="~/.vieb/scripts/get_page_password.sh"><action.openLinkExternal><:runjsinpage setTimeout(function(){document.execCommand('paste')}, 500)>
+inoremap <c-space>g <:set externalcommand="/Applications/kitty.app/Contents/MacOS/kitty -1 ~/.vieb/scripts/generate_page_password.sh"><action.openLinkExternal>
+" unset openLinkExternal
+nunmap x
+
+
+" Permission Management
+set permissionsallowed=
+set permissionsallowed+=todoist.com~notifications
+set permissionsallowed+=whatsapp.com~notifications
+
+source ~/.viebrc_local
+
+" Viebrc generated by Vieb
+" vim: ft=vim

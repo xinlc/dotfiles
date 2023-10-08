@@ -31,14 +31,14 @@
 
   "tabnine.experimentalAutoImports": false,
 
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.md": "default"
   },
-  "workbench.colorTheme": "Community Material Theme",
+  "workbench.colorTheme": "Catppuccin Macchiato",
 
   // 避免终端 alt 键输入特殊字符
   "terminal.integrated.macOptionIsMeta": true,
@@ -49,6 +49,9 @@
 
   // vim
   // "vim.enableNeovim": true,
+  // "vim.neovimUseConfigFile": true,
+  // "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  // "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   // "vim.useSolidBlockCursor": false, // 开启后很卡
   "vim.overrideCopy": false,
   "vim.easymotion": true,
@@ -220,4 +223,9 @@
   "git.openRepositoryInParentFolders": "never",
   "editor.fontFamily": "FiraCode Nerd Font Mono,LXGW WenKai Mono",
   "editor.fontLigatures": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
 }

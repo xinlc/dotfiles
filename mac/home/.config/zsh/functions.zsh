@@ -26,6 +26,15 @@ function joshuto_cwd_fn() {
 	esac
 }
 
+# There is a wrapper of yazi, that provides the ability to change the current working directory when yazi exiting, feel free to use it:
+function yazi_cwd_fn() {
+	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # git diff before commit
 function git_diff_fn {

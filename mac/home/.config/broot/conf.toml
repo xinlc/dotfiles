@@ -21,7 +21,8 @@
 # chosen when your terminal has a light background and when
 # it has a light one.
 imports = [
-    "skin.toml",
+    # "skin.toml",
+    "skins/catppuccin-macchiato.hjson",
     "verbs.toml"
 ]
 

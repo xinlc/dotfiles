@@ -19,7 +19,7 @@
 # fzf-tab
 # git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-source ~/.config/zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.config/zsh/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 plugins=(
   # z
@@ -29,6 +29,7 @@ plugins=(
   # vi-mode
   # docker
   # extract
+  # fzf
   fzf-tab
   zsh-autosuggestions
   zsh-history-substring-search

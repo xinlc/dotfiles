@@ -158,3 +158,7 @@ cn_en_spacer = require("cn_en_spacer")
 
 -- 错音错字提示
 corrector = require("corrector")
+
+-- 英文词条上屏自动空格
+-- 在 engine/filters 增加 - lua_filter@en_spacer
+en_spacer = require("en_spacer")

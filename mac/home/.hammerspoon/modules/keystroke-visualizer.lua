@@ -156,7 +156,7 @@ end
 function styleKeystrokeText(text)
     return hs.styledtext.new(text, {
         font = {
-            name = "Monaco",
+            name = "LXGW WenKai Mono",
             size = 40,
         },
         -- 加粗
@@ -166,7 +166,7 @@ function styleKeystrokeText(text)
         },
         backgroundColor = {
             hex = "#000000",
-            alpha = 0.5,
+            alpha = 0.8,
         },
         paragraphStyle = {
             -- 超过画布宽度后自动换行

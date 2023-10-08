@@ -49,7 +49,7 @@ vim:setFallbackOnlyUrlPatterns({
 -- To customize the hot key you want, see the mods and key parameters at:
 --   https://www.hammerspoon.org/docs/hs.hotkey.html#bind
 --
-vim:bindHotKeys({ enter = { {'ctrl'}, ';' } })
+vim:bindHotKeys({ enter = { {'ctrl', 'cmd'}, ';' } })
 
 --------------------------------
 -- END VIM CONFIG

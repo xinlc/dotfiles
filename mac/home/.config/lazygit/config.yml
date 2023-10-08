@@ -4,26 +4,26 @@ gui:
   theme:
     lightTheme: false # For terminals with a light background
     activeBorderColor:
-      - '#f5c2e7'
+      - '#f0c6c6'
       - bold
     inactiveBorderColor:
-      - '#a6adc8'
+      - '#a5adcb'
     optionsTextColor:
-      - '#89b4fa'
+      - '#8aadf4'
     selectedLineBgColor:
-      - '#313244'
+      - '#363a4f'
     selectedRangeBgColor:
-      - '#313244'
+      - '#363a4f'
     cherryPickedCommitBgColor:
-      - '#45475a'
+      - '#494d64'
     cherryPickedCommitFgColor:
-      - '#f5c2e7'
+      - '#f0c6c6'
     unstagedChangesColor:
-      - '#f38ba8'
+      - '#ed8796'
     defaultFgColor:
-      - '#cdd6f4'
+      - '#cad3f5'
     searchingActiveBorderColor:
-      - '#f9e2af'
+      - '#eed49f'
 git:
   paging:
     colorArg: always

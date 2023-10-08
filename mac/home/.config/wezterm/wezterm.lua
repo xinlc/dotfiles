@@ -67,7 +67,7 @@ local config = {
   default_cursor_style = "BlinkingBar",
   -- color_scheme = 'Solarized Dark (base16)',
   -- color_scheme = "Solarized Dark Higher Contrast",
-  color_scheme = "Catppuccin Mocha",
+  color_scheme = "Catppuccin Macchiato",
 
   -- Window
   -- adjust_window_size_when_changing_font_size = false,
@@ -75,7 +75,7 @@ local config = {
   window_close_confirmation = "NeverPrompt",
   window_decorations = "RESIZE",
   -- window_background_image = '/Users/richard/Documents/img/im_alita.png',
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.92,
   text_background_opacity = 1.0,
   window_padding = {
     left = 5,

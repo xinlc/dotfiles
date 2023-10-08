@@ -57,6 +57,7 @@
 - [Bob](https://github.com/ripperhe/Bob) - 划词翻译和截图翻译工具
 - [Chrome](https://www.google.cn/chrome/) - 最好用的浏览器没有之一
 - [Qutebrowser](https://github.com/qutebrowser/qutebrowser) - 如果您正在寻找一款使用Vim风格的键盘操作的浏览器，那么开源的Qutebrowser将会是个不错的选择。
+- [Vieb](https://github.com/Jelmerro/Vieb) - 类似 Qutebrowser。
 - [Firefox](http://www.firefox.com.cn) - 信仰浏览器
 - [Microsoft Edge](https://www.microsoft.com/zh-cn/edge) - 微软基于 Chromium 开发的新版浏览器。
 - [WPS Office](https://www.wps.cn) - 办公套件
@@ -223,6 +224,7 @@ brew bundle --file ~/Brewfile
 # hetty - 用于安全研究的 HTTP 工具包，代替 Burp Suite Pro。brew install hettysoft/tap/hetty。https://github.com/dstotijn/hetty/
 # mitmproxy - 抓包工具。类似 Fiddler、Charles、wireshark、Whistle。https://github.com/mitmproxy/mitmproxy/
 # asdf - 管理多个运行环境版本的简单命令行工具，代替 nvm、pyenv等社区有大量插件。https://github.com/asdf-vm/asdf
+# rtx - asdf rust 版本。https://github.com/jdx/rtx
 # tre-command - 现代的 tree 命令。https://github.com/dduan/tre/
 # broot - 一种查看和导航目录tree的新方法，它集成了ls, tree, find, grep, du, fzf等工具的常用功能。https://github.com/Canop/broot
 # zellij - 终端复用器（multiplexer），类似 Tmux。https://github.com/zellij-org/zellij
@@ -250,6 +252,7 @@ brew bundle --file ~/Brewfile
 # lsd - 代替 ls。https://github.com/lsd-rs/lsd
 # choose-rust - 代替 awk。https://github.com/theryangeary/choose
 # sd - 代替 sed。https://github.com/chmln/sd
+# yazi - 跟 joshuto 类似，但更快。https://github.com/sxyazi/yazi
 
 ```
 

@@ -43,7 +43,7 @@
   {
     "key": "ctrl+d",
     "command": "deleteRight",
-    "when": "editorTextFocus && !editorReadonly && vim.mode == 'Insert'"
+    "when": "editorTextFocus && !editorReadonly && (vim.mode == 'Insert' || neovim.mode == insert)"
   },
   {
     "key": "cmd+[",
@@ -110,5 +110,11 @@
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
   }
 ]

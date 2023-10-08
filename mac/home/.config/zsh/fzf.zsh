@@ -12,13 +12,15 @@ fi
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
+# fzf-git
+source ~/.config/zsh/fzf/fzf-git.sh
 
 # 配置参数
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---height 50% --layout=reverse --border \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--height 50% --layout=reverse \
 --bind=ctrl-t:top,change:top --bind ctrl-e:down,ctrl-u:up \
 "
 
