@@ -3,19 +3,12 @@
 -- Add any additional options here
 
 vim.g.mapleader = " "
+vim.g.autoformat = false
 
-vim.opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
-}
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.o.foldcolumn = "0"
+vim.g.os = vim.loop.os_uname().sysname
+vim.g.open_command = vim.g.os == "Darwin" and "open" or "xdg-open"
+
+-- vim.opt.grepprg = "rg --vimgrep --smart-case --"
 
 if vim.fn.has("nvim-0.8") == 1 then
   vim.opt.backup = true
@@ -24,7 +17,7 @@ if vim.fn.has("nvim-0.8") == 1 then
 end
 
 if vim.g.neovide then
-  vim.opt.guifont = { "FiraCode Nerd Font Mono", "h9" }
+  vim.o.guifont = "Fira Code,Symbols Nerd Font Mono:h34"
   vim.g.neovide_scale_factor = 0.3
 end
 

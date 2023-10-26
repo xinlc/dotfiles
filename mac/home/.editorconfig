@@ -64,13 +64,13 @@ indent_size = 2
 indent_style = tab
 
 [*.py]
-indent_size = 4
+indent_size = 2
 
 [*.js]
-indent_size = 4
+indent_size = 2
 
 [*.ts]
-indent_size = 4
+indent_size = 2
 
 [*.{less,css}]
 indent_size = 2

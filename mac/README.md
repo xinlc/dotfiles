@@ -48,7 +48,7 @@
 
 ### 应用软件
 
-- [V2rayU](https://github.com/yanue/V2rayU) - 科学上网，哎！通往世界的大门
+- [Clash](https://github.com/Dreamacro/clash) - 科学上网，哎！通往世界的大门
 - [网易云音乐](https://music.163.com/#/download) - 音乐
 - [网易有道词典](http://cidian.youdao.com/index-mac.html) - 词典
 - [百度网盘](https://pan.baidu.com/download#pan) - 网盘
@@ -84,6 +84,8 @@
 
 - [drawio](https://github.com/jgraph/drawio-desktop) - 画图神器
 - [excalidraw](https://github.com/excalidraw/excalidraw) - 手绘风画图神器
+- [Slidev](https://github.com/slidevjs/slidev) - Markdown 语法来实现 PPT
+- [Mermaid](https://github.com/mermaid-js/mermaid) - Markdown 语法来实现图表，类似 PlantUML
 - [ProcessOn](https://www.processon.com) - 国内版 Draw.io
 - [OmniGraffle](https://www.omnigroup.com/omnigraffle/) - 画图神器
 - [PDManer](https://gitee.com/robergroup/pdmaner) - 国产数据库建模工具
@@ -104,6 +106,7 @@
 - [JMeter](http://jmeter.apache.org/download_jmeter.cgi) - 压测工具
 - [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有~~之一~~
 - [Obsidian](https://obsidian.md/) - 代替 Typora
+- [Logseq](https://github.com/logseq/logseq) - 大纲类型文档
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。

@@ -1,11 +1,10 @@
 return {
-  -- { "ellisonleao/gruvbox.nvim" },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
-      -- colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
+      colorscheme = "catppuccin-macchiato",
       -- colorscheme = "gruvbox",
     }
   },

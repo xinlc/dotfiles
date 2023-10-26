@@ -1,9 +1,11 @@
 return {
 
+  -- { "ellisonleao/gruvbox.nvim" },
+
   -- tokyonight
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {
       style = "storm",

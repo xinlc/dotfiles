@@ -42,6 +42,10 @@ export LANG=zh_CN.UTF-8
 export EDITOR="nvim"
 # tmux E
 
+# GPG B
+export GPG_TTY=$(tty)
+# GPG E
+
 export PATH=$PATH:~/bin
 
 # android B
