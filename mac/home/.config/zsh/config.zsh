@@ -24,7 +24,10 @@ eval "$(zoxide init zsh --cmd j)"
 # zoxide E
 
 # fnm B
-eval "$(fnm env --use-on-cd)"
+# fnm
+if (( $+commands[fnm] )); then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 # fnm E
 
 # atuin B
@@ -45,36 +48,69 @@ export SDKMAN_DIR="/Users/richard/.sdkman"
 
 
 # conda B
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/richard/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/richard/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/Users/richard/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/richard/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# lazyload conda
+# if (( $+commands[conda] )) &>/dev/null; then
+    __xinlc_lazy_conda_aliases=('python' 'conda' 'mamba' 'pip' 'pip3' 'python3')
+    for lazy_conda_alias in $__xinlc_lazy_conda_aliases
+    do
+        alias $lazy_conda_alias="__xinlc_load_conda && $lazy_conda_alias"
+    done
 
-if [ -f "/Users/richard/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/Users/richard/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
+    __xinlc_load_conda() {
+        for lazy_conda_alias in $__xinlc_lazy_conda_aliases
+        do
+            unalias $lazy_conda_alias
+        done
+
+        # >>> conda initialize >>>
+        # !! Contents within this block are managed by 'conda init' !!
+        __conda_setup="$('/Users/richard/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__conda_setup"
+        else
+            if [ -f "/Users/richard/mambaforge/etc/profile.d/conda.sh" ]; then
+                . "/Users/richard/mambaforge/etc/profile.d/conda.sh"
+            else
+                export PATH="/Users/richard/mambaforge/bin:$PATH"
+            fi
+        fi
+        unset __conda_setup
+
+        if [ -f "/Users/richard/mambaforge/etc/profile.d/mamba.sh" ]; then
+            . "/Users/richard/mambaforge/etc/profile.d/mamba.sh"
+        fi
+
+        # <<< conda initialize <<<
+
+        unfunction __xinlc_load_conda
+
+
+        alias conda="mamba"
+        # 自动激活 dev 环境
+        mamba activate dev
+    }
+# fi
 
 # 设置别名
-alias conda="mamba"
+# alias conda="mamba"
 alias condaup="mamba activate dev"
 alias condadown="mamba deactivate"
 
 # 自动激活 dev 环境
-mamba activate dev
+# 开启后会影响 zsh 初始加载性能
+# mamba activate dev
 # conda E
 
 # the fuck B
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
+## Lazyload thefuck
+if (( $+commands[thefuck] )) &>/dev/null; then
+    _xinlc_lazyload_command_fuck() {
+        eval $(thefuck --alias)
+    }
+
+    xinlc_lazyload_add_command fuck
+fi
 # the fuck E
 
 # mcfly B

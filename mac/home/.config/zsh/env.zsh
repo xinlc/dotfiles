@@ -1,6 +1,9 @@
 export RANGER_LOAD_DEFAULT_RC="false"
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_DISABLE_COMPFIX="true"
+# This speed up zsh-autosuggetions by a lot
+export ZSH_AUTOSUGGEST_USE_ASYNC="true"
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
 # export TERM_ITALICS=true
 # export TERM=screen-256color-bce
 # export TERM=xterm-256color

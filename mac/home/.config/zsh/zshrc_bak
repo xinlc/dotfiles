@@ -207,7 +207,7 @@ eval $(thefuck --alias)
 # the fuck E
 
 # mcfly B
-# 现在使用 fzf ctl-r 
+# 现在使用 fzf ctl-r
 # eval "$(mcfly init zsh)"
 # mcfly E
 

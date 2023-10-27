@@ -23,7 +23,7 @@ source ~/.config/zsh/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 plugins=(
   # z
-  git
+#   git
   # node
   # npm
   # vi-mode
