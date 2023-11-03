@@ -20,6 +20,7 @@ alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~
 alias la='eza -la'
 alias lt='eza -T -L 1'
 alias lg='lazygit'
+alias gl='git pull'
 # alias rr='joshuto_cwd_fn --change-directory'
 alias rr='yazi_cwd_fn'
 alias er='xplr'

@@ -23,7 +23,7 @@ source ~/.config/zsh/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 plugins=(
   # z
-#   git
+  # git
   # node
   # npm
   # vi-mode
@@ -32,9 +32,10 @@ plugins=(
   # fzf
   fzf-tab
   zsh-autosuggestions
-  zsh-history-substring-search
+  #zsh-history-substring-search
   zsh-completions
   zsh-syntax-highlighting
+  #fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -401,6 +401,8 @@ mamba activate dev"
 
 ## 安装 zsh
 
+> 不建议瞎搞 bash 。瞎搞 zsh 出问题之后还可以用 bash，瞎搞 bash 出问题之后你用什么？
+
 - [iterm2](https://www.iterm2.com/downloads.html)
 - [Mac Terminal 配置](https://blog.lichao.xin/tools/mac-terminal/)
 
