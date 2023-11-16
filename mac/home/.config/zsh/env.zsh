@@ -73,6 +73,13 @@ export IDEA_MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/l
 export PATH="$PATH:$IDEA_MAVEN_HOME/bin"
 # idea maven E
 
+# mysql B
+## brew install mysql-client
+# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS"
+# mysql E
+
+
 # spring boot B
 # export MAVEN_OPTS=-Djava.security.egd=file:/dev/urandom
 export MAVEN_OPTS=-Djava.security.egd=file:/dev/./urandom

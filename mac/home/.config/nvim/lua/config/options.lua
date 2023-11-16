@@ -10,6 +10,10 @@ vim.g.open_command = vim.g.os == "Darwin" and "open" or "xdg-open"
 
 -- vim.opt.grepprg = "rg --vimgrep --smart-case --"
 
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
 if vim.fn.has("nvim-0.8") == 1 then
   vim.opt.backup = true
   vim.opt.cmdheight = 0

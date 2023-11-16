@@ -14,7 +14,7 @@ export def "authed" [] {
 }
 
 # Log into a 1password session for the given account
-export def-env "login" [account: string = 'neofinancial' --return] {
+export def --env "login" [account: string = 'neofinancial' --return] {
     $env.OP_SESSION = (if (onepass authed) {
         $env.OP_SESSION
     } else {
@@ -34,21 +34,21 @@ export def-env "login" [account: string = 'neofinancial' --return] {
 }
 
 # Copy an items password to the clipboard
-export def-env "word" [record: string] {
+export def --env "word" [record: string] {
     onepass login
     op get item $"($record)" --session $env.OP_SESSION --fields password | pbcopy
     print ([(ansi green) '  ' (ansi reset) ' Copied your "' $record '" password to the clipboard'] | str collect)
 }
 
 # Copy an items MFA token to the clipboard
-export def-env "mfa" [record: string] {
+export def --env "mfa" [record: string] {
     onepass login
     op get totp $"($record)" --session $env.OP_SESSION | pbcopy
     print ([(ansi green) '  ' (ansi reset) ' Copied your "' $record '" MFA to the clipboard'] | str collect)
 }
 
 # Look at at a given items details
-export def-env "view" [record: string] {
+export def --env "view" [record: string] {
     onepass login
     op get item $"($record)" --session $env.OP_SESSION | from json
 }

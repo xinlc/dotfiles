@@ -30,6 +30,9 @@ return {
       { "<leader>mf", "<Plug>(VM-Visual-Find)", mode = { "x" }, desc = "Visual Find" },
       { "<leader>ma", "<Plug>(VM-Visual-All)", mode = { "x" }, desc = "Visual All" },
       { "<leader>mr", "<Plug>(VM-Visual-Regex)", mode = { "x" }, desc = "Visual Regex" },
+
+      -- { "<C-A-down>", "<plug>(VM-Add-Cursor-Down)", desc = "foo", silent = false },
+      -- { "<C-A-up>", "<plug>(VM-Add-Cursor-Up)", desc = "foo", silent = false },
     }
   }
 }

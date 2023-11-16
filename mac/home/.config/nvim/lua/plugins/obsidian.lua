@@ -1,0 +1,26 @@
+if true then return {} end
+
+-- return {
+--   {
+--     "epwalsh/obsidian.nvim",
+--     lazy = true,
+--     event = {
+--       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+--       -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+--       "BufReadPre /Users/richard/Documents/docs/**.md",
+--       "BufNewFile /Users/richard/Documents/docs/**.md",
+--     },
+--     dependencies = {
+--       -- Required.
+--       "nvim-lua/plenary.nvim",
+--       "hrsh7th/nvim-cmp",
+--       "nvim-telescope/telescope.nvim",
+--     },
+--     opts = {
+--       dir = "/Users/richard/Documents/docs", -- no need to call 'vim.fn.expand' here
+--     },
+--     keys = {
+--       { "<localleader>f", "<cmd>ObsidianFollowLink<cr>", desc = "obsidian follow link" },
+--     },
+--   }
+-- }

@@ -1,0 +1,179 @@
+
+" https://github.com/JetBrains/ideavim
+
+" leader: ,
+" let mapleader = ","
+let mapleader=' '
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showcmd
+set showmode
+set number
+set relativenumber
+set scrolloff=5
+set history=1000
+set clipboard=unnamed
+set tm=300
+set novisualbell
+set noerrorbells
+
+" clear the highlighted search result
+" nnoremap <leader>cs :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
+
+nnoremap <leader>w :w<CR>
+
+" Quit normal mode
+nnoremap <leader>q  :q<CR>
+" nnoremap <leader>Q  :qa!<CR>
+
+" Move half page faster
+nnoremap <leader>d  <C-d>
+nnoremap <leader>u  <C-u>
+
+" Insert mode shortcut
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+
+" Quit insert mode
+inoremap jj <Esc>
+inoremap kk <Esc>
+
+" Quit visual mode
+vnoremap v <Esc>
+
+" Move to the start of line
+"nnoremap H ^
+
+" Move to the end of line
+"nnoremap L $
+
+" Redo
+nnoremap U <C-r>
+
+" Yank to the end of line
+nnoremap Y y$
+
+" 复制选中区到系统剪切板中
+vnoremap <leader>y "+y
+
+" => 选中及操作改键
+
+" 调整缩进后自动选中，方便再次操作
+vnoremap < <gv
+vnoremap > >gv
+
+" Window operation
+" nnoremap <leader>ww <C-W>w
+" nnoremap <leader>wd <C-W>c
+" nnoremap <leader>wj <C-W>j
+" nnoremap <leader>wk <C-W>k
+" nnoremap <leader>wh <C-W>h
+" nnoremap <leader>wl <C-W>l
+" nnoremap <leader>ws <C-W>s
+" nnoremap <leader>w- <C-W>s
+" nnoremap <leader>wv <C-W>v
+" nnoremap <leader>w\| <C-W>v
+
+" Tab operation
+" nnoremap tn gt
+" nnoremap tp gT
+noremap <leader>k gt
+noremap <leader>j gT
+nnoremap <leader>t1 1gt
+nnoremap <leader>t2 2gt
+nnoremap <leader>t3 3gt
+nnoremap <leader>t4 4gt
+nnoremap <leader>t5 5gt
+nnoremap <leader>t6 6gt
+nnoremap <leader>t0 :tablast<CR>
+
+" ==================================================
+" Show all the provided actions via `:actionlist`
+" ==================================================
+
+" built in search looks better
+" nnoremap / :action Find<CR>
+" but preserve ideavim search
+" nnoremap <leader>/ /
+
+nnoremap <leader>;; :action CommentByLineComment<CR>
+
+nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
+nnoremap <leader>br :action ViewBreakpoints<CR>
+
+nnoremap <leader>cv :action ChangeView<CR>
+
+nnoremap <leader>cd :action ChooseDebugConfiguration<CR>
+
+nnoremap <leader>ga :action GotoAction<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gs :action GotoSymbol<CR>
+nnoremap <leader>gt :action GotoTest<CR>
+
+" nnoremap <leader>fp :action ShowFilePath<CR>
+" nnoremap <leader>fu :action FindUsages<CR>
+
+nnoremap <leader>ic :action InspectCode<CR>
+
+nnoremap <leader>mv :action ActivateMavenProjectsToolWindow<CR>
+
+nnoremap <leader>oi :action OptimizeImports<CR>
+
+nnoremap <leader>pm :action ShowPopupMenu<CR>
+
+nnoremap <leader>rc :action ChooseRunConfiguration<CR>
+nnoremap <leader>re :action RenameElement<CR>
+nnoremap <leader>rf :action RenameFile<CR>
+
+nnoremap <leader>se :action SearchEverywhere<CR>
+nnoremap <leader>su :action ShowUsages<CR>
+
+nnoremap <leader>tc  :action CloseActiveTab<CR>
+nnoremap <leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+vnoremap <leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+
+" noremap f :action AceAction<CR>
+
+" 映射idea常用快捷键
+" 重命名
+" nnoremap <leader>r :action RenameElement<CR>
+" 格式化当前文件
+nnoremap <leader>f :action ReformatCode<CR><esc>
+" quick java doc
+nnoremap <leader>q :action QuickJavaDoc<CR>
+
+" 插件
+" 1. EasyMotion依赖于IdeaVim-EasyMotion https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion/ 和 AceJump https://plugins.jetbrains.com/plugin/7086-acejump/ 两个插件
+" 命令 https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+
+" 2. 多光标 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
+
+" 3. surround https://github.com/tpope/vim-surround 就是提供快捷的对操作。比如添加括号，双引号等等。
+" 支持的命令有：ys, cs, ds, S。常见用法如下，将光标停留在*所在位置，输入对应的命令(Command)，即可将左侧（Old text）的内容修改为右侧（New text）的内容“。
+
+" 4. commentary 方便添加注释的插件 https://github.com/tpope/vim-commentary
+" IdeaVim模拟的命令有： gcc, gc + motion, v_gc
+
+" 插件模拟
+" surround
+set surround
+" multiple-cursors
+set multiple-cursors
+" easyMotion 模拟，额外依赖插件：AceJump,IdeaVim-EasyMotion
+set easymotion
+" 注释插件模拟
+set commentary
+
+" 5. ideavim_extension 自动切换输入法插件 https://github.com/hadix-lin/ideavim_extension

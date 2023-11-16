@@ -38,7 +38,7 @@ export def fzf-files [] {
 
 # fzf through directories, navigating to result
 # Requires: `fd`
-export def-env fzf-cd [] {
+export def --env fzf-cd [] {
 	cd (fd --type d --hidden | fzf --prompt "FOLDERS> " | str trim)
 }
 
@@ -77,7 +77,7 @@ export def zshtory [] {
 }
 
 # # Change to dir matching zoxide query
-# export def-env j [
+# export def --env j [
 # 	query: string # Directory query
 # ] {
 # 	cd (zoxide query $query | str trim)
@@ -104,13 +104,13 @@ export def zshtory [] {
 ## terminal proxy
 ##
 
-export def-env proxyon [] {
+export def --env proxyon [] {
     $env.http_proxy = "http://127.0.0.1:7890"
     $env.https_proxy = "http://127.0.0.1:7890"
     $env.all_proxy = "socks5://127.0.0.1:7890"
 }
 
-export def-env proxyoff [] {
+export def --env proxyoff [] {
     hide-env http_proxy
     hide-env https_proxy
     hide-env all_proxy

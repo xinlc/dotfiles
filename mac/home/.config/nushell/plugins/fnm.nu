@@ -5,7 +5,7 @@ load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace 
 $env.PATH = ($env.PATH | prepend $"($env.FNM_MULTISHELL_PATH)/bin")
 
 # add fnm with cd
-def-env fnmcd [path: string] {
+def --env fnmcd [path: string] {
 	$env.PWD = ($path | path expand)
 	if (['.node-version' '.nvmrc'] | any? ($env.PWD | path join $it | path exists)) {
 		fnm use --silent-if-unchanged

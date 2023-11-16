@@ -5,6 +5,9 @@
 -- This file is automatically loaded by lazyvim.config.init
 -- local Util = require("lazyvim.util")
 
+local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
+
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -19,6 +22,8 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- keymap.set("n", "x", '"_x')
+
 -- exit insert mode with jk
 -- vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
 map("i", "jj", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
@@ -26,7 +31,27 @@ map("i", "kk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
 
 -- save file
 map({ "i", "v", "n", "s" }, "<M-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
+keymap.set("n", "<leader>w", "<cmd>w<cr>", opts)
+
+map({ "n", "v" }, "<c-d>", "<c-d>zz")
+map({ "n", "v" }, "<c-u>", "<c-u>zz")
+
+-- Delete a word backwards
+map({ "n" }, "dw", 'vb"_d')
+
+-- Select all
+map({ "n" }, "<C-a>", "gg<S-v>G")
+
+-- Diagnostics
+keymap.set("n", "<C-j>", function()
+	vim.diagnostic.goto_next()
+end, opts)
+
+-- map("n", "<S-left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+-- map("n", "<S-right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+
+-- map("n", ",d", [[:put =strftime('%A, %B %d, %Y')<cr>kJ]], { desc = "Put date" })
+-- map("n", ",t", [[:put =strftime('%T')<cr>kJ]], { desc = "Put time" })
 
 -- change word with <c-c>
 -- vim.keymap.set("n", "<C-c>", "<cmd>normal! ciw<cr>a")

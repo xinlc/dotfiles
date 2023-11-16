@@ -1,0 +1,73 @@
+################################################################################
+# .vimiumrc doesn't exist, but store settings here.
+################################################################################
+
+################################################################################
+# Custom key mappings
+################################################################################
+
+map h goBack
+map l goForward
+map H scrollLeft
+map L scrollRight
+
+map D scrollFullPageDown
+map U scrollFullPageUp
+
+map t Vomnibar.activateInNewTab
+
+# global marks on lowercase keys instead of uppercase
+map ` Marks.activateGotoMode swap
+map ' Marks.activateGotoMode swap
+map m Marks.activateCreateMode swap
+
+map g. closeOtherTabs
+
+map zh ScrollToLeft
+map zl ScrollToRight
+
+map b Vomnibar.activateTabSelection
+
+unmap <a-p>
+unmap <a-f>
+unmap <a-m>
+map gm toggleMuteTab
+map zf LinkHints.activateModeWithQueue
+
+unmap gf
+unmap gF
+map gf LinkHints.activateModeToOpenInNewForegroundTab
+
+# for arc browser
+# map gxh closeTabsOnLeft
+# map gxl closeTabsOnRight
+# map gp togglePinTab
+unmap gt
+unmap gT
+unmap J
+unmap K
+unmap g0
+unmap g$
+unmap X
+unmap x
+unmap W
+unmap <<
+unmap >>
+
+################################################################################
+# Custom search engines
+################################################################################
+
+w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia
+y: https://www.youtube.com/results?search_query=%s Youtube
+a: https://www.amazon.ca/s/?field-keywords=%s Amazon
+g: https://www.google.com/search?q=%s Google
+map: https://www.google.com/maps?q=%s Google maps
+gh: https://github.com/search?q=%s Github
+t: https://twitter.com/search?q=%s Twitter
+r: https://www.reddit.com/search/?q=%s Reddit
+rg: https://www.google.com/search?q=%s+Reddit Reddit Google
+sr: https://www.reddit.com/r/%s SubReddit
+hr: https://www.hockey-reference.com/search/search.fcgi?search=%s
+tah: https://theathletic.com/nhl/team/%s
+ens: https://www.espn.com/nhl/team/schedule/_/name/%s
