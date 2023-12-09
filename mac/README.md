@@ -54,7 +54,6 @@
 - [百度网盘](https://pan.baidu.com/download#pan) - 网盘
 - [钉钉](https://page.dingtalk.com/wow/dingtalk/act/download) - 企业办公工具
 - [腾讯会议](https://meeting.tencent.com/download/) - 会议。
-- [Bob](https://github.com/ripperhe/Bob) - 划词翻译和截图翻译工具
 - [Chrome](https://www.google.cn/chrome/) - 最好用的浏览器没有之一
 - [Qutebrowser](https://github.com/qutebrowser/qutebrowser) - 如果您正在寻找一款使用Vim风格的键盘操作的浏览器，那么开源的Qutebrowser将会是个不错的选择。
 - [Vieb](https://github.com/Jelmerro/Vieb) - 类似 Qutebrowser。
@@ -87,6 +86,8 @@
 - [Slidev](https://github.com/slidevjs/slidev) - Markdown 语法来实现 PPT
 - [Mermaid](https://github.com/mermaid-js/mermaid) - Markdown 语法来实现图表，类似 PlantUML
 - [tldraw](https://github.com/tldraw/tldraw) - 一个非常好的白板
+- [carbon](https://github.com/carbon-app/carbon) - 代码贴图工具
+- [mind-map](https://github.com/wanglin2/mind-map) - 一个还算强大的Web思维导图
 - [ProcessOn](https://www.processon.com) - 国内版 Draw.io
 - [OmniGraffle](https://www.omnigroup.com/omnigraffle/) - 画图神器
 - [PDManer](https://gitee.com/robergroup/pdmaner) - 国产数据库建模工具
@@ -257,6 +258,7 @@ brew bundle --file ~/Brewfile
 # choose-rust - 代替 awk。https://github.com/theryangeary/choose
 # sd - 代替 sed。https://github.com/chmln/sd
 # yazi - 跟 joshuto 类似，但更快。https://github.com/sxyazi/yazi
+# easydict - 一个简洁优雅的词典翻译 macOS App。https://github.com/tisfeng/Easydict
 
 ```
 

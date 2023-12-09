@@ -26,11 +26,12 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-	editor = CC=/opt/homebrew/bin/gcc-12 nvim
-	#editor = nvim
+	# editor = CC=/opt/homebrew/bin/gcc-12 nvim
+	editor = nvim
 
     pager = delta
 	quotepath = false
+    ignorecase = false
 
 [pager]
 	diff = delta

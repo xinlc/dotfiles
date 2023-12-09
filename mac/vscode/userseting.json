@@ -34,10 +34,9 @@
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.editor.untitled.hint": "hidden",
-  "workbench.editorAssociations": {
-    "*.md": "default"
-  },
+  // "workbench.editorAssociations": {
+  //   "*.md": "default"
+  // },
   "workbench.colorTheme": "Catppuccin Macchiato",
 
   // 避免终端 alt 键输入特殊字符
@@ -221,11 +220,15 @@
   },
   "editor.accessibilitySupport": "off",
   "git.openRepositoryInParentFolders": "never",
-  "editor.fontFamily": "FiraCode Nerd Font Mono,LXGW WenKai Mono",
-  "editor.fontLigatures": true,
+  // "editor.fontFamily": "'FiraCode Nerd Font Mono', 'LXGW WenKai Mono'",
+  // "editor.fontLigatures": true,
+  "editor.fontFamily": "'MonaspiceKr NFM', 'LXGW WenKai Mono'",
+  // "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02'",
+  "editor.fontLigatures": "'liga', 'dlig', 'ss01', 'ss02'",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+  "workbench.editor.empty.hint": "hidden",
 }
