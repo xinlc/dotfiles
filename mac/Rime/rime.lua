@@ -140,6 +140,9 @@ code_length_limit_processor = require("code_length_limit_processor")
 -- iRime 九宫格专用，将输入框的数字转为对应的拼音或英文
 -- irime_t9_preedit = require("irime_t9_preedit")
 
+-- 农历，可在方案中配置触发关键字。
+lunar = require("lunar")
+
 -- Unicode 输入
 unicode_input_translator = require("unicode_input_translator")
 

@@ -13,25 +13,30 @@ require("modules.status-message")
 
 local TWM = hs.loadSpoon("TilingWindowManagerMod")
 -- TWM:setLogLevel("debug")                             -- 可选开启 Tile 模式下 debug 日志
-TWMObj = TWM:start({
-    menubar = true,
-    dynamic = winman_dynamicAdjustWindowLayout, -- 是否开启实时动态窗口布局调整, 默认关闭, 开启会有些许性能下降
-    layouts = {
-        spoon.TilingWindowManagerMod.layouts.floating, -- 每个Space 默认用floating 布局, 即不改变当前现状的布局
-        spoon.TilingWindowManagerMod.layouts.fullscreen,
-        spoon.TilingWindowManagerMod.layouts.tall,
-        spoon.TilingWindowManagerMod.layouts.talltwo,
-        spoon.TilingWindowManagerMod.layouts.wide,
-    },
-    displayLayout = true,
-    floatApps = {},
-    fullscreenRightApps = { "md.obsidian" } -- 支持指定 App 窗口右半屏布局(全屏模式下)
-})
+TWMObj = {}
+
+-- 禁用 Title，如需使用打开下面注释
+-- TWMObj = TWM:start({
+--     menubar = true,
+--     dynamic = winman_dynamicAdjustWindowLayout, -- 是否开启实时动态窗口布局调整, 默认关闭, 开启会有些许性能下降
+--     layouts = {
+--         spoon.TilingWindowManagerMod.layouts.floating, -- 每个Space 默认用floating 布局, 即不改变当前现状的布局
+--         spoon.TilingWindowManagerMod.layouts.fullscreen,
+--         spoon.TilingWindowManagerMod.layouts.tall,
+--         spoon.TilingWindowManagerMod.layouts.talltwo,
+--         spoon.TilingWindowManagerMod.layouts.wide,
+--     },
+--     displayLayout = true,
+--     menubar = false,  -- 在菜单栏上显示
+--     floatApps = {},
+--     fullscreenRightApps = { "md.obsidian" } -- 支持指定 App 窗口右半屏布局(全屏模式下)
+-- })
 
 
 local WGL = spoon.Layouts
 -- WGL.logger.setLogLevel('debug')              -- 可选开启 Layout Spoon debug 日志
-WGL:start()
+-- 禁用 Layout，如需使用改功能可打开下面注释
+-- WGL:start()
 
 -- 记录所有屏幕所有 Space 的布局, SpaceUID --> layoutName
 WindowLayoutForSpaceStatus = {

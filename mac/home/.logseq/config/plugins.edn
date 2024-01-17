@@ -1,0 +1,19 @@
+{:logseq-tabs {:version "v1.19.3", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
+ :logseq-agenda {:version "v2.15.2", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
+ :logseq-vim-shortcuts {:version "v0.1.20", :repo "vipzhicheng/logseq-plugin-vim-shortcuts", :effect true, :theme false}
+ :logseq-mark-map {:version "v0.4.0", :repo "vipzhicheng/logseq-plugin-mark-map", :effect false, :theme false}
+ :logseq-pdf-export-plugin {:version "2.2.8", :repo "sawhney17/logseq-pdf-export", :effect true, :theme false}
+ :logseq-heatmap {:version "v2.4.3", :repo "pengx17/logseq-plugin-heatmap", :effect true, :theme false}
+ :logseq-journals-calendar {:version "v0.10.10", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
+ :logseq-paste-more {:version "v1.5.6", :repo "usoonees/logseq-plugin-paste-more", :effect true, :theme false}
+ :logseq-diagrams-as-code {:version "0.0.21", :repo "npgrosser/logseq-diagrams-as-code", :effect false, :theme false}
+ :logseq-bullet-threading {:version "v1.1.4", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-vim-editor {:version "v0.0.6", :repo "vipzhicheng/logseq-plugin-vim-editor", :effect false, :theme false}
+ :logseq-mermaid-plugin {:version "1.2.1", :repo "hkgnp/logseq-mermaid-plugin", :effect false, :theme false}
+ :logseq-catppuccin {:version "v0.4.0", :repo "catppuccin/logseq", :effect false, :theme true}
+ :logseq-todo-plugin {:version "v1.20.0", :repo "ahonn/logseq-plugin-todo", :effect true, :theme false}
+ :logseq-tags {:version "v0.1.2", :repo "gidongkwon/logseq-plugin-tags", :effect false, :theme false}
+ :logseq-automatic-linker {:version "1.5.5", :repo "sawhney17/logseq-automatic-linker", :effect false, :theme false}
+ :logseq-awesome-links {:version "v1.15.16", :repo "yoyurec/logseq-awesome-links", :effect true, :theme false}
+ :logseq-toc-plugin {:version "1.5.6", :repo "hkgnp/logseq-toc-plugin", :effect false, :theme false}
+ :logseq-doc {:version "v1.18.2", :repo "sethyuan/logseq-plugin-doc", :effect true, :theme false}}

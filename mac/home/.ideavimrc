@@ -1,6 +1,10 @@
 
+" IdeaVim Plugins: https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
 " Plug 'tommcdo/vim-exchange'
 
 let mapleader = " "
@@ -18,12 +22,12 @@ set hlsearch
 set number
 set relativenumber
 
-set surround
-set commentary
+"set surround
+"set commentary
 " set exchange
 " set sneak
 " set quickscope
-set easymotion
+"set easymotion
 
 set visualbell
 
@@ -71,10 +75,13 @@ nnoremap <c-k> <c-w>k
 
 nnoremap gd :action GotoDeclaration<cr>
 nnoremap gr :action FindUsages<cr>
-nnoremap gI :action ReSharperGotoImplementation<cr>
+nnoremap gI :action GotoImplementation<cr>
+" nnoremap gI :action ReSharperGotoImplementation<cr>
 
-nnoremap H :bprevious<cr>
-nnoremap L :bnext<cr>
+" nnoremap H :bprevious<cr>
+" nnoremap L :bnext<cr>
+nnoremap H gT
+nnoremap L gt
 
 nnoremap ]h :action VcsShowNextChangeMarker<cr>
 nnoremap [h :action VcsShowPrevChangeMarker<cr>
@@ -219,3 +226,6 @@ nnoremap \\\\r :action Rerun<cr>
 " nnoremap [<space> mzO<esc>`z
 " nnoremap [d mz:-d<cr>`z
 " nnoremap ]d mz:+d<cr>`z
+
+" preservim/nerdtree
+nnoremap <leader>e :NERDTree<CR>

@@ -18,6 +18,7 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 # export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 # export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true
 # homebrew E
 
 

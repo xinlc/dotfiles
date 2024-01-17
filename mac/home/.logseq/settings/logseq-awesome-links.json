@@ -1,0 +1,20 @@
+{
+  "promoAwesomeStyler": false,
+  "externalHeading": null,
+  "faviconsEnabled": true,
+  "inheritExtColor": true,
+  "internalHeading": null,
+  "pageIconsEnabled": true,
+  "inheritingHeading": null,
+  "inheritFromProp": "page-type",
+  "inheritFromHierarchy": true,
+  "dafaultPropsHeading": null,
+  "defaultPageProps": "icon::🍀\ncolor::#ff9966 ",
+  "defaultJournalProps": "icon::☀️\ncolor::#cc33ff",
+  "iconsFontHeading": null,
+  "iconFont": "tabler-icons",
+  "otherHeading": null,
+  "fixLowContrast": false,
+  "featureUpdaterEnabled": true,
+  "disabled": false
+}

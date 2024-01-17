@@ -337,7 +337,7 @@ nnoremap <Space>gi        :action Start.Use.Vcs<CR>
 nnoremap <Space>gg        :action Vcs.QuickListPopupAction<CR>
 
 " ShowInlineBlame 只是开关
-nnoremap <Space>gb        :action GitToolBox.ShowInlineBlame<CR> 
+nnoremap <Space>gb        :action GitToolBox.ShowInlineBlame<CR>
 nnoremap gh               :action GitToolBox.BlameDetails<CR>
 
 " hunk actions
@@ -390,3 +390,69 @@ nnoremap <Space>jj             :action KJumpAction<CR>
 nnoremap <Space>jl             :action KJumpAction.Line<CR>
 nnoremap <Space>jw             :action KJumpAction.Word0<CR>
 " }}}
+
+
+
+
+" ==================================================
+" Show all the provided actions via `:actionlist`
+" ==================================================
+
+" built in search looks better
+" nnoremap / :action Find<CR>
+" but preserve bdeavim search
+" nnoremap <leader>/ /
+
+
+"nnoremap <leader>;; :action CommentByLineComment<CR>
+"
+"nnoremap <leader>bb :action ToggleLineBreakpoint<CR>
+"nnoremap <leader>br :action ViewBreakpoints<CR>
+"nnoremap <leader>bx :action XDebugger.MuteBreakpoints<CR>
+"
+"nnoremap <leader>cv :action ChangeView<CR>
+"
+"nnoremap <leader>cd :action ChooseDebugConfiguration<CR>
+"
+"nnoremap <leader>ga :action GotoAction<CR>
+"nnoremap <leader>gc :action GotoClass<CR>
+"nnoremap <leader>gd :action GotoDeclaration<CR>
+"nnoremap <leader>gf :action GotoFile<CR>
+"nnoremap <leader>gi :action GotoImplementation<CR>
+"nnoremap <leader>gs :action GotoSymbol<CR>
+"nnoremap <leader>gt :action GotoTest<CR>
+"nnoremap <leader>nn :action GotoNextError<CR>
+"nnoremap <leader>nb :action GotoPreviousError<CR>
+"nnoremap <leader>p :action Paste<CR>
+"
+"" debug
+"" nnoremap <leader>rr :action Rerun<CR>
+"nnoremap <leader>rr :action Debug<CR>
+"
+"nnoremap <leader>gg :action FindUsages<CR>
+"
+"nnoremap <leader>fp :action ShowFilePath<CR>
+"" nnoremap <leader>fu :action FindUsages<CR>
+"
+"nnoremap <leader>ic :action InspectCode<CR>
+"
+"nnoremap <leader>mv :action ActivateMavenProjectsToolWindow<CR>
+"
+"nnoremap <leader>oi :action OptimizeImports<CR>
+"
+"nnoremap <leader>pm :action ShowPopupMenu<CR>
+"
+"nnoremap <leader>rc :action ChooseRunConfiguration<CR>
+"nnoremap <leader>re :action RenameElement<CR>
+"nnoremap <leader>rf :action RenameFile<CR>
+"
+"nnoremap <leader>se :action SearchEverywhere<CR>
+"nnoremap <leader>su :action ShowUsages<CR>
+"
+"nnoremap <leader>tc  :action CloseActiveTab<CR>
+"nnoremap <leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>
+"vnoremap <leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>

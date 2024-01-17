@@ -1,5 +1,6 @@
 ﻿-- 来源 https://github.com/yanhuacuo/98wubi-tables > http://98wb.ysepan.com/
 -- 数字、金额大写 (任意大写字母引导+数字)
+-- 触发前缀默认为 recognizer/patterns/number 的第 2 个字符，即 R
 
 local function splitNumPart(str)
 	local part = {}
@@ -24,7 +25,7 @@ local function decimal_func(str, posMap, valMap)
 	valMap = valMap or {[0]="零"; "壹"; "贰"; "叁" ;"肆"; "伍"; "陆"; "柒"; "捌"; "玖"}
 	if #str>4 then dec = string.sub(tostring(str), 1, 4) else dec =tostring(str) end
 	dec = string.gsub(dec, "0+$", "")
-	
+
 	if dec == "" then return "整" end
 
 	local result = ""
@@ -58,7 +59,7 @@ local function formatNum(num,t)
 end
 
 -- 数值转换为中文
-function number2cnChar(num,flag,digitUnit,wordFigure)    --flag=0中文小写反之为大写
+local function number2cnChar(num,flag,digitUnit,wordFigure)    --flag=0中文小写反之为大写
 	local st,result
 	num=tostring(num) result=""
 	local num1,num2=math.modf(num)
@@ -82,7 +83,7 @@ end
 
 local function number2zh(num,t)
 	local result,wordFigure
-	result="" 
+	result=""
 	if tonumber(t) <1 then
 		wordFigure = {"〇","一","二","三","四","五","六","七","八","九"}
 	else wordFigure = {"零","壹","贰","叁","肆","伍","陆","柒","捌","玖"} end
@@ -109,10 +110,11 @@ local function number_translatorFunc(num)
 	return result
 end
 
--- 触发模式为任意大写字母（除了 U，U 用在 Unicode 了）开头，可在 recognizer/patterns 中自定义
-local function number_translator(input, seg)
+local function number_translator(input, seg, env)
+	-- 获取 recognizer/patterns/number 的第 2 个字符作为触发前缀
+	env.number_keyword = env.number_keyword or env.engine.schema.config:get_string('recognizer/patterns/number'):sub(2, 2)
     local str, num, numberPart
-    if string.match(input, "^([A-TV-Z]+%d+)(%.?)(%d*)$") ~= nil then
+    if env.number_keyword ~= '' and input:sub(1, 1) == env.number_keyword then
         str = string.gsub(input, "^(%a+)", "")
         numberPart = number_translatorFunc(str)
         if #numberPart > 0 then

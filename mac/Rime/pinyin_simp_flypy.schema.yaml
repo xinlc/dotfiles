@@ -71,6 +71,7 @@ engine:
     - punct_translator   # ※ 轉換標點符號
     - script_translator  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
     - lua_translator@date_translator  # 时间、日期、星期
+    - lua_translator@lunar                # 农历
     - table_translator@custom_phrase  # 自定义短语 custom_phrase_double.txt
     # - table_translator@custom_phraseXT
     # - table_translator@custom_phraseYH
@@ -101,6 +102,16 @@ date_translator:
   timestamp: timestamp  # 时间戳： 1669716794
 
 
+# Lua 配置：农历
+lunar: lunar  # 癸卯年(兔)冬月廿一  二〇二四年冬月廿一
+
+
+# Lua 配置：为 corrector 格式化 comment，占位符为 {comment}
+# 默认 "{comment}" 输入 hun dun 时会在「馄饨」旁边生成 hún tun 的 comment
+# 例如左右加个括号 "({comment})" 就会变成 (hún tun)
+corrector: "{comment}"
+
+
 # Lua 配置: 降低部分英语单词在候选项的位置。
 # 详细介绍 https://dvel.me/posts/make-rime-en-better/#短单词置顶的问题
 # 正常情况： 输入 rug 得到 「1.rug 2.如果 …… 」
@@ -127,7 +138,7 @@ reduce_english_filter:
   mag, maid, mann, mar, mat, med, mel, mend, mens, ment, mil, mins, mint, mob, moc, mod, mop, mos, mot, mud, mug, mum, nail,
   nap, nat, nay, neil, nib, nip, noun, nous, nun, nut,
   pac, paid, pail, pain, pair, pak, pal, pam, pans, pant, pap, par, pat, paw, pax, pens, pic, pier, pies, pins, pint, pit, pix, pod, pop, pos, pot, pour, pow, pub,
-  rand, rant, rent, rep, res, ret, rex, rib, rid, rig, rim, rub, rug, rum, runs,
+  rand, rant, rent, rep, res, ret, rex, rib, rid, rig, rim, rub, rug, rum, runc, runs,
   sac, sail, sal, sam, sans, sap, saw, sax, sew, sham, shaw, shin, sig, sin, sip, sis, suit, sung, suns, sup, sur, sus,
   tad, tail, taj, tar, tax, tec, ted, tel, ter, tex, tic, tied, tier, ties, tim, tin, tit, tour, tout, tum,
   wag, wand, womens, wap, wax, weir, won,
@@ -254,10 +265,11 @@ key_binder:
 recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
-    punct: "^V([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_caps_v.yaml 的 symbols
-    reverse_lookup: "^L[a-z]+$"       # 响应两分拼字的反查
-    unicode: "^U[a-f0-9]+"            # 响应 Unicode
-    number: "^R[0-9]+[.]?[0-9]*"      # 响应 number_translator
+    punct: "^V([0-9]|10|[A-Za-z]+)$"    # 响应 symbols_caps_v.yaml 的 symbols
+    reverse_lookup: "^L[a-z]+$"         # 响应两分拼字的反查
+    unicode: "^U[a-f0-9]+"              # 响应 lua_translator@unicode 脚本将自动获取第 2 个字符作为触发前缀
+    number: "^R[0-9]+[.]?[0-9]*"        # 响应 lua_translator@number_translator 脚本将自动获取第 2 个字符作为触发前缀
+    gregorian_to_lunar: "^N[0-9]{1,8}"  # 响应 lua_translator@lunar 公历转农历，输入 N20240115 得到「二〇二四年腊月初五」，脚本将自动获取第 2 个字符作为触发前缀
 
 # 反查：两分（拼字）
 liangfen:

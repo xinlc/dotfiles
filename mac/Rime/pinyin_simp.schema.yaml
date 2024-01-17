@@ -64,6 +64,7 @@ engine:
     - script_translator  # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
     # - lua_translator@v_single_char_first_filter  # v 模式 symbols 优先（否则是英文优先）
     - lua_translator@date_translator  # 时间、日期、星期 # 这个顺序要在 table_translator@melt_eng 上面，否则动态时间（输入sj）的候选项不会在第一个，不知道为啥。。。
+    - lua_translator@lunar            # 农历
     - table_translator@custom_phrase  # 自定义短语 custom_phrase.txt
     - table_translator@melt_eng       # 英文输入
     - reverse_lookup_translator@latex       # ※ 反查，LaTeX
@@ -93,6 +94,16 @@ date_translator:
   week: xq       # 星期： 星期二
   datetime: dt   # ISO 8601： 2022-11-29T18:13:11+08:00
   timestamp: ts  # 时间戳： 1669716794
+
+# Lua 配置：农历的触发关键字
+lunar: nl  # 癸卯年（兔）冬月廿一  二〇二四年冬月廿一
+
+
+# Lua 配置：为 corrector 格式化 comment，占位符为 {comment}
+# 默认 "{comment}" 输入 hun dun 时会在「馄饨」旁边生成 hún tun 的 comment
+# 例如左右加个括号 "({comment})" 就会变成 (hún tun)
+corrector: "{comment}"
+
 
 # Lua 配置: 长词优先，提升 count 个词语，插入到第 idx 个位置。
 # 示例：将 2 个词插入到第 4、5 个候选项，输入 jie 得到「1接 2解 3姐 4饥饿 5极恶」
@@ -124,10 +135,10 @@ reduce_english_filter:
   jim, jug,
   kat,
   lab, lad, lag, laid, lam, laos, lap, lat, lax, lay, led, leg, lex, liam, lib, lid, lied, lien, lies, linn, lip, lit, liz, lob, lug, lund, lung, lux,
-  mag, maid, mann, mar, mat, med, mel, mend, mens, ment, mil, mins, mint, mob, moc, mod, mop, mos, mot, mud, mug, mum, nail,
+  mag, maid, mann, mar, mat, med, mel, mend, mens, ment, mil, mins, mint, mob, moc, mop, mos, mot, mud, mug, mum, nail,
   nap, nat, nay, neil, nib, nip, noun, nous, nun, nut,
   pac, paid, pail, pain, pair, pak, pal, pam, pans, pant, pap, par, pat, paw, pax, pens, pic, pier, pies, pins, pint, pit, pix, pod, pop, pos, pot, pour, pow, pub,
-  rand, rant, rent, rep, res, ret, rex, rib, rid, rig, rim, rub, rug, rum, runs,
+  rand, rant, rent, rep, res, ret, rex, rib, rid, rig, rim, rub, rug, rum, runc, runs,
   sac, sail, sal, sam, sans, sap, saw, sax, sew, sham, shaw, shin, sig, sin, sip, sis, suit, sung, suns, sup, sur, sus,
   tad, tail, taj, tar, tax, tec, ted, tel, ter, tex, tic, tied, tier, ties, tim, tin, tit, tour, tout, tum,
   wag, wand, womens, wap, wax, weir, won,
@@ -174,15 +185,15 @@ translator:
   dictionary: pinyin_simp       # 挂载拼音主词库 pinyin_simp.dict.yaml
   db_class: tabledb             # tabledb | userdb ，前者会生成人类可读的 *.txt，后者生成二进制的 *.userdb/
   contextual_suggestions: false  # 开启八股文
-  spelling_hints: 8              # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
-  always_show_comments: true     # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
-  initial_quality: 1.2           # 拼音的权重应该比英文大
-  preedit_format:                # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
-    - xform/([jqxy])v/$1u/       # 显示为 ju qu xu yu
-    # - xform/([nl])v/$1ü/       # 显示为 nü lü
-    # - xform/([nl])ue/$1üe/     # 显示为 nüe lüe
-    - xform/([nl])v/$1v/         # 显示为 nv lv
-    - xform/([nl])ue/$1ve/       # 显示为 nve lve
+  spelling_hints: 8           # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
+  always_show_comments: true  # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
+  initial_quality: 1.2        # 拼音的权重应该比英文大
+  preedit_format:             # preedit_format 影响到输入框的显示和“Shift+回车”上屏的字符
+    - xform/([jqxy])v/$1u/    # 显示为 ju qu xu yu
+    # - xform/([nl])v/$1ü/    # 显示为 nü lü
+    # - xform/([nl])ue/$1üe/  # 显示为 nüe lüe
+    - xform/([nl])v/$1v/      # 显示为 nv lv
+    - xform/([nl])ue/$1ve/    # 显示为 nve lve
 
 # 次翻译器，英文
 melt_eng:
@@ -216,11 +227,12 @@ punctuator:
 recognizer:
   import_preset: default  # 从 default.yaml 继承通用的
   patterns:  # 再增加方案专有的：
-    punct: "^v([0-9]|10|[A-Za-z]+)$"  # 响应 symbols_v.yaml 的 symbols，用 'v' 替换 '/'
-    # reverse_lookup: "^u[a-z]+$"       # 响应两分拼字的反查
+    punct: "^v([0-9]|10|[A-Za-z]+)$"    # 响应 symbols_v.yaml 的 symbols，用 'v' 替换 '/'
+    # reverse_lookup: "^u[a-z]+$"         # 响应两分拼字的反查
     reverse_lookup: '(^u[A-Za-z]+$)|(^i.+$)'  # 两组反查
-    unicode: "^U[a-f0-9]+"            # 响应 Unicode
-    number: "^R[0-9]+[.]?[0-9]*"      # 响应 number_translator
+    unicode: "^U[a-f0-9]+"              # 响应 lua_translator@unicode 脚本将自动获取第 2 个字符作为触发前缀
+    number: "^R[0-9]+[.]?[0-9]*"        # 响应 lua_translator@number_translator 脚本将自动获取第 2 个字符作为触发前缀
+    gregorian_to_lunar: "^N[0-9]{1,8}"  # 响应 lua_translator@lunar 公历转农历，输入 N20240115 得到「二〇二四年腊月初五」，脚本将自动获取第 2 个字符作为触发前缀
 
 
 # 反查：两分（拼字）

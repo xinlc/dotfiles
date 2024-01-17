@@ -109,6 +109,7 @@
 - [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有~~之一~~
 - [Obsidian](https://obsidian.md/) - 代替 Typora
 - [Logseq](https://github.com/logseq/logseq) - 大纲类型文档
+- [Anytype](https://github.com/anyproto/anytype-ts) - 知识管理软件，类似 Notion
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
