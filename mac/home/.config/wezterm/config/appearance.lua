@@ -59,7 +59,7 @@ return {
     -- font_size = fonts.font_size,
   },
   inactive_pane_hsb = {
-    saturation = 1.0,
-    brightness = 1.0,
+    saturation = 0.7,
+    brightness = 0.6,
   },
 }

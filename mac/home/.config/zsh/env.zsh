@@ -76,8 +76,13 @@ export PATH="$PATH:$IDEA_MAVEN_HOME/bin"
 
 # mysql B
 ## brew install mysql-client
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+
 # export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATH="$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS"
+# export PATH="$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS"
 # mysql E
 
 
@@ -118,8 +123,8 @@ export USUAL_CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/con
 export PATH="$PATH:$HOME/.local/bin"
 
 # php B
-export LDFLAGS="-L/opt/homebrew/opt/php@7.2/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/php@7.2/include"
+# export LDFLAGS="-L/opt/homebrew/opt/php@7.2/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/php@7.2/include"
 # export PATH="$PATH:/opt/homebrew/opt/php@7.2/bin"
 # export PATH="$PATH:/opt/homebrew/opt/php@7.2/sbin"
 # php E

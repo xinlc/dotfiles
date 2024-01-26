@@ -1,5 +1,7 @@
 local Config = require('config')
 
+-- require('utils.backdrops'):set_files():random()
+
 require('events.gui-startup').setup()
 require('events.right-status').setup()
 require('events.tab-title').setup()

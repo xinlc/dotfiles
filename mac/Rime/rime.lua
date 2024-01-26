@@ -165,3 +165,16 @@ corrector = require("corrector")
 -- 英文词条上屏自动空格
 -- 在 engine/filters 增加 - lua_filter@en_spacer
 en_spacer = require("en_spacer")
+
+-- 默认未启用：
+
+-- 词条置顶
+-- 满足左边的 cand.preedit 时，将右边的 cand 按顺序置顶。
+-- 在 engine/filters 增加 - lua_filter@pin_cand_filter
+-- 在方案里写配置项：
+-- pin_cand_filter:
+--   - "l	了"
+--   - "le	了"
+--   - "ta	他 她 它"
+--   - "ni hao	你好 拟好"
+pin_cand_filter = require("pin_cand_filter")
