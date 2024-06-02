@@ -260,6 +260,11 @@ brew bundle --file ~/Brewfile
 # sd - 代替 sed。https://github.com/chmln/sd
 # yazi - 跟 joshuto 类似，但更快。https://github.com/sxyazi/yazi
 # easydict - 一个简洁优雅的词典翻译 macOS App。https://github.com/tisfeng/Easydict
+# czg - 输出标准格式的 Commitizen 适配器和 CLI https://github.com/Zhengqbbb/cz-git
+# onefetch - 它将直接在终端中展示本地 Git 仓库的项目详情和代码统计等内容。https://github.com/o2sh/onefetch
+
+
+
 
 ```
 

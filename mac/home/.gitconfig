@@ -2,6 +2,7 @@
 
 	name = Richard
 	email = hi@lichao.xin
+	signingkey = 95F43BA89F81E4F8
 
 [core]
 
@@ -26,12 +27,12 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-	# editor = CC=/opt/homebrew/bin/gcc-12 nvim
+    # editor = CC=/opt/homebrew/bin/gcc-12 nvim
 	editor = nvim
 
-    pager = delta
+	pager = delta
 	quotepath = false
-    ignorecase = false
+	ignorecase = false
 
 [pager]
 	diff = delta
@@ -41,6 +42,7 @@
 
 [interactive]
 	diffFilter = delta --color-only --features=interactive
+	# diffFilter = delta --color-only
 
 [color]
 
@@ -70,7 +72,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	# gpgsign = true
+	gpgsign = true
 
     # 为了更好的 commit message 阅读者体验，可能你需要考虑给 commit message 里面的内容自动换行，让内容控制在轻松能看到的宽度之内，使用 Vim 的同学可以在你的 ~/.vimrc 里面增加下面的配置：
     # autocmd Filetype gitcommit setlocal spell textwidth=80
@@ -81,8 +83,7 @@
 
 	# Detect copies as well as renames
 	renames = copies
-
-    colorMoved = default
+	colorMoved = default
 
 
 [diff "bin"]
@@ -100,7 +101,7 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
-    conflictstyle = diff3
+	conflictstyle = diff3
 
 [push]
 
@@ -226,19 +227,25 @@
 	smudge = git-lfs smudge -- %f
 
 [url "https://"]
-    insteadOf = git://
+	insteadOf = git://
 
 [delta]
 	features = decorations
-    navigate = true
-    light = false
-    line-numbers = true
-    side-by-side = true
-    # line-numbers-left-format = ""
-    # line-numbers-right-format = "│ "
-    syntax-theme = Nord
+	navigate = true # 运行使用 n 和 N 在 diff 部分之间移动
+	light = false   # 如果终端是浅色主题，则设置为 true
+	line-numbers = true # 显示行号
+	side-by-side = true # 并排对比视图
+	wrap-max-lines = 10
+	# line-numbers-left-format = ""
+	# line-numbers-right-format = "│ "
+	# line-numbers-left-format = "{nm:^4}⋮" #左边默认就是这个配置 可以不用配置, 也可以进行修改比如 {nm:^4}⋮ 改成 "{nm:^4}:"
+	# line-numbers-right-format = "│ " #这个就是把右边的行号去掉了并且保留了 分割线 |
+
+	# syntax-theme = Nord
+	syntax-theme = Solarized (dark)
 
 [delta "interactive"]
 	keep-plus-minus-markers = false
+
 [log]
 	date = format:%Y-%m-%d %H:%M:%S

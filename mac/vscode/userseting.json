@@ -201,7 +201,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -222,9 +222,10 @@
   "git.openRepositoryInParentFolders": "never",
   // "editor.fontFamily": "'FiraCode Nerd Font Mono', 'LXGW WenKai Mono'",
   // "editor.fontLigatures": true,
-  "editor.fontFamily": "'MonaspiceKr NFM', 'LXGW WenKai Mono'",
+"editor.fontFamily": "'MonaspiceKr NFM', 'LXGW WenKai Mono'",
   // "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02'",
-  "editor.fontLigatures": "'liga', 'dlig', 'ss01', 'ss02'",
+  // "editor.fontLigatures": "'liga', 'dlig', 'ss01', 'ss02'",
+  "editor.fontLigatures": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },

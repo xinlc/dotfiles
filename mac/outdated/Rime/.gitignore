@@ -1,0 +1,12 @@
+.DS_Store
+**/.idea/
+.vscode/
+
+build/
+*.userdb/
+
+installation.yaml
+user.yaml
+
+cn_dicts/private.dict.yaml
+*private*

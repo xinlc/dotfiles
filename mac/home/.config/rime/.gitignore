@@ -1,0 +1,14 @@
+.DS_Store
+**/.idea/
+.vscode/
+dist/
+
+build/
+sync/
+*.userdb/
+
+*private*
+
+rime_console
+rime_deployer
+rime_patch
