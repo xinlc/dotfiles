@@ -32,6 +32,7 @@
 - [Rectangle](https://github.com/rxhanson/Rectangle) - 使用键盘快捷键和捕捉区域在 macOS 上移动和调整窗口大小。
 - [Mos](https://github.com/Caldis/Mos) - 一个用于在MacOS上平滑你的鼠标滚动效果的小工具, 让你的滚轮爽如触控板。
 - [MonitorControl](https://github.com/MonitorControl/MonitorControl) - 控制外接显示器的亮度和音量。
+- [Snipaste](https://www.snipaste.com/) - 自动吸附式截图+贴图 
 - Xnip - 最好用的mac长截图/截图工具 (App Store)
 - iShop - 优秀的截图录屏工具 (App Store)
 - Gifox 2 - 最好用的Gif动画录制工具 (App Store)
@@ -86,6 +87,7 @@
 - [Slidev](https://github.com/slidevjs/slidev) - Markdown 语法来实现 PPT
 - [Mermaid](https://github.com/mermaid-js/mermaid) - Markdown 语法来实现图表，类似 PlantUML
 - [tldraw](https://github.com/tldraw/tldraw) - 一个非常好的白板
+- [revezone](https://github.com/revezone/revezone) - 支持 Excalidraw、Tldraw 白板和类 Notion 笔记。
 - [carbon](https://github.com/carbon-app/carbon) - 代码贴图工具
 - [mind-map](https://github.com/wanglin2/mind-map) - 一个还算强大的Web思维导图
 - [ProcessOn](https://www.processon.com) - 国内版 Draw.io
@@ -235,6 +237,7 @@ brew bundle --file ~/Brewfile
 # broot - 一种查看和导航目录tree的新方法，它集成了ls, tree, find, grep, du, fzf等工具的常用功能。https://github.com/Canop/broot
 # zellij - 终端复用器（multiplexer），类似 Tmux。https://github.com/zellij-org/zellij
 # tealdeer - 替换 tldr 和 man。https://github.com/dbrgn/tealdeer
+# tlrc - tldr 客户端 替换 man。https://github.com/tldr-pages/tlrc
 # tokei - 统计代码量。https://github.com/XAMPPRocky/tokei
 # helix - 后现代终端编辑器，类似 vim。https://github.com/helix-editor/helix
 # chezmoi - 多台机器上管理你的个人配置文件 dotfiles。https://github.com/twpayne/chezmoi
@@ -320,6 +323,7 @@ brew bundle --file ~/Brewfile
 # raycast - Raycast 是一款速度极快、完全可扩展的启动器。它可以让您完成任务、计算、共享公共链接等等。https://www.raycast.com/
 # devtoys - 开发工具集。https://github.com/ObuchiYuki/DevToysMac
 # motrix - 全能下载器。https://github.com/agalwood/Motrix
+# flameshot - 截图/钉图/反色绘制/数字标注。 https://github.com/flameshot-org/flameshot
 
 ```
 
@@ -341,6 +345,9 @@ brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 # 霞鹜文楷 https://github.com/lxgw/LxgwWenKai
 # 字体名：LXGW WenKai Mono
 brew tap homebrew/cask-fonts && brew install font-lxgw-wenkai
+
+# 如提示文件已损坏，执行以下命令：
+sudo xattr -rd com.apple.quarantine /Applications/xxx.app
 ```
 
 ### [conda](https://docs.conda.io/en/latest/miniconda.html)
@@ -376,6 +383,16 @@ conda remove -n machinelearning --all
 # 重命名环境
 conda create -n python2 --clone py2
 conda remove -n py2 --all
+```
+
+### [m1 安装 python2.7](https://stackoverflow.com/questions/67380286/anaconda-channel-for-installing-python-2-7)
+
+```sh
+CONDA_SUBDIR=osx-64 conda create -n py27 python=2.7  # include other packages here
+
+# ensure that future package installs in this env stick to 'osx-64'
+conda activate py27
+conda config --env --set subdir osx-64
 ```
 
 #### tmux 中 conda 环境无法生效问题

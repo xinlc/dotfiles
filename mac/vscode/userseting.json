@@ -229,6 +229,11 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "vscode-neovim.compositeKeys": {
+    "jj": {
+        "command": "vscode-neovim.escape"
+    }
+  },
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   "workbench.editor.empty.hint": "hidden",

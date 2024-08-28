@@ -92,13 +92,13 @@ export MAVEN_OPTS=-Djava.security.egd=file:/dev/./urandom
 # spring boot E
 
 # Smart Project B
-export MYSQL_URL=192.168.2.202
-export REDIS_URL=192.168.2.202
-export SMART_GATEWAY=127.0.0.1
-export SMART_ADMIN=127.0.0.1
-export NACOS_URL=192.168.2.202
-export SMART_TX_MANAGER=127.0.0.1
-export MONGO_URL=192.168.2.202
+# export MYSQL_URL=192.168.2.202
+# export REDIS_URL=192.168.2.202
+# export SMART_GATEWAY=127.0.0.1
+# export SMART_ADMIN=127.0.0.1
+# export NACOS_URL=192.168.2.202
+# export SMART_TX_MANAGER=127.0.0.1
+# export MONGO_URL=192.168.2.202
 # Smart Project E
 
 # selenium B

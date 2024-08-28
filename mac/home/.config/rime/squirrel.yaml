@@ -159,7 +159,7 @@ preset_color_schemes:
     label_font_point: 12
     comment_font_face: "Helvetica"  # 注字体及大小
     comment_font_point: 16
-    # candidate_list_layout: stacked        # 候选项排列方向 stacked(默认) | linear
+    candidate_list_layout: linear        # 候选项排列方向 stacked(默认) | linear
     # text_orientation: horizontal          # 文字排列方向 horizontal(默认) | vertical
     inline_preedit: true                    # 拼音位于： 候选框 false | 行内 true
     translucency: false                     # 磨砂： false | true
