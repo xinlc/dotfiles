@@ -53,18 +53,18 @@ export GPG_TTY=$(tty)
 export PATH=$PATH:~/bin
 
 # android B
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
+#export ANDROID_HOME=$HOME/Library/Android/sdk
+#export PATH=$PATH:$ANDROID_HOME/tools
+#export PATH=$PATH:$ANDROID_HOME/tools/bin
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
+#export PATH=$PATH:$ANDROID_HOME/emulator
 # android E
 
 # flutter B
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export FLUTTER_HOME=$HOME/workspace/software/flutter/flutter
-export PATH="$PATH:$FLUTTER_HOME/bin"
+#export PUB_HOSTED_URL=https://pub.flutter-io.cn
+#export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+#export FLUTTER_HOME=$HOME/workspace/software/flutter/flutter
+#export PATH="$PATH:$FLUTTER_HOME/bin"
 # flutter E
 
 # idea maven B
@@ -102,8 +102,8 @@ export MAVEN_OPTS=-Djava.security.egd=file:/dev/./urandom
 # Smart Project E
 
 # selenium B
-export SELENIUM_DRIVER_HOME=$HOME/workspace/software/selenium_driver
-export PATH=$PATH:$SELENIUM_DRIVER_HOME/
+#export SELENIUM_DRIVER_HOME=$HOME/workspace/software/selenium_driver
+#export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 # selenium E
 
 # openjdk B
@@ -112,11 +112,11 @@ export PATH=$PATH:$SELENIUM_DRIVER_HOME/
 #
 
 # go B
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
+#export GOPATH=$HOME/go
+#export GOBIN=$GOPATH/bin
 
-export CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/config.yaml
-export USUAL_CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/usualConfig.yaml
+#export CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/config.yaml
+#export USUAL_CONFIG_NAME=/Users/richard/workspace/software/Open-IM-Server/db/config/usualConfig.yaml
 
 # go E
 

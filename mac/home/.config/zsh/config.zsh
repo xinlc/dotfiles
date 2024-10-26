@@ -6,7 +6,7 @@ source ~/.config/zsh/aliases.zsh
 # source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/fzf.zsh
 source ~/.config/zsh/mappings.zsh
-source ~/.config/zsh/prompt.zsh
+# source ~/.config/zsh/prompt.zsh
 
 
 # p10k B
@@ -142,9 +142,9 @@ alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 # hstr E
 
 # pnpm
-export PNPM_HOME="/Users/richard/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+#export PNPM_HOME="/Users/richard/Library/pnpm"
+#case ":$PATH:" in
+#  *":$PNPM_HOME:"*) ;;
+#  *) export PATH="$PNPM_HOME:$PATH" ;;
+#esac
 # pnpm end
