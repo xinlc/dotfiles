@@ -350,10 +350,10 @@ brew tap homebrew/cask-fonts && brew install font-lxgw-wenkai
 sudo xattr -rd com.apple.quarantine /Applications/xxx.app
 ```
 
-### [conda](https://docs.conda.io/en/latest/miniconda.html)
+### [conda](https://docs.conda.io/en/latest/miniconda.html) - 是一种通用包管理系统，包管理与pip的使用类似。
 
-- [miniconda](https://docs.conda.io/en/latest/miniconda.html)
-- [Anaconda](https://docs.anaconda.com/anaconda/install/)
+- [miniconda](https://docs.conda.io/en/latest/miniconda.html) - 它只包含最基本的内容——python与conda，其他的库得自己装。空间占用小。
+- [Anaconda](https://docs.anaconda.com/anaconda/install/) - 则是一个打包的集合，里面预装好了conda、某个版本的python、众多packages、科学计算工具等等，空间占用大。
 - [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 - [中科大镜像](https://mirrors.ustc.edu.cn/help/anaconda.html)
 - [阿里云镜像](https://developer.aliyun.com/mirror/)
@@ -423,6 +423,18 @@ bash Mambaforge-MacOSX-arm64.sh
 
 mamba create --name dev python=3.9
 mamba activate dev"
+```
+
+### [uv](https://github.com/astral-sh/uv) - 一个用 Rust 编写的极快的 Python 包和项目管理器。
+
+```sh
+
+# 安装
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 或用 Homebrew
+brew install uv
+
 ```
 
 ## 安装 zsh

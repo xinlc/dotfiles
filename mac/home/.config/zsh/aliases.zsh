@@ -25,6 +25,7 @@ alias gl='git pull'
 alias rr='yazi_cwd_fn'
 alias er='xplr'
 # alias lzd='lazydocker'
+alias oman='/usr/bin/man'
 alias man='tldr'
 alias zj="zellij"
 # alias onpm='eval $NVM_BIN/npm'
