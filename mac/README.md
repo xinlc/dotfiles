@@ -265,8 +265,9 @@ brew bundle --file ~/Brewfile
 # easydict - 一个简洁优雅的词典翻译 macOS App。https://github.com/tisfeng/Easydict
 # czg - 输出标准格式的 Commitizen 适配器和 CLI https://github.com/Zhengqbbb/cz-git
 # onefetch - 它将直接在终端中展示本地 Git 仓库的项目详情和代码统计等内容。https://github.com/o2sh/onefetch
-
-
+# oha - 压测工具，代替 ab。https://github.com/hatoo/oha
+  # 这个命令会进行 10 秒的压测，使用 100 个并发连接，每秒 100 个请求的速率，并启用延迟修正，关闭 keep-alive 连接。
+  # oha -z 10s -c 100 -q 100 --latency-correction --disable-keepalive https://example.com
 
 
 ```

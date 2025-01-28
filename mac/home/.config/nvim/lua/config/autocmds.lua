@@ -20,16 +20,17 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
   end,
 })
 
+-- https://www.lazyvim.org/configuration/general#auto-commands
 -- Fix conceallevel for json & help files
 -- Disable the concealing in some file formats
 -- The default conceallevel is 3 in LazyVim
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = { "json", "jsonc", "markdown"},
---   callback = function()
---     vim.wo.spell = false
---     vim.wo.conceallevel = 0
---   end,
--- })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "json", "jsonc", "markdown"},
+  callback = function()
+    vim.wo.spell = false
+    vim.wo.conceallevel = 0
+  end,
+})
 
 -- Tree-Sitter highlighting for filetypes not autodetected
 -- vim.filetype.add({

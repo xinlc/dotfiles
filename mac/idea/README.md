@@ -6,6 +6,8 @@
 
 [.ideavimrc](../home/.ideavimrc)
 
+> https://github.com/cufarvid/lazy-idea
+
 ## 安装的插件
 
 - `Alibaba Java Coding Guidelines` p3c 阿里巴巴代码规范
