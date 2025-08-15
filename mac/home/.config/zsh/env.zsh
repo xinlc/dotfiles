@@ -76,14 +76,21 @@ export PATH="$PATH:$IDEA_MAVEN_HOME/bin"
 
 # mysql B
 ## brew install mysql-client
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+
+## brew install mysql-client@8.0
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client@8.0/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client@8.0/include"
+
 
 # export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 # export PATH="$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS"
 # mysql E
+
 
 
 # spring boot B
