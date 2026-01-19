@@ -83,7 +83,9 @@
 ### 图形设计
 
 - [drawio](https://github.com/jgraph/drawio-desktop) - 画图神器
+- [next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io) - ai 画图神器
 - [excalidraw](https://github.com/excalidraw/excalidraw) - 手绘风画图神器
+- [drawnix](https://github.com/plait-board/drawnix/) - 开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等
 - [Slidev](https://github.com/slidevjs/slidev) - Markdown 语法来实现 PPT
 - [Mermaid](https://github.com/mermaid-js/mermaid) - Markdown 语法来实现图表，类似 PlantUML
 - [tldraw](https://github.com/tldraw/tldraw) - 一个非常好的白板
@@ -112,6 +114,7 @@
 - [Obsidian](https://obsidian.md/) - 代替 Typora
 - [Logseq](https://github.com/logseq/logseq) - 大纲类型文档
 - [Anytype](https://github.com/anyproto/anytype-ts) - 知识管理软件，类似 Notion
+- [MiaoYan](https://github.com/tw93/MiaoYan) - MacOS 轻量级 Markdown 应用程序
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
@@ -268,6 +271,7 @@ brew bundle --file ~/Brewfile
 # oha - 压测工具，代替 ab。https://github.com/hatoo/oha
   # 这个命令会进行 10 秒的压测，使用 100 个并发连接，每秒 100 个请求的速率，并启用延迟修正，关闭 keep-alive 连接。
   # oha -z 10s -c 100 -q 100 --latency-correction --disable-keepalive https://example.com
+# mole - 深层清洁和优化您的Mac。https://github.com/tw93/Mole
 
 
 ```

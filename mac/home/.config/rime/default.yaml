@@ -19,7 +19,7 @@ schema_list:
 menu:
   page_size: 9  # 候选词个数
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
-  # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键
+  # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键（注意在雾凇中，大写字母也作为编码了）
 
 
 # 方案选单相关
@@ -81,6 +81,8 @@ ascii_composer:
 #              '~' 是半角的，
 #              '`'（反引号）没有改成 '·'（间隔号）。
 punctuator:
+  digit_separators: ",.:"  # 在此处指定的字符，在数字后被输入，若再次输入数字，则连同数字直接上屏；若双击，则恢复映射。 # librime >= 1.13.0
+  # digit_separator_action: commit  # 关闭上述行为 librime >= 1.13.1
   full_shape:
     ' ' : { commit: '　' }
     ',' : { commit: ， }
@@ -239,6 +241,11 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+    # 将小键盘 + - * / 映射到主键盘，使计算器 如 1+2-3*4 可使用小键盘输入
+    - {accept: KP_Multiply, send: asterisk, when: composing}
+    - {accept: KP_Add,      send: plus,     when: composing}
+    - {accept: KP_Subtract, send: minus,    when: composing}
+    - {accept: KP_Divide,   send: slash,    when: composing}
 
 
 # 按键速查

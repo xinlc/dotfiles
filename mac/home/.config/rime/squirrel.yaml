@@ -10,7 +10,7 @@
 
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2024-11-04'  # config_version: '1.0'
+config_version: '2025-10-23'  # config_version: '1.0.3'
 
 
 # options: last | default | _custom_
@@ -129,7 +129,7 @@ style:
   # 以下是预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
 
   # 候选框与文字的排列方式
-  candidate_list_layout: stacked  # stacked | linear       皮肤横竖排显示是调整这个
+  candidate_list_layout: linear  # stacked | linear       皮肤横竖排显示是调整这个
   text_orientation: horizontal    # horizontal | vertical  文字方向
   # 拼音或词句是否显示在键入位置
   inline_preedit: true     # true | false  键入码显示位置
@@ -141,6 +141,8 @@ style:
   mutual_exclusive: false
   # Whether to use a translucent background. Only visible when background color is transparent
   translucency: false
+  # Enable to show small arrows that indicates if paging up/down is possible
+  show_paging: false
 
   corner_radius: 7
   hilited_corner_radius: 0
@@ -185,7 +187,6 @@ preset_color_schemes:
     label_font_point: 12
     comment_font_face: "Helvetica"  # 注字体及大小
     comment_font_point: 16
-    candidate_list_layout: linear        # 候选项排列方向 stacked(默认) | linear
     # candidate_list_layout: stacked        # 候选项排列方向 stacked(默认) | linear
     # text_orientation: horizontal          # 文字排列方向 horizontal(默认) | vertical
     inline_preedit: true                    # 键入码（拼音）是否显示在键入位置 true | false
