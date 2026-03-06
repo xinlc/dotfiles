@@ -34,7 +34,8 @@ local function init(config)
             winFrame.w = scrFrame.w
             winFrame.y = scrFrame.y
             winFrame.x = scrFrame.x
-            winFrame.h = scrFrame.h / 1.5
+            -- winFrame.h = scrFrame.h / 1.5
+            winFrame.h = scrFrame.h
             -- print(winFrame)
             win:setFrame(winFrame, 0)
             -- print(win:frame())

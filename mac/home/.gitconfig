@@ -2,7 +2,7 @@
 
 	name = Richard
 	email = hi@lichao.xin
-	signingkey = 95F43BA89F81E4F8
+	# signingkey = 95F43BA89F81E4F8
 
 [core]
 
@@ -72,7 +72,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	# gpgsign = true
 
     # 为了更好的 commit message 阅读者体验，可能你需要考虑给 commit message 里面的内容自动换行，让内容控制在轻松能看到的宽度之内，使用 Vim 的同学可以在你的 ~/.vimrc 里面增加下面的配置：
     # autocmd Filetype gitcommit setlocal spell textwidth=80

@@ -11,6 +11,7 @@
 - [rubick](https://github.com/rubickCenter/rubick) - 开源工具箱，对标 uTools。
 - [Alfred 4](https://www.alfredapp.com) - 本地搜索及应用快速启动
 - [Raycast](https://www.raycast.com/) - 类似Alfred功能，重要的是免费。
+- [Wox](https://github.com/Wox-launcher/Wox) - Wox是一款简单易用的跨平台启动器。它是Alfred和Raycast的开源替代方案。
 - [Cerebro](https://github.com/cerebroapp/cerebro) - 开源的 launcher。
 - [sol](https://github.com/ospfranco/sol) - 替代 Alfred、Spotlight 和 Raycast。
 - [AltTab](https://github.com/lwouis/alt-tab-macos) - 模拟 Windows Alt+Tab。建议快捷键设置成 Command+tab 代替系统默认 cmd+tab
@@ -103,13 +104,15 @@
 - [iTerm2](https://github.com/gnachman/iTerm2) - 终端神器
 - [Alacritty](https://github.com/alacritty/alacritty) - 一个跨平台的 OpenGL 终端模拟器。
 - [wezterm](https://github.com/wez/wezterm) - Rust 实现的 GPU 加速跨平台终端仿真器和多路复用器。
+- [ghostty](https://github.com/ghostty-org/ghostty) - Zig 实现的 👻 Ghostty 是一款快速、功能丰富且跨平台的终端模拟器，它使用平台原生 UI 和 GPU 加速。
+- [Kaku](https://github.com/tw93/Kaku) - 一款专为 AI 编码而打造的快速、开箱即用的终端。基于 WezTerm 的一个深度定制分支。
 - [SwitchHosts](https://github.com/oldj/SwitchHosts) - hosts 修改工具
 - [Another Redis Desktop Manager](https://github.com/qishibo/AnotherRedisDesktopManager) - Redis 客户端
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) - MySQL 官方客户端
 - [Navicat Premium](http://www.navicat.com.cn) - 强大的数据库管理工具
 - [Postman](https://www.postman.com/downloads/) - Api 调试神器
 - [hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源 API 开发生态系统（原postwomen）。对标 Postman、insomnia等。
-- [JMeter](http://jmeter.apache.org/download_jmeter.cgi) - 压测工具
+- [JMeter](https://github.com/apache/jmeter) - 压测工具
 - [Typora](https://www.typora.io) - 最好用的 Markdown 编辑器没有~~之一~~
 - [Obsidian](https://obsidian.md/) - 代替 Typora
 - [Logseq](https://github.com/logseq/logseq) - 大纲类型文档
@@ -272,6 +275,8 @@ brew bundle --file ~/Brewfile
   # 这个命令会进行 10 秒的压测，使用 100 个并发连接，每秒 100 个请求的速率，并启用延迟修正，关闭 keep-alive 连接。
   # oha -z 10s -c 100 -q 100 --latency-correction --disable-keepalive https://example.com
 # mole - 深层清洁和优化您的Mac。https://github.com/tw93/Mole
+# witr - 一条命令就能把进程查个底朝天。https://github.com/pranshuparmar/witr
+
 
 
 ```

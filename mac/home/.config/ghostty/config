@@ -1,0 +1,4 @@
+# Ghostty 主配置 / Ghostty main config
+# 加载顺序很重要：后加载文件会覆盖先加载值
+config-file = conf.d/appearance.conf
+config-file = conf.d/keybinds.conf

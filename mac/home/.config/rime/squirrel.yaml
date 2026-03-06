@@ -112,6 +112,8 @@ app_options:
   com.github.wez.wezterm:
       ascii_mode: true
       no_inline: true
+  com.mitchellh.ghostty:
+      ascii_mode: true
   io.alacritty:
       ascii_mode: true
       no_inline: true

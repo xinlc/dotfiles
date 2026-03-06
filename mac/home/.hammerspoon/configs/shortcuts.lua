@@ -110,14 +110,16 @@ if string.len(hsreload_keys[2]) > 0 then
 end
 
 -- dropdown 快捷键
-dropdowns = {{
-    prefix = {"Ctrl"},
-    key = ",",
-    message = "WezTerm",
-    appName = "WezTerm"
-}, {
+dropdowns = {
+-- {
+--     prefix = {"Ctrl"},
+--     key = ",",
+--     message = "Ghostty",
+--     appName = "Ghostty"
+-- },
+{
     prefix = {"Ctrl"},
     key = ".",
-    message = "Alacritty",
-    appName = "Alacritty"
+    message = "WezTerm",
+    appName = "WezTerm"
 }}
