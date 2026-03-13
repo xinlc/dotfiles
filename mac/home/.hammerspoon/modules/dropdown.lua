@@ -2,6 +2,7 @@
 require("configs.shortcuts")
 
 ---- https://world.hey.com/jonash/alacritty-drop-down-guake-quake-style-terminal-setup-on-macos-6eef7d73
+---  https://gist.github.com/programus/d3bf9c6b8f9b7648891d1f59b665b35e/
 ---- https://github.com/asmagill/hs._asm.spaces
 ---- https://www.hammerspoon.org/docs/hs.spaces.html
 
@@ -15,9 +16,12 @@ local function init(config)
     hs.hotkey.bind(config.prefix, config.key, function()
         function moveWindow(dropdown, space, mainScreen)
             -- move to main space
-            local win = nil
-            while win == nil do
-                win = dropdown:mainWindow()
+            local win = dropdown:mainWindow()
+            -- while win == nil do
+            --     win = dropdown:mainWindow()
+            -- end
+            if win == nil then
+              return
             end
             -- print(win)
             -- print(space)
