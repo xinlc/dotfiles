@@ -51,6 +51,8 @@
 ### 应用软件
 
 - [Clash](https://github.com/Dreamacro/clash) - 科学上网，哎！通往世界的大门
+- [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
+- [sniffnet](https://github.com/GyulyVGC/sniffnet)
 - [网易云音乐](https://music.163.com/#/download) - 音乐
 - [网易有道词典](http://cidian.youdao.com/index-mac.html) - 词典
 - [百度网盘](https://pan.baidu.com/download#pan) - 网盘
@@ -118,6 +120,7 @@
 - [Logseq](https://github.com/logseq/logseq) - 大纲类型文档
 - [Anytype](https://github.com/anyproto/anytype-ts) - 知识管理软件，类似 Notion
 - [MiaoYan](https://github.com/tw93/MiaoYan) - MacOS 轻量级 Markdown 应用程序
+- [Tolaria](https://github.com/refactoringhq/tolaria) - Markdown 知识库
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
