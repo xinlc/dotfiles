@@ -1,0 +1,26 @@
+{
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "xxx",
+    "ANTHROPIC_BASE_URL": "https://xxx/anthropic",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "glm-5.2[1M]",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "glm-5.2",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen3.6-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2[1M]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "glm-5.2",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-5.2[1M]",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "glm-5.2",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "983616",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-marketplace": {
+      "source": {
+        "repo": "obra/superpowers-marketplace",
+        "source": "github"
+      }
+    }
+  }
+}

@@ -279,7 +279,7 @@ brew bundle --file ~/Brewfile
   # oha -z 10s -c 100 -q 100 --latency-correction --disable-keepalive https://example.com
 # mole - 深层清洁和优化您的Mac。https://github.com/tw93/Mole
 # witr - 一条命令就能把进程查个底朝天。https://github.com/pranshuparmar/witr
-
+# tuicr - 一个带 vim 键位的终端代码审查 TUI 工具（Rust 编写，MIT 协议，读作 "tweaker"）。https://github.com/agavra/tuicr
 
 
 ```
@@ -331,6 +331,7 @@ brew bundle --file ~/Brewfile
 # redisinsight - RedisInsight 是一个直观高效的 Redis GUI 管理工具(官方工具）。https://github.com/RedisInsight/RedisInsight
 # squirrel - 鼠须管输入法。https://github.com/rime。https://github.com/rime/squirrel
 # hiddenbar - 隐藏菜单栏图标。https://github.com/dwarvesf/hidden
+# jordanbaird-ice - 整理、隐藏菜单栏图标。https://github.com/jordanbaird/Ice
 # rectangle - 简单的移动和调整大小的窗口。https://github.com/rxhanson/Rectangle
 # mos - 一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具。https://github.com/Caldis/Mos
 # raycast - Raycast 是一款速度极快、完全可扩展的启动器。它可以让您完成任务、计算、共享公共链接等等。https://www.raycast.com/
