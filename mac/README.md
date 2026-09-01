@@ -52,7 +52,7 @@
 
 - [Clash](https://github.com/Dreamacro/clash) - 科学上网，哎！通往世界的大门
 - [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
-- [sniffnet](https://github.com/GyulyVGC/sniffnet)
+- [sniffnet](https://github.com/GyulyVGC/sniffnet) - 这是一个简单网络监控应用，了解设备的网络流量。
 - [网易云音乐](https://music.163.com/#/download) - 音乐
 - [网易有道词典](http://cidian.youdao.com/index-mac.html) - 词典
 - [百度网盘](https://pan.baidu.com/download#pan) - 网盘
@@ -121,6 +121,7 @@
 - [Anytype](https://github.com/anyproto/anytype-ts) - 知识管理软件，类似 Notion
 - [MiaoYan](https://github.com/tw93/MiaoYan) - MacOS 轻量级 Markdown 应用程序
 - [Tolaria](https://github.com/refactoringhq/tolaria) - Markdown 知识库
+- [花笺](https://github.com/Achilng/floral-notepaper) - 轻量优雅的跨平台桌面便签工具，支持 Markdown 编辑与预览
 - [Visual Studio Code](https://code.visualstudio.com) - 全能代码编辑器
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - java 开发集成环境
 - [DataGrip](https://www.jetbrains.com/datagrip/) - 数据库工具。
@@ -280,6 +281,7 @@ brew bundle --file ~/Brewfile
 # mole - 深层清洁和优化您的Mac。https://github.com/tw93/Mole
 # witr - 一条命令就能把进程查个底朝天。https://github.com/pranshuparmar/witr
 # tuicr - 一个带 vim 键位的终端代码审查 TUI 工具（Rust 编写，MIT 协议，读作 "tweaker"）。https://github.com/agavra/tuicr
+# dbx - 20MB，管理90+种数据库。https://github.com/t8y2/dbx
 
 
 ```

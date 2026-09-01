@@ -10,7 +10,8 @@ alias c='clear'
 # alias gc='git config credential.helper store'
 # alias gg='git clone'
 alias cdw="cd ~/workspace"
-alias rm="safermformac"
+# alias rm="safermformac"
+alias rm="~/bin/safe-rm.sh"
 alias readlink=greadlink
 alias cat=bat
 # docker run --rm -it -v \/var/run/docker.sock:/var/run/docker.sock \-v ~/.config/lazydocker:/.config/jesseduffield/lazydocker \lazyteam/lazydocker

@@ -126,7 +126,7 @@ fi
 
 # proxy B
 #export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890;export ALL_PROXY=socks5://127.0.0.1:7890;
-alias proxyon='export http_proxy=http://127.0.0.1:7890; export https_proxy=$http_proxy; export all_proxy=socks5://127.0.0.1:7890'
+alias proxyon='export NODE_USE_ENV_PROXY=1; export http_proxy=http://127.0.0.1:7890; export https_proxy=$http_proxy; export all_proxy=socks5://127.0.0.1:7890'
 alias proxyoff='unset http_proxy;unset https_proxy;unset all_proxy'
 #alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 #alias unproxy='unset all_proxy'
