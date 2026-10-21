@@ -1,0 +1,65 @@
+ui-onboarding:
+  welcomeNoticeVersion: 2026-08-13.1
+ui-theme:
+  preference: light
+llm-pi-ai:
+  providers:
+    bailian:
+      apiKeyEnv: BAILIAN_API_KEY
+      api: anthropic-messages
+      baseURL: https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic
+      reasoning: high
+      # thinkingBudgets:           # 可选：自定义各等级的思考预算（四项必须写全）
+      #   minimal: 1024
+      #   low: 4096
+      #   medium: 8192
+      #   high: 32768
+      models:
+        - id: deepseek-v4-flash-0731
+          name: deepseek-v4-flash-0731
+          contextWindow: 1000000
+          maxTokens: 380000
+        - id: deepseek-v4.1-flash
+          name: deepseek-v4.1-flash
+          contextWindow: 1000000
+          maxTokens: 393216
+          input:
+            - text
+            - image
+          reasoningEfforts:
+            off: null
+            low: low
+            high: high
+            max: max
+        - id: glm-5.2
+          name: glm-5.2
+          contextWindow: 1000000
+          maxTokens: 16000
+        - id: qwen3.8-max
+          name: qwen3.8-max
+          contextWindow: 983616
+          maxTokens: 131072
+          input: [ text, image ]
+          reasoningEfforts:
+            off:
+            low: low
+            high: high
+            max: max
+    linkapi:
+      apiKeyEnv: LINKAPI_API_KEY
+      api: openai-completions
+      baseURL: https://linkapi.ai/v1
+      models:
+        - id: glm-5.3-flash
+          name: glm-5.3-flash
+        - id: grok-4.6
+          name: grok-4.6
+    openrouter:
+      apiKeyEnv: OPENROUTER_API_KEY
+      models:
+        - id: stealth/ox-alpha
+          name: ox-alpha
+agent-default-model:
+  provider: bailian
+  model: qwen3.8-max
+  reasoningEffort: max

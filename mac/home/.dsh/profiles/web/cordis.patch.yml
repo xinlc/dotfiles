@@ -1,0 +1,23 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+
+# Pin ctx.web's search to the Exa provider (its registered id is `exa`).
+# A patch replaces the targeted row's WHOLE config, so `fetchProvider: http`
+# is restated from the dsh-base bundle.
+- id: web
+  config:
+    searchProvider: exa
+    fetchProvider: http
+
+# Mount the Exa provider (installed as a plain dependency, so it must be
+# inserted explicitly). The API key is read from $EXA_API_KEY — process env,
+# the invoking directory's .env, or ~/.dsh/.env. Until a key exists the
+# provider stays unavailable and search calls fail with a structured error.
+- insert:
+    - id: web-search-exa
+      name: '@deepseek-ai/dsh-web-search-exa'
+      config:
+        # all optional; defaults shown
+        searchType: auto      # auto | keyword | neural
+        highlightsPerResult: 1
