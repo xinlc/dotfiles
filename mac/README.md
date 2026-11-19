@@ -11,6 +11,7 @@
 - [rubick](https://github.com/rubickCenter/rubick) - 开源工具箱，对标 uTools。
 - [Alfred 4](https://www.alfredapp.com) - 本地搜索及应用快速启动
 - [Raycast](https://www.raycast.com/) - 类似Alfred功能，重要的是免费。
+- [Tinycast](https://github.com/abue-ammar/tinycast) - 这是一款用 Swift 编写的轻量级 macOS 启动器，内存占用不到 100MB，支持文件搜索、剪贴板历史、汇率换算、代码片段、窗口管理和 AI 对话等功能，兼容 Raycast 扩展。
 - [Wox](https://github.com/Wox-launcher/Wox) - Wox是一款简单易用的跨平台启动器。它是Alfred和Raycast的开源替代方案。
 - [Cerebro](https://github.com/cerebroapp/cerebro) - 开源的 launcher。
 - [sol](https://github.com/ospfranco/sol) - 替代 Alfred、Spotlight 和 Raycast。
@@ -137,6 +138,9 @@
 - [AppFlowy](https://github.com/AppFlowy-IO/appflowy) - 开源版 Notion。
 - [jsoncrack](https://github.com/AykutSarac/jsoncrack.com) - 超级优雅的 JSON 数据可视化工具
 - [Beekeeper Studio](https://github.com/beekeeper-studio/beekeeper-studio) - 一款跨平台的数据库管理工具。
+- [Winc](https://github.com/DEEIX-AI/Winc) - 更轻、更快、更顺手的桌面编辑器。
+- [cc-switch](https://github.com/farion1231/cc-switch) - 统一管理你的 AI 编程工具
+- [magpie](https://github.com/yetone/magpie) - Agent 网关
 - Xcode - 不做IOS开发最好也装，有的软件需要依赖 (App Store)
 
 ## 安装软件

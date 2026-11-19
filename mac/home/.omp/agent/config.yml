@@ -1,0 +1,46 @@
+symbolPreset: nerd
+composer:
+  shape: band
+theme:
+  dark: titanium
+setupVersion: 3
+disabledProviders:
+  - agents
+  - claude
+  - opencode
+  - codex
+modelRoles:
+  default: bailian-token-plan/deepseek-v4.1-flash:high
+  web: web/exa
+hideThinkingBlock: true
+retry:
+  fallbackChains:
+    web:
+      - web/parallel
+      - web/perplexity
+      - google-gemini-cli/gemini-2.5-flash
+      - google-antigravity/gemini-2.5-flash
+      - google/gemini-2.5-flash
+      - anthropic/claude-haiku-4-5
+      - openai-codex/gpt-6-luna
+      - xai/grok-4.5
+      - web/zai
+      - web/tinyfish
+      - web/jina
+      - web/kagi
+      - web/tavily
+      - web/firecrawl
+      - web/brave
+      - web/kimi
+      - web/synthetic
+      - web/ollama
+      - web/searxng
+      - web/startpage
+      - web/duckduckgo
+      - web/ecosia
+      - web/google
+      - web/mojeek
+      - web/public
+      - web/hosted
+update:
+  auto: false
